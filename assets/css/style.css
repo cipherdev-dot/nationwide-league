@@ -759,6 +759,26 @@ img {
     font-size: 1.5rem;
   }
 }
+
+/* making screen adjustments for media query at 1000pixels */
+/* Add at end of CSS */
+@media (min-width: 1000px) {
+  .hero-row {
+    flex-direction: row !important;
+  }
+  .left-col-fixed {
+    width: 670px;
+    flex-shrink: 0;
+  }
+  .middle-col-flex {
+    flex: 1 1 0;
+    min-width: 240px;
+  }
+  .right-col-flex {
+    flex: 1 1 0;
+    min-width: 300px;
+  }
+}
 .fade-out {
   opacity: 0;
   transition: opacity 0.15s ease;
