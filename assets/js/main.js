@@ -84,18 +84,19 @@ const resultsData = [
     matches: [
       {
         home: "Shakhtar Donetsk",
-        homeLogo: "https://picsum.photos/id/1/24/24",
+        homeLogo:
+          "/football-logos/australia_adelaide-united.football-logos.cc.svg",
         away: "Leverkusen",
-        awayLogo: "https://picsum.photos/id/2/24/24",
+        awayLogo: "/football-logos/austria_admira.football-logos.cc.svg",
         score: "0-0",
         referee: "William Collum (SCO)",
         stadium: "Donbass Arena, Donetsk (UKR)",
       },
       {
         home: "Real Sociedad",
-        homeLogo: "https://picsum.photos/id/3/24/24",
+        homeLogo: "/football-logos/cyprus_aek-larnaca.football-logos.cc.svg",
         away: "Man. United",
-        awayLogo: "https://picsum.photos/id/4/24/24",
+        awayLogo: "/football-logos/cyprus_aez.football-logos.cc.svg",
         score: "0-0",
         referee: "Nicol Rizzoli (ITA)",
         stadium: "Anoeta, San Sebastian (ESP)",
@@ -107,18 +108,19 @@ const resultsData = [
     matches: [
       {
         home: "Juventus",
-        homeLogo: "https://picsum.photos/id/5/24/24",
+        homeLogo:
+          "/football-logos/czech-republic_sparta-praha.football-logos.cc.svg",
         away: "Real Madrid",
-        awayLogo: "https://picsum.photos/id/6/24/24",
+        awayLogo: "/football-logos/england_afc-fylde.football-logos.cc.svg",
         score: "2-2",
         referee: "Howard Webb (ENG)",
         stadium: "Juventus Stadium, Turin (ITA)",
       },
       {
         home: "København",
-        homeLogo: "https://picsum.photos/id/7/24/24",
+        homeLogo: "/football-logos/england_afc-totton.football-logos.cc.svg",
         away: "Galatasaray",
-        awayLogo: "https://picsum.photos/id/8/24/24",
+        awayLogo: "/football-logos/france_ajaccio.football-logos.cc.svg",
         score: "1-0",
         referee: "Martin Atkinson (ENG)",
         stadium: "Parken, Copenhagen (DEN)",
@@ -130,18 +132,19 @@ const resultsData = [
     matches: [
       {
         home: "Paris",
-        homeLogo: "https://picsum.photos/id/9/24/24",
+        homeLogo:
+          "/football-logos/germany_germany-national-team.football-logos.cc.svg",
         away: "Anderlecht",
-        awayLogo: "https://picsum.photos/id/10/24/24",
+        awayLogo: "/football-logos/iceland_afturelding.football-logos.cc.svg",
         score: "1-1",
         referee: "Mario Strahonja (CRO)",
         stadium: "Parc des Princes, Paris (FRA)",
       },
       {
         home: "Olympiacos",
-        homeLogo: "https://picsum.photos/id/11/24/24",
+        homeLogo: "/football-logos/scotland_aberdeen.football-logos.cc.svg",
         away: "Benfica",
-        awayLogo: "https://picsum.photos/id/12/24/24",
+        awayLogo: "/football-logos/france_ajaccio.football-logos.cc.svg",
         score: "1-0",
         referee: "Damir Skomina (SVN)",
         stadium: "Stadio Georgios Karaiskakis, Piraeus (GRE)",
@@ -153,18 +156,20 @@ const resultsData = [
     matches: [
       {
         home: "Man. City",
-        homeLogo: "https://picsum.photos/id/13/24/24",
+        homeLogo: "/football-logos/italy_chievo.football-logos.cc.svg",
         away: "CSKA Moskva",
-        awayLogo: "https://picsum.photos/id/14/24/24",
+        awayLogo: "/football-logos/turkey_adanaspor.football-logos.cc.svg",
         score: "5-2",
         referee: "Carlos Velasco Carballo (ESP)",
         stadium: "City of Manchester Stadium, Manchester (ENG)",
       },
       {
         home: "Plzeň",
-        homeLogo: "https://picsum.photos/id/15/24/24",
+        homeLogo:
+          "/football-logos/wales_aberystwyth-town.football-logos.cc.svg",
         away: "Bayern",
-        awayLogo: "https://picsum.photos/id/16/24/24",
+        awayLogo:
+          "/football-logos/venezuela_academia-anzoategui.football-logos.cc.svg",
         score: "0-1",
         referee: "Cüneyt Çakır (TUR)",
         stadium: "Doosan Arena, Plzeň (CZE)",
@@ -180,18 +185,19 @@ const liveData = [
     matches: [
       {
         home: "Arsenal",
-        homeLogo: "https://picsum.photos/id/1/24/24",
+        homeLogo:
+          "/football-logos/portugal_ac-marinhense.football-logos.cc.svg",
         away: "Chelsea",
-        awayLogo: "https://picsum.photos/id/2/24/24",
+        awayLogo: "/football-logos/iceland_afturelding.football-logos.cc.svg",
         score: "2-1",
         minute: "72'",
         stadium: "Emirates Stadium",
       },
       {
         home: "Manchester City",
-        homeLogo: "https://picsum.photos/id/3/24/24",
+        homeLogo: "/football-logos/greece_aek-athens.football-logos.cc.svg",
         away: "Liverpool",
-        awayLogo: "https://picsum.photos/id/4/24/24",
+        awayLogo: "/football-logos/finland_oulu.football-logos.cc.svg",
         score: "0-0",
         minute: "55'",
         stadium: "Etihad Stadium",
