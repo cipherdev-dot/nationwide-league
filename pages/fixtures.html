@@ -30,7 +30,6 @@
 
     <!-- Main styles (relative path from pages/ to root assets) -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-   
   </head>
   <body>
     <!-- ========== TOP BAR ========== -->
@@ -85,7 +84,7 @@
 
     <!-- ========== MAIN CONTENT ========== -->
     <div class="content-container hero-white-bg py-4">
-      <!-- PROMO BANNER -->
+      <!-- PROMO BANNER (Leeds jersey) -->
       <div class="promo-banner">
         <h1>WIN a match‑worn Leeds United jersey signed by Brenden Aaronson</h1>
         <p style="margin-top: 0.5rem; color: var(--dark-gray)">
@@ -93,7 +92,7 @@
         </p>
       </div>
 
-      <!-- MATCH TYPE NAVIGATION -->
+      <!-- MATCH TYPE NAVIGATION (matches, PL, community etc.) -->
       <div class="match-nav-links">
         <a href="../index.html">Premier League</a>
         <a href="../index.html">Football & Community</a>
@@ -103,7 +102,7 @@
       </div>
 
       <div class="row">
-        <!-- LEFT COLUMN: Match Details -->
+        <!-- LEFT COLUMN: Match Details (three news items) -->
         <div class="col-lg-4 mb-4">
           <div class="match-details">
             <h3>Match Details</h3>
@@ -115,20 +114,20 @@
           </div>
         </div>
 
-        <!-- RIGHT COLUMN: Fixtures Tables -->
+        <!-- RIGHT COLUMN: Fixtures Tables + extra note -->
         <div class="col-lg-8">
-          <!-- Match Overview -->
+          <!-- Match Overview (Matchweek 31 + date range) -->
           <div class="fixtures-table">
             <h4>Match Overview</h4>
-            <div style="margin-bottom: 1rem">
+            <div class="match-overview-text">
               <span style="font-weight: 700">Matchweek 31</span>
               <span style="color: var(--dark-gray)">
-                – Fri 20 Mar - Sun 22 Mar</span
-              >
+                – Fri 20 Mar - Sun 22 Mar
+              </span>
             </div>
           </div>
 
-          <!-- Today's Fixtures -->
+          <!-- Today's Fixtures  -->
           <div class="fixtures-table">
             <h4>Today's Fixtures</h4>
             <table>
@@ -148,27 +147,27 @@
                 <tr>
                   <td>Brighton and Hove Albion</td>
                   <td>Liverpool</td>
-                  <td>13:30</td>
+                  <td class="time-cell">13:30</td>
                 </tr>
                 <tr>
                   <td>Fulham</td>
                   <td>Burnley</td>
-                  <td>16:00</td>
+                  <td class="time-cell">16:00</td>
                 </tr>
                 <tr>
                   <td>Manchester City</td>
                   <td>Crystal Palace</td>
-                  <td>P - P</td>
+                  <td class="result-score">P - P</td>
                 </tr>
                 <tr>
                   <td>Everton</td>
                   <td>Chelsea</td>
-                  <td>18:30</td>
+                  <td class="time-cell">18:30</td>
                 </tr>
                 <tr>
                   <td>Leeds United</td>
                   <td>Brentford</td>
-                  <td>21:00</td>
+                  <td class="time-cell">21:00</td>
                 </tr>
               </tbody>
             </table>
@@ -189,25 +188,37 @@
                 <tr>
                   <td>Newcastle United</td>
                   <td>Sunderland</td>
-                  <td>13:00</td>
+                  <td class="time-cell">13:00</td>
                 </tr>
                 <tr>
                   <td>Aston Villa</td>
                   <td>West Ham United</td>
-                  <td>15:15</td>
+                  <td class="time-cell">15:15</td>
                 </tr>
                 <tr>
                   <td>Tottenham Hotspur</td>
                   <td>Nottingham Forest</td>
-                  <td>15:15</td>
+                  <td class="time-cell">15:15</td>
                 </tr>
               </tbody>
             </table>
           </div>
+
+          <!-- Possible Premier League fixture changes -->
+          <div class="fixture-change-note">
+            <i class="bi bi-calendar2-week"></i>
+            <span
+              ><strong
+                >Possible Premier League fixture changes in 2025/26</strong
+              >
+              — Broadcast selections & European commitments may alter dates;
+              final schedule TBC.</span
+            >
+          </div>
         </div>
       </div>
 
-      <!-- SPONSOR LOGOS / PARTNERS -->
+      <!-- SPONSOR / PARTNER ROW  -->
       <div class="sponsor-row">
         <div class="sponsor-item">Leeds Partner</div>
         <div class="sponsor-item">Official Creativity Partner</div>
@@ -218,11 +229,15 @@
         <div class="sponsor-item">Official Cloud & AI Partner</div>
         <div class="sponsor-item">Official Ball</div>
         <div class="sponsor-item">Official License</div>
+        <div class="sponsor-item">Official License</div>
+
         <div class="sponsor-item">@sorare</div>
         <div class="sponsor-item">Espressos</div>
         <div class="sponsor-item">Official Licensee</div>
         <div class="sponsor-item">Coca‑Cola</div>
         <div class="sponsor-item">PREMIER LEAGUE 2026</div>
+        <div class="sponsor-item">Premiere League</div>
+
         <div class="sponsor-item">Table</div>
         <div class="sponsor-item">Latest Video</div>
         <div class="sponsor-item">Fantasy</div>
@@ -234,9 +249,9 @@
       </div>
     </div>
 
-    <!-- Bootstrap JS (optional, but keeps dropdowns etc. working) -->
+    <!-- Bootstrap JS (optional, but keeps dropdowns and other functionality for responsiveness) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Your main JavaScript (burger menu etc.) -->
+    <!-- my main JavaScript (burger menu etc.) -->
     <script src="../assets/js/main.js"></script>
   </body>
 </html>

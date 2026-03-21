@@ -77,7 +77,7 @@ const matchContainer = document.querySelector(".match-date-group");
 // Store original fixtures HTML
 const fixturesHtml = matchContainer.innerHTML;
 
-// --- SAMPLE RESULTS DATA (grouped like the screenshot) ---
+// --- SAMPLE RESULTS DATA ---
 const resultsData = [
   {
     group: "Group A",

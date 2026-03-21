@@ -840,129 +840,168 @@ img {
 
 /* fixture page */
 .promo-banner {
-        background: var(--pure-white);
-        border: 1px solid var(--light-gray);
-        border-radius: 1rem;
-        padding: 2rem;
-        text-align: center;
-        margin: 2rem 0;
-      }
-      .promo-banner h1 {
-        font-size: 1.8rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        color: var(--charcoal);
-      }
-      .match-nav-links {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 2rem;
-        border-bottom: 1px solid var(--light-gray);
-        padding-bottom: 1rem;
-      }
-      .match-nav-links a {
-        color: var(--dark-gray);
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 0.9rem;
-        transition: color 0.2s;
-      }
-      .match-nav-links a:hover {
-        color: var(--pure-black);
-      }
-      .match-details {
-        background: var(--pure-white);
-        border: 1px solid var(--light-gray);
-        border-radius: 0.75rem;
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-      }
-      .match-details h3 {
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        border-left: 4px solid var(--pure-black);
-        padding-left: 0.75rem;
-      }
-      .match-details ul {
-        list-style: none;
-        padding-left: 0;
-      }
-      .match-details li {
-        margin-bottom: 0.5rem;
-        padding-left: 1.5rem;
-        position: relative;
-      }
-      .match-details li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: var(--dark-gray);
-        font-weight: bold;
-      }
-      .fixtures-table {
-        background: var(--pure-white);
-        border: 1px solid var(--light-gray);
-        border-radius: 0.75rem;
-        padding: 1rem;
-        margin-bottom: 2rem;
-      }
-      .fixtures-table h4 {
-        font-size: 1rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        letter-spacing: 0.5px;
-      }
-      .fixtures-table table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      .fixtures-table th,
-      .fixtures-table td {
-        padding: 0.75rem 0.5rem;
-        border-bottom: 1px solid var(--light-gray);
-        text-align: left;
-      }
-      .fixtures-table th {
-        font-weight: 700;
-        color: var(--charcoal);
-        font-size: 0.85rem;
-      }
-      .fixtures-table td {
-        font-size: 0.9rem;
-        color: var(--charcoal);
-      }
-      .fixtures-table .result-score {
-        font-weight: 600;
-        color: var(--dark-gray);
-      }
-      .sponsor-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 3rem;
-        padding: 1.5rem 0;
-        border-top: 1px solid var(--light-gray);
-        text-align: center;
-      }
-      .sponsor-item {
-        font-size: 0.75rem;
-        color: var(--medium-gray);
-        font-weight: 500;
-        letter-spacing: 0.5px;
-      }
-      @media (max-width: 768px) {
-        .promo-banner h1 {
-          font-size: 1.2rem;
-        }
-        .fixtures-table th,
-        .fixtures-table td {
-          font-size: 0.75rem;
-          padding: 0.5rem;
-        }
-      }
-      /* end of fixtures page */
+  background: var(--pure-white);
+  border: 1px solid var(--light-gray);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+.promo-banner h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+}
+.match-nav-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--light-gray);
+  padding-bottom: 1rem;
+}
+.match-nav-links a {
+  color: var(--dark-gray);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.match-nav-links a:hover {
+  color: var(--pure-black);
+}
+.match-details {
+  background: var(--pure-white);
+  border: 1px solid var(--light-gray);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.match-details h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--pure-black);
+  padding-left: 0.75rem;
+}
+.match-details ul {
+  list-style: none;
+  padding-left: 0;
+}
+.match-details li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.match-details li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--dark-gray);
+  font-weight: bold;
+}
+.fixtures-table {
+  background: var(--pure-white);
+  border: 1px solid var(--light-gray);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.fixtures-table h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+.fixtures-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.fixtures-table th,
+.fixtures-table td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--light-gray);
+  text-align: left;
+}
+.fixtures-table th {
+  font-weight: 700;
+  color: var(--charcoal);
+  font-size: 0.85rem;
+}
+.fixtures-table td {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+}
+.fixtures-table .result-score {
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+.sponsor-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--light-gray);
+  text-align: center;
+}
+.sponsor-item {
+  font-size: 0.75rem;
+  color: var(--medium-gray);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+  .promo-banner h1 {
+    font-size: 1.2rem;
+  }
+  .fixtures-table th,
+  .fixtures-table td {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+}
+.fixtures-table .time-cell {
+  color: #c95a0f; /* warm orange for kick-off times */
+  font-weight: 600;
+}
+.fixtures-table .result-score {
+  color: #2c6e2c; /* deep green for final scores */
+  font-weight: 700;
+}
+/* new note styling – fits with existing card look */
+.fixture-change-note {
+  background: var(--pure-white);
+  border: 1px solid var(--light-gray);
+  border-radius: 0.75rem;
+  padding: 1rem 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.fixture-change-note i {
+  color: var(--dark-gray);
+  font-size: 1rem;
+}
+.fixture-change-note strong {
+  font-weight: 700;
+  color: var(--charcoal);
+}
+/* small adjustment for match overview area */
+.match-overview-text {
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .fixture-change-note {
+    font-size: 0.75rem;
+  }
+}
+/* end of fixtures page */
