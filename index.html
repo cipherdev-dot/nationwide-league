@@ -1,31 +1,712 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Club Badges</title>
-</head>
-<body>
-    <div class="team-badges">
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
-        <div class="badge"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Premier League · responsive burger nav</title>
+
+    <!-- Fonts + Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="#">Shop</a><a href="#">About Us</a
+        ><a href="#">Football & Community</a><a href="#">Events</a
+        ><a href="#">Media</a><a href="#">Mornings Live</a>
+      </div>
     </div>
-</body>
+    <header class="main-header">
+      <div class="header-content">
+        <a href="#" class="logo">PREMIER LEAGUE</a>
+        <div class="nav-links-wrapper">
+          <a href="#">Home</a><a href="#">Fixtures</a><a href="#">Tables</a
+          ><a href="#">News</a><a href="#">Clubs</a><a href="#">Players</a
+          ><a href="#">Statistics</a>
+        </div>
+        <div class="search-signin">
+          <i class="fas fa-search"></i
+          ><a href="#" class="signin-btn">Sign in</a>
+        </div>
+        <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-links">
+          <a href="#">Shop</a><a href="#">About Us</a
+          ><a href="#">Football & Community</a><a href="#">Events</a
+          ><a href="#">Media</a><a href="#">Mornings Live</a
+          ><a href="#">Fixtures</a><a href="#">Tables</a><a href="#">News</a
+          ><a href="#">Clubs</a><a href="#">Players</a
+          ><a href="#">Statistics</a>
+        </div>
+      </div>
+    </header>
+    <div class="trending-bar">
+      <div class="trending-content">
+        <span class="trending-item"
+          ><span class="live-badge">LIVE</span> Man Utd 3-1 Aston Villa</span
+        ><span class="trending-item"
+          ><i class="fas fa-futbol"></i> Fernandes 2 assists</span
+        ><span class="trending-item"
+          ><i class="fas fa-chart-line"></i> Haaland 28 goals</span
+        ><span class="trending-item"
+          ><i class="fas fa-fire"></i> Arsenal unbeaten in 12</span
+        ><span class="trending-item"
+          ><span class="live-badge">LIVE</span> Chelsea 0-1 Newcastle</span
+        ><span class="trending-item"
+          ><i class="fas fa-star"></i> Saka POTM nominee</span
+        ><span class="trending-item"
+          ><i class="fas fa-crown"></i> Title race heating up</span
+        >
+      </div>
+    </div>
+
+    <div class="content-container hero-white-bg py-3">
+      <div class="hero-row">
+        <div class="left-col-fixed">
+          <div class="video-card">
+            <video id="mainVideo" autoplay muted loop playsinline>
+              <source
+                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="video-overlay-solid">
+              <div class="headline-large" id="video-title">
+                Champions League: Arsenal go through, Chelsea and City exit
+              </div>
+              <div class="headline-medium" id="video-subtitle">
+                Eze scores stunner as league leaders progress, while Chelsea and
+                Man City go out
+              </div>
+              <div class="features-link" id="video-badge">Features</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-col-flex">
+          <div class="middle-features-card p-0">
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+              data-badge="FEATURES"
+              data-title="RANK the best attacking midfielders in Premier League history"
+              data-subtitle="Vote now and see where your favourites rank"
+            >
+              <div class="feature-text">
+                <div class="card-label">FEATURES</div>
+                <div class="feature-item-title">
+                  RANK the best attacking midfielders in Premier League history
+                </div>
+                <div class="feature-item-sub">
+                  Vote now and see where your favourites rank
+                </div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img src="https://picsum.photos/id/100/80/60" alt="midfield" />
+              </div>
+            </div>
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+              data-badge="FEATURES"
+              data-title="Premier League Last Fan Standing - Play our exciting NEW game"
+              data-subtitle="How long can you survive?"
+            >
+              <div class="feature-text">
+                <div class="card-label">FEATURES</div>
+                <div class="feature-item-title">
+                  Premier League Last Fan Standing – Play our exciting NEW game
+                </div>
+                <div class="feature-item-sub">How long can you survive?</div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img src="https://picsum.photos/id/1015/80/60" alt="game" />
+              </div>
+            </div>
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+              data-badge="INSIGHTS"
+              data-title="Golden Boot Race: Haaland vs Salah vs Watkins"
+              data-subtitle="Who will finish as top scorer? Analysts predict final tally"
+            >
+              <div class="feature-text">
+                <div class="card-label">INSIGHTS</div>
+                <div class="feature-item-title">
+                  Golden Boot Race: Haaland vs Salah vs Watkins
+                </div>
+                <div class="feature-item-sub">
+                  Who will finish as top scorer? Analysts predict final tally
+                </div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img
+                  src="https://picsum.photos/id/104/80/60"
+                  alt="golden boot"
+                />
+              </div>
+            </div>
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoy.mp4"
+              data-badge="FANTASY"
+              data-title="FPL Double Gameweek tips: best captain & differentials"
+              data-subtitle="Essential transfers to climb your mini-leagues"
+            >
+              <div class="feature-text">
+                <div class="card-label">FANTASY</div>
+                <div class="feature-item-title">
+                  FPL Double Gameweek tips: best captain & differentials
+                </div>
+                <div class="feature-item-sub">
+                  Essential transfers to climb your mini-leagues
+                </div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img src="https://picsum.photos/id/20/80/60" alt="fantasy" />
+              </div>
+            </div>
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+              data-badge="ACADEMY"
+              data-title="Next Gen: The 5 teenagers taking Premier League by storm"
+              data-subtitle="Meet the future stars lighting up the league"
+            >
+              <div class="feature-text">
+                <div class="card-label">ACADEMY</div>
+                <div class="feature-item-title">
+                  Next Gen: The 5 teenagers taking Premier League by storm
+                </div>
+                <div class="feature-item-sub">
+                  Meet the future stars lighting up the league
+                </div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img src="https://picsum.photos/id/25/80/60" alt="youth" />
+              </div>
+            </div>
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+              data-badge="CLASSICS"
+              data-title="Best Premier League comebacks: 2005 Istanbul echoes"
+              data-subtitle="Relive the most iconic fightbacks in history"
+            >
+              <div class="feature-text">
+                <div class="card-label">CLASSICS</div>
+                <div class="feature-item-title">
+                  Best Premier League comebacks: 2005 Istanbul echoes
+                </div>
+                <div class="feature-item-sub">
+                  Relive the most iconic fightbacks in history
+                </div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img src="https://picsum.photos/id/42/80/60" alt="comeback" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-col-flex">
+          <div class="scrollable-card inverted-right p-3">
+            <div class="matchcentre-header">
+              <h5>MATCH CENTRE</h5>
+              <a href="./pages/fixtures.html" class="btn-view-all">VIEW ALL</a>
+            </div>
+            <div class="matchcentre-tabs">
+              <span class="matchcentre-tab active" data-tab="fixtures"
+                >FIXTURES</span
+              >
+              <span class="matchcentre-tab" data-tab="results">RESULTS</span>
+              <span class="matchcentre-tab" data-tab="live">LIVE</span>
+            </div>
+            <div class="match-date-group">
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Arsenal</span
+                    ><span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/1/24/24"
+                        alt="arsenal"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/2/24/24"
+                        alt="chelsea" /></span
+                    ><span class="team-name">Chelsea</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 29 Mar 17:30 - Emirates
+                  Stadium
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Manchester City</span
+                    ><span class="team-logo"
+                      ><img src="https://picsum.photos/id/3/24/24" alt="city"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/4/24/24"
+                        alt="liverpool" /></span
+                    ><span class="team-name">Liverpool</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 30 Mar 16:30 - Etihad Stadium
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Tottenham</span
+                    ><span class="team-logo"
+                      ><img src="https://picsum.photos/id/5/24/24" alt="spurs"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/6/24/24"
+                        alt="villa" /></span
+                    ><span class="team-name">Aston Villa</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 31 Mar 14:00 - Tottenham
+                  Hotspur Stadium
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Newcastle Utd</span
+                    ><span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/7/24/24"
+                        alt="newcastle"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/8/24/24"
+                        alt="manutd" /></span
+                    ><span class="team-name">Man Utd</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 01 Apr 20:00 - St. James' Park
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Brighton</span
+                    ><span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/9/24/24"
+                        alt="brighton"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/10/24/24"
+                        alt="westham" /></span
+                    ><span class="team-name">West Ham</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 02 Apr 19:45 - Amex Stadium
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Brentford</span
+                    ><span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/11/24/24"
+                        alt="brentford"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/12/24/24"
+                        alt="fulham" /></span
+                    ><span class="team-name">Fulham</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 03 Apr 15:00 - Gtech Community
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Wolves</span
+                    ><span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/13/24/24"
+                        alt="wolves"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/14/24/24"
+                        alt="everton" /></span
+                    ><span class="team-name">Everton</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 05 Apr 12:30 - Molineux
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Crystal Palace</span
+                    ><span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/15/24/24"
+                        alt="palace"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/16/24/24"
+                        alt="leicester" /></span
+                    ><span class="team-name">Leicester City</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 06 Apr 15:00 - Selhurst Park
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Southampton</span
+                    ><span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/17/24/24"
+                        alt="southampton"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/18/24/24"
+                        alt="bournemouth" /></span
+                    ><span class="team-name">Bournemouth</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 07 Apr 20:00 - St Mary's
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Nottingham Forest</span
+                    ><span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/19/24/24"
+                        alt="forest"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/20/24/24"
+                        alt="burnley" /></span
+                    ><span class="team-name">Burnley</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 08 Apr 14:00 - City Ground
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Sheffield Utd</span
+                    ><span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/21/24/24"
+                        alt="sheffield"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="https://picsum.photos/id/22/24/24"
+                        alt="luton" /></span
+                    ><span class="team-name">Luton Town</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 09 Apr 19:45 - Bramall Lane
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="carousel-section">
+      <div class="content-container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="carousel-header text-dark">
+            Watch 2025/26 match highlights & news
+          </h2>
+          <div class="d-flex gap-2">
+            <button onclick="scrollCarousel('left')" class="nav-arrow">
+              <i class="fas fa-chevron-left"></i></button
+            ><button onclick="scrollCarousel('right')" class="nav-arrow">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div id="horizontalCarousel" class="horizontal-scroll d-flex pb-3">
+          <!-- 10 cards total -->
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/1015/600/400"
+                  alt="highlight"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">HIGHLIGHTS</div>
+                <div class="highlight-desc">
+                  Two goal comeback earns a point! | Brentford 2-2 Wolves
+                </div>
+                <a href="#" class="match-link">Match highlights</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/102/600/400"
+                  alt="highlight"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">HIGHLIGHTS</div>
+                <div class="highlight-desc">
+                  Liverpool 1-1 Spurs | Szoboszlai Free-Kick stunner
+                </div>
+                <a href="#" class="match-link">Match highlights</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/104/600/400"
+                  alt="highlight"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">HIGHLIGHTS</div>
+                <div class="highlight-desc">
+                  City thrash Everton 4-0 | Haaland hat-trick masterclass
+                </div>
+                <a href="#" class="match-link">Match highlights</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/106/600/400"
+                  alt="highlight"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">HIGHLIGHTS</div>
+                <div class="highlight-desc">
+                  Arsenal 3-1 Newcastle | Saka & Odegaard shine
+                </div>
+                <a href="#" class="match-link">Match highlights</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/15/600/400"
+                  alt="highlight"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">HIGHLIGHTS</div>
+                <div class="highlight-desc">
+                  Chelsea 2-0 Man Utd | Palmer brace stuns Old Trafford
+                </div>
+                <a href="#" class="match-link">Match highlights</a>
+              </div>
+            </div>
+          </div>
+          <!-- new cards (club news / interviews) -->
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/20/600/400"
+                  alt="club news"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">CLUB NEWS</div>
+                <div class="highlight-desc">
+                  Howe gives the latest on Tonali ahead of Tyne-Wear derby
+                </div>
+                <a href="#" class="match-link">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/22/600/400"
+                  alt="team news"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">TEAM NEWS</div>
+                <div class="highlight-desc">
+                  Carrick's team news for Bournemouth match
+                </div>
+                <a href="#" class="match-link">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img src="https://picsum.photos/id/26/600/400" alt="pep" />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">PRESSER</div>
+                <div class="highlight-desc">
+                  Pep discusses EFL Cup final against Arsenal
+                </div>
+                <a href="#" class="match-link">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img src="https://picsum.photos/id/28/600/400" alt="arteta" />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">EXCLUSIVE</div>
+                <div class="highlight-desc">
+                  Every word from Arteta's EFL Cup final presser
+                </div>
+                <a href="#" class="match-link">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/30/600/400"
+                  alt="damsgaard"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">INJURY UPDATE</div>
+                <div class="highlight-desc">
+                  Damsgaard to be assessed ahead of Leeds clash
+                </div>
+                <a href="#" class="match-link">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="button-view-more"
+        style="display: flex; justify-content: center; margin-top: 1rem"
+      >
+        <button
+          style="
+            background-color: #333333;
+            color: #ffffff;
+            padding: 0.3rem 1.5rem;
+            border-radius: 20px;
+            border: none;
+          "
+        >
+          View more
+        </button>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

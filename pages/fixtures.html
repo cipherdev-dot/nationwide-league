@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Premier League – Full Fixtures</title>
+
+    <!-- Fonts + Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Main styles (relative path from pages/ to root assets) -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <!-- ========== TOP BAR ========== -->
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="../index.html">Shop</a><a href="../index.html">About Us</a>
+        <a href="../index.html">Football & Community</a
+        ><a href="../index.html">Events</a> <a href="../index.html">Media</a
+        ><a href="../index.html">Mornings Live</a>
+      </div>
+    </div>
+
+    <!-- ========== MAIN HEADER ========== -->
+    <header class="main-header">
+      <div class="header-content">
+        <!-- Logo links back to home page -->
+        <a href="../index.html" class="logo">PREMIER LEAGUE</a>
+        <div class="nav-links-wrapper">
+          <a href="../index.html">Home</a>
+          <a href="fixtures.html">Fixtures</a>
+          <a href="../index.html">Tables</a>
+          <a href="../index.html">News</a>
+          <a href="../index.html">Clubs</a>
+          <a href="../index.html">Players</a>
+          <a href="../index.html">Statistics</a>
+        </div>
+        <div class="search-signin">
+          <i class="fas fa-search"></i>
+          <a href="#" class="signin-btn">Sign in</a>
+        </div>
+        <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-links">
+          <a href="../index.html">Shop</a>
+          <a href="../index.html">About Us</a>
+          <a href="../index.html">Football & Community</a>
+          <a href="../index.html">Events</a>
+          <a href="../index.html">Media</a>
+          <a href="../index.html">Mornings Live</a>
+          <a href="../index.html">Fixtures</a>
+          <a href="../index.html">Tables</a>
+          <a href="../index.html">News</a>
+          <a href="../index.html">Clubs</a>
+          <a href="../index.html">Players</a>
+          <a href="../index.html">Statistics</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="content-container hero-white-bg py-4">
+      <!-- PROMO BANNER (Leeds jersey) -->
+      <div class="promo-banner">
+        <h1>WIN a match‑worn Leeds United jersey signed by Brenden Aaronson</h1>
+        <p style="margin-top: 0.5rem; color: var(--dark-gray)">
+          Enter now for your chance to own a piece of history
+        </p>
+      </div>
+
+      <!-- MATCH TYPE NAVIGATION (matches, PL, community etc.) -->
+      <div class="match-nav-links">
+        <a href="../index.html">Premier League</a>
+        <a href="../index.html">Football & Community</a>
+        <a href="../index.html">Events</a>
+        <a href="../index.html">Media</a>
+        <a href="../index.html">Morning Line</a>
+      </div>
+
+      <div class="row">
+        <!-- LEFT COLUMN: Match Details (three news items) -->
+        <div class="col-lg-4 mb-4">
+          <div class="match-details">
+            <h3>Match Details</h3>
+            <ul>
+              <li>Damsgaard to be assessed ahead of Leeds clash</li>
+              <li>Injury news: Adams to miss clash with Manchester United</li>
+              <li>Guardiola: EFL Cup final is a big moment</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Fixtures Tables + extra note -->
+        <div class="col-lg-8">
+          <!-- Match Overview (Matchweek 31 + date range) -->
+          <div class="fixtures-table">
+            <h4>Match Overview</h4>
+            <div class="match-overview-text">
+              <span style="font-weight: 700">Matchweek 31</span>
+              <span style="color: var(--dark-gray)">
+                – Fri 20 Mar - Sun 22 Mar
+              </span>
+            </div>
+          </div>
+
+          <!-- Today's Fixtures  -->
+          <div class="fixtures-table">
+            <h4>Today's Fixtures</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Team</th>
+                  <th>Opponent</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bournemouth</td>
+                  <td>Manchester United</td>
+                  <td class="result-score">2 - 2</td>
+                </tr>
+                <tr>
+                  <td>Brighton and Hove Albion</td>
+                  <td>Liverpool</td>
+                  <td class="time-cell">13:30</td>
+                </tr>
+                <tr>
+                  <td>Fulham</td>
+                  <td>Burnley</td>
+                  <td class="time-cell">16:00</td>
+                </tr>
+                <tr>
+                  <td>Manchester City</td>
+                  <td>Crystal Palace</td>
+                  <td class="result-score">P - P</td>
+                </tr>
+                <tr>
+                  <td>Everton</td>
+                  <td>Chelsea</td>
+                  <td class="time-cell">18:30</td>
+                </tr>
+                <tr>
+                  <td>Leeds United</td>
+                  <td>Brentford</td>
+                  <td class="time-cell">21:00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Tomorrow's Fixtures -->
+          <div class="fixtures-table">
+            <h4>Tomorrow's Fixtures</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Team</th>
+                  <th>Opponent</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Newcastle United</td>
+                  <td>Sunderland</td>
+                  <td class="time-cell">13:00</td>
+                </tr>
+                <tr>
+                  <td>Aston Villa</td>
+                  <td>West Ham United</td>
+                  <td class="time-cell">15:15</td>
+                </tr>
+                <tr>
+                  <td>Tottenham Hotspur</td>
+                  <td>Nottingham Forest</td>
+                  <td class="time-cell">15:15</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Possible Premier League fixture changes -->
+          <div class="fixture-change-note">
+            <i class="bi bi-calendar2-week"></i>
+            <span
+              ><strong
+                >Possible Premier League fixture changes in 2025/26</strong
+              >
+              — Broadcast selections & European commitments may alter dates;
+              final schedule TBC.</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- SPONSOR / PARTNER ROW  -->
+      <div class="sponsor-row">
+        <div class="sponsor-item">Leeds Partner</div>
+        <div class="sponsor-item">Official Creativity Partner</div>
+        <div class="sponsor-item">Official Bank</div>
+        <div class="sponsor-item">Official Soft Drink</div>
+        <div class="sponsor-item">Official Beer</div>
+        <div class="sponsor-item">Microsoft</div>
+        <div class="sponsor-item">Official Cloud & AI Partner</div>
+        <div class="sponsor-item">Official Ball</div>
+        <div class="sponsor-item">Official License</div>
+        <div class="sponsor-item">Official License</div>
+
+        <div class="sponsor-item">@sorare</div>
+        <div class="sponsor-item">Espressos</div>
+        <div class="sponsor-item">Official Licensee</div>
+        <div class="sponsor-item">Coca‑Cola</div>
+        <div class="sponsor-item">PREMIER LEAGUE 2026</div>
+        <div class="sponsor-item">Premiere League</div>
+
+        <div class="sponsor-item">Table</div>
+        <div class="sponsor-item">Latest Video</div>
+        <div class="sponsor-item">Fantasy</div>
+        <div class="sponsor-item">Statistics</div>
+        <div class="sponsor-item">Clubs</div>
+        <div class="sponsor-item">Matches</div>
+        <div class="sponsor-item">Latest News</div>
+        <div class="sponsor-item">Players</div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, but keeps dropdowns and other functionality for responsiveness) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- my main JavaScript (burger menu etc.) -->
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
