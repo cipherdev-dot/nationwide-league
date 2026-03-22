@@ -271,3 +271,250 @@ setTimeout(() => {
   const c = document.getElementById("horizontalCarousel");
   if (c) c.scrollLeft = 0;
 }, 200);
+
+// dynamic rendering of the clubs
+
+// ----- GOALS DATA (with logo placeholders) -----
+const goalsPlayers = [
+  {
+    rank: 1,
+    name: "Erling Haaland",
+    club: "Manchester City",
+    value: 22,
+    img: "/football-logos/download (1).jfif",
+    logo: "/football-logos/australia_adelaide-united.football-logos.cc.svg",
+  },
+  {
+    rank: 2,
+    name: "Igor Thiago",
+    club: "Brentford",
+    value: 19,
+    img: "/football-logos/download (10).jfif",
+    logo: "/football-logos/austria_admira.football-logos.cc.svg",
+  },
+  {
+    rank: 3,
+    name: "Antoine Semenyo",
+    club: "Manchester City",
+    value: 15,
+    img: "/football-logos/anthony gordon.jfif",
+    logo: "/football-logos/cyprus_aek-larnaca.football-logos.cc.svg",
+  },
+  {
+    rank: 4,
+    name: "João Pedro",
+    club: "Chelsea",
+    value: 14,
+    img: "/football-logos/download (4).jfif",
+    logo: "/football-logos/england_afc-totton.football-logos.cc.svg",
+  },
+  {
+    rank: 5,
+    name: "Hugo Ekitiké",
+    club: "Liverpool",
+    value: 11,
+    img: "/football-logos/download (5).jfif",
+    logo: "/football-logos/finland_oulu.football-logos.cc.svg",
+  },
+  {
+    rank: 5,
+    name: "Viktor Gyökeres",
+    club: "Arsenal",
+    value: 11,
+    img: "/football-logos/download (6).jfif",
+    logo: "/football-logos/france_ajaccio.football-logos.cc.svg",
+  },
+  {
+    rank: 7,
+    name: "Danny Welbeck",
+    club: "Brighton",
+    value: 10,
+    img: "/football-logos/download (4).jfif",
+    logo: "/football-logos/england_afc-totton.football-logos.cc.svg",
+  },
+  {
+    rank: 7,
+    name: "Dominic Calvert-Lewin",
+    club: "Leeds",
+    value: 10,
+    img: "/football-logos/download (3).jfif",
+    logo: "/football-logos/england_afc-fylde.football-logos.cc.svg",
+  },
+  {
+    rank: 9,
+    name: "Benjamin Sesko",
+    club: "Man United",
+    value: 9,
+    img: "/football-logos/bruno-fernandes.jfif",
+    logo: "/football-logos/czech-republic_sparta-praha.football-logos.cc.svg",
+  },
+  {
+    rank: 9,
+    name: "Bryan Mbeumo",
+    club: "Man United",
+    value: 9,
+    img: "/football-logos/armstrong-img.webp",
+    logo: "/football-logos/cyprus_aez.football-logos.cc.svg",
+  },
+];
+
+// ----- ASSISTS DATA (with logo placeholders) -----
+const assistsPlayers = [
+  {
+    rank: 1,
+    name: "Bruno Fernandes",
+    club: "Manchester United",
+    value: 16,
+    img: "/football-logos/download (9).jfif",
+    logo: "/football-logos/venezuela_academia-puerto-cabello.football-logos.cc.svg",
+  },
+  {
+    rank: 2,
+    name: "Ollie Watkins",
+    club: "Aston Villa",
+    value: 14,
+    img: "/football-logos/download (8).jfif",
+    logo: "/football-logos/venezuela_academia-anzoategui.football-logos.cc.svg",
+  },
+  {
+    rank: 3,
+    name: "Martin Ødegaard",
+    club: "Arsenal",
+    value: 12,
+    img: "/football-logos/download (6).jfif",
+    logo: "/football-logos/turkey_adanaspor.football-logos.cc.svg",
+  },
+  {
+    rank: 4,
+    name: "Kevin De Bruyne",
+    club: "Manchester City",
+    value: 11,
+    img: "/football-logos/download (5).jfif",
+    logo: "/football-logos/portugal_ac-marinhense.football-logos.cc.svg",
+  },
+  {
+    rank: 5,
+    name: "Mohamed Salah",
+    club: "Liverpool",
+    value: 10,
+    img: "/football-logos/download (7).jfif",
+    logo: "/football-logos/saudi-arabia_abha.football-logos.cc.svg",
+  },
+  {
+    rank: 6,
+    name: "Son Heung-min",
+    club: "Tottenham",
+    value: 9,
+    img: "/football-logos/download (3).jfif",
+    logo: "/football-logos/czech-republic_sparta-praha.football-logos.cc.svg",
+  },
+  {
+    rank: 7,
+    name: "James Maddison",
+    club: "Tottenham",
+    value: 8,
+    img: "/football-logos/download (2).jfif",
+    logo: "/football-logos/greece_aek-athens.football-logos.cc.svg",
+  },
+  {
+    rank: 8,
+    name: "Cole Palmer",
+    club: "Chelsea",
+    value: 8,
+    img: "/football-logos/download (10).jfif",
+    logo: "/football-logos/hungary_ajka-fc.football-logos.cc.svg",
+  },
+  {
+    rank: 9,
+    name: "Pascal Groß",
+    club: "Brighton",
+    value: 7,
+    img: "/football-logos/David-Beckham-left-Bruno-Fernandes-right-.webp",
+    logo: "/football-logos/italy_carpi.football-logos.cc.svg",
+  },
+  {
+    rank: 10,
+    name: "Bukayo Saka",
+    club: "Arsenal",
+    value: 7,
+    img: "/football-logos/bruno-fernandes.jfif",
+    logo: "/football-logos/czech-republic_sparta-praha.football-logos.cc.svg",
+  },
+];
+
+// Helper: generate placeholder image URL using initials (rounded square)
+function getPlayerImage(name, size = 48) {
+  const initials = name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
+  return `https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&background=2a2a2a&color=fff&size=${size}&rounded=false&bold=true&length=2`;
+}
+
+// Render ranking list with updated layout and club logo images
+function renderRankingList(containerId, players) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = "";
+
+  players.forEach((player) => {
+    const row = document.createElement("div");
+    row.className = "player-row";
+
+    // Rank (left)
+    const rankSpan = document.createElement("div");
+    rankSpan.className = "player-rank";
+    rankSpan.textContent = player.rank;
+
+    // Center: avatar + player info
+    const infoWrapper = document.createElement("div");
+    infoWrapper.className = "player-info-wrapper";
+
+    const playerImg = document.createElement("img");
+    playerImg.className = "player-img";
+    playerImg.alt = player.name;
+    playerImg.src =
+      player.img && player.img.trim() !== ""
+        ? player.img
+        : getPlayerImage(player.name, 48);
+
+    const detailsDiv = document.createElement("div");
+    detailsDiv.className = "player-details";
+    const nameSpan = document.createElement("div");
+    nameSpan.className = "player-name";
+    nameSpan.textContent = player.name;
+
+    const clubSpan = document.createElement("div");
+    clubSpan.className = "player-club";
+
+    // Club logo image
+    const clubLogo = document.createElement("img");
+    clubLogo.className = "club-logo";
+    clubLogo.src = player.logo || "https://placehold.co/16x16?text=?"; // fallback if no logo
+    clubLogo.alt = `${player.club} logo`;
+    clubSpan.appendChild(clubLogo);
+    clubSpan.appendChild(document.createTextNode(` ${player.club}`));
+
+    detailsDiv.appendChild(nameSpan);
+    detailsDiv.appendChild(clubSpan);
+
+    infoWrapper.appendChild(playerImg);
+    infoWrapper.appendChild(detailsDiv);
+
+    // Value (right)
+    const valueSpan = document.createElement("div");
+    valueSpan.className = "player-value";
+    valueSpan.textContent = player.value;
+
+    row.appendChild(rankSpan);
+    row.appendChild(infoWrapper);
+    row.appendChild(valueSpan);
+    container.appendChild(row);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderRankingList("goalsList", goalsPlayers);
+  renderRankingList("assistsList", assistsPlayers);
+});
