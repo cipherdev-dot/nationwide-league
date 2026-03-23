@@ -265,3 +265,12 @@ setTimeout(() => {
   const c = document.getElementById("horizontalCarousel");
   if (c) c.scrollLeft = 0;
 }, 200);
+
+// ----- LOGS TAB SWITCHING -----
+function switchTab(btn, id) {
+  document.querySelectorAll(".logs-tabs .tab-btn").forEach((b) => b.classList.remove("active"));
+  document.querySelectorAll(".logs-panel .tab-content").forEach((c) => c.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById(id).classList.add("active");
+}
+
