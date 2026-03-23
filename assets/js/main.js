@@ -274,3 +274,83 @@ function switchTab(btn, id) {
   document.getElementById(id).classList.add("active");
 }
 
+// ----- VIDEO CARD PLAY FUNCTIONALITY -----
+document.addEventListener('DOMContentLoaded', function() {
+  const videoCards = document.querySelectorAll('.video-card-new');
+  
+  videoCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const videoSrc = this.dataset.video;
+      if (videoSrc) {
+        openVideoModal(videoSrc);
+      }
+    });
+  });
+  
+  function openVideoModal(src) {
+    // Remove existing modal if any
+    const existingModal = document.getElementById('videoModal');
+    if (existingModal) existingModal.remove();
+    
+    // Create modal
+    const modal = document.createElement('div');
+    modal.id = 'videoModal';
+    modal.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: pointer;
+    `;
+    
+    modal.innerHTML = `
+      <div style="position: relative; width: 90%; max-width: 900px;" onclick="event.stopPropagation()">
+        <button onclick="closeVideoModal()" style="
+          position: absolute;
+          top: -40px;
+          right: 0;
+          background: none;
+          border: none;
+          color: #fff;
+          font-size: 2rem;
+          cursor: pointer;
+          z-index: 10;
+        ">&times;</button>
+        <video controls autoplay style="width: 100%; border-radius: 8px;">
+          <source src="${src}" type="video/mp4">
+        </video>
+      </div>
+    `;
+    
+    modal.addEventListener('click', closeVideoModal);
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+  }
+  
+  window.closeVideoModal = function() {
+    const modal = document.getElementById('videoModal');
+    if (modal) {
+      modal.remove();
+      document.body.style.overflow = '';
+    }
+  };
+  
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeVideoModal();
+  });
+});
+
+// ----- POLL SELECTION FUNCTION -----
+function selectPoll(btn) {
+  const card = btn.closest('.poll-card');
+  card.querySelectorAll('.poll-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
