@@ -293,7 +293,9 @@ img {
   background-color: var(--off-white) !important;
   border: 1px solid var(--off-white) !important;
   border-radius: 1rem;
-  height: 628px;
+  height: clamp(400px, 50vw, 628px);
+  min-height: 400px;
+  max-height: 628px;
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -354,7 +356,22 @@ img {
   border: 1px solid var(--off-white) !important;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.scrollable-card.inverted-right .matchcentre-header,
+.scrollable-card.inverted-right .matchcentre-tabs {
+  flex-shrink: 0;
+}
+.scrollable-card.inverted-right .match-date-group {
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1;
+}
+.scrollable-card.inverted-right .match-date-group::-webkit-scrollbar {
+  display: none;
 }
 .scrollable-card.inverted-right::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
@@ -494,18 +511,18 @@ img {
   justify-content: flex-end;
 }
 .team-logo {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  overflow: hidden;
+  width: 28px;
+  height: 28px;
+  overflow: visible;
   flex-shrink: 0;
-  background-color: var(--light-gray);
-  border: 1px solid var(--medium-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .team-logo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 .vs-badge {
@@ -532,8 +549,9 @@ img {
   background: var(--off-white);
 }
 .left-col-fixed {
-  width: 670px;
-  flex-shrink: 0;
+  flex: 2 1 0;
+  min-width: 0;
+  max-width: 670px;
 }
 .middle-col-flex {
   flex: 1 1 0;
@@ -541,24 +559,25 @@ img {
 }
 .right-col-flex {
   flex: 1 1 0;
-  min-width: 300px;
+  min-width: 280px;
 }
 .left-col-fixed .card,
 .middle-col-flex .middle-features-card,
 .right-col-flex .scrollable-card {
-  height: 628px;
+  height: clamp(400px, 50vw, 628px);
   margin-bottom: 0;
 }
 .right-col-flex .scrollable-card {
-  height: 628px;
+  height: clamp(400px, 50vw, 628px);
   overflow-y: auto;
 }
 .video-card {
   background-color: var(--charcoal);
   border: 1px solid var(--off-white);
-  border-radius: 1rem;
+  border-radius: 0;
   overflow: hidden;
-  height: 628px;
+  height: clamp(400px, 50vw, 628px);
+  min-height: 300px;
   position: relative;
 }
 .video-card video {
@@ -628,8 +647,8 @@ img {
   scroll-snap-align: start;
 }
 .news-card {
-  background-color: var(--off-white) !important;
-  border: 1px solid var(--off-white) !important;
+  background-color: var(--pure-white) !important;
+  border: 1px solid var(--light-gray) !important;
   border-radius: 0.75rem;
   overflow: hidden;
   transition:
@@ -640,7 +659,7 @@ img {
 }
 .news-card:hover {
   transform: translateY(-4px);
-  border-color: var(--dark-gray) !important;
+  border-color: var(--medium-gray) !important;
 }
 .card-img-wrapper {
   position: relative;
@@ -677,7 +696,7 @@ img {
   text-transform: uppercase;
   color: var(--dark-gray);
   text-decoration: none;
-  border-bottom: 1px dotted var(--medium-gray);
+  border-bottom: none;
 }
 .nav-arrow {
   width: 40px;
@@ -1075,7 +1094,7 @@ img {
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
 }
 
@@ -1089,8 +1108,7 @@ img {
   cursor: pointer;
   border: 1px solid #e5e5e5;
   width: 100%;
-  max-width: 379.33px;
-  height: 310px;
+  min-height: 280px;
 }
 
 .news-card:hover {
@@ -1101,21 +1119,35 @@ img {
 .news-card.featured {
   grid-column: span 2;
   flex-direction: row;
-  max-width: 774.66px;
-  height: 247px;
+}
+
+@media (max-width: 768px) {
+  .news-card.featured {
+    grid-column: span 1;
+    flex-direction: column;
+  }
 }
 
 .card-img {
   width: 100%;
-  height: 180px;
+  height: auto;
+  min-height: 160px;
   object-fit: cover;
   display: block;
 }
 
 .news-card.featured .card-img {
   width: 45%;
-  height: 100%;
+  height: auto;
+  min-height: 200px;
   flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .news-card.featured .card-img {
+    width: 100%;
+    min-height: 180px;
+  }
 }
 
 .news-card .card-body {
@@ -1281,6 +1313,12 @@ img {
   color: #555;
   overflow: hidden;
 }
+.club-badge-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
 .badge-sun {
   background: #f5c518;
@@ -1370,6 +1408,31 @@ img {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 140px;
+  position: relative;
+  cursor: pointer;
+}
+.club-name:hover {
+  overflow: visible;
+  white-space: normal;
+  word-wrap: break-word;
+  position: absolute;
+  z-index: 10;
+  background: var(--pure-white);
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  max-width: none;
+}
+.log-row {
+  position: relative;
+}
+
+.log-club {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
 }
 
 .log-stat {
