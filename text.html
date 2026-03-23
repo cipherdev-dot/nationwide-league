@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Centre – Fixed Logo Alignment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* ====== Your original CSS (with only the necessary changes below) ====== */
+        /* right column (scrollable inverted) – scrollbar hidden */
+        .scrollable-card.inverted-right {
+          background-color: var(--off-white) !important;
+          color: var(--pure-black) !important;
+          border: 1px solid var(--off-white) !important;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          overflow-y: auto;
+          overflow-x: hidden;
+          position: relative;
+          width: 100%;
+          box-sizing: border-box;
+        }
+        .scrollable-card.inverted-right::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollable-card.inverted-right .matchcentre-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+        }
+        .scrollable-card.inverted-right .matchcentre-header h5 {
+          font-family: var(--font-mont);
+          font-weight: 700;
+          font-size: 12px;
+          margin: 0;
+          border-left: 4px solid var(--pure-black);
+          padding-left: 0.75rem;
+          text-transform: uppercase;
+        }
+        .scrollable-card.inverted-right .btn-view-all {
+          background: #525252 !important;
+          color: white !important;
+          border: none;
+          border-radius: 2px !important;
+          padding: 0.35rem 1.2rem;
+          font-size: 9px;
+          font-weight: 400;
+          text-decoration: none;
+          font-family: var(--font-mont);
+          text-transform: uppercase;
+        }
+        .matchcentre-topbar {
+          position: sticky;
+          top: 0;
+          background: var(--off-white) !important;
+          background-color: #f5f5f5 !important;
+          z-index: 1060 !important;
+          width: 100%;
+          padding: 0.75rem 1rem;
+          margin: 0;
+          isolation: isolate;
+          background-clip: border-box;
+          box-sizing: border-box;
+        }
+
+        /* Header styling */
+        .matchcentre-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+          gap: 3rem;
+          border: none;
+        }
+
+        /* Tabs styling */
+        .matchcentre-tabs {
+          display: flex;
+          gap: 2.3rem;
+          border: none;
+          justify-content: space-between;
+        }
+
+        .matchcentre-tab {
+          font-size: 11px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 0.4rem 1rem;
+          border-radius: 2px !important;
+          background: transparent;
+          color: var(--pure-black);
+          cursor: pointer;
+          border: none;
+          font-family: var(--font-mont);
+        }
+        .matchcentre-tab:hover {
+          background-color: #525252;
+          color: #ffffff;
+        }
+        .matchcentre-tab a {
+          text-decoration: none;
+          color: inherit;
+        }
+        .matchcentre-tab.active {
+          background: #525252 !important;
+          color: white !important;
+        }
+
+        /* Results / Live group styling */
+        .results-group {
+          margin-bottom: 1.75rem;
+        }
+        .results-group h6 {
+          font-size: 0.85rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          border-left: 3px solid var(--pure-black);
+          padding-left: 0.5rem;
+          margin-bottom: 0.75rem;
+          color: var(--charcoal);
+        }
+        .results-match {
+          margin-bottom: 1rem;
+          padding-bottom: 0.5rem;
+          border-bottom: 1px solid var(--light-gray);
+        }
+        .results-match .match-teams {
+          margin-bottom: 0.25rem;
+        }
+        .results-match .match-info {
+          font-size: 0.7rem;
+          color: var(--dark-gray);
+          padding-left: 0;
+          text-align: left;
+          margin-top: 0.5rem;
+        }
+        .results-match .vs-badge {
+          font-weight: 700;
+          background: transparent;
+          color: var(--dark-gray);
+        }
+        .live-badge-sm {
+          background: var(--dark-gray);
+          color: var(--pure-white);
+          font-size: 0.6rem;
+          padding: 0.1rem 0.4rem;
+          border-radius: 4px;
+          margin-right: 0.5rem;
+          display: inline-block;
+        }
+        /* end of Results/ Live group styling */
+
+        /* Team name – allow wrapping */
+        .team-name {
+          font-size: 11px;
+          font-family: var(--font-mont);
+          font-weight: 400;
+          color: var(--pure-black);
+          white-space: normal;
+          word-break: break-word;
+          line-height: 1.3;
+          width: auto;
+          max-width: none;
+          overflow: visible;
+          text-overflow: clip;
+        }
+        .match-item {
+          margin-bottom: 1.25rem;
+        }
+
+        /* ===== UPDATED CSS: fixed logo position regardless of name length ===== */
+        .match-teams {
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        /* Left block: name on left, logo on right (fixed 24px width) */
+        .team-block.left {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 0.5rem;
+          align-items: center;
+          justify-content: flex-start;
+          min-width: 0;
+        }
+        /* Right block: logo on left (fixed 24px width), name on right */
+        .team-block.right {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 0.5rem;
+          align-items: center;
+          justify-content: flex-end;
+          min-width: 0;
+        }
+
+        .team-logo {
+          width: 24px;
+          height: 24px;
+          border-radius: 0;
+          overflow: hidden;
+          flex-shrink: 0;
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .team-logo img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          display: block;
+        }
+        .vs-badge {
+          font-size: 0.7rem;
+          font-weight: 700;
+          color: var(--dark-gray);
+          text-transform: uppercase;
+          margin: 0;
+          padding: 0 0.75rem;
+          flex-shrink: 0;
+          text-align: center;
+        }
+        .match-info {
+          font-size: 0.7rem;
+          color: var(--dark-gray);
+          margin-top: 0.5rem;
+          padding-left: 0;
+          line-height: 1.4;
+          text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="right-col-flex">
+        <div class="scrollable-card inverted-right">
+            <div class="matchcentre-topbar">
+                <div class="matchcentre-header">
+                    <h5>MATCH CENTRE</h5>
+                    <a href="./pages/fixtures.html" class="btn-view-all"><strong>VIEW ALL</strong></a>
+                </div>
+                <div class="matchcentre-tabs">
+                    <span class="matchcentre-tab active" data-tab="fixtures">FIXTURES</span>
+                    <span class="matchcentre-tab" data-tab="results">RESULTS</span>
+                    <span class="matchcentre-tab" data-tab="live">LIVE</span>
+                </div>
+            </div>
+
+            <div class="match-date-group">
+                <!-- All your original match items remain unchanged -->
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Arsenal</span>
+                            <span class="team-logo"><img src="./football-logos/australia_adelaide-united.football-logos.cc.svg" alt="arsenal"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/austria_admira.football-logos.cc.svg" alt="chelsea"></span>
+                            <span class="team-name">Chelsea</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 29 Mar 17:30 - Emirates Stadium
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Manchester City</span>
+                            <span class="team-logo"><img src="./football-logos/cyprus_aek-larnaca.football-logos.cc.svg" alt="city"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/cyprus_aez.football-logos.cc.svg" alt="liverpool"></span>
+                            <span class="team-name">Liverpool</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 30 Mar 16:30 - Etihad Stadium
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Tottenham</span>
+                            <span class="team-logo"><img src="./football-logos/czech-republic_sparta-praha.football-logos.cc.svg" alt="spurs"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/england_afc-fylde.football-logos.cc.svg" alt="villa"></span>
+                            <span class="team-name">Aston Villa</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 31 Mar 14:00 - Tottenham Hotspur Stadium
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Newcastle Utd</span>
+                            <span class="team-logo"><img src="./football-logos/england_afc-totton.football-logos.cc.svg" alt="newcastle"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/finland_oulu.football-logos.cc.svg" alt="manutd"></span>
+                            <span class="team-name">Man Utd</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 01 Apr 20:00 - St. James' Park
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Brighton</span>
+                            <span class="team-logo"><img src="./football-logos/france_ajaccio.football-logos.cc.svg" alt="brighton"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/france_ajaccio.football-logos.cc.svg" alt="westham"></span>
+                            <span class="team-name">West Ham</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 02 Apr 19:45 - Amex Stadium
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Brentford</span>
+                            <span class="team-logo"><img src="./football-logos/greece_aek-athens.football-logos.cc.svg" alt="brentford"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/hungary_ajka-fc.football-logos.cc.svg" alt="fulham"></span>
+                            <span class="team-name">Fulham</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 03 Apr 15:00 - Gtech Community
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Wolves</span>
+                            <span class="team-logo"><img src="./football-logos/iceland_afturelding.football-logos.cc.svg" alt="wolves"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/italy_chievo.football-logos.cc.svg" alt="everton"></span>
+                            <span class="team-name">Everton</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 05 Apr 12:30 - Molineux
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Crystal Palace</span>
+                            <span class="team-logo"><img src="./football-logos/germany_germany-national-team.football-logos.cc.svg" alt="palace"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/venezuela_academia-anzoategui.football-logos.cc.svg" alt="leicester"></span>
+                            <span class="team-name">Leicester City</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 06 Apr 15:00 - Selhurst Park
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Southampton</span>
+                            <span class="team-logo"><img src="./football-logos/germany_dfb-german-football-association.football-logos.cc.svg" alt="southampton"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/portugal_ac-marinhense.football-logos.cc.svg" alt="bournemouth"></span>
+                            <span class="team-name">Bournemouth</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 07 Apr 20:00 - St Mary's
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Nottingham Forest</span>
+                            <span class="team-logo"><img src="./football-logos/saudi-arabia_abha.football-logos.cc.svg" alt="forest"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/turkey_adanaspor.football-logos.cc.svg" alt="burnley"></span>
+                            <span class="team-name">Burnley</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 08 Apr 14:00 - City Ground
+                    </div>
+                </div>
+                <div class="match-item">
+                    <div class="match-teams">
+                        <div class="team-block left">
+                            <span class="team-name">Sheffield Utd</span>
+                            <span class="team-logo"><img src="./football-logos/venezuela_academia-anzoategui.football-logos.cc.svg" alt="sheffield"></span>
+                        </div>
+                        <span class="vs-badge">VS</span>
+                        <div class="team-block right">
+                            <span class="team-logo"><img src="./football-logos/wales_aberystwyth-town.football-logos.cc.svg" alt="luton"></span>
+                            <span class="team-name">Luton Town</span>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="bi bi-calendar3"></i> 09 Apr 19:45 - Bramall Lane
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
