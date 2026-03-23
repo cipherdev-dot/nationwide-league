@@ -505,14 +505,13 @@ img {
   font-weight: 400;
   color: var(--pure-black);
   white-space: normal; /* allow wrap */
-  word-break: break-word;
+
   line-height: 1.3;
   /* remove constraints that caused truncation */
   width: auto;
   max-width: none;
   overflow: visible;
   text-overflow: clip;
-  padding-left: 1.5rem;
 }
 .match-item {
   margin-bottom: 1.25rem;
@@ -539,6 +538,7 @@ img {
   gap: 0.5rem;
   align-items: center;
   justify-content: flex-end;
+  text-align: end;
   min-width: 0;
 }
 .team-logo {
@@ -575,7 +575,7 @@ img {
   margin-top: 0.5rem; /* more separation from teams */
   padding-left: 0; /* align with team row start */
   line-height: 1.4;
-  text-align: center; 
+  text-align: center;
 }
 /* hero row */
 .hero-row {
@@ -764,14 +764,16 @@ img {
   background: var(--off-white);
 }
 
-/* RESPONSIVE */
+/* ========== RESPONSIVE MEDIA QUERIES ========== */
+
+/* General layout for tablet and smaller */
 @media (max-width: 1023px) {
   .nav-links-wrapper {
     display: none !important;
   }
   .burger-menu {
     display: flex !important;
-  } /* show burger on tablets/mobile */
+  }
   .hero-row {
     flex-direction: column;
   }
@@ -799,7 +801,7 @@ img {
   }
   .card-wrapper {
     flex: 0 0 calc(33.33% - 0.8rem);
-  } /* 3 cards on tablet */
+  }
   .carousel-header {
     text-align: center;
     border-left: none;
@@ -815,6 +817,7 @@ img {
     gap: var(--space-md);
   }
 }
+
 @media (max-width: 720px) {
   .top-bar {
     display: none;
@@ -835,20 +838,18 @@ img {
   }
   .card-wrapper {
     flex: 0 0 calc(50% - 0.8rem);
-  } /* 2 cards */
+  }
 }
+
 @media (max-width: 480px) {
   .card-wrapper {
     flex: 0 0 100%;
-  } /* 1 card */
+  }
   .headline-large {
     font-size: 16px;
   }
-  .team-name {
-    font-size: 9px;
-    width: 60px;
-  }
 }
+
 @media (max-width: 360px) {
   .header-content {
     gap: 0.5rem;
@@ -870,7 +871,75 @@ img {
   }
 }
 
-/* making screen adjustments for media query at 1000pixels */
+/* ========== RIGHT COLUMN RESPONSIVE ADJUSTMENTS ========== */
+/* These rules ensure the match centre stacks gracefully on mobile and tablet */
+
+/* Tablet and below: adjust gaps, font sizes, and padding */
+@media (max-width: 1024px) {
+  .right-col-flex {
+    max-width: 100%;
+    margin: 0;
+  }
+  .matchcentre-topbar {
+    padding: 0.75rem;
+  }
+  .matchcentre-header {
+    gap: 1rem;
+  }
+  .matchcentre-header h5 {
+    font-size: 11px;
+  }
+  .btn-view-all {
+    padding: 0.3rem 1rem;
+    font-size: 8px;
+  }
+  .matchcentre-tabs {
+    gap: 1rem;
+  }
+  .matchcentre-tab {
+    font-size: 10px;
+    padding: 0.3rem 0.8rem;
+  }
+  .match-teams {
+    gap: 0.5rem;
+  }
+  .team-block.left,
+  .team-block.right {
+    gap: 0.25rem;
+  }
+  .team-name {
+    font-size: 10px;
+  }
+  .vs-badge {
+    font-size: 0.65rem;
+    padding: 0 0.5rem;
+  }
+  .match-info {
+    font-size: 0.65rem;
+  }
+}
+
+/* Very small phones: allow header and tabs to wrap */
+@media (max-width: 480px) {
+  .matchcentre-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .matchcentre-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ========== DESKTOP OVERRIDE (keep original max-width for right column) ========== */
+@media (min-width: 1025px) {
+  .right-col-flex {
+    max-width: 450px;
+    margin: 2rem auto;
+  }
+}
+
+/* ========== HERO ROW LAYOUT FOR WIDER SCREENS (prevent wrapping) ========== */
 @media (min-width: 1000px) {
   .hero-row {
     flex-wrap: nowrap; /* prevent wrapping */
@@ -889,180 +958,7 @@ img {
     min-width: 280px;
   }
 }
-.fade-out {
-  opacity: 0;
-  transition: opacity 0.15s ease;
-}
 
-/* fixture page */
-.promo-banner {
-  background: var(--pure-white);
-  border: 1px solid var(--light-gray);
-  border-radius: 1rem;
-  padding: 2rem;
-  text-align: center;
-  margin: 2rem 0;
-}
-.promo-banner h1 {
-  font-size: 1.8rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--charcoal);
-}
-.match-nav-links {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--light-gray);
-  padding-bottom: 1rem;
-}
-.match-nav-links a {
-  color: var(--dark-gray);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: color 0.2s;
-}
-.match-nav-links a:hover {
-  color: var(--pure-black);
-}
-.match-details {
-  background: var(--pure-white);
-  border: 1px solid var(--light-gray);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-}
-.match-details h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  border-left: 4px solid var(--pure-black);
-  padding-left: 0.75rem;
-}
-.match-details ul {
-  list-style: none;
-  padding-left: 0;
-}
-.match-details li {
-  margin-bottom: 0.5rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-.match-details li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--dark-gray);
-  font-weight: bold;
-}
-.fixtures-table {
-  background: var(--pure-white);
-  border: 1px solid var(--light-gray);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  margin-bottom: 2rem;
-}
-.fixtures-table h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  letter-spacing: 0.5px;
-}
-.fixtures-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.fixtures-table th,
-.fixtures-table td {
-  padding: 0.75rem 0.5rem;
-  border-bottom: 1px solid var(--light-gray);
-  text-align: left;
-}
-.fixtures-table th {
-  font-weight: 700;
-  color: var(--charcoal);
-  font-size: 0.85rem;
-}
-.fixtures-table td {
-  font-size: 0.9rem;
-  color: var(--charcoal);
-}
-.fixtures-table .result-score {
-  font-weight: 600;
-  color: var(--dark-gray);
-}
-.sponsor-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--light-gray);
-  text-align: center;
-}
-.sponsor-item {
-  font-size: 0.75rem;
-  color: var(--medium-gray);
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-@media (max-width: 768px) {
-  .promo-banner h1 {
-    font-size: 1.2rem;
-  }
-  .fixtures-table th,
-  .fixtures-table td {
-    font-size: 0.75rem;
-    padding: 0.5rem;
-  }
-}
-.fixtures-table .time-cell {
-  color: #c95a0f; /* warm orange for kick-off times */
-  font-weight: 600;
-}
-.fixtures-table .result-score {
-  color: #2c6e2c; /* deep green for final scores */
-  font-weight: 700;
-}
-/* new note styling – fits with existing card look */
-.fixture-change-note {
-  background: var(--pure-white);
-  border: 1px solid var(--light-gray);
-  border-radius: 0.75rem;
-  padding: 1rem 1.2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.fixture-change-note i {
-  color: var(--dark-gray);
-  font-size: 1rem;
-}
-.fixture-change-note strong {
-  font-weight: 700;
-  color: var(--charcoal);
-}
-/* small adjustment for match overview area */
-.match-overview-text {
-  margin-bottom: 0.5rem;
-}
-@media (max-width: 768px) {
-  .fixture-change-note {
-    font-size: 0.75rem;
-  }
-}
-/* end of fixtures page */
-
-/* assist, goals, suggestion styling */
 /* ========== PREDICTION SECTION ========== */
 .prediction-section {
   background: var(--off-white);
@@ -1516,4 +1412,193 @@ img {
   flex: 1;
   overflow-y: hidden;
   max-height: none;
+}
+
+/* ========== FIXTURES PAGE ========== */
+.fixture-change-note {
+  background: var(--pure-white);
+  border: 1px solid var(--light-gray);
+  border-radius: 0.75rem;
+  padding: 1rem 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.fixture-change-note i {
+  color: var(--dark-gray);
+  font-size: 1rem;
+}
+.fixture-change-note strong {
+  font-weight: 700;
+  color: var(--charcoal);
+}
+.match-overview-text {
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .fixture-change-note {
+    font-size: 0.75rem;
+  }
+}
+
+.promo-banner {
+  background: var(--pure-white);
+  border: 1px solid var(--light-gray);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+.promo-banner h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+}
+.match-nav-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--light-gray);
+  padding-bottom: 1rem;
+}
+.match-nav-links a {
+  color: var(--dark-gray);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.match-nav-links a:hover {
+  color: var(--pure-black);
+}
+.match-details {
+  background: var(--pure-white);
+  border: 1px solid var(--light-gray);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.match-details h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--pure-black);
+  padding-left: 0.75rem;
+}
+.match-details ul {
+  list-style: none;
+  padding-left: 0;
+}
+.match-details li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.match-details li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--dark-gray);
+  font-weight: bold;
+}
+.fixtures-table {
+  background: var(--pure-white);
+  border: 1px solid var(--light-gray);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.fixtures-table h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+.fixtures-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.fixtures-table th,
+.fixtures-table td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--light-gray);
+  text-align: left;
+}
+.fixtures-table th {
+  font-weight: 700;
+  color: var(--charcoal);
+  font-size: 0.85rem;
+}
+.fixtures-table td {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+}
+.fixtures-table .result-score {
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+.sponsor-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--light-gray);
+  text-align: center;
+}
+.sponsor-item {
+  font-size: 0.75rem;
+  color: var(--medium-gray);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+  .promo-banner h1 {
+    font-size: 1.2rem;
+  }
+  .fixtures-table th,
+  .fixtures-table td {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  /* Right column container – take full width and remove min-width constraint */
+  .right-col-flex {
+    min-width: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  /* Inner scrollable card – ensure no overflow */
+  .scrollable-card.inverted-right {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Reduce side padding for the header and content to fit mobile */
+  .matchcentre-topbar,
+  .match-date-group {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+.fixtures-table .time-cell {
+  color: #c95a0f;
+  font-weight: 600;
+}
+.fixtures-table .result-score {
+  color: #2c6e2c;
+  font-weight: 700;
 }
