@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Match Recap | National League</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@400;700;800&family=Bebas+Neue&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-content">
+    <a href="#">Shop</a><a href="#">About Us</a><a href="#">Football & Community</a><a href="#">Events</a><a href="#">Media</a><a href="#">Mornings Live</a>
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header class="main-header">
+  <div class="header-content">
+    <a href="../index.html" class="logo">NATIONAL LEAGUE</a>
+    <div class="nav-links-wrapper">
+      <a href="../index.html">Home</a><a href="./fixtures.html">Fixtures</a><a href="./tables.html">Tables</a><a href="./news-logs.html">News</a><a href="./clubs.html">Clubs</a><a href="./players.html">Players</a><a href="./statistics.html">Statistics</a>
+    </div>
+    <div class="search-signin">
+      <i class="fas fa-search"></i><a href="#" class="signin-btn">Sign in</a>
+    </div>
+    <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-links">
+      <a href="#">Shop</a><a href="#">About Us</a><a href="#">Football & Community</a><a href="#">Events</a><a href="#">Media</a><a href="#">Mornings Live</a><a href="../index.html">Home</a><a href="./fixtures.html">Fixtures</a><a href="./tables.html">Tables</a><a href="./news-logs.html">News</a><a href="./clubs.html">Clubs</a><a href="./players.html">Players</a><a href="./statistics.html">Statistics</a>
+    </div>
+  </div>
+</header>
+
+<!-- MATCH RECAP PAGE -->
+<div class="match-page">
+
+  <!-- ═══ LEFT: MATCH CARD ═══ -->
+  <div class="match-card">
+
+    <div class="score-header">
+      <!-- Home Team -->
+      <div class="team-block">
+        <div class="team-crest" id="homeCrest">
+          <img src="" alt="Home Team" id="homeLogo" />
+        </div>
+        <span class="team-name-label" id="homeTeam">Home Team</span>
+      </div>
+
+      <!-- Score -->
+      <div class="score-box">
+        <div class="score-num" id="scoreDisplay">– – –</div>
+        <div class="score-ht" id="htScore">HT - -</div>
+      </div>
+
+      <!-- Away Team -->
+      <div class="team-block">
+        <div class="team-crest" id="awayCrest">
+          <img src="" alt="Away Team" id="awayLogo" />
+        </div>
+        <span class="team-name-label" id="awayTeam">Away Team</span>
+      </div>
+    </div>
+
+    <!-- Events -->
+    <div class="match-events">
+      <div class="event-row">
+        <span class="left"></span>
+        <div class="event-icon ev-more">+</div>
+        <span class="right"></span>
+      </div>
+    </div>
+
+    <!-- Meta -->
+    <div class="match-meta">
+      <p id="matchCompetition">Premier League • Matchweek 31</p>
+      <p id="matchDateTime">Date • Stadium</p>
+      <p id="matchReferee">Referee</p>
+    </div>
+
+    <!-- Visuals / Donuts -->
+    <div class="match-visuals">
+      <div class="visual-item">
+        <div class="donut-ring" style="background: conic-gradient(#c8102e 0% 50%, #e5e5e5 50% 100%);">
+          <div class="donut-inner"><span>⚽</span><span>🔴</span></div>
+        </div>
+        <span class="visual-label" id="donutLabel1">Head to<br>Head</span>
+      </div>
+      <div class="visual-item">
+        <div class="donut-ring" style="background: conic-gradient(#c8102e 0% 40%, #e5e5e5 40% 100%);">
+          <div class="donut-inner"><span>⚽</span><span>📊</span></div>
+        </div>
+        <span class="visual-label">Last Time<br>Out</span>
+      </div>
+    </div>
+
+    <!-- All Matches -->
+    <a href="./fixtures.html" class="all-matches-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      All Matches
+    </a>
+
+  </div>
+
+  <!-- ═══ CENTRE: TABS + CONTENT ═══ -->
+  <div class="centre-panel">
+
+    <!-- Tabs -->
+    <div class="match-tabs">
+      <button class="tab active" data-tab="recap">Recap</button>
+      <button class="tab" data-tab="highlights">Highlights</button>
+      <button class="tab" data-tab="lineups">Lineups</button>
+      <button class="tab" data-tab="stats">Stats</button>
+      <button class="tab" data-tab="table">Table</button>
+      <button class="tab" data-tab="commentary">Commentary</button>
+      <button class="tab" data-tab="match-info">Match Info</button>
+    </div>
+
+    <!-- Report Section -->
+    <div class="report-section" id="recap-section">
+      <!-- Report -->
+      <div class="report-card">
+        <div class="report-title">Report</div>
+        <button class="expand-btn" title="Expand">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </button>
+        <p class="report-text" id="matchReport">
+          Match report will be displayed here once available. Click on a match from the fixtures to see the full recap.
+        </p>
+        <p class="report-text" id="matchReport">
+          Match report will be displayed here once available. Click on a match from the fixtures to see the full recap.
+        </p>
+      </div>
+
+      <!-- Club Reports -->
+      <div class="club-reports">
+        <div class="club-report-card">
+          <div class="club-report-header">
+            <div class="club-mini-crest" id="homeReportCrest">
+              <img src="" alt="" id="homeReportLogo" />
+            </div>
+            <span class="club-report-name" id="homeReportName">Home Team</span>
+          </div>
+          <span class="club-report-label" id="homeReportLabel">Home Report</span>
+          <a href="#" target="_blank" class="club-report-link" id="homeReportLink">
+            View Report
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div class="club-report-card">
+          <div class="club-report-header">
+            <div class="club-mini-crest" id="awayReportCrest">
+              <img src="" alt="" id="awayReportLogo" />
+            </div>
+            <span class="club-report-name" id="awayReportName">Away Team</span>
+          </div>
+          <span class="club-report-label" id="awayReportLabel">Away Report</span>
+          <a href="#" target="_blank" class="club-report-link" id="awayReportLink">
+            View Report
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lineups Section -->
+    <div class="lineups-section" id="lineups-section" style="display: none;">
+      <!-- ── Lineups Header ── -->
+      <div class="lineups-header">
+        <div class="team-header left">
+          <div class="team-crest-sm">⚽</div>
+          <div>
+            <div class="team-header-name" id="lineupsHomeTeam">Black</div>
+            <span class="formation-label">Formation<span class="formation-val"> 4-2-3-1</span></span>
+          </div>
+        </div>
+        <div class="header-divider"></div>
+        <div class="team-header right">
+          <div class="team-crest-sm mun">🔴</div>
+          <div>
+            <div class="team-header-name" id="lineupsAwayTeam">Black</div>
+            <span class="formation-label">Formation<span class="formation-val"> 4-2-3-1</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Pitch ── -->
+      <div class="pitch-wrap">
+        <!-- SVG pitch markings -->
+        <svg class="pitch-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Centre circle -->
+          <circle cx="500" cy="260" r="70" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+          <circle cx="500" cy="260" r="3" fill="rgba(255,255,255,0.15)"/>
+          <!-- Centre line -->
+          <line x1="500" y1="0" x2="500" y2="520" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+
+          <!-- LEFT goal box -->
+          <rect x="0" y="180" width="80" height="160" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+          <rect x="0" y="210" width="35" height="100" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+          <!-- LEFT penalty spot -->
+          <circle cx="95" cy="260" r="3" fill="rgba(255,255,255,0.15)"/>
+          <!-- LEFT penalty arc -->
+          <path d="M 95 230 A 50 50 0 0 0 95 290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+          <!-- RIGHT goal box -->
+          <rect x="920" y="180" width="80" height="160" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+          <rect x="965" y="210" width="35" height="100" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+          <!-- RIGHT penalty spot -->
+          <circle cx="905" cy="260" r="3" fill="rgba(255,255,255,0.15)"/>
+          <!-- RIGHT penalty arc -->
+          <path d="M 905 230 A 50 50 0 0 1 905 290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+          <!-- Outer pitch border -->
+          <rect x="2" y="2" width="996" height="516" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+        </svg>
+
+        <div class="pitch-grid">
+        <!-- ════ HOME TEAM (left, attacking right) ════ -->
+          <div class="team-pitch bou" id="homePitch">
+            <!-- GK row - positioned in goal area -->
+            <div class="formation-row" style="justify-content:flex-start; padding-left: 20px;">
+              <div class="player-token">
+                <div class="player-avatar gk">
+                  <img src="../assets/img/field-player-2.png" alt="Player" class="player-img" />
+                  <span class="player-num">1</span>
+                </div>
+                <span class="player-name">Petrovic</span>
+              </div>
+            </div>
+
+            <!-- DEF row: 4 defenders -->
+            <div class="formation-row">
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">3</span>
+                </div>
+                <div class="badge-wrap">
+                  <div class="badge badge-sub" style="font-size:0.5rem; padding:1px 3px;">✎</div>
+                </div>
+                <span class="player-name">Truffert</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">5</span>
+                </div>
+                <span class="player-name">Senesi</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">23</span>
+                </div>
+                <span class="player-name">Hill</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">20</span>
+                </div>
+                <div class="badge-wrap">
+                  <div class="badge badge-yellow"></div>
+                </div>
+                <div class="sub-time"><span class="sub-arrow-icon">↙</span>73'</div>
+                <span class="player-name">Jiménez</span>
+              </div>
+            </div>
+
+            <!-- MID row: 2 DMs -->
+            <div class="formation-row" style="justify-content: space-evenly;">
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">16</span>
+                </div>
+                <span class="player-name">Tavernier</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">8</span>
+                </div>
+                <span class="player-name">Scott</span>
+              </div>
+            </div>
+
+            <!-- ATT MID row: 3 -->
+            <div class="formation-row">
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">21</span>
+                </div>
+                <div class="badge-wrap">
+                  <div class="sub-time" style="position:absolute;top:-16px;right:-4px;font-size:0.58rem;"><span>↙</span>73'</div>
+                </div>
+                <span class="player-name">Adli</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">10</span>
+                </div>
+                <div class="captain-badge">C</div>
+                <div class="goal-icon">⚽</div>
+                <span class="player-name">Christie</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">37</span>
+                </div>
+                <div class="badge-wrap">
+                  <div class="sub-time" style="position:absolute;top:-16px;right:-4px;font-size:0.58rem;"><span>↙</span>87'</div>
+                </div>
+                <span class="player-name">Rayan</span>
+              </div>
+            </div>
+
+            <!-- ST row: 1 -->
+            <div class="formation-row" style="justify-content: center;">
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">9</span>
+                </div>
+                <span class="player-name">Evanilson</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ════ AWAY TEAM (right, attacking left) ════ -->
+          <div class="team-pitch mun" id="awayPitch">
+            <!-- ST row (closest to centre) -->
+            <div class="formation-row" style="justify-content: center;">
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">19</span>
+                </div>
+                <div class="badge-wrap">
+                  <div class="sub-time" style="position:absolute;top:-16px;left:-4px;font-size:0.58rem;"><span>↙</span>71'</div>
+                </div>
+                <span class="player-name">Mbeumo</span>
+              </div>
+            </div>
+
+            <!-- ATT MID row: 3 -->
+            <div class="formation-row">
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">16</span>
+                </div>
+                <div class="badge-wrap">
+                  <div class="sub-time" style="position:absolute;top:-16px;left:-4px;font-size:0.58rem;"><span>↙</span>96'</div>
+                </div>
+                <span class="player-name">Diallo</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">8</span>
+                </div>
+                <div class="captain-badge">C</div>
+                <span class="player-name">Fernandes</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">10</span>
+                </div>
+                <div class="badge-wrap">
+                  <div class="sub-time" style="position:absolute;top:-16px;left:-4px;font-size:0.58rem;"><span>↙</span>82'</div>
+                </div>
+                <span class="player-name">Cunha</span>
+              </div>
+            </div>
+
+            <!-- MID row: 2 DMs -->
+            <div class="formation-row" style="justify-content: space-evenly;">
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">18</span>
+                </div>
+                <div class="badge-wrap">
+                  <div class="badge badge-yellow"></div>
+                </div>
+                <div class="sub-time" style="font-size:0.58rem;"><span>↙</span>82'</div>
+                <span class="player-name">Casemiro</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">37</span>
+                </div>
+                <span class="player-name">Mainoo</span>
+              </div>
+            </div>
+
+            <!-- DEF row: 4 defenders -->
+            <div class="formation-row">
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
+                  <span class="player-num">2</span>
+                </div>
+                <span class="player-name">Dalot</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">15</span>
+                </div>
+                <span class="player-name">Yoro</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">5</span>
+                </div>
+                <div class="badge-wrap">
+                  <div class="badge badge-red"></div>
+                </div>
+                <span class="player-name">Maguire</span>
+              </div>
+              <div class="player-token">
+                <div class="player-avatar">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">23</span>
+                </div>
+                <span class="player-name">Shaw</span>
+              </div>
+            </div>
+
+            <!-- GK row -->
+            <div class="formation-row" style="justify-content:flex-end; padding-right: 10px;">
+              <div class="player-token">
+                <div class="player-avatar gk">
+                  <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
+                  <span class="player-num">31</span>
+                </div>
+                <span class="player-name">Lammens</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Managers ── -->
+      <div class="managers-bar">
+        <div class="manager-cell">Manager <strong id="homeManager">Andoni Iraola</strong></div>
+        <div class="manager-cell right">Manager <strong id="awayManager">Michael Carrick</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ RIGHT: PLAYER OF THE MATCH ═══ -->
+  <div class="potm-card" id="potm-card">
+    <div class="potm-top">
+      <div class="potm-first-name" id="potmFirstName">Player</div>
+      <div class="potm-last-name" id="potmLastName">Of The Match</div>
+      <div class="potm-position" id="potmPosition">Position</div>
+      <a href="#" class="potm-stats-btn">
+        View stats
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+
+    <!-- Player silhouette / placeholder -->
+    <div class="potm-player-placeholder">
+      <img src="../assets/img/recap-image.png" alt="Player of the Match" class="potm-silhouette-image" />
+    </div>
+
+    <div class="potm-bottom">
+      <span class="potm-label">Player of the Match</span>
+      <span class="potm-sponsor">Snapdragon</span>
+    </div>
+  </div>
+
+  <!-- ═══ BOTTOM: RELATED CONTENT ═══ -->
+  <div class="related-section">
+
+    <div class="related-header">
+      <span class="related-title">Related Content</span>
+      <div class="related-controls">
+        <button class="nav-arrow">&#8592;</button>
+        <button class="nav-arrow">&#8594;</button>
+        <a href="./news-logs.html" class="see-all-link">See All &#8250;</a>
+      </div>
+    </div>
+
+    <div class="related-grid">
+
+      <div class="related-card">
+        <div class="thumb-placeholder tp1">
+          🏆
+          <span class="thumb-overlay-text">TEAM OF THE WEEK</span>
+        </div>
+        <div class="related-body">
+          <div class="related-card-title">Alan Shearer's Team of the Week for Matchweek 31</div>
+          <div class="related-tag">Team Of The Week</div>
+        </div>
+      </div>
+
+      <div class="related-card">
+        <div class="thumb-placeholder tp2">
+          📱
+          <span class="thumb-overlay-text">PICK YOUR TEAM</span>
+        </div>
+        <div class="related-body">
+          <div class="related-card-title">Pick YOUR Premier League Team of the Week</div>
+          <div class="related-tag">Features</div>
+        </div>
+      </div>
+
+      <div class="related-card">
+        <div class="thumb-placeholder tp3">
+          🏥
+          <span class="thumb-overlay-text">INJURY UPDATE</span>
+        </div>
+        <div class="related-body">
+          <div class="related-card-title">Latest Premier League player injuries club by club news</div>
+          <div class="related-tag">News</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Enhanced tab switching with lineups functionality
+  function initTabSwitching() {
+    const tabs = document.querySelectorAll('.tab');
+    const recapSection = document.getElementById('recap-section');
+    const lineupsSection = document.getElementById('lineups-section');
+    const potmCard = document.getElementById('potm-card');
+    const centrePanel = document.querySelector('.centre-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const tabType = tab.getAttribute('data-tab');
+
+        // Handle lineups tab specifically
+        if (tabType === 'lineups') {
+          // Show lineups section
+          lineupsSection.style.display = 'block';
+          // Hide report section
+          recapSection.style.display = 'none';
+          // Hide POTM card
+          potmCard.style.display = 'none';
+          // Adjust centre panel to span full width
+          centrePanel.style.gridColumn = '2 / 4';
+        } else {
+          // Show report section
+          recapSection.style.display = 'block';
+          // Hide lineups section
+          lineupsSection.style.display = 'none';
+          // Show POTM card
+          potmCard.style.display = 'block';
+          // Reset centre panel to normal width
+          centrePanel.style.gridColumn = '2';
+        }
+      });
+    });
+  }
+
+  // Get URL parameters and populate match data
+  function getUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      home: params.get('home') || 'Home Team',
+      homeLogo: params.get('homeLogo') || '',
+      away: params.get('away') || 'Away Team',
+      awayLogo: params.get('awayLogo') || '',
+      date: params.get('date') || '',
+      venue: params.get('venue') || '',
+      competition: params.get('competition') || 'Premier League',
+      score: params.get('score') || ''
+    };
+  }
+
+  function populateMatchData() {
+    const data = getUrlParams();
+    
+    // Update team names
+    document.getElementById('homeTeam').textContent = data.home;
+    document.getElementById('awayTeam').textContent = data.away;
+    document.getElementById('homeReportName').textContent = data.home;
+    document.getElementById('awayReportName').textContent = data.away;
+    document.getElementById('homeReportLabel').textContent = data.home + ' Report';
+    document.getElementById('awayReportLabel').textContent = data.away + ' Report';
+    
+    // Update lineups team names
+    document.getElementById('lineupsHomeTeam').textContent = data.home;
+    document.getElementById('lineupsAwayTeam').textContent = data.away;
+    
+    // Update managers (you can customize these based on your data)
+    document.getElementById('homeManager').textContent = 'Manager Name';
+    document.getElementById('awayManager').textContent = 'Manager Name';
+    
+    // Update logos
+    if (data.homeLogo) {
+      document.getElementById('homeLogo').src = data.homeLogo;
+      document.getElementById('homeReportLogo').src = data.homeLogo;
+    }
+    if (data.awayLogo) {
+      document.getElementById('awayLogo').src = data.awayLogo;
+      document.getElementById('awayReportLogo').src = data.awayLogo;
+    }
+    
+    // Update match info
+    if (data.date || data.venue) {
+      document.getElementById('matchDateTime').textContent = data.date + ' • ' + data.venue;
+    }
+    document.getElementById('matchCompetition').textContent = data.competition;
+    
+    // Update score display
+    if (data.score && data.score !== 'VS') {
+      // Score format like "2-1" - convert to "2 – 1" for display
+      const formattedScore = data.score.replace('-', ' – ');
+      document.getElementById('scoreDisplay').textContent = formattedScore;
+    } else {
+      // No score yet (fixture) - show VS
+      document.getElementById('scoreDisplay').textContent = 'VS';
+    }
+    
+    // Update donut label
+    document.getElementById('donutLabel1').innerHTML = data.home.substring(0,3).toUpperCase() + ' vs<br>' + data.away.substring(0,3).toUpperCase();
+    
+    // Update page title
+    document.title = data.home + ' vs ' + data.away + ' | Match Recap | National League';
+  }
+
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    initTabSwitching();
+    populateMatchData();
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
