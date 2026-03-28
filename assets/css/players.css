@@ -133,7 +133,9 @@
   background: var(--pure-white);
   border-radius: 0.75rem;
   overflow-x: auto;
+ 
 }
+
 
 .list-header {
   display: grid;
@@ -146,6 +148,7 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+
 }
 
 .player-row {
@@ -157,7 +160,7 @@
   transition: background 0.2s;
 }
 .player-row:hover {
-  background: var(--off-white);
+  background: var(--light-gray);
 }
 
 .player-info {
