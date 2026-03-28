@@ -11,7 +11,6 @@
   gap: 12px;
   min-height: calc(100vh - 200px);
   justify-content: center;
-  align-items: start;
 }
 .match-card {
   grid-column: 1;
