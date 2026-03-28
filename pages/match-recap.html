@@ -70,7 +70,7 @@
         <!-- Score -->
         <div class="score-box">
           <div class="score-num" id="scoreDisplay">– – –</div>
-          <div class="score-ht" id="htScore">HT - -</div>
+          <!-- <div class="score-ht" id="htScore">HT - -</div> -->
         </div>
 
         <!-- Away Team -->
@@ -98,22 +98,7 @@
         <p id="matchReferee">Referee</p>
       </div>
 
-      <!-- Visuals / Donuts -->
-      <div class="match-visuals">
-        <div class="visual-item">
-          <div class="donut-ring" style="background: conic-gradient(#c8102e 0% 50%, #e5e5e5 50% 100%);">
-            <div class="donut-inner"><span>⚽</span><span>🔴</span></div>
-          </div>
-          <span class="visual-label" id="donutLabel1">Head to<br>Head</span>
-        </div>
-        <div class="visual-item">
-          <div class="donut-ring" style="background: conic-gradient(#c8102e 0% 40%, #e5e5e5 40% 100%);">
-            <div class="donut-inner"><span>⚽</span><span>📊</span></div>
-          </div>
-          <span class="visual-label">Last Time<br>Out</span>
-        </div>
-      </div>
-
+    
       <!-- All Matches -->
       <a href="./fixtures.html" class="all-matches-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -284,308 +269,291 @@
 
       <!-- Lineups Section -->
       <div class="lineups-section" id="lineups-section" style="display: none;">
-        <!-- ── Lineups Header ── -->
-        <div class="lineups-header">
-          <div class="team-header left">
-            <div class="team-crest-sm">⚽</div>
-            <div>
-              <div class="team-header-name" id="lineupsHomeTeam">Black</div>
-              <span class="formation-label">Formation<span class="formation-val"> 4-2-3-1</span></span>
-            </div>
-          </div>
-          <div class="header-divider"></div>
-          <div class="team-header right">
-            <div class="team-crest-sm mun">🔴</div>
-            <div>
-              <div class="team-header-name" id="lineupsAwayTeam">Black</div>
-              <span class="formation-label">Formation<span class="formation-val"> 4-2-3-1</span></span>
-            </div>
-          </div>
-        </div>
 
-        <!-- ── Pitch ── -->
-        <div class="pitch-wrap">
-          <!-- SVG pitch markings -->
-          <svg class="pitch-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Centre circle -->
-            <circle cx="500" cy="260" r="70" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" />
-            <circle cx="500" cy="260" r="3" fill="rgba(255,255,255,0.15)" />
-            <!-- Centre line -->
-            <line x1="500" y1="0" x2="500" y2="520" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" />
+<!-- ── Team Headers ── -->
+<div class="lineups-header">
+  <div class="team-hdr">
+    <div class="crest" id="lineupsHomeCrest">
+      <img src="" alt="Home Team" id="lineupsHomeLogo" />
+    </div>
+    <div>
+      <div class="hdr-name" id="lineupsHomeTeam">Bournemouth</div>
+      <span class="hdr-form">Formation <strong>4-2-3-1</strong></span>
+    </div>
+  </div>
+  <div class="team-hdr right">
+    <div>
+      <div class="hdr-name" style="text-align:right;" id="lineupsAwayTeam">Man Utd</div>
+      <span class="hdr-form">Formation <strong>4-2-3-1</strong></span>
+    </div>
+    <div class="crest" id="lineupsAwayCrest">
+      <img src="" alt="Away Team" id="lineupsAwayLogo" />
+    </div>
+  </div>
+</div>
 
-            <!-- LEFT goal box -->
-            <rect x="0" y="180" width="80" height="160" fill="none" stroke="rgba(255,255,255,0.12)"
-              stroke-width="1.5" />
-            <rect x="0" y="210" width="35" height="100" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" />
-            <!-- LEFT penalty spot -->
-            <circle cx="95" cy="260" r="3" fill="rgba(255,255,255,0.15)" />
-            <!-- LEFT penalty arc -->
-            <path d="M 95 230 A 50 50 0 0 0 95 290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" />
+<!-- ── Pitch ── -->
+<div class="pitch-outer">
+<div class="pitch">
 
-            <!-- RIGHT goal box -->
-            <rect x="920" y="180" width="80" height="160" fill="none" stroke="rgba(255,255,255,0.12)"
-              stroke-width="1.5" />
-            <rect x="965" y="210" width="35" height="100" fill="none" stroke="rgba(255,255,255,0.10)"
-              stroke-width="1" />
-            <!-- RIGHT penalty spot -->
-            <circle cx="905" cy="260" r="3" fill="rgba(255,255,255,0.15)" />
-            <!-- RIGHT penalty arc -->
-            <path d="M 905 230 A 50 50 0 0 1 905 290" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" />
+  <!-- ═══ SVG PITCH MARKINGS ═══ -->
+  <svg class="pitch-lines" viewBox="0 0 1000 580" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Outer border -->
+    <rect x="8" y="8" width="984" height="564" fill="none" stroke="#a3a3a3" stroke-width="2"/>
 
-            <!-- Outer pitch border -->
-            <rect x="2" y="2" width="996" height="516" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
-          </svg>
+    <!-- Centre line -->
+    <line x1="500" y1="8" x2="500" y2="572" stroke="#a3a3a3" stroke-width="2"/>
 
-          <div class="pitch-grid">
-            <!-- ════ HOME TEAM (left, attacking right) ════ -->
-            <div class="team-pitch bou" id="homePitch">
-              <!-- GK row - positioned in goal area -->
-              <div class="formation-row" style="justify-content:flex-start; padding-left: 20px;">
-                <div class="player-token">
-                  <div class="player-avatar gk">
-                    <img src="../assets/img/field-player-2.png" alt="Player" class="player-img" />
-                    <span class="player-num">1</span>
-                  </div>
-                  <span class="player-name">Petrovic</span>
-                </div>
-              </div>
+    <!-- Centre circle -->
+    <circle cx="500" cy="290" r="80" fill="none" stroke="#a3a3a3" stroke-width="2"/>
+    <circle cx="500" cy="290" r="4" fill="#a3a3a3"/>
 
-              <!-- DEF row: 4 defenders -->
-              <div class="formation-row">
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
-                    <span class="player-num">3</span>
-                  </div>
-                  <div class="badge-wrap">
-                    <div class="badge badge-sub" style="font-size:0.5rem; padding:1px 3px;">✎</div>
-                  </div>
-                  <span class="player-name">Truffert</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
-                    <span class="player-num">5</span>
-                  </div>
-                  <span class="player-name">Senesi</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
-                    <span class="player-num">23</span>
-                  </div>
-                  <span class="player-name">Hill</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
-                    <span class="player-num">20</span>
-                  </div>
-                  <div class="badge-wrap">
-                    <div class="badge badge-yellow"></div>
-                  </div>
-                  <div class="sub-time"><span class="sub-arrow-icon">↙</span>73'</div>
-                  <span class="player-name">Jiménez</span>
-                </div>
-              </div>
+    <!-- LEFT penalty area (big box) -->
+    <rect x="8" y="155" width="130" height="270" fill="none" stroke="#a3a3a3" stroke-width="2"/>
+    <!-- LEFT 6-yard box -->
+    <rect x="8" y="225" width="50" height="130" fill="none" stroke="#a3a3a3" stroke-width="2"/>
+    <!-- LEFT penalty spot -->
+    <circle cx="108" cy="290" r="4" fill="#a3a3a3"/>
+    <!-- LEFT penalty arc -->
+    <path d="M 138 230 A 80 80 0 0 0 138 350" fill="none" stroke="#a3a3a3" stroke-width="2"/>
 
-              <!-- MID row: 2 DMs -->
-              <div class="formation-row" style="justify-content: space-evenly;">
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
-                    <span class="player-num">16</span>
-                  </div>
-                  <span class="player-name">Tavernier</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
-                    <span class="player-num">8</span>
-                  </div>
-                  <span class="player-name">Scott</span>
-                </div>
-              </div>
+    <!-- RIGHT penalty area (big box) -->
+    <rect x="862" y="155" width="130" height="270" fill="none" stroke="#a3a3a3" stroke-width="2"/>
+    <!-- RIGHT 6-yard box -->
+    <rect x="942" y="225" width="50" height="130" fill="none" stroke="#a3a3a3" stroke-width="2"/>
+    <!-- RIGHT penalty spot -->
+    <circle cx="892" cy="290" r="4" fill="#a3a3a3"/>
+    <!-- RIGHT penalty arc -->
+    <path d="M 862 230 A 80 80 0 0 1 862 350" fill="none" stroke="#a3a3a3" stroke-width="2"/>
 
-              <!-- ATT MID row: 3 -->
-              <div class="formation-row">
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
-                    <span class="player-num">21</span>
-                  </div>
-                  <div class="badge-wrap">
-                    <div class="sub-time" style="position:absolute;top:-16px;right:-4px;font-size:0.58rem;">
-                      <span>↙</span>73'
-                    </div>
-                  </div>
-                  <span class="player-name">Adli</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
-                    <span class="player-num">10</span>
-                  </div>
-                  <div class="captain-badge">C</div>
-                  <div class="goal-icon">⚽</div>
-                  <span class="player-name">Christie</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
-                    <span class="player-num">37</span>
-                  </div>
-                  <div class="badge-wrap">
-                    <div class="sub-time" style="position:absolute;top:-16px;right:-4px;font-size:0.58rem;">
-                      <span>↙</span>87'
-                    </div>
-                  </div>
-                  <span class="player-name">Rayan</span>
-                </div>
-              </div>
+    <!-- LEFT goal -->
+    <rect x="0" y="252" width="8" height="76" fill="rgba(163,163,163,0.2)" stroke="#a3a3a3" stroke-width="1"/>
+    <!-- RIGHT goal -->
+    <rect x="992" y="252" width="8" height="76" fill="rgba(163,163,163,0.2)" stroke="#a3a3a3" stroke-width="1"/>
+  </svg>
 
-              <!-- ST row: 1 -->
-              <div class="formation-row" style="justify-content: center;">
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-1.png" alt="Player" class="player-img" />
-                    <span class="player-num">9</span>
-                  </div>
-                  <span class="player-name">Evanilson</span>
-                </div>
-              </div>
-            </div>
+  <!-- GK (Bournemouth) -->
+  <div class="player gk-bou" style="left:4%;top:50%;">
+    <div class="p-avatar">
+      <span class="p-num">1</span>
+      <img src="../assets/img/recap-image.png" alt="Petrovic" class="p-img">
+    </div>
+    <span class="p-name">Petrovic</span>
+  </div>
 
-            <!-- ════ AWAY TEAM (right, attacking left) ════ -->
-            <div class="team-pitch mun" id="awayPitch">
-              <!-- ST row (closest to centre) -->
-              <div class="formation-row" style="justify-content: center;">
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
-                    <span class="player-num">19</span>
-                  </div>
-                  <div class="badge-wrap">
-                    <div class="sub-time" style="position:absolute;top:-16px;left:-4px;font-size:0.58rem;">
-                      <span>↙</span>71'
-                    </div>
-                  </div>
-                  <span class="player-name">Mbeumo</span>
-                </div>
-              </div>
+  <!-- LB -->
+  <div class="player bou" style="left:16%;top:13%;">
+    <div class="p-avatar">
+      <span class="p-num">3</span>
+      <img src="../assets/img/field-player-1.png" alt="Truffert" class="p-img">
+      <span class="pencil">✎</span>
+    </div>
+    <span class="p-name">Truffert</span>
+  </div>
 
-              <!-- ATT MID row: 3 -->
-              <div class="formation-row">
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
-                    <span class="player-num">16</span>
-                  </div>
-                  <div class="badge-wrap">
-                    <div class="sub-time" style="position:absolute;top:-16px;left:-4px;font-size:0.58rem;">
-                      <span>↙</span>96'
-                    </div>
-                  </div>
-                  <span class="player-name">Diallo</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
-                    <span class="player-num">8</span>
-                  </div>
-                  <div class="captain-badge">C</div>
-                  <span class="player-name">Fernandes</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
-                    <span class="player-num">10</span>
-                  </div>
-                  <div class="badge-wrap">
-                    <div class="sub-time" style="position:absolute;top:-16px;left:-4px;font-size:0.58rem;">
-                      <span>↙</span>82'
-                    </div>
-                  </div>
-                  <span class="player-name">Cunha</span>
-                </div>
-              </div>
+  <!-- CB-L -->
+  <div class="player bou" style="left:16%;top:36%;">
+    <div class="p-avatar">
+      <span class="p-num">5</span>
+      <img src="../assets/img/field-player-1.png" alt="Senesi" class="p-img">
+    </div>
+    <span class="p-name">Senesi</span>
+  </div>
 
-              <!-- MID row: 2 DMs -->
-              <div class="formation-row" style="justify-content: space-evenly;">
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
-                    <span class="player-num">18</span>
-                  </div>
-                  <div class="badge-wrap">
-                    <div class="badge badge-yellow"></div>
-                  </div>
-                  <div class="sub-time" style="font-size:0.58rem;"><span>↙</span>82'</div>
-                  <span class="player-name">Casemiro</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/recap-image-2.png" alt="Player" class="player-img" />
-                    <span class="player-num">37</span>
-                  </div>
-                  <span class="player-name">Mainoo</span>
-                </div>
-              </div>
+  <!-- CB-R -->
+  <div class="player bou" style="left:16%;top:64%;">
+    <div class="p-avatar">
+      <span class="p-num">23</span>
+      <img src="../assets/img/field-player-1.png" alt="Hill" class="p-img">
+    </div>
+    <span class="p-name">Hill</span>
+  </div>
 
-              <!-- DEF row: 4 defenders -->
-              <div class="formation-row">
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
-                    <span class="player-num">2</span>
-                  </div>
-                  <span class="player-name">Dalot</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
-                    <span class="player-num">15</span>
-                  </div>
-                  <span class="player-name">Yoro</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
-                    <span class="player-num">5</span>
-                  </div>
-                  <div class="badge-wrap">
-                    <div class="badge badge-red"></div>
-                  </div>
-                  <span class="player-name">Maguire</span>
-                </div>
-                <div class="player-token">
-                  <div class="player-avatar">
-                    <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
-                    <span class="player-num">23</span>
-                  </div>
-                  <span class="player-name">Shaw</span>
-                </div>
-              </div>
+  <!-- RB -->
+  <div class="player bou" style="left:16%;top:87%;">
+    <div class="p-avatar">
+      <span class="p-num">20</span>
+      <img src="../assets/img/field-player-1.png" alt="Jiménez" class="p-img">
+      <div class="badges"><div class="b-yellow"></div></div>
+    </div>
+    <div class="sub-label"><span class="sub-arrow">↙</span>73'</div>
+    <span class="p-name">Jiménez</span>
+  </div>
 
-              <!-- GK row -->
-              <div class="formation-row" style="justify-content:flex-end; padding-right: 10px;">
-                <div class="player-token">
-                  <div class="player-avatar gk">
-                    <img src="../assets/img/field-player-3.png" alt="Player" class="player-img" />
-                    <span class="player-num">31</span>
-                  </div>
-                  <span class="player-name">Lammens</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- DM-L -->
+  <div class="player bou" style="left:28%;top:34%;">
+    <div class="p-avatar">
+      <span class="p-num">16</span>
+      <img src="../assets/img/field-player-1.png" alt="Tavernier" class="p-img">
+    </div>
+    <span class="p-name">Tavernier</span>
+  </div>
 
-        <!-- ── Managers ── -->
-        <div class="managers-bar">
-          <div class="manager-cell">Manager <strong id="homeManager">Andoni Iraola</strong></div>
-          <div class="manager-cell right">Manager <strong id="awayManager">Michael Carrick</strong></div>
-        </div>
+  <!-- DM-R -->
+  <div class="player bou" style="left:28%;top:66%;">
+    <div class="p-avatar">
+      <span class="p-num">8</span>
+      <img src="../assets/img/field-player-1.png" alt="Scott" class="p-img">
+    </div>
+    <span class="p-name">Scott</span>
+  </div>
+
+  <!-- LW (Adli) -->
+  <div class="player bou" style="left:38%;top:14%;">
+    <div class="p-avatar">
+      <span class="p-num">21</span>
+      <img src="../assets/img/field-player-1.png" alt="Adli" class="p-img">
+    </div>
+    <div class="sub-label"><span class="sub-arrow">↙</span>73'</div>
+    <span class="p-name">Adli</span>
+  </div>
+
+  <!-- CAM (Christie — captain + goal) -->
+  <div class="player bou" style="left:38%;top:50%;">
+    <div class="p-avatar">
+      <span class="p-num">10</span>
+      <img src="../assets/img/field-player-1.png" alt="Christie" class="p-img">
+      <span class="cap-badge">C</span>
+      <div class="badges"><div class="b-goal">⚽</div></div>
+    </div>
+    <div class="sub-label"><span class="sub-arrow">↙</span>73'</div>
+    <span class="p-name">Christie</span>
+  </div>
+
+  <!-- RW (Rayan) -->
+  <div class="player bou" style="left:38%;top:86%;">
+    <div class="p-avatar">
+      <span class="p-num">37</span>
+      <img src="../assets/img/field-player-1.png" alt="Rayan" class="p-img">
+    </div>
+    <div class="sub-label"><span class="sub-arrow">↙</span>87'</div>
+    <span class="p-name">Rayan</span>
+  </div>
+
+  <!-- ST (Evanilson) -->
+  <div class="player bou" style="left:46%;top:50%;">
+    <div class="p-avatar">
+      <span class="p-num">9</span>
+      <img src="../assets/img/field-player-1.png" alt="Evanilson" class="p-img">
+    </div>
+    <span class="p-name">Evanilson</span>
+  </div>
+
+  <!-- GK (Man Utd) -->
+  <div class="player gk-mun" style="left:96%;top:50%;">
+    <div class="p-avatar">
+      <span class="p-num">31</span>
+      <img src="../assets/img/recap-image-2.png" alt="Lammens" class="p-img">
+    </div>
+    <span class="p-name">Lammens</span>
+  </div>
+
+  <!-- RB (Dalot) -->
+  <div class="player mun" style="left:84%;top:13%;">
+    <div class="p-avatar">
+      <span class="p-num">2</span>
+      <img src="../assets/img/field-player-2.png" alt="Dalot" class="p-img">
+    </div>
+    <span class="p-name">Dalot</span>
+  </div>
+
+  <!-- CB-R (Yoro) -->
+  <div class="player mun" style="left:84%;top:36%;">
+    <div class="p-avatar">
+      <span class="p-num">15</span>
+      <img src="../assets/img/field-player-2.png" alt="Yoro" class="p-img">
+    </div>
+    <span class="p-name">Yoro</span>
+  </div>
+
+  <!-- CB-L (Maguire — red card) -->
+  <div class="player mun" style="left:84%;top:64%;">
+    <div class="p-avatar">
+      <span class="p-num">5</span>
+      <img src="../assets/img/field-player-2.png" alt="Maguire" class="p-img">
+      <div class="badges"><div class="b-red"></div></div>
+    </div>
+    <span class="p-name">Maguire</span>
+  </div>
+
+  <!-- LB (Shaw) -->
+  <div class="player mun" style="left:84%;top:87%;">
+    <div class="p-avatar">
+      <span class="p-num">23</span>
+      <img src="../assets/img/field-player-2.png" alt="Shaw" class="p-img">
+    </div>
+    <span class="p-name">Shaw</span>
+  </div>
+
+  <!-- DM-R (Casemiro — yellow) -->
+  <div class="player mun" style="left:72%;top:34%;">
+    <div class="p-avatar">
+      <span class="p-num">18</span>
+      <img src="../assets/img/field-player-2.png" alt="Casemiro" class="p-img">
+      <div class="badges"><div class="b-yellow"></div></div>
+    </div>
+    <div class="sub-label"><span class="sub-arrow">↙</span>82'</div>
+    <span class="p-name">Casemiro</span>
+  </div>
+
+  <!-- DM-L (Mainoo) -->
+  <div class="player mun" style="left:72%;top:66%;">
+    <div class="p-avatar">
+      <span class="p-num">37</span>
+      <img src="../assets/img/field-player-2.png" alt="Mainoo" class="p-img">
+    </div>
+    <span class="p-name">Mainoo</span>
+  </div>
+
+  <!-- RW (Diallo) -->
+  <div class="player mun" style="left:62%;top:14%;">
+    <div class="p-avatar">
+      <span class="p-num">16</span>
+      <img src="../assets/img/field-player-2.png" alt="Diallo" class="p-img">
+    </div>
+    <div class="sub-label"><span class="sub-arrow">↙</span>96'</div>
+    <span class="p-name">Diallo</span>
+  </div>
+
+  <!-- CAM (Fernandes — captain) -->
+  <div class="player mun" style="left:62%;top:50%;">
+    <div class="p-avatar">
+      <span class="p-num">8</span>
+      <img src="../assets/img/field-player-2.png" alt="Fernandes" class="p-img">
+      <span class="cap-badge">C</span>
+    </div>
+    <span class="p-name">Fernandes</span>
+  </div>
+
+  <!-- LW (Cunha) -->
+  <div class="player mun" style="left:62%;top:86%;">
+    <div class="p-avatar">
+      <span class="p-num">10</span>
+      <img src="../assets/img/field-player-2.png" alt="Cunha" class="p-img">
+    </div>
+    <div class="sub-label"><span class="sub-arrow">↙</span>82'</div>
+    <span class="p-name">Cunha</span>
+  </div>
+
+  <!-- ST (Mbeumo) -->
+  <div class="player mun" style="left:54%;top:50%;">
+    <div class="p-avatar">
+      <span class="p-num">19</span>
+      <img src="../assets/img/field-player-2.png" alt="Mbeumo" class="p-img">
+    </div>
+    <div class="sub-label"><span class="sub-arrow">↙</span>71'</div>
+    <span class="p-name">Mbeumo</span>
+  </div>
+
+</div><!-- .pitch -->
+</div><!-- .pitch-outer -->
+
+<!-- ── Managers ── -->
+<div class="managers-bar">
+  <div class="mgr">Manager <strong id="homeManager">Andoni Iraola</strong></div>
+  <div class="mgr right">Manager <strong id="awayManager">Michael Carrick</strong></div>
+</div>
+
       </div>
     </div>
 
@@ -839,10 +807,12 @@
       if (data.homeLogo) {
         document.getElementById('homeLogo').src = data.homeLogo;
         document.getElementById('homeReportLogo').src = data.homeLogo;
+        document.getElementById('lineupsHomeLogo').src = data.homeLogo;
       }
       if (data.awayLogo) {
         document.getElementById('awayLogo').src = data.awayLogo;
         document.getElementById('awayReportLogo').src = data.awayLogo;
+        document.getElementById('lineupsAwayLogo').src = data.awayLogo;
       }
 
       // Update match info
