@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
   <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/news-logs.css">
   <script src="../assets/js/main.js" defer></script>
 </head>
 
@@ -32,7 +33,7 @@
       <a href="../index.html" class="logo">NATIONAL LEAGUE</a>
       <div class="nav-links-wrapper">
         <a href="../index.html">Home</a><a href="fixtures.html">Fixtures</a><a href="tables.html">Tables</a><a href="news-logs.html">News</a><a
-          href="clubs.html">Clubs</a><a href="players.html">Players</a><a href="statistics.html">Statistics</a>
+          href="clubs.html">Clubs</a><a href="players.html">Players</a>
       </div>
       <div class="search-signin">
         <i class="fas fa-search"></i><a href="#" class="signin-btn">Sign in</a>
@@ -45,225 +46,257 @@
       <div class="mobile-nav-links">
         <a href="#">Shop</a><a href="#">About Us</a><a href="#">Football & Community</a><a href="#">Events</a><a
           href="#">Media</a><a href="#">Mornings Live</a><a href="../index.html">Home</a><a href="fixtures.html">Fixtures</a><a href="tables.html">Tables</a><a
-          href="news-logs.html">News</a><a href="clubs.html">Clubs</a><a href="players.html">Players</a><a href="statistics.html">Statistics</a>
+          href="news-logs.html">News</a><a href="clubs.html">Clubs</a><a href="players.html">Players</a>
       </div>
     </div>
   </header>
 
-  <div class="content-container hero-white-bg">
-    <div class="page-header">
-      <h1>Latest News</h1>
-      <p class="page-subtitle">Stay updated with the latest football news and updates</p>
-    </div>
+  <div class="header-spacer"></div>
 
-    <div class="news-logs-section">
-      <div class="content-container">
-        <div class="section-wrapper">
-          <!-- NEWS -->
-          <div class="news-panel">
-            <div class="panel-header">
-              <h2 class="panel-title">Latest News</h2>
-              <a href="#" class="btn-view-all">View All News</a>
-            </div>
+  <div class="page-header">
+    <h1>Latest News</h1>
+    <p class="page-subtitle">Stay updated with the latest football news and updates</p>
+  </div>
 
-            <div class="news-grid">
-              <!-- Featured -->
-              <div class="news-card featured">
-                <img class="card-img" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80"
-                  alt="Sundowns vs Gallants" />
-                <div class="card-body">
-                  <h3 class="card-title">
-                    Clinical Downs Grind Out Victory Over Gallants
-                  </h3>
-                  <span class="card-date">17 Mar 2026</span>
-                  <p class="card-excerpt">
-                    Mamelodi Sundowns were made to work hard for their latest
-                    Betway Premiership win this week after recording a hard-fought
-                    3-1 victory over Marumo Gallants at Loftus Versfeld on Tuesday
-                    night.
-                  </p>
-                </div>
-              </div>
+  <!-- FILTER BAR (like fixtures) -->
+  <div class="filters-bar">
+    <button class="filter-icon-btn" aria-label="Filter options">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="8" y1="12" x2="16" y2="12" />
+        <line x1="11" y1="18" x2="13" y2="18" />
+      </svg>
+    </button>
+    <select id="compFilter" class="filter-btn">
+      <option value="all">All Competitions</option>
+      <option value="premier">Premier League</option>
+      <option value="la-liga">La Liga</option>
+      <option value="serie-a">Serie A</option>
+      <option value="bundesliga">Bundesliga</option>
+    </select>
+    <select id="seasonSelect" class="filter-btn">
+      <option value="2025/26">2025/26 Season</option>
+      <option value="2024/25">2024/25 Season</option>
+    </select>
+    <button id="resetBtn" class="reset-btn">
+      Reset
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="1 4 1 10 7 10" />
+        <path d="M3.51 15a9 9 0 1 0 .49-3.36" />
+      </svg>
+    </button>
+  </div>
 
-              <!-- Card 2 -->
-              <div class="news-card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80"
-                  alt="Chiefs winning" />
-                <div class="card-body">
-                  <h3 class="card-title">Chiefs Back to Winning Ways</h3>
-                  <span class="card-date">15 Mar 2026</span>
-                  <p class="card-excerpt">
-                    Kaizer Chiefs returned to winning form in the Betway Premiership
-                    with a 1-0 triumph over Durban City at the FNB Stadium on Sunday
-                    …
-                  </p>
-                </div>
-              </div>
+  <!-- NEWS GRID SECTION -->
+  <div class="news-logs-section">
+    <div class="content-container">
+      <div class="news-grid">
 
-              <!-- Card 3 -->
-              <div class="news-card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=600&q=80"
-                  alt="Sekhukhune vs Polokwane" />
-                <div class="card-body">
-                  <h3 class="card-title">
-                    Sekhukhune & Polokwane City Fire Blanks in Limpopo…
-                  </h3>
-                  <span class="card-date">14 Mar 2026</span>
-                  <p class="card-excerpt">
-                    There was no separation between Sekhukhune United and Polokwane
-                    City in the most recent instalment of the Limpopo Derby in the
-                    Bet…
-                  </p>
-                </div>
-              </div>
-
-              <!-- Card 4 -->
-              <div class="news-card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&q=80"
-                  alt="Arrows vs Gallants" />
-                <div class="card-body">
-                  <h3 class="card-title">Arrows Topple 10-Man Gallants</h3>
-                  <span class="card-date">14 Mar 2026</span>
-                  <p class="card-excerpt">
-                    Golden Arrows returned to winning ways in the Betway Premiership
-                    this weekend after recording a 2-1 victory over a 10-man Marumo
-                    G…
-                  </p>
-                </div>
-              </div>
-
-              <!-- Card 5 -->
-              <div class="news-card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1487466365202-1afdb86c764e?w=600&q=80"
-                  alt="Magesi vs Chippa" />
-                <div class="card-body">
-                  <h3 class="card-title">
-                    Courageous Magesi Strike Late to Deny Chippa
-                  </h3>
-                  <span class="card-date">14 Mar 2026</span>
-                  <p class="card-excerpt">
-                    Magesi FC showed character as they fought back to hold Chippa
-                    United to a 2-2 draw in the Betway Premiership match played at
-                    the S…
-                  </p>
-                </div>
-              </div>
-
-              <!-- Card 6 -->
-              <div class="news-card">
-                <img class="card-img" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
-                  alt="Match highlights" />
-                <div class="card-body">
-                  <h3 class="card-title">
-                    Haaland Hat-trick Secures Vital Win for City
-                  </h3>
-                  <span class="card-date">13 Mar 2026</span>
-                  <p class="card-excerpt">
-                    Erling Haaland scored a brilliant hat-trick as Manchester City
-                    secured a crucial 4-0 victory over Everton at the Etihad Stadium…
-                  </p>
-                </div>
-              </div>
-            </div>
+        <!-- Regular news card -->
+        <div class="news-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" alt="News image">
           </div>
-
-          <!-- LOGS -->
-          <div class="logs-panel">
-            <div class="panel-header">
-              <h2 class="panel-title">Logs</h2>
-              <a href="tables.html" class="btn-view-all">View All Logs</a>
-            </div>
-
-            <div class="logs-tabs">
-              <button class="tab-btn active" onclick="switchTab(this, 'premier')">
-                Premier Division
-              </button>
-              <button class="tab-btn" onclick="switchTab(this, 'first')">
-                First Division
-              </button>
-            </div>
-
-            <!-- PREMIER DIVISION -->
-            <div id="premier" class="tab-content active logs-table-wrap">
-              <div class="logs-head">
-                <span>#</span>
-                <span>Club</span>
-                <span>P</span>
-                <span>W</span>
-                <span>PTS</span>
-              </div>
-
-              <div class="log-row">
-                <span class="log-pos">1</span>
-                <div class="log-club">
-                  <img class="club-badge-img" src="../assets/logos/england_arsenal.football-logos.cc.svg" alt="Arsenal">
-                  <span class="club-name">Arsenal</span>
-                </div>
-                <span class="log-stat">21</span><span class="log-stat">15</span><span class="log-pts">50</span>
-              </div>
-              <div class="log-row">
-                <span class="log-pos">2</span>
-                <div class="log-club">
-                  <img class="club-badge-img" src="../assets/logos/england_chelsea.football-logos.cc.svg" alt="Chelsea">
-                  <span class="club-name">Chelsea</span>
-                </div>
-                <span class="log-stat">21</span><span class="log-stat">15</span><span class="log-pts">48</span>
-              </div>
-              <div class="log-row">
-                <span class="log-pos">3</span>
-                <div class="log-club">
-                  <img class="club-badge-img" src="../assets/logos/england_liverpool.football-logos.cc.svg"
-                    alt="Liverpool">
-                  <span class="club-name">Liverpool</span>
-                </div>
-                <span class="log-stat">21</span><span class="log-stat">9</span><span class="log-pts">34</span>
-              </div>
-              <div class="log-row">
-                <span class="log-pos">4</span>
-                <div class="log-club">
-                  <img class="club-badge-img" src="../assets/logos/england_manchester-city.football-logos.cc.svg"
-                    alt="Man City">
-                  <span class="club-name">Man City</span>
-                </div>
-                <span class="log-stat">21</span><span class="log-stat">10</span><span class="log-pts">34</span>
-              </div>
-              <div class="log-row">
-                <span class="log-pos">5</span>
-                <div class="log-club">
-                  <img class="club-badge-img" src="../assets/logos/england_manchester-united.football-logos.cc.svg"
-                    alt="Man Utd">
-                  <span class="club-name">Man Utd</span>
-                </div>
-                <span class="log-stat">19</span><span class="log-stat">9</span><span class="log-pts">33</span>
-              </div>
-            </div>
-
-            <!-- FIRST DIVISION -->
-            <div id="first" class="tab-content logs-table-wrap">
-              <div class="logs-head">
-                <span>#</span>
-                <span>Club</span>
-                <span>P</span>
-                <span>W</span>
-                <span>PTS</span>
-              </div>
-              <div class="log-row">
-                <span class="log-pos">1</span>
-                <div class="log-club">
-                  <div class="club-badge badge-sek">FC</div>
-                  <span class="club-name">First Division Data</span>
-                </div>
-                <span class="log-stat">—</span><span class="log-stat">—</span><span class="log-pts">—</span>
-              </div>
+          <div class="card-content">
+            <h3 class="card-title">Clinical Downs Grind Out Victory Over Gallants</h3>
+            <span class="card-date">17 Mar 2026</span>
+            <p class="card-excerpt">Mamelodi Sundowns were made to work hard for their latest Betway Premiership win this week after recording a hard-fought 3-1 victory over Marumo Gallants at Loftus Versfeld on Tuesday night.</p>
+            <div class="card-footer">
+              <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
             </div>
           </div>
         </div>
+
+        <!-- Match result card (with two teams) -->
+        <div class="news-card match-result-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80" alt="Match">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Man City 3 - 2 Liverpool | Thriller at Etihad</h3>
+            <span class="card-date">30 Mar 2026</span>
+            <div class="match-result">
+              <div class="team">
+                <img class="team-logo" src="../assets/logos/england_manchester-city.football-logos.cc.svg" alt="Man City">
+                <span class="team-name">Man City</span>
+              </div>
+              <div class="score">3 - 2</div>
+              <div class="team">
+                <img class="team-logo" src="../assets/logos/england_liverpool.football-logos.cc.svg" alt="Liverpool">
+                <span class="team-name">Liverpool</span>
+              </div>
+            </div>
+            <p class="card-excerpt">A pulsating encounter saw City come out on top in a seven‑goal thriller at the Etihad Stadium.</p>
+            <div class="card-footer">
+              <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regular news card -->
+        <div class="news-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1487466365202-1afdb86c764e?w=600&q=80" alt="News image">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Chiefs Back to Winning Ways</h3>
+            <span class="card-date">15 Mar 2026</span>
+            <p class="card-excerpt">Kaizer Chiefs returned to winning form in the Betway Premiership with a 1-0 triumph over Durban City at the FNB Stadium on Sunday …</p>
+            <div class="card-footer">
+              <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match result card -->
+        <div class="news-card match-result-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80" alt="Match">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Arsenal 3 - 1 Newcastle | Saka & Odegaard shine</h3>
+            <span class="card-date">14 Mar 2026</span>
+            <div class="match-result">
+              <div class="team">
+                 <span class="team-name">Arsenal</span>
+                <img class="team-logo" src="../assets/logos/england_arsenal.football-logos.cc.svg" alt="Arsenal">
+               
+              </div>
+              <div class="score">3 - 1</div>
+              <div class="team">
+                <img class="team-logo" src="../assets/logos/scotland_aberdeen.football-logos.cc.svg" alt="Newcastle">
+                <span class="team-name">Newcastle</span>
+              </div>
+            </div>
+            <p class="card-excerpt">Arsenal cruised past Newcastle thanks to a superb performance from Bukayo Saka and Martin Ødegaard.</p>
+            <div class="card-footer">
+              <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regular news card -->
+        <div class="news-card">
+          <div class="card-img-wrapper">
+            <img src="https://picsum.photos/id/108/600/400" alt="News image">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Sekhukhune & Polokwane City Fire Blanks in Limpopo Derby</h3>
+            <span class="card-date">14 Mar 2026</span>
+            <p class="card-excerpt">There was no separation between Sekhukhune United and Polokwane City in the most recent instalment of the Limpopo Derby in the Bet…</p>
+            <div class="card-footer">
+              <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match result card -->
+        <div class="news-card match-result-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=600&q=80" alt="Match">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Chelsea 2 - 0 Man Utd | Palmer brace stuns Old Trafford</h3>
+            <span class="card-date">12 Mar 2026</span>
+            <div class="match-result">
+              <div class="team">
+                 <span class="team-name">Chelsea</span>
+                <img class="team-logo" src="../assets/logos/england_chelsea.football-logos.cc.svg" alt="Chelsea">
+               
+              </div>
+              <div class="score">2 - 0</div>
+              <div class="team">
+                <img class="team-logo" src="../assets/logos/england_manchester-united.football-logos.cc.svg" alt="Man Utd">
+                <span class="team-name">Man Utd</span>
+              </div>
+            </div>
+            <p class="card-excerpt">Cole Palmer scored twice as Chelsea secured a convincing win over Manchester United at Stamford Bridge.</p>
+            <div class="card-footer">
+              <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Regular news card -->
+        <div class="news-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&q=80" alt="News image">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Haaland Hat‑trick Secures Vital Win for City</h3>
+            <span class="card-date">13 Mar 2026</span>
+            <p class="card-excerpt">Erling Haaland scored a brilliant hat-trick as Manchester City secured a crucial 4-0 victory over Everton at the Etihad Stadium…</p>
+            <div class="card-footer">
+              <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match result card -->
+        <div class="news-card match-result-card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=600&q=80" alt="Match">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Liverpool 1 - 1 Spurs | Szoboszlai Free‑Kick stunner</h3>
+            <span class="card-date">10 Mar 2026</span>
+            <div class="match-result">
+              <div class="team">
+                 <span class="team-name">Liverpool</span>
+                <img class="team-logo" src="../assets/logos/england_liverpool.football-logos.cc.svg" alt="Liverpool">
+               
+              </div>
+              <div class="score">1 - 1</div>
+              <div class="team">
+                <img class="team-logo" src="../assets/logos/france_ajaccio.football-logos.cc.svg" alt="Spurs">
+                <span class="team-name">Spurs</span>
+              </div>
+            </div>
+            <p class="card-excerpt">Dominik Szoboszlai's stunning free‑kick rescued a point for Liverpool against a resilient Spurs side.</p>
+            <div class="card-footer">
+              <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+        <button class="page-btn" disabled>‹</button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">4</button>
+        <button class="page-btn">›</button>
       </div>
     </div>
+  </div>
+
+  <!-- FOOTER BAR (unchanged) -->
+  <div class="footer-bar-wrap">
+    <div class="footer-bar">
+      <a href="../index.html" class="footer-brand">National League</a>
+      <div class="social-links">
+        <a href="#" class="fb" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.733-8.835L2.25 2.25h6.984l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="li" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M21.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/></svg></a>
+        <a href="#" class="vk" aria-label="VK"><svg viewBox="0 0 24 24"><path d="M21.547 7h-3.29a.743.743 0 0 0-.655.392s-1.312 2.416-1.734 3.23C14.734 12.813 14 12.126 14 11.11V7.603A1.104 1.104 0 0 0 12.896 6.5h-2.474a1.982 1.982 0 0 0-1.75.813s1.255-.204 1.255 1.49c0 .42.022 1.626.04 2.64C9.97 11.454 8.77 9.24 7.84 7.392A.742.742 0 0 0 7.18 7H3.8a.55.55 0 0 0-.55.64s1.914 4.48 4.08 6.716c1.811 1.869 4.16 1.644 4.16 1.644h1.328a.638.638 0 0 0 .64-.623v-.534s-.022-1.94 1.022-2.227c1.017-.283 2.316 1.879 3.696 2.706A2.35 2.35 0 0 0 19.526 16h2.957a.55.55 0 0 0 .55-.685s-.77-2.065-3.43-4.504c-.814-.745-.948-.99.046-2.01C20.535 7.655 22.072 6 21.547 7z"/></svg></a>
+        <a href="#" class="yt" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg></a>
+      </div>
+      <a href="#" class="btn-get-into">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Get Into Miliga
+      </a>
+    </div>
+  </div>
+
+  <div class="bottom-strip">
+    <p>Lead Partner <strong>EA SPORTS FC</strong> &bull; Official Creativity Partner <strong>Adobe</strong> &bull; Official Bank <strong>Barclays</strong></p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-</task_progress>
-</write_to_file>

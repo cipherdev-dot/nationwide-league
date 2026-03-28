@@ -1,1499 +1,2066 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>National League· responsive burger nav</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title> National League· responsive burger nav</title>
+    <!-- Fonts + Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@400;700;800&family=Bebas+Neue&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-  <!-- Fonts + Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@400;700;800&family=Bebas+Neue&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="/nationwide-league/assets/css/style.css" />
+    <script src="./assets/js/main.js" defer></script>
+  </head>
 
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <script src="./assets/js/main.js" defer></script>
-</head>
-
-<body>
-  <div class="top-bar">
-    <div class="top-bar-content">
-      <a href="#">Shop</a><a href="#">About Us</a><a href="#">Football & Community</a><a href="#">Events</a><a
-        href="#">Media</a><a href="#">Mornings Live</a>
-    </div>
-  </div>
-  <header class="main-header">
-    <div class="header-content">
-      <a href="#" class="logo">NATIONAL LEAGUE</a>
-      <div class="nav-links-wrapper">
-        <a href="./index.html">Home</a><a href="./pages/fixtures.html">Fixtures</a><a
-          href="./pages/tables.html">Tables</a><a href="./pages/news-logs.html">News</a><a
-          href="./pages/clubs.html">Clubs</a><a href="./pages/players.html">Players</a><a
-          href="./pages/statistics.html">Statistics</a>
-      </div>
-      <div class="search-signin">
-        <i class="fas fa-search"></i><a href="#" class="signin-btn">Sign in</a>
-      </div>
-      <button class="burger-menu" id="burgerBtn" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-    <div class="mobile-nav" id="mobileNav">
-      <div class="mobile-nav-links">
-        <a href="#">Shop</a><a href="#">About Us</a><a href="#">Football & Community</a><a href="#">Events</a><a
-          href="#">Media</a><a href="#">Mornings Live</a><a href="./index.html">Home</a><a
-          href="./pages/fixtures.html">Fixtures</a><a href="./pages/tables.html">Tables</a><a
-          href="./pages/news-logs.html">News</a><a href="./pages/clubs.html">Clubs</a><a
-          href="./pages/players.html">Players</a><a href="./pages/statistics.html">Statistics</a>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="#">Shop</a><a href="#">About Us</a
+        ><a href="#">Football & Community</a><a href="#">Events</a
+        ><a href="#">Media</a><a href="#">Mornings Live</a>
       </div>
     </div>
-  </header>
-  <div class="trending-bar">
-    <div class="trending-content">
-      <span class="trending-item"><span class="live-badge">LIVE</span> Man Utd 3-1 Aston Villa</span><span
-        class="trending-item"><i class="fas fa-futbol"></i> Fernandes 2 assists</span><span class="trending-item"><i
-          class="fas fa-chart-line"></i> Haaland 28 goals</span><span class="trending-item"><i class="fas fa-fire"></i>
-        Arsenal unbeaten in 12</span><span class="trending-item"><span class="live-badge">LIVE</span> Chelsea 0-1
-        Newcastle</span><span class="trending-item"><i class="fas fa-star"></i> Saka POTM nominee</span><span
-        class="trending-item"><i class="fas fa-crown"></i> Title race heating up</span>
-    </div>
-  </div>
-
-  <div class="content-container hero-white-bg">
-    <div class="hero-row">
-      <div class="left-col-fixed">
-        <div class="video-card">
-          <video id="mainVideo" autoplay muted loop playsinline>
-            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-              type="video/mp4" />
-          </video>
-          <div class="video-overlay-solid">
-            <div class="headline-large" id="video-title">
-              Champions League: Arsenal go through, Chelsea and City exit
-            </div>
-            <div class="headline-medium" id="video-subtitle">
-              Eze scores stunner as league leaders progress, while Chelsea and
-              Man City go out
-            </div>
-            <div class="features-link" id="video-badge">Features</div>
-          </div>
+    <header class="main-header">
+      <div class="header-content">
+        <a href="#" class="logo">NATIONAL LEAGUE</a>
+        <div class="nav-links-wrapper">
+          <a href="./index.html">Home</a
+          ><a href="./pages/fixtures.html">Fixtures</a
+          ><a href="./pages/tables.html">Tables</a
+          ><a href="./pages/news-logs.html">News</a
+          ><a href="./pages/clubs.html">Clubs</a
+          ><a href="./pages/players.html">Players</a>
+        </div>
+        <div class="search-signin">
+          <i class="fas fa-search"></i
+          ><a href="#" class="signin-btn">Sign in</a>
+        </div>
+        <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-links">
+          <a href="#">Shop</a><a href="#">About Us</a
+          ><a href="#">Football & Community</a><a href="#">Events</a
+          ><a href="#">Media</a><a href="#">Mornings Live</a
+          ><a href="./pages/index.html">Home</a
+          ><a href="./pages/fixtures.html">Fixtures</a
+          ><a href="./pages/tables.html">Tables</a
+          ><a href="./pages/news-logs.html">News</a
+          ><a href="./pages/clubs.html">Clubs</a
+          ><a href="./pages/players.html">Players</a
+          ><a href="./pages/statistics.html">Statistics</a>
         </div>
       </div>
-
-      <div class="middle-col-flex">
-        <div class="middle-features-card p-0">
-          <div class="feature-item"
-            data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-            data-badge="FEATURES" data-title="RANK the best attacking midfielders in Premier League history"
-            data-subtitle="Vote now and see where your favourites rank">
-            <div class="feature-text">
-              <div class="card-label">FEATURES</div>
-              <div class="feature-item-title">
-                RANK the best attacking midfielders in Premier League history
-              </div>
-              <div class="feature-item-sub">
-                Vote now and see where your favourites rank
-              </div>
-            </div>
-            <div class="feature-img-placeholder">
-              <img src="https://picsum.photos/id/100/80/60" alt="midfield" />
-            </div>
-          </div>
-          <div class="feature-item"
-            data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-            data-badge="FEATURES" data-title="Premier League Last Fan Standing - Play our exciting NEW game"
-            data-subtitle="How long can you survive?">
-            <div class="feature-text">
-              <div class="card-label">FEATURES</div>
-              <div class="feature-item-title">
-                Premier League Last Fan Standing – Play our exciting NEW game
-              </div>
-              <div class="feature-item-sub">How long can you survive?</div>
-            </div>
-            <div class="feature-img-placeholder">
-              <img src="https://picsum.photos/id/1015/80/60" alt="game" />
-            </div>
-          </div>
-          <div class="feature-item"
-            data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
-            data-badge="INSIGHTS" data-title="Golden Boot Race: Haaland vs Salah vs Watkins"
-            data-subtitle="Who will finish as top scorer? Analysts predict final tally">
-            <div class="feature-text">
-              <div class="card-label">INSIGHTS</div>
-              <div class="feature-item-title">
-                Golden Boot Race: Haaland vs Salah vs Watkins
-              </div>
-              <div class="feature-item-sub">
-                Who will finish as top scorer? Analysts predict final tally
-              </div>
-            </div>
-            <div class="feature-img-placeholder">
-              <img src="https://picsum.photos/id/104/80/60" alt="golden boot" />
-            </div>
-          </div>
-          <div class="feature-item"
-            data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoy.mp4"
-            data-badge="FANTASY" data-title="FPL Double Gameweek tips: best captain & differentials"
-            data-subtitle="Essential transfers to climb your mini-leagues">
-            <div class="feature-text">
-              <div class="card-label">FANTASY</div>
-              <div class="feature-item-title">
-                FPL Double Gameweek tips: best captain & differentials
-              </div>
-              <div class="feature-item-sub">
-                Essential transfers to climb your mini-leagues
-              </div>
-            </div>
-            <div class="feature-img-placeholder">
-              <img src="https://picsum.photos/id/20/80/60" alt="fantasy" />
-            </div>
-          </div>
-          <div class="feature-item"
-            data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
-            data-badge="ACADEMY" data-title="Next Gen: The 5 teenagers taking Premier League by storm"
-            data-subtitle="Meet the future stars lighting up the league">
-            <div class="feature-text">
-              <div class="card-label">ACADEMY</div>
-              <div class="feature-item-title">
-                Next Gen: The 5 teenagers taking Premier League by storm
-              </div>
-              <div class="feature-item-sub">
-                Meet the future stars lighting up the league
-              </div>
-            </div>
-            <div class="feature-img-placeholder">
-              <img src="https://picsum.photos/id/25/80/60" alt="youth" />
-            </div>
-          </div>
-          <div class="feature-item"
-            data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
-            data-badge="CLASSICS" data-title="Best Premier League comebacks: 2005 Istanbul echoes"
-            data-subtitle="Relive the most iconic fightbacks in history">
-            <div class="feature-text">
-              <div class="card-label">CLASSICS</div>
-              <div class="feature-item-title">
-                Best Premier League comebacks: 2005 Istanbul echoes
-              </div>
-              <div class="feature-item-sub">
-                Relive the most iconic fightbacks in history
-              </div>
-            </div>
-            <div class="feature-img-placeholder">
-              <img src="https://picsum.photos/id/42/80/60" alt="comeback" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="right-col-flex">
-        <div class="scrollable-card inverted-right p-3">
-          <div class="matchcentre-header">
-            <h5>MATCH CENTRE</h5>
-            <a href="./pages/fixtures.html" class="btn-view-all">VIEW ALL</a>
-          </div>
-          <div class="matchcentre-tabs">
-            <span class="matchcentre-tab active" data-tab="fixtures">FIXTURES</span>
-            <span class="matchcentre-tab" data-tab="results">RESULTS</span>
-            <span class="matchcentre-tab" data-tab="live">LIVE</span>
-          </div>
-          <div class="match-date-group">
-            <!-- Completed Match with Score -->
-            <div class="match-item completed">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">Arsenal</span><span class="team-logo"><img
-                      src="./assets/logos/england_arsenal.football-logos.cc.svg" alt="Arsenal" /></span>
-                </div>
-                <span class="score-badge">2 - 1</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/england_chelsea.football-logos.cc.svg"
-                      alt="Chelsea" /></span><span class="team-name">Chelsea</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <span class="result-label">FT</span> 29 Mar 17:30 - Emirates Stadium
-              </div>
-            </div>
-
-            <!-- Completed Match with Score -->
-            <div class="match-item completed">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">Man City</span><span class="team-logo"><img
-                      src="./assets/logos/england_manchester-city.football-logos.cc.svg" alt="Man City" /></span>
-                </div>
-                <span class="score-badge">3 - 2</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/england_liverpool.football-logos.cc.svg"
-                      alt="Liverpool" /></span><span class="team-name">Liverpool</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <span class="result-label">FT</span> 30 Mar 16:30 - Etihad Stadium
-              </div>
-            </div>
-            <!-- Upcoming Fixture -->
-            <div class="match-item upcoming">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">Accrington</span><span class="team-logo"><img
-                      src="./assets/logos/england_accrington.football-logos.cc.svg" alt="Accrington" /></span>
-                </div>
-                <span class="vs-badge">VS</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/australia_adelaide-united.football-logos.cc.svg"
-                      alt="Adelaide Utd" /></span><span class="team-name">Adelaide Utd</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <i class="bi bi-calendar3"></i> 31 Mar 14:00 - Wham Stadium
-              </div>
-            </div>
-
-            <!-- Upcoming Fixture -->
-            <div class="match-item upcoming">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">Flamengo</span><span class="team-logo"><img
-                      src="./assets/logos/brazil_flamengo.football-logos.cc.svg" alt="Flamengo" /></span>
-                </div>
-                <span class="vs-badge">VS</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/england_manchester-united.football-logos.cc.svg"
-                      alt="Man Utd" /></span><span class="team-name">Man Utd</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <i class="bi bi-calendar3"></i> 01 Apr 20:00 - Maracanã
-              </div>
-            </div>
-            <!-- Completed Match with Score -->
-            <div class="match-item completed">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">AEL Limassol</span><span class="team-logo"><img
-                      src="./assets/logos/cyprus_ael.football-logos.cc.svg" alt="AEL" /></span>
-                </div>
-                <span class="score-badge">1 - 0</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/cyprus_aez.football-logos.cc.svg"
-                      alt="AEZ" /></span><span class="team-name">AEZ Zakakiou</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <span class="result-label">FT</span> 02 Apr 19:45 - GSZ Stadium
-              </div>
-            </div>
-
-            <!-- Completed Match with Score -->
-            <div class="match-item completed">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">Ajaccio</span><span class="team-logo"><img
-                      src="./assets/logos/france_ajaccio.football-logos.cc.svg" alt="Ajaccio" /></span>
-                </div>
-                <span class="score-badge">2 - 3</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/germany_bayern-munchen.football-logos.cc.svg"
-                      alt="Bayern" /></span><span class="team-name">Bayern Munich</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <span class="result-label">FT</span> 03 Apr 15:00 - Stade François
-              </div>
-            </div>
-
-<!-- Upcoming Fixture -->
-            <div class="match-item upcoming">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">B. Dortmund</span><span class="team-logo"><img
-                      src="./assets/logos/germany_borussia-dortmund.football-logos.cc.svg" alt="Dortmund" /></span>
-                </div>
-                <span class="vs-badge">VS</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/italy_juventus.football-logos.cc.svg"
-                      alt="Juventus" /></span><span class="team-name">Juventus</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <i class="bi bi-calendar3"></i> 05 Apr 18:30 - Signal Iduna Park
-              </div>
-            </div>
-
-            <!-- Upcoming Fixture -->
-            <div class="match-item upcoming">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">Benfica</span><span class="team-logo"><img
-                      src="./assets/logos/portugal_benfica.football-logos.cc.svg" alt="Benfica" /></span>
-                </div>
-                <span class="vs-badge">VS</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/saudi-arabia_al-nassr.football-logos.cc.svg"
-                      alt="Al-Nassr" /></span><span class="team-name">Al-Nassr</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <i class="bi bi-calendar3"></i> 06 Apr 15:00 - Estádio da Luz
-              </div>
-            </div>
-
-            <!-- Upcoming Fixture -->
-            <div class="match-item upcoming">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">Aberdeen</span><span class="team-logo"><img
-                      src="./assets/logos/scotland_aberdeen.football-logos.cc.svg" alt="Aberdeen" /></span>
-                </div>
-                <span class="vs-badge">VS</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/spain_barcelona.football-logos.cc.svg"
-                      alt="Barcelona" /></span><span class="team-name">Barcelona</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <i class="bi bi-calendar3"></i> 07 Apr 20:00 - Pittodrie
-              </div>
-            </div>
-
-            <!-- Upcoming Fixture -->
-            <div class="match-item upcoming">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">Real Madrid</span><span class="team-logo"><img
-                      src="./assets/logos/spain_real-madrid.football-logos.cc.svg" alt="Real Madrid" /></span>
-                </div>
-                <span class="vs-badge">VS</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/usa_inter-miami-cf.football-logos.cc.svg"
-                      alt="Inter Miami" /></span><span class="team-name">Inter Miami</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <i class="bi bi-calendar3"></i> 08 Apr 21:00 - Santiago Bernabéu
-              </div>
-            </div>
-
-            <!-- Upcoming Fixture -->
-            <div class="match-item upcoming">
-              <div class="match-teams">
-                <div class="team-block left">
-                  <span class="team-name">Arsenal</span><span class="team-logo"><img
-                      src="./assets/logos/england_arsenal.football-logos.cc.svg" alt="Arsenal" /></span>
-                </div>
-                <span class="vs-badge">VS</span>
-                <div class="team-block right">
-                  <span class="team-logo"><img src="./assets/logos/england_chelsea.football-logos.cc.svg"
-                      alt="Chelsea" /></span><span class="team-name">Chelsea</span>
-                </div>
-              </div>
-              <div class="match-info">
-                <i class="bi bi-calendar3"></i> 09 Apr 19:45 - Emirates Stadium
-              </div>
-            </div>
-          </div>
-        </div>
+    </header>
+    <div class="header-spacer"></div>
+    <div class="trending-bar">
+      <div class="trending-content">
+        <span class="trending-item"
+          ><span class="live-badge">LIVE</span> Man Utd 3-1 Aston Villa</span
+        ><span class="trending-item"
+          ><i class="fas fa-futbol"></i> Fernandes 2 assists</span
+        ><span class="trending-item"
+          ><i class="fas fa-chart-line"></i> Haaland 28 goals</span
+        ><span class="trending-item"
+          ><i class="fas fa-fire"></i> Arsenal unbeaten in 12</span
+        ><span class="trending-item"
+          ><span class="live-badge">LIVE</span> Chelsea 0-1 Newcastle</span
+        ><span class="trending-item"
+          ><i class="fas fa-star"></i> Saka POTM nominee</span
+        ><span class="trending-item"
+          ><i class="fas fa-crown"></i> Title race heating up</span
+        >
       </div>
     </div>
-  </div>
 
-  <section class="carousel-section">
-    <div class="content-container">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="carousel-header text-dark">
-          Watch 2025/26 match highlights
-        </h2>
-        <div class="d-flex gap-2">
-          <button onclick="scrollCarousel('left')" class="nav-arrow">
-            <i class="fas fa-chevron-left"></i></button><button onclick="scrollCarousel('right')" class="nav-arrow">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-      <div id="horizontalCarousel" class="horizontal-scroll d-flex pb-3">
-        <div class="card-wrapper">
-          <div class="news-card">
-            <div class="card-img-wrapper">
-              <img src="https://picsum.photos/id/1015/600/400" alt="highlight" />
-            </div>
-            <div class="card-body">
-              <div class="highlight-label">HIGHLIGHTS</div>
-              <div class="highlight-desc">
-                Two goal comeback earns a point! | Brentford 2-2 Wolves
+    <div class="content-container hero-white-bg">
+      <div class="hero-row">
+        <div class="left-col-fixed">
+          <div class="video-card">
+            <video id="mainVideo" autoplay muted loop playsinline>
+              <source
+                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="video-overlay-solid">
+              <div class="headline-large" id="video-title">
+                Champions League: Arsenal go through, Chelsea and City exit
               </div>
-              <a href="#" class="match-link">Match highlights</a>
+              <div class="headline-medium" id="video-subtitle">
+                Eze scores stunner as league leaders progress, while Chelsea and
+                Man City go out
+              </div>
+              <div class="features-link" id="video-badge">Features</div>
             </div>
           </div>
         </div>
-        <div class="card-wrapper">
-          <div class="news-card">
-            <div class="card-img-wrapper">
-              <img src="https://picsum.photos/id/102/600/400" alt="highlight" />
-            </div>
-            <div class="card-body">
-              <div class="highlight-label">HIGHLIGHTS</div>
-              <div class="highlight-desc">
-                Liverpool 1-1 Spurs | Szoboszlai Free-Kick stunner
+
+        <div class="middle-col-flex">
+          <div class="middle-features-card p-0">
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+              data-badge="FEATURES"
+              data-title="RANK the best attacking midfielders in Premier League history"
+              data-subtitle="Vote now and see where your favourites rank"
+            >
+              <div class="feature-text">
+                <div class="card-label">FEATURES</div>
+                <div class="feature-item-title">
+                  RANK the best attacking midfielders in Premier League history
+                </div>
+                <div class="feature-item-sub">
+                  Vote now and see where your favourites rank
+                </div>
               </div>
-              <a href="#" class="match-link">Match highlights</a>
+              <div class="feature-img-placeholder">
+                <img src="https://picsum.photos/id/100/80/60" alt="midfield" />
+              </div>
+            </div>
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+              data-badge="FEATURES"
+              data-title="Premier League Last Fan Standing - Play our exciting NEW game"
+              data-subtitle="How long can you survive?"
+            >
+              <div class="feature-text">
+                <div class="card-label">FEATURES</div>
+                <div class="feature-item-title">
+                  Premier League Last Fan Standing – Play our exciting NEW game
+                </div>
+                <div class="feature-item-sub">How long can you survive?</div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img src="https://picsum.photos/id/1015/80/60" alt="game" />
+              </div>
+            </div>
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+              data-badge="INSIGHTS"
+              data-title="Golden Boot Race: Haaland vs Salah vs Watkins"
+              data-subtitle="Who will finish as top scorer? Analysts predict final tally"
+            >
+              <div class="feature-text">
+                <div class="card-label">INSIGHTS</div>
+                <div class="feature-item-title">
+                  Golden Boot Race: Haaland vs Salah vs Watkins
+                </div>
+                <div class="feature-item-sub">
+                  Who will finish as top scorer? Analysts predict final tally
+                </div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img
+                  src="https://picsum.photos/id/104/80/60"
+                  alt="golden boot"
+                />
+              </div>
+            </div>
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoy.mp4"
+              data-badge="FANTASY"
+              data-title="FPL Double Gameweek tips: best captain & differentials"
+              data-subtitle="Essential transfers to climb your mini-leagues"
+            >
+              <div class="feature-text">
+                <div class="card-label">FANTASY</div>
+                <div class="feature-item-title">
+                  FPL Double Gameweek tips: best captain & differentials
+                </div>
+                <div class="feature-item-sub">
+                  Essential transfers to climb your mini-leagues
+                </div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img src="https://picsum.photos/id/20/80/60" alt="fantasy" />
+              </div>
+            </div>
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+              data-badge="ACADEMY"
+              data-title="Next Gen: The 5 teenagers taking Premier League by storm"
+              data-subtitle="Meet the future stars lighting up the league"
+            >
+              <div class="feature-text">
+                <div class="card-label">ACADEMY</div>
+                <div class="feature-item-title">
+                  Next Gen: The 5 teenagers taking Premier League by storm
+                </div>
+                <div class="feature-item-sub">
+                  Meet the future stars lighting up the league
+                </div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img src="https://picsum.photos/id/25/80/60" alt="youth" />
+              </div>
+            </div>
+            <div
+              class="feature-item"
+              data-video-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+              data-badge="CLASSICS"
+              data-title="Best Premier League comebacks: 2005 Istanbul echoes"
+              data-subtitle="Relive the most iconic fightbacks in history"
+            >
+              <div class="feature-text">
+                <div class="card-label">CLASSICS</div>
+                <div class="feature-item-title">
+                  Best Premier League comebacks: 2005 Istanbul echoes
+                </div>
+                <div class="feature-item-sub">
+                  Relive the most iconic fightbacks in history
+                </div>
+              </div>
+              <div class="feature-img-placeholder">
+                <img src="https://picsum.photos/id/42/80/60" alt="comeback" />
+              </div>
             </div>
           </div>
         </div>
-        <div class="card-wrapper">
-          <div class="news-card">
-            <div class="card-img-wrapper">
-              <img src="https://picsum.photos/id/104/600/400" alt="highlight" />
+
+        <div class="right-col-flex">
+          <div class="scrollable-card inverted-right p-3">
+            <div class="matchcentre-header">
+              <h5>MATCH CENTRE</h5>
+              <a href="./pages/fixtures.html" class="btn-view-all">VIEW ALL</a>
             </div>
-            <div class="card-body">
-              <div class="highlight-label">HIGHLIGHTS</div>
-              <div class="highlight-desc">
-                City thrash Everton 4-0 | Haaland hat-trick masterclass
+            <div class="matchcentre-tabs">
+              <span class="matchcentre-tab active" data-tab="fixtures"
+                >FIXTURES</span
+              >
+              <span class="matchcentre-tab" data-tab="results">RESULTS</span>
+              <span class="matchcentre-tab" data-tab="live">LIVE</span>
+            </div>
+            <div class="match-date-group">
+              <!-- Completed Match with Score -->
+              <div class="match-item completed">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Arsenal</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/england_arsenal.football-logos.cc.svg"
+                        alt="Arsenal"
+                    /></span>
+                  </div>
+                  <span class="score-badge">2 - 1</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/england_chelsea.football-logos.cc.svg"
+                        alt="Chelsea" /></span
+                    ><span class="team-name">Chelsea</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <span class="result-label">FT</span> 29 Mar 17:30 - Emirates
+                  Stadium
+                </div>
               </div>
-              <a href="#" class="match-link">Match highlights</a>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="news-card">
-            <div class="card-img-wrapper">
-              <img src="https://picsum.photos/id/106/600/400" alt="highlight" />
-            </div>
-            <div class="card-body">
-              <div class="highlight-label">HIGHLIGHTS</div>
-              <div class="highlight-desc">
-                Arsenal 3-1 Newcastle | Saka & Odegaard shine
+
+              <!-- Completed Match with Score -->
+              <div class="match-item completed">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Man City</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/england_manchester-city.football-logos.cc.svg"
+                        alt="Man City"
+                    /></span>
+                  </div>
+                  <span class="score-badge">3 - 2</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/england_liverpool.football-logos.cc.svg"
+                        alt="Liverpool" /></span
+                    ><span class="team-name">Liverpool</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <span class="result-label">FT</span> 30 Mar 16:30 - Etihad
+                  Stadium
+                </div>
               </div>
-              <a href="#" class="match-link">Match highlights</a>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="news-card">
-            <div class="card-img-wrapper">
-              <img src="https://picsum.photos/id/15/600/400" alt="highlight" />
-            </div>
-            <div class="card-body">
-              <div class="highlight-label">HIGHLIGHTS</div>
-              <div class="highlight-desc">
-                Chelsea 2-0 Man Utd | Palmer brace stuns Old Trafford
+              <!-- Upcoming Fixture -->
+              <div class="match-item upcoming">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Accrington</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/england_accrington.football-logos.cc.svg"
+                        alt="Accrington"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/australia_adelaide-united.football-logos.cc.svg"
+                        alt="Adelaide Utd" /></span
+                    ><span class="team-name">Adelaide Utd</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 31 Mar 14:00 - Wham Stadium
+                </div>
               </div>
-              <a href="#" class="match-link">Match highlights</a>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="news-card">
-            <div class="card-img-wrapper">
-              <img src="https://picsum.photos/id/20/600/400" alt="club news" />
-            </div>
-            <div class="card-body">
-              <div class="highlight-label">CLUB NEWS</div>
-              <div class="highlight-desc">
-                Howe gives the latest on Tonali ahead of Tyne-Wear derby
+
+              <!-- Upcoming Fixture -->
+              <div class="match-item upcoming">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Flamengo</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/brazil_flamengo.football-logos.cc.svg"
+                        alt="Flamengo"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/england_manchester-united.football-logos.cc.svg"
+                        alt="Man Utd" /></span
+                    ><span class="team-name">Man Utd</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 01 Apr 20:00 - Maracanã
+                </div>
               </div>
-              <a href="#" class="match-link">Read more</a>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="news-card">
-            <div class="card-img-wrapper">
-              <img src="https://picsum.photos/id/22/600/400" alt="team news" />
-            </div>
-            <div class="card-body">
-              <div class="highlight-label">TEAM NEWS</div>
-              <div class="highlight-desc">
-                Carrick's team news for Bournemouth match
+              <!-- Completed Match with Score -->
+              <div class="match-item completed">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">AEL Limassol</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/cyprus_ael.football-logos.cc.svg"
+                        alt="AEL"
+                    /></span>
+                  </div>
+                  <span class="score-badge">1 - 0</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/cyprus_aez.football-logos.cc.svg"
+                        alt="AEZ" /></span
+                    ><span class="team-name">AEZ Zakakiou</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <span class="result-label">FT</span> 02 Apr 19:45 - GSZ
+                  Stadium
+                </div>
               </div>
-              <a href="#" class="match-link">Read more</a>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="news-card">
-            <div class="card-img-wrapper">
-              <img src="https://picsum.photos/id/26/600/400" alt="pep" />
-            </div>
-            <div class="card-body">
-              <div class="highlight-label">PRESSER</div>
-              <div class="highlight-desc">
-                Pep discusses EFL Cup final against Arsenal
+
+              <!-- Completed Match with Score -->
+              <div class="match-item completed">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Ajaccio</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/france_ajaccio.football-logos.cc.svg"
+                        alt="Ajaccio"
+                    /></span>
+                  </div>
+                  <span class="score-badge">2 - 3</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/germany_bayern-munchen.football-logos.cc.svg"
+                        alt="Bayern" /></span
+                    ><span class="team-name">Bayern Munich</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <span class="result-label">FT</span> 03 Apr 15:00 - Stade
+                  François
+                </div>
               </div>
-              <a href="#" class="match-link">Read more</a>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="news-card">
-            <div class="card-img-wrapper">
-              <img src="https://picsum.photos/id/28/600/400" alt="arteta" />
-            </div>
-            <div class="card-body">
-              <div class="highlight-label">EXCLUSIVE</div>
-              <div class="highlight-desc">
-                Every word from Arteta's EFL Cup final presser
+
+              <!-- Upcoming Fixture -->
+              <div class="match-item upcoming">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">B. Dortmund</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/germany_borussia-dortmund.football-logos.cc.svg"
+                        alt="Dortmund"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/italy_juventus.football-logos.cc.svg"
+                        alt="Juventus" /></span
+                    ><span class="team-name">Juventus</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 05 Apr 18:30 - Signal Iduna
+                  Park
+                </div>
               </div>
-              <a href="#" class="match-link">Read more</a>
-            </div>
-          </div>
-        </div>
-        <div class="card-wrapper">
-          <div class="news-card">
-            <div class="card-img-wrapper">
-              <img src="https://picsum.photos/id/30/600/400" alt="damsgaard" />
-            </div>
-            <div class="card-body">
-              <div class="highlight-label">INJURY UPDATE</div>
-              <div class="highlight-desc">
-                Damsgaard to be assessed ahead of Leeds clash
+
+              <!-- Upcoming Fixture -->
+              <div class="match-item upcoming">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Benfica</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/portugal_benfica.football-logos.cc.svg"
+                        alt="Benfica"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/saudi-arabia_al-nassr.football-logos.cc.svg"
+                        alt="Al-Nassr" /></span
+                    ><span class="team-name">Al-Nassr</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 06 Apr 15:00 - Estádio da Luz
+                </div>
               </div>
-              <a href="#" class="match-link">Read more</a>
+
+              <!-- Upcoming Fixture -->
+              <div class="match-item upcoming">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Aberdeen</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/scotland_aberdeen.football-logos.cc.svg"
+                        alt="Aberdeen"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/spain_barcelona.football-logos.cc.svg"
+                        alt="Barcelona" /></span
+                    ><span class="team-name">Barcelona</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 07 Apr 20:00 - Pittodrie
+                </div>
+              </div>
+
+              <!-- Upcoming Fixture -->
+              <div class="match-item upcoming">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Real Madrid</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/spain_real-madrid.football-logos.cc.svg"
+                        alt="Real Madrid"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/usa_inter-miami-cf.football-logos.cc.svg"
+                        alt="Inter Miami" /></span
+                    ><span class="team-name">Inter Miami</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 08 Apr 21:00 - Santiago
+                  Bernabéu
+                </div>
+              </div>
+
+              <!-- Upcoming Fixture -->
+              <div class="match-item upcoming">
+                <div class="match-teams">
+                  <div class="team-block left">
+                    <span class="team-name">Arsenal</span
+                    ><span class="team-logo"
+                      ><img
+                        src="./assets/logos/england_arsenal.football-logos.cc.svg"
+                        alt="Arsenal"
+                    /></span>
+                  </div>
+                  <span class="vs-badge">VS</span>
+                  <div class="team-block right">
+                    <span class="team-logo"
+                      ><img
+                        src="./assets/logos/england_chelsea.football-logos.cc.svg"
+                        alt="Chelsea" /></span
+                    ><span class="team-name">Chelsea</span>
+                  </div>
+                </div>
+                <div class="match-info">
+                  <i class="bi bi-calendar3"></i> 09 Apr 19:45 - Emirates
+                  Stadium
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="button-view-more" style="display: flex; justify-content: center; margin-top: 1rem">
-      <button style="
+
+    <section class="carousel-section">
+      <div class="content-container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="section-title">Watch 2025/26 match highlights</h2>
+          <div class="d-flex gap-2">
+            <button onclick="scrollCarousel('left')" class="nav-arrow">
+              <i class="fas fa-chevron-left"></i></button
+            ><button onclick="scrollCarousel('right')" class="nav-arrow">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div id="horizontalCarousel" class="horizontal-scroll d-flex pb-3">
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/1015/600/400"
+                  alt="highlight"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">HIGHLIGHTS</div>
+                <div class="highlight-desc">
+                  Two goal comeback earns a point! | Brentford 2-2 Wolves
+                </div>
+                <a href="#" class="match-link">Match highlights</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/102/600/400"
+                  alt="highlight"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">HIGHLIGHTS</div>
+                <div class="highlight-desc">
+                  Liverpool 1-1 Spurs | Szoboszlai Free-Kick stunner
+                </div>
+                <a href="#" class="match-link">Match highlights</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/104/600/400"
+                  alt="highlight"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">HIGHLIGHTS</div>
+                <div class="highlight-desc">
+                  City thrash Everton 4-0 | Haaland hat-trick masterclass
+                </div>
+                <a href="#" class="match-link">Match highlights</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/106/600/400"
+                  alt="highlight"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">HIGHLIGHTS</div>
+                <div class="highlight-desc">
+                  Arsenal 3-1 Newcastle | Saka & Odegaard shine
+                </div>
+                <a href="#" class="match-link">Match highlights</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/15/600/400"
+                  alt="highlight"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">HIGHLIGHTS</div>
+                <div class="highlight-desc">
+                  Chelsea 2-0 Man Utd | Palmer brace stuns Old Trafford
+                </div>
+                <a href="#" class="match-link">Match highlights</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/20/600/400"
+                  alt="club news"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">CLUB NEWS</div>
+                <div class="highlight-desc">
+                  Howe gives the latest on Tonali ahead of Tyne-Wear derby
+                </div>
+                <a href="#" class="match-link">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/22/600/400"
+                  alt="team news"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">TEAM NEWS</div>
+                <div class="highlight-desc">
+                  Carrick's team news for Bournemouth match
+                </div>
+                <a href="#" class="match-link">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img src="https://picsum.photos/id/26/600/400" alt="pep" />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">PRESSER</div>
+                <div class="highlight-desc">
+                  Pep discusses EFL Cup final against Arsenal
+                </div>
+                <a href="#" class="match-link">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img src="https://picsum.photos/id/28/600/400" alt="arteta" />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">EXCLUSIVE</div>
+                <div class="highlight-desc">
+                  Every word from Arteta's EFL Cup final presser
+                </div>
+                <a href="#" class="match-link">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="card-wrapper">
+            <div class="news-card">
+              <div class="card-img-wrapper">
+                <img
+                  src="https://picsum.photos/id/30/600/400"
+                  alt="damsgaard"
+                />
+              </div>
+              <div class="card-body">
+                <div class="highlight-label">INJURY UPDATE</div>
+                <div class="highlight-desc">
+                  Damsgaard to be assessed ahead of Leeds clash
+                </div>
+                <a href="#" class="match-link">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="button-view-more"
+        style="display: flex; justify-content: center; margin-top: 1rem"
+      >
+        <button
+          style="
             background-color: #333333;
             color: #ffffff;
             padding: 0.3rem 1.5rem;
             border-radius: 20px;
             border: none;
-          ">
-        View more
-      </button>
-    </div>
-  </section>
+          "
+        >
+          View more
+        </button>
+      </div>
+    </section>
 
+    <!-- POLL & STATS SECTION -->
+    <section class="poll-stats-section">
+      <div class="content-container">
+        <h2 class="poll-stats-heading">
+          Fernandes on Course to Break Premier League Assists Record
+        </h2>
 
+        <div class="ps-grid">
+          <!-- POLL CARD -->
+          <div class="poll-card">
+            <p class="poll-question">
+              How many assists will Fernandes finish the season with?
+            </p>
+            <p class="poll-sub">Choose one option below</p>
+            <div class="poll-options">
+              <button class="poll-btn" onclick="selectPoll(this)">
+                16 (current)
+              </button>
+              <button class="poll-btn" onclick="selectPoll(this)">17</button>
+              <button class="poll-btn" onclick="selectPoll(this)">18</button>
+              <button class="poll-btn" onclick="selectPoll(this)">19</button>
+              <button class="poll-btn" onclick="selectPoll(this)">
+                20 (equals record)
+              </button>
+              <button class="poll-btn" onclick="selectPoll(this)">
+                21+ (new record)
+              </button>
+            </div>
+          </div>
 
-  <!-- POLL & STATS SECTION -->
-  <section class="poll-stats-section">
-    <div class="content-container">
-      <h2 class="poll-stats-heading">Fernandes on Course to Break Premier League Assists Record</h2>
+          <!-- GOALS CARD -->
+          <div class="stats-card">
+            <div class="stats-header">
+              <span class="stats-title">
+                Goals
+                <svg viewBox="0 0 24 24">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </span>
+            </div>
+            <div class="player-list">
+              <div class="player-row">
+                <span class="player-rank">1</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_manchester-city.football-logos.cc.svg"
+                    alt="Haaland"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Erling Haaland</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #6cabdd"></span
+                    >Manchester City</span
+                  >
+                </div>
+                <span class="player-stat">22</span>
+              </div>
 
-      <div class="ps-grid">
+              <div class="player-row">
+                <span class="player-rank">2</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_chelsea.football-logos.cc.svg"
+                    alt="Thiago"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Igor Thiago</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #e30613"></span
+                    >Brentford</span
+                  >
+                </div>
+                <span class="player-stat">19</span>
+              </div>
 
-        <!-- POLL CARD -->
-        <div class="poll-card">
-          <p class="poll-question">How many assists will Fernandes finish the season with?</p>
-          <p class="poll-sub">Choose one option below</p>
-          <div class="poll-options">
-            <button class="poll-btn" onclick="selectPoll(this)">16 (current)</button>
-            <button class="poll-btn" onclick="selectPoll(this)">17</button>
-            <button class="poll-btn" onclick="selectPoll(this)">18</button>
-            <button class="poll-btn" onclick="selectPoll(this)">19</button>
-            <button class="poll-btn" onclick="selectPoll(this)">20 (equals record)</button>
-            <button class="poll-btn" onclick="selectPoll(this)">21+ (new record)</button>
+              <div class="player-row">
+                <span class="player-rank">3</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_manchester-city.football-logos.cc.svg"
+                    alt="Semenyo"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Antoine Semenyo</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #6cabdd"></span
+                    >Manchester City</span
+                  >
+                </div>
+                <span class="player-stat">15</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">4</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_chelsea.football-logos.cc.svg"
+                    alt="Pedro"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">João Pedro</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #034694"></span
+                    >Chelsea</span
+                  >
+                </div>
+                <span class="player-stat">14</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">5</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_liverpool.football-logos.cc.svg"
+                    alt="Ekitiké"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Hugo Ekitiké</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #c8102e"></span
+                    >Liverpool</span
+                  >
+                </div>
+                <span class="player-stat">11</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">5</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_arsenal.football-logos.cc.svg"
+                    alt="Gyökeres"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Viktor Gyökeres</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #ef0107"></span
+                    >Arsenal</span
+                  >
+                </div>
+                <span class="player-stat">11</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">7</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_chelsea.football-logos.cc.svg"
+                    alt="Welbeck"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Danny Welbeck</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #0057b8"></span
+                    >Brighton and Hove Albion</span
+                  >
+                </div>
+                <span class="player-stat">10</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">7</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_chelsea.football-logos.cc.svg"
+                    alt="Calvert-Lewin"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Dominic Calvert-Lewin</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #1d428a"></span
+                    >Leeds United</span
+                  >
+                </div>
+                <span class="player-stat">10</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">9</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_manchester-united.football-logos.cc.svg"
+                    alt="Sesko"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Benjamin Sesko</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #da291c"></span
+                    >Manchester United</span
+                  >
+                </div>
+                <span class="player-stat">9</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">9</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_manchester-united.football-logos.cc.svg"
+                    alt="Mbeumo"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Bryan Mbeumo</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #da291c"></span
+                    >Manchester United</span
+                  >
+                </div>
+                <span class="player-stat">9</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ASSIST CARD -->
+          <div class="stats-card">
+            <div class="stats-header">
+              <span class="stats-title">
+                Assists
+                <svg viewBox="0 0 24 24">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </span>
+            </div>
+            <div class="player-list">
+              <div class="player-row">
+                <span class="player-rank">1</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_manchester-united.football-logos.cc.svg"
+                    alt="Fernandes"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Bruno Fernandes</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #da291c"></span
+                    >Manchester United</span
+                  >
+                </div>
+                <span class="player-stat">16</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">2</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_manchester-city.football-logos.cc.svg"
+                    alt="KDB"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Kevin De Bruyne</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #6cabdd"></span
+                    >Manchester City</span
+                  >
+                </div>
+                <span class="player-stat">14</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">3</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_arsenal.football-logos.cc.svg"
+                    alt="Ødegaard"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Martin Ødegaard</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #ef0107"></span
+                    >Arsenal</span
+                  >
+                </div>
+                <span class="player-stat">12</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">4</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_liverpool.football-logos.cc.svg"
+                    alt="Salah"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Mohamed Salah</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #c8102e"></span
+                    >Liverpool</span
+                  >
+                </div>
+                <span class="player-stat">11</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">5</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_chelsea.football-logos.cc.svg"
+                    alt="Palmer"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Cole Palmer</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #034694"></span
+                    >Chelsea</span
+                  >
+                </div>
+                <span class="player-stat">10</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">5</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_arsenal.football-logos.cc.svg"
+                    alt="Saka"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Bukayo Saka</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #ef0107"></span
+                    >Arsenal</span
+                  >
+                </div>
+                <span class="player-stat">10</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">7</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_chelsea.football-logos.cc.svg"
+                    alt="Maddison"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">James Maddison</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #132257"></span
+                    >Tottenham</span
+                  >
+                </div>
+                <span class="player-stat">9</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">7</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_manchester-city.football-logos.cc.svg"
+                    alt="Foden"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Phil Foden</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #6cabdd"></span
+                    >Manchester City</span
+                  >
+                </div>
+                <span class="player-stat">9</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">9</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_liverpool.football-logos.cc.svg"
+                    alt="Núñez"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Darwin Núñez</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #c8102e"></span
+                    >Liverpool</span
+                  >
+                </div>
+                <span class="player-stat">8</span>
+              </div>
+
+              <div class="player-row">
+                <span class="player-rank">9</span>
+                <div class="player-avatar">
+                  <img
+                    src="./assets/logos/england_chelsea.football-logos.cc.svg"
+                    alt="Son"
+                  />
+                </div>
+                <div class="player-info">
+                  <span class="player-name">Son Heung-min</span>
+                  <span class="player-club"
+                    ><span class="club-dot" style="background: #132257"></span
+                    >Tottenham</span
+                  >
+                </div>
+                <span class="player-stat">8</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- POLL CARD (right) -->
+          <div class="poll-card">
+            <p class="poll-question">
+              Who will win the Golden Boot this season?
+            </p>
+            <p class="poll-sub">Cast your vote</p>
+            <div class="poll-options">
+              <button class="poll-btn" onclick="selectPoll(this)">
+                Erling Haaland
+              </button>
+              <button class="poll-btn" onclick="selectPoll(this)">
+                Mohamed Salah
+              </button>
+              <button class="poll-btn" onclick="selectPoll(this)">
+                Igor Thiago
+              </button>
+              <button class="poll-btn" onclick="selectPoll(this)">
+                Viktor Gyökeres
+              </button>
+              <button class="poll-btn" onclick="selectPoll(this)">Other</button>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- GOALS CARD -->
-        <div class="stats-card">
-          <div class="stats-header">
-            <span class="stats-title">
-              Goals
+    <!-- NEWS & LOGS SECTION -->
+    <section class="news-logs-section">
+      <div class="content-container">
+        <div class="section-wrapper">
+          <!-- NEWS -->
+          <div class="news-panel">
+            <div class="panel-header">
+              <h2 class="panel-title">Latest News</h2>
+              <a href="#" class="btn-view-all">View All News</a>
+            </div>
+
+            <div class="news-grid">
+              <!-- Featured -->
+              <div class="news-card featured">
+                <img
+                  class="card-img"
+                  src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80"
+                  alt="Sundowns vs Gallants"
+                />
+                <div class="card-body">
+                  <h3 class="card-title">
+                    Clinical Downs Grind Out Victory Over Gallants
+                  </h3>
+                  <span class="card-date">17 Mar 2026</span>
+                  <p class="card-excerpt">
+                    Mamelodi Sundowns were made to work hard for their latest
+                    Betway Premiership win this week after recording a
+                    hard-fought 3-1 victory over Marumo Gallants at Loftus
+                    Versfeld on Tuesday night.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="news-card">
+                <img
+                  class="card-img"
+                  src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80"
+                  alt="Chiefs winning"
+                />
+                <div class="card-body">
+                  <h3 class="card-title">Chiefs Back to Winning Ways</h3>
+                  <span class="card-date">15 Mar 2026</span>
+                  <p class="card-excerpt">
+                    Kaizer Chiefs returned to winning form in the Betway
+                    Premiership with a 1-0 triumph over Durban City at the FNB
+                    Stadium on Sunday …
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="news-card">
+                <img
+                  class="card-img"
+                  src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80"
+                  alt="Chiefs winning"
+                />
+                <div class="card-body">
+                  <h3 class="card-title">Chiefs Back to Winning Ways</h3>
+                  <span class="card-date">15 Mar 2026</span>
+                  <p class="card-excerpt">
+                    Kaizer Chiefs returned to winning form in the Betway
+                    Premiership with a 1-0 triumph over Durban City at the FNB
+                    Stadium on Sunday …
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="news-card">
+                <img
+                  class="card-img"
+                  src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=600&q=80"
+                  alt="Sekhukhune vs Polokwane"
+                />
+                <div class="card-body">
+                  <h3 class="card-title">
+                    Sekhukhune & Polokwane City Fire Blanks in Limpopo…
+                  </h3>
+                  <span class="card-date">14 Mar 2026</span>
+                  <p class="card-excerpt">
+                    There was no separation between Sekhukhune United and
+                    Polokwane City in the most recent instalment of the Limpopo
+                    Derby in the Bet…
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="news-card">
+                <img
+                  class="card-img"
+                  src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=600&q=80"
+                  alt="Sekhukhune vs Polokwane"
+                />
+                <div class="card-body">
+                  <h3 class="card-title">
+                    Sekhukhune & Polokwane City Fire Blanks in Limpopo…
+                  </h3>
+                  <span class="card-date">14 Mar 2026</span>
+                  <p class="card-excerpt">
+                    There was no separation between Sekhukhune United and
+                    Polokwane City in the most recent instalment of the Limpopo
+                    Derby in the Bet…
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="news-card">
+                <img
+                  class="card-img"
+                  src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&q=80"
+                  alt="Arrows vs Gallants"
+                />
+                <div class="card-body">
+                  <h3 class="card-title">Arrows Topple 10-Man Gallants</h3>
+                  <span class="card-date">14 Mar 2026</span>
+                  <p class="card-excerpt">
+                    Golden Arrows returned to winning ways in the Betway
+                    Premiership this weekend after recording a 2-1 victory over
+                    a 10-man Marumo G…
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 7 -->
+              <div class="news-card">
+                <img
+                  class="card-img"
+                  src="https://images.unsplash.com/photo-1487466365202-1afdb86c764e?w=600&q=80"
+                  alt="Magesi vs Chippa"
+                />
+                <div class="card-body">
+                  <h3 class="card-title">
+                    Courageous Magesi Strike Late to Deny Chippa
+                  </h3>
+                  <span class="card-date">14 Mar 2026</span>
+                  <p class="card-excerpt">
+                    Magesi FC showed character as they fought back to hold
+                    Chippa United to a 2-2 draw in the Betway Premiership match
+                    played at the S…
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LOGS -->
+          <div class="logs-panel">
+            <div class="panel-header">
+              <h2 class="panel-title">Logs</h2>
+              <a href="#" class="btn-view-all">View All Logs</a>
+            </div>
+
+            <div class="logs-tabs">
+              <button
+                class="tab-btn active"
+                onclick="switchTab(this, 'premier')"
+              >
+                Premier Division
+              </button>
+              <button class="tab-btn" onclick="switchTab(this, 'first')">
+                First Division
+              </button>
+            </div>
+
+            <!-- PREMIER DIVISION -->
+            <div id="premier" class="tab-content active logs-table-wrap">
+              <div class="logs-head">
+                <span>#</span>
+                <span>Club</span>
+                <span>P</span>
+                <span>W</span>
+                <span>PTS</span>
+              </div>
+
+              <div class="log-row">
+                <span class="log-pos">1</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/england_arsenal.football-logos.cc.svg"
+                    alt="Arsenal"
+                  />
+                  <span class="club-name">Arsenal</span>
+                </div>
+                <span class="log-stat">21</span><span class="log-stat">15</span
+                ><span class="log-pts">50</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">2</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/england_chelsea.football-logos.cc.svg"
+                    alt="Chelsea"
+                  />
+                  <span class="club-name">Chelsea</span>
+                </div>
+                <span class="log-stat">21</span><span class="log-stat">15</span
+                ><span class="log-pts">48</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">3</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/england_liverpool.football-logos.cc.svg"
+                    alt="Liverpool"
+                  />
+                  <span class="club-name">Liverpool</span>
+                </div>
+                <span class="log-stat">21</span><span class="log-stat">9</span
+                ><span class="log-pts">34</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">4</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/england_manchester-city.football-logos.cc.svg"
+                    alt="Man City"
+                  />
+                  <span class="club-name">Man City</span>
+                </div>
+                <span class="log-stat">21</span><span class="log-stat">10</span
+                ><span class="log-pts">34</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">5</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/england_manchester-united.football-logos.cc.svg"
+                    alt="Man Utd"
+                  />
+                  <span class="club-name">Man Utd</span>
+                </div>
+                <span class="log-stat">19</span><span class="log-stat">9</span
+                ><span class="log-pts">33</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">6</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/england_accrington.football-logos.cc.svg"
+                    alt="Accrington"
+                  />
+                  <span class="club-name">Accrington</span>
+                </div>
+                <span class="log-stat">21</span><span class="log-stat">9</span
+                ><span class="log-pts">32</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">7</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/germany_bayern-munchen.football-logos.cc.svg"
+                    alt="Bayern"
+                  />
+                  <span class="club-name">Bayern Munich</span>
+                </div>
+                <span class="log-stat">20</span><span class="log-stat">7</span
+                ><span class="log-pts">29</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">8</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/germany_borussia-dortmund.football-logos.cc.svg"
+                    alt="Dortmund"
+                  />
+                  <span class="club-name">B. Dortmund</span>
+                </div>
+                <span class="log-stat">21</span><span class="log-stat">7</span
+                ><span class="log-pts">25</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">9</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/spain_barcelona.football-logos.cc.svg"
+                    alt="Barcelona"
+                  />
+                  <span class="club-name">Barcelona</span>
+                </div>
+                <span class="log-stat">20</span><span class="log-stat">7</span
+                ><span class="log-pts">24</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">10</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/spain_real-madrid.football-logos.cc.svg"
+                    alt="Real Madrid"
+                  />
+                  <span class="club-name">Real Madrid</span>
+                </div>
+                <span class="log-stat">20</span><span class="log-stat">6</span
+                ><span class="log-pts">24</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">11</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/italy_juventus.football-logos.cc.svg"
+                    alt="Juventus"
+                  />
+                  <span class="club-name">Juventus</span>
+                </div>
+                <span class="log-stat">20</span><span class="log-stat">5</span
+                ><span class="log-pts">23</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">12</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/portugal_benfica.football-logos.cc.svg"
+                    alt="Benfica"
+                  />
+                  <span class="club-name">Benfica</span>
+                </div>
+                <span class="log-stat">21</span><span class="log-stat">5</span
+                ><span class="log-pts">23</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">13</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/brazil_flamengo.football-logos.cc.svg"
+                    alt="Flamengo"
+                  />
+                  <span class="club-name">Flamengo</span>
+                </div>
+                <span class="log-stat">21</span><span class="log-stat">4</span
+                ><span class="log-pts">20</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">14</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/saudi-arabia_al-nassr.football-logos.cc.svg"
+                    alt="Al-Nassr"
+                  />
+                  <span class="club-name">Al-Nassr</span>
+                </div>
+                <span class="log-stat">22</span><span class="log-stat">4</span
+                ><span class="log-pts">18</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">15</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/usa_inter-miami-cf.football-logos.cc.svg"
+                    alt="Inter Miami"
+                  />
+                  <span class="club-name">Inter Miami</span>
+                </div>
+                <span class="log-stat">21</span><span class="log-stat">5</span
+                ><span class="log-pts">18</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">16</span>
+                <div class="log-club">
+                  <img
+                    class="club-badge-img"
+                    src="./assets/logos/scotland_aberdeen.football-logos.cc.svg"
+                    alt="Aberdeen"
+                  />
+                  <span class="club-name">Aberdeen</span>
+                </div>
+                <span class="log-stat">20</span><span class="log-stat">2</span
+                ><span class="log-pts">14</span>
+              </div>
+            </div>
+
+            <!-- FIRST DIVISION -->
+            <div id="first" class="tab-content logs-table-wrap">
+              <div class="logs-head">
+                <span>#</span>
+                <span>Club</span>
+                <span>P</span>
+                <span>W</span>
+                <span>PTS</span>
+              </div>
+              <div class="log-row">
+                <span class="log-pos">1</span>
+                <div class="log-club">
+                  <div class="club-badge badge-sek">FC</div>
+                  <span class="club-name">First Division Data</span>
+                </div>
+                <span class="log-stat">—</span><span class="log-stat">—</span
+                ><span class="log-pts">—</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS SECTION -->
+    <section class="videos-section">
+      <div class="content-container">
+        <div class="section-header">
+          <h2 class="section-title">Videos</h2>
+          <a href="#" class="btn-view-all">View All Videos</a>
+        </div>
+
+        <div class="video-grid">
+          <!-- Card 1 -->
+          <div
+            class="video-card-new"
+            data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          >
+            <img
+              class="video-thumb"
+              src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
+              alt="Match highlights"
+            />
+            <div class="play-btn">
               <svg viewBox="0 0 24 24">
-                <path d="M9 18l6-6-6-6" />
+                <polygon points="5,3 19,12 5,21" />
               </svg>
-            </span>
+            </div>
+            <div class="video-caption">
+              <div class="video-title">
+                Match in 5 Highlights | Sporting v Bodo/Glimt | UEFA Champions
+                League …
+              </div>
+              <div class="video-date">17 Mar 2026</div>
+            </div>
           </div>
-          <div class="player-list">
 
-            <div class="player-row">
-              <span class="player-rank">1</span>
-              <div class="player-avatar"><img src="./assets/logos/england_manchester-city.football-logos.cc.svg"
-                  alt="Haaland"></div>
-              <div class="player-info">
-                <span class="player-name">Erling Haaland</span>
-                <span class="player-club"><span class="club-dot" style="background:#6cabdd;"></span>Manchester
-                  City</span>
-              </div>
-              <span class="player-stat">22</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">2</span>
-              <div class="player-avatar"><img src="./assets/logos/england_chelsea.football-logos.cc.svg" alt="Thiago">
-              </div>
-              <div class="player-info">
-                <span class="player-name">Igor Thiago</span>
-                <span class="player-club"><span class="club-dot" style="background:#e30613;"></span>Brentford</span>
-              </div>
-              <span class="player-stat">19</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">3</span>
-              <div class="player-avatar"><img src="./assets/logos/england_manchester-city.football-logos.cc.svg"
-                  alt="Semenyo"></div>
-              <div class="player-info">
-                <span class="player-name">Antoine Semenyo</span>
-                <span class="player-club"><span class="club-dot" style="background:#6cabdd;"></span>Manchester
-                  City</span>
-              </div>
-              <span class="player-stat">15</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">4</span>
-              <div class="player-avatar"><img src="./assets/logos/england_chelsea.football-logos.cc.svg" alt="Pedro">
-              </div>
-              <div class="player-info">
-                <span class="player-name">João Pedro</span>
-                <span class="player-club"><span class="club-dot" style="background:#034694;"></span>Chelsea</span>
-              </div>
-              <span class="player-stat">14</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">5</span>
-              <div class="player-avatar"><img src="./assets/logos/england_liverpool.football-logos.cc.svg"
-                  alt="Ekitiké"></div>
-              <div class="player-info">
-                <span class="player-name">Hugo Ekitiké</span>
-                <span class="player-club"><span class="club-dot" style="background:#c8102e;"></span>Liverpool</span>
-              </div>
-              <span class="player-stat">11</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">5</span>
-              <div class="player-avatar"><img src="./assets/logos/england_arsenal.football-logos.cc.svg" alt="Gyökeres">
-              </div>
-              <div class="player-info">
-                <span class="player-name">Viktor Gyökeres</span>
-                <span class="player-club"><span class="club-dot" style="background:#ef0107;"></span>Arsenal</span>
-              </div>
-              <span class="player-stat">11</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">7</span>
-              <div class="player-avatar"><img src="./assets/logos/england_chelsea.football-logos.cc.svg" alt="Welbeck">
-              </div>
-              <div class="player-info">
-                <span class="player-name">Danny Welbeck</span>
-                <span class="player-club"><span class="club-dot" style="background:#0057b8;"></span>Brighton and Hove
-                  Albion</span>
-              </div>
-              <span class="player-stat">10</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">7</span>
-              <div class="player-avatar"><img src="./assets/logos/england_chelsea.football-logos.cc.svg"
-                  alt="Calvert-Lewin"></div>
-              <div class="player-info">
-                <span class="player-name">Dominic Calvert-Lewin</span>
-                <span class="player-club"><span class="club-dot" style="background:#1d428a;"></span>Leeds United</span>
-              </div>
-              <span class="player-stat">10</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">9</span>
-              <div class="player-avatar"><img src="./assets/logos/england_manchester-united.football-logos.cc.svg"
-                  alt="Sesko"></div>
-              <div class="player-info">
-                <span class="player-name">Benjamin Sesko</span>
-                <span class="player-club"><span class="club-dot" style="background:#da291c;"></span>Manchester
-                  United</span>
-              </div>
-              <span class="player-stat">9</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">9</span>
-              <div class="player-avatar"><img src="./assets/logos/england_manchester-united.football-logos.cc.svg"
-                  alt="Mbeumo"></div>
-              <div class="player-info">
-                <span class="player-name">Bryan Mbeumo</span>
-                <span class="player-club"><span class="club-dot" style="background:#da291c;"></span>Manchester
-                  United</span>
-              </div>
-              <span class="player-stat">9</span>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ASSIST CARD -->
-        <div class="stats-card">
-          <div class="stats-header">
-            <span class="stats-title">
-              Assists
+          <!-- Card 2 -->
+          <div
+            class="video-card-new"
+            data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+          >
+            <img
+              class="video-thumb"
+              src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
+              alt="Match highlights"
+            />
+            <div class="play-btn">
               <svg viewBox="0 0 24 24">
-                <path d="M9 18l6-6-6-6" />
+                <polygon points="5,3 19,12 5,21" />
               </svg>
-            </span>
-          </div>
-          <div class="player-list">
-
-            <div class="player-row">
-              <span class="player-rank">1</span>
-              <div class="player-avatar"><img src="./assets/logos/england_manchester-united.football-logos.cc.svg"
-                  alt="Fernandes"></div>
-              <div class="player-info">
-                <span class="player-name">Bruno Fernandes</span>
-                <span class="player-club"><span class="club-dot" style="background:#da291c;"></span>Manchester
-                  United</span>
-              </div>
-              <span class="player-stat">16</span>
             </div>
-
-            <div class="player-row">
-              <span class="player-rank">2</span>
-              <div class="player-avatar"><img src="./assets/logos/england_manchester-city.football-logos.cc.svg"
-                  alt="KDB"></div>
-              <div class="player-info">
-                <span class="player-name">Kevin De Bruyne</span>
-                <span class="player-club"><span class="club-dot" style="background:#6cabdd;"></span>Manchester
-                  City</span>
+            <div class="video-caption">
+              <div class="video-title">
+                Mamelodi Sundowns v Marumo Gallants | Extended Highlights |
+                Betway Pre…
               </div>
-              <span class="player-stat">14</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">3</span>
-              <div class="player-avatar"><img src="./assets/logos/england_arsenal.football-logos.cc.svg" alt="Ødegaard">
-              </div>
-              <div class="player-info">
-                <span class="player-name">Martin Ødegaard</span>
-                <span class="player-club"><span class="club-dot" style="background:#ef0107;"></span>Arsenal</span>
-              </div>
-              <span class="player-stat">12</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">4</span>
-              <div class="player-avatar"><img src="./assets/logos/england_liverpool.football-logos.cc.svg" alt="Salah">
-              </div>
-              <div class="player-info">
-                <span class="player-name">Mohamed Salah</span>
-                <span class="player-club"><span class="club-dot" style="background:#c8102e;"></span>Liverpool</span>
-              </div>
-              <span class="player-stat">11</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">5</span>
-              <div class="player-avatar"><img src="./assets/logos/england_chelsea.football-logos.cc.svg" alt="Palmer">
-              </div>
-              <div class="player-info">
-                <span class="player-name">Cole Palmer</span>
-                <span class="player-club"><span class="club-dot" style="background:#034694;"></span>Chelsea</span>
-              </div>
-              <span class="player-stat">10</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">5</span>
-              <div class="player-avatar"><img src="./assets/logos/england_arsenal.football-logos.cc.svg" alt="Saka">
-              </div>
-              <div class="player-info">
-                <span class="player-name">Bukayo Saka</span>
-                <span class="player-club"><span class="club-dot" style="background:#ef0107;"></span>Arsenal</span>
-              </div>
-              <span class="player-stat">10</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">7</span>
-              <div class="player-avatar"><img src="./assets/logos/england_chelsea.football-logos.cc.svg" alt="Maddison">
-              </div>
-              <div class="player-info">
-                <span class="player-name">James Maddison</span>
-                <span class="player-club"><span class="club-dot" style="background:#132257;"></span>Tottenham</span>
-              </div>
-              <span class="player-stat">9</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">7</span>
-              <div class="player-avatar"><img src="./assets/logos/england_manchester-city.football-logos.cc.svg"
-                  alt="Foden"></div>
-              <div class="player-info">
-                <span class="player-name">Phil Foden</span>
-                <span class="player-club"><span class="club-dot" style="background:#6cabdd;"></span>Manchester
-                  City</span>
-              </div>
-              <span class="player-stat">9</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">9</span>
-              <div class="player-avatar"><img src="./assets/logos/england_liverpool.football-logos.cc.svg" alt="Núñez">
-              </div>
-              <div class="player-info">
-                <span class="player-name">Darwin Núñez</span>
-                <span class="player-club"><span class="club-dot" style="background:#c8102e;"></span>Liverpool</span>
-              </div>
-              <span class="player-stat">8</span>
-            </div>
-
-            <div class="player-row">
-              <span class="player-rank">9</span>
-              <div class="player-avatar"><img src="./assets/logos/england_chelsea.football-logos.cc.svg" alt="Son">
-              </div>
-              <div class="player-info">
-                <span class="player-name">Son Heung-min</span>
-                <span class="player-club"><span class="club-dot" style="background:#132257;"></span>Tottenham</span>
-              </div>
-              <span class="player-stat">8</span>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- POLL CARD (right) -->
-        <div class="poll-card">
-          <p class="poll-question">Who will win the Golden Boot this season?</p>
-          <p class="poll-sub">Cast your vote</p>
-          <div class="poll-options">
-            <button class="poll-btn" onclick="selectPoll(this)">Erling Haaland</button>
-            <button class="poll-btn" onclick="selectPoll(this)">Mohamed Salah</button>
-            <button class="poll-btn" onclick="selectPoll(this)">Igor Thiago</button>
-            <button class="poll-btn" onclick="selectPoll(this)">Viktor Gyökeres</button>
-            <button class="poll-btn" onclick="selectPoll(this)">Other</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- NEWS & LOGS SECTION -->
-  <section class="news-logs-section">
-    <div class="content-container">
-      <div class="section-wrapper">
-        <!-- NEWS -->
-        <div class="news-panel">
-          <div class="panel-header">
-            <h2 class="panel-title">Latest News</h2>
-            <a href="#" class="btn-view-all">View All News</a>
-          </div>
-
-          <div class="news-grid">
-            <!-- Featured -->
-            <div class="news-card featured">
-              <img class="card-img" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80"
-                alt="Sundowns vs Gallants" />
-              <div class="card-body">
-                <h3 class="card-title">
-                  Clinical Downs Grind Out Victory Over Gallants
-                </h3>
-                <span class="card-date">17 Mar 2026</span>
-                <p class="card-excerpt">
-                  Mamelodi Sundowns were made to work hard for their latest
-                  Betway Premiership win this week after recording a hard-fought
-                  3-1 victory over Marumo Gallants at Loftus Versfeld on Tuesday
-                  night.
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="news-card">
-              <img class="card-img" src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80"
-                alt="Chiefs winning" />
-              <div class="card-body">
-                <h3 class="card-title">Chiefs Back to Winning Ways</h3>
-                <span class="card-date">15 Mar 2026</span>
-                <p class="card-excerpt">
-                  Kaizer Chiefs returned to winning form in the Betway Premiership
-                  with a 1-0 triumph over Durban City at the FNB Stadium on Sunday
-                  …
-                </p>
-              </div>
-            </div>
-
-
-            <!-- Card 3 -->
-            <div class="news-card">
-              <img class="card-img" src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80"
-                alt="Chiefs winning" />
-              <div class="card-body">
-                <h3 class="card-title">Chiefs Back to Winning Ways</h3>
-                <span class="card-date">15 Mar 2026</span>
-                <p class="card-excerpt">
-                  Kaizer Chiefs returned to winning form in the Betway Premiership
-                  with a 1-0 triumph over Durban City at the FNB Stadium on Sunday
-                  …
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="news-card">
-              <img class="card-img" src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=600&q=80"
-                alt="Sekhukhune vs Polokwane" />
-              <div class="card-body">
-                <h3 class="card-title">
-                  Sekhukhune & Polokwane City Fire Blanks in Limpopo…
-                </h3>
-                <span class="card-date">14 Mar 2026</span>
-                <p class="card-excerpt">
-                  There was no separation between Sekhukhune United and Polokwane
-                  City in the most recent instalment of the Limpopo Derby in the
-                  Bet…
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="news-card">
-              <img class="card-img" src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=600&q=80"
-                alt="Sekhukhune vs Polokwane" />
-              <div class="card-body">
-                <h3 class="card-title">
-                  Sekhukhune & Polokwane City Fire Blanks in Limpopo…
-                </h3>
-                <span class="card-date">14 Mar 2026</span>
-                <p class="card-excerpt">
-                  There was no separation between Sekhukhune United and Polokwane
-                  City in the most recent instalment of the Limpopo Derby in the
-                  Bet…
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="news-card">
-              <img class="card-img" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&q=80"
-                alt="Arrows vs Gallants" />
-              <div class="card-body">
-                <h3 class="card-title">Arrows Topple 10-Man Gallants</h3>
-                <span class="card-date">14 Mar 2026</span>
-                <p class="card-excerpt">
-                  Golden Arrows returned to winning ways in the Betway Premiership
-                  this weekend after recording a 2-1 victory over a 10-man Marumo
-                  G…
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 7 -->
-            <div class="news-card">
-              <img class="card-img" src="https://images.unsplash.com/photo-1487466365202-1afdb86c764e?w=600&q=80"
-                alt="Magesi vs Chippa" />
-              <div class="card-body">
-                <h3 class="card-title">
-                  Courageous Magesi Strike Late to Deny Chippa
-                </h3>
-                <span class="card-date">14 Mar 2026</span>
-                <p class="card-excerpt">
-                  Magesi FC showed character as they fought back to hold Chippa
-                  United to a 2-2 draw in the Betway Premiership match played at
-                  the S…
-                </p>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-        <!-- LOGS -->
-        <div class="logs-panel">
-          <div class="panel-header">
-            <h2 class="panel-title">Logs</h2>
-            <a href="#" class="btn-view-all">View All Logs</a>
-          </div>
-
-          <div class="logs-tabs">
-            <button class="tab-btn active" onclick="switchTab(this, 'premier')">
-              Premier Division
-            </button>
-            <button class="tab-btn" onclick="switchTab(this, 'first')">
-              First Division
-            </button>
-          </div>
-
-          <!-- PREMIER DIVISION -->
-          <div id="premier" class="tab-content active logs-table-wrap">
-            <div class="logs-head">
-              <span>#</span>
-              <span>Club</span>
-              <span>P</span>
-              <span>W</span>
-              <span>PTS</span>
-            </div>
-
-            <div class="log-row">
-              <span class="log-pos">1</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/england_arsenal.football-logos.cc.svg" alt="Arsenal">
-                <span class="club-name">Arsenal</span>
-              </div>
-              <span class="log-stat">21</span><span class="log-stat">15</span><span class="log-pts">50</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">2</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/england_chelsea.football-logos.cc.svg" alt="Chelsea">
-                <span class="club-name">Chelsea</span>
-              </div>
-              <span class="log-stat">21</span><span class="log-stat">15</span><span class="log-pts">48</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">3</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/england_liverpool.football-logos.cc.svg"
-                  alt="Liverpool">
-                <span class="club-name">Liverpool</span>
-              </div>
-              <span class="log-stat">21</span><span class="log-stat">9</span><span class="log-pts">34</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">4</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/england_manchester-city.football-logos.cc.svg"
-                  alt="Man City">
-                <span class="club-name">Man City</span>
-              </div>
-              <span class="log-stat">21</span><span class="log-stat">10</span><span class="log-pts">34</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">5</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/england_manchester-united.football-logos.cc.svg"
-                  alt="Man Utd">
-                <span class="club-name">Man Utd</span>
-              </div>
-              <span class="log-stat">19</span><span class="log-stat">9</span><span class="log-pts">33</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">6</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/england_accrington.football-logos.cc.svg"
-                  alt="Accrington">
-                <span class="club-name">Accrington</span>
-              </div>
-              <span class="log-stat">21</span><span class="log-stat">9</span><span class="log-pts">32</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">7</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/germany_bayern-munchen.football-logos.cc.svg"
-                  alt="Bayern">
-                <span class="club-name">Bayern Munich</span>
-              </div>
-              <span class="log-stat">20</span><span class="log-stat">7</span><span class="log-pts">29</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">8</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/germany_borussia-dortmund.football-logos.cc.svg"
-                  alt="Dortmund">
-                <span class="club-name">B. Dortmund</span>
-              </div>
-              <span class="log-stat">21</span><span class="log-stat">7</span><span class="log-pts">25</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">9</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/spain_barcelona.football-logos.cc.svg" alt="Barcelona">
-                <span class="club-name">Barcelona</span>
-              </div>
-              <span class="log-stat">20</span><span class="log-stat">7</span><span class="log-pts">24</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">10</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/spain_real-madrid.football-logos.cc.svg"
-                  alt="Real Madrid">
-                <span class="club-name">Real Madrid</span>
-              </div>
-              <span class="log-stat">20</span><span class="log-stat">6</span><span class="log-pts">24</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">11</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/italy_juventus.football-logos.cc.svg" alt="Juventus">
-                <span class="club-name">Juventus</span>
-              </div>
-              <span class="log-stat">20</span><span class="log-stat">5</span><span class="log-pts">23</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">12</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/portugal_benfica.football-logos.cc.svg" alt="Benfica">
-                <span class="club-name">Benfica</span>
-              </div>
-              <span class="log-stat">21</span><span class="log-stat">5</span><span class="log-pts">23</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">13</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/brazil_flamengo.football-logos.cc.svg" alt="Flamengo">
-                <span class="club-name">Flamengo</span>
-              </div>
-              <span class="log-stat">21</span><span class="log-stat">4</span><span class="log-pts">20</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">14</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/saudi-arabia_al-nassr.football-logos.cc.svg"
-                  alt="Al-Nassr">
-                <span class="club-name">Al-Nassr</span>
-              </div>
-              <span class="log-stat">22</span><span class="log-stat">4</span><span class="log-pts">18</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">15</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/usa_inter-miami-cf.football-logos.cc.svg"
-                  alt="Inter Miami">
-                <span class="club-name">Inter Miami</span>
-              </div>
-              <span class="log-stat">21</span><span class="log-stat">5</span><span class="log-pts">18</span>
-            </div>
-            <div class="log-row">
-              <span class="log-pos">16</span>
-              <div class="log-club">
-                <img class="club-badge-img" src="./assets/logos/scotland_aberdeen.football-logos.cc.svg" alt="Aberdeen">
-                <span class="club-name">Aberdeen</span>
-              </div>
-              <span class="log-stat">20</span><span class="log-stat">2</span><span class="log-pts">14</span>
+              <div class="video-date">17 Mar 2026</div>
             </div>
           </div>
 
-          <!-- FIRST DIVISION -->
-          <div id="first" class="tab-content logs-table-wrap">
-            <div class="logs-head">
-              <span>#</span>
-              <span>Club</span>
-              <span>P</span>
-              <span>W</span>
-              <span>PTS</span>
+          <!-- Card 3 -->
+          <div
+            class="video-card-new"
+            data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+          >
+            <img
+              class="video-thumb"
+              src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
+              alt="Match highlights"
+            />
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
             </div>
-            <div class="log-row">
-              <span class="log-pos">1</span>
-              <div class="log-club">
-                <div class="club-badge badge-sek">FC</div>
-                <span class="club-name">First Division Data</span>
+            <div class="video-caption">
+              <div class="video-title">
+                Kaizer Chiefs v Durban City | Extended Highlights | Betway
+                Premiership
               </div>
-              <span class="log-stat">—</span><span class="log-stat">—</span><span class="log-pts">—</span>
+              <div class="video-date">15 Mar 2026</div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="video-card-new"
+            data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+          >
+            <img
+              class="video-thumb"
+              src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
+              alt="Match highlights"
+            />
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <div class="video-caption">
+              <div class="video-title">
+                Kaizer Chiefs v Durban City | Extended Highlights | Betway
+                Premiership
+              </div>
+              <div class="video-date">15 Mar 2026</div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="video-card-new"
+            data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoy.mp4"
+          >
+            <img
+              class="video-thumb"
+              src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
+              alt="Match highlights"
+            />
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <div class="video-caption">
+              <div class="video-title">
+                AmaZulu v Richards Bay | Extended Highlights | Betway
+                Premiership
+              </div>
+              <div class="video-date">14 Mar 2026</div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="video-card-new"
+            data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+          >
+            <img
+              class="video-thumb"
+              src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
+              alt="Match highlights"
+            />
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <div class="video-caption">
+              <div class="video-title">
+                Orlando Pirates v Siwelele FC | Extended Highlights | Betway
+                Premiersh…
+              </div>
+              <div class="video-date">14 Mar 2026</div>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div
+            class="video-card-new"
+            data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+          >
+            <img
+              class="video-thumb"
+              src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
+              alt="Match highlights"
+            />
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <div class="video-caption">
+              <div class="video-title">
+                Stellenbosch v TS Galaxy | Extended Highlights | Betway
+                Premiership…
+              </div>
+              <div class="video-date">13 Mar 2026</div>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div
+            class="video-card-new"
+            data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          >
+            <img
+              class="video-thumb"
+              src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
+              alt="Match highlights"
+            />
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
+            </div>
+            <div class="video-caption">
+              <div class="video-title">
+                Kaizer Chiefs v Durban City | Extended Highlights | Betway
+                Premiership
+              </div>
+              <div class="video-date">15 Mar 2026</div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- VIDEOS SECTION -->
-  <section class="videos-section">
-    <div class="content-container">
-      <div class="section-header">
-        <h2 class="section-title">Videos</h2>
-        <a href="#" class="btn-view-all">View All Videos</a>
-      </div>
-
-      <div class="video-grid">
-
-        <!-- Card 1 -->
-        <div class="video-card-new"
-          data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
-          <img class="video-thumb" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
-            alt="Match highlights" />
-          <div class="play-btn"><svg viewBox="0 0 24 24">
-              <polygon points="5,3 19,12 5,21" />
-            </svg></div>
-          <div class="video-caption">
-            <div class="video-title">Match in 5 Highlights | Sporting v Bodo/Glimt | UEFA Champions League …</div>
-            <div class="video-date">17 Mar 2026</div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="video-card-new"
-          data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4">
-          <img class="video-thumb" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
-            alt="Match highlights" />
-          <div class="play-btn"><svg viewBox="0 0 24 24">
-              <polygon points="5,3 19,12 5,21" />
-            </svg></div>
-          <div class="video-caption">
-            <div class="video-title">Mamelodi Sundowns v Marumo Gallants | Extended Highlights | Betway Pre…</div>
-            <div class="video-date">17 Mar 2026</div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="video-card-new"
-          data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4">
-          <img class="video-thumb" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
-            alt="Match highlights" />
-          <div class="play-btn"><svg viewBox="0 0 24 24">
-              <polygon points="5,3 19,12 5,21" />
-            </svg></div>
-          <div class="video-caption">
-            <div class="video-title">Kaizer Chiefs v Durban City | Extended Highlights | Betway Premiership</div>
-            <div class="video-date">15 Mar 2026</div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="video-card-new"
-          data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4">
-          <img class="video-thumb" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
-            alt="Match highlights" />
-          <div class="play-btn"><svg viewBox="0 0 24 24">
-              <polygon points="5,3 19,12 5,21" />
-            </svg></div>
-          <div class="video-caption">
-            <div class="video-title">Kaizer Chiefs v Durban City | Extended Highlights | Betway Premiership</div>
-            <div class="video-date">15 Mar 2026</div>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="video-card-new"
-          data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoy.mp4">
-          <img class="video-thumb" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
-            alt="Match highlights" />
-          <div class="play-btn"><svg viewBox="0 0 24 24">
-              <polygon points="5,3 19,12 5,21" />
-            </svg></div>
-          <div class="video-caption">
-            <div class="video-title">AmaZulu v Richards Bay | Extended Highlights | Betway Premiership</div>
-            <div class="video-date">14 Mar 2026</div>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="video-card-new"
-          data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4">
-          <img class="video-thumb" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
-            alt="Match highlights" />
-          <div class="play-btn"><svg viewBox="0 0 24 24">
-              <polygon points="5,3 19,12 5,21" />
-            </svg></div>
-          <div class="video-caption">
-            <div class="video-title">Orlando Pirates v Siwelele FC | Extended Highlights | Betway Premiersh…</div>
-            <div class="video-date">14 Mar 2026</div>
-          </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="video-card-new"
-          data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4">
-          <img class="video-thumb" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
-            alt="Match highlights" />
-          <div class="play-btn"><svg viewBox="0 0 24 24">
-              <polygon points="5,3 19,12 5,21" />
-            </svg></div>
-          <div class="video-caption">
-            <div class="video-title">Stellenbosch v TS Galaxy | Extended Highlights | Betway Premiership…</div>
-            <div class="video-date">13 Mar 2026</div>
-          </div>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="video-card-new"
-          data-video="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
-          <img class="video-thumb" src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80"
-            alt="Match highlights" />
-          <div class="play-btn"><svg viewBox="0 0 24 24">
-              <polygon points="5,3 19,12 5,21" />
-            </svg></div>
-          <div class="video-caption">
-            <div class="video-title">Kaizer Chiefs v Durban City | Extended Highlights | Betway Premiership</div>
-            <div class="video-date">15 Mar 2026</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SPONSORS SECTION -->
-  <div class="sponsors-section-new">
-
-    <!-- Row 1: 7 sponsors -->
-    <div class="sponsors-row row-1">
-
-      <div class="sponsor-item-new">
-        <div class="sponsor-logo">
-          <svg width="52" height="46" viewBox="0 0 52 46" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="38" font-family="'Barlow',sans-serif" font-weight="900" font-size="42" fill="#111">P</text>
-          </svg>
-        </div>
-        <span class="sponsor-label">Official Ball</span>
-      </div>
-
-      <div class="sponsor-item-new">
-        <div class="sponsor-logo">
-          <span class="logo-microsoft">
-            <span class="ms-grid"><span></span><span></span><span></span><span></span></span>
-            Microsoft
-          </span>
-        </div>
-        <span class="sponsor-label">Innovation Partner</span>
-      </div>
-
-      <div class="sponsor-item-new">
-        <div class="sponsor-logo">
-          <span class="logo-sanmiguel">San<em>Miguel</em></span>
-        </div>
-        <span class="sponsor-label">Official Beer</span>
-      </div>
-
-      <div class="sponsor-item-new">
-        <div class="sponsor-logo">
-          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="19" cy="19" r="18" stroke="#111" stroke-width="1.5" fill="none" />
-            <path d="M19 6 L22 14 L30 14 L24 19 L26 27 L19 22 L12 27 L14 19 L8 14 L16 14 Z" fill="#111" />
-          </svg>
-        </div>
-        <span class="sponsor-label">Official Sponsor</span>
-      </div>
-
-      <div class="sponsor-item-new">
-        <div class="sponsor-logo">
-          <span class="logo-bkt">BKT</span>
-        </div>
-        <span class="sponsor-label">Official Tire</span>
-      </div>
-
-      <div class="sponsor-item-new">
-        <div class="sponsor-logo">
-          <span class="logo-moeve">moeve</span>
-        </div>
-        <span class="sponsor-label">Official Partner</span>
-      </div>
-
-      <div class="sponsor-item-new">
-        <div class="sponsor-logo">
-          <svg width="80" height="36" viewBox="0 0 80 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" y="0" width="80" height="36" rx="2" fill="#111" />
-            <text x="8" y="22" font-family="'Barlow Condensed',sans-serif" font-weight="800" font-size="13" fill="#fff"
-              letter-spacing="1">LEGENDS</text>
-            <text x="8" y="32" font-family="'Barlow',sans-serif" font-size="7" fill="#aaa">The Home of Football</text>
-          </svg>
-        </div>
-        <span class="sponsor-label">Legends Experience</span>
-      </div>
-
-    </div>
-
-    <!-- Row 2: 3 Global Licensees -->
-    <div class="sponsors-row row-2">
-
-      <div class="sponsor-item-new">
-        <div class="sponsor-logo">
-          <span class="logo-fanatics">
-            <svg width="14" height="14" viewBox="0 0 14 14">
-              <path d="M2 7 L5 10 L12 3" stroke="#111" stroke-width="2.2" fill="none" stroke-linecap="round" />
+    <!-- SPONSORS SECTION -->
+    <div class="sponsors-section-new">
+      <!-- Row 1: 7 sponsors -->
+      <div class="sponsors-row row-1">
+        <div class="sponsor-item-new">
+          <div class="sponsor-logo">
+            <svg
+              width="52"
+              height="46"
+              viewBox="0 0 52 46"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <text
+                x="0"
+                y="38"
+                font-family="'Barlow',sans-serif"
+                font-weight="900"
+                font-size="42"
+                fill="#111"
+              >
+                P
+              </text>
             </svg>
-            Fanatics
-          </span>
+          </div>
+          <span class="sponsor-label">Official Ball</span>
         </div>
-        <span class="sponsor-label">Global Licensee</span>
+
+        <div class="sponsor-item-new">
+          <div class="sponsor-logo">
+            <span class="logo-microsoft">
+              <span class="ms-grid"
+                ><span></span><span></span><span></span><span></span
+              ></span>
+              Microsoft
+            </span>
+          </div>
+          <span class="sponsor-label">Innovation Partner</span>
+        </div>
+
+        <div class="sponsor-item-new">
+          <div class="sponsor-logo">
+            <span class="logo-sanmiguel">San<em>Miguel</em></span>
+          </div>
+          <span class="sponsor-label">Official Beer</span>
+        </div>
+
+        <div class="sponsor-item-new">
+          <div class="sponsor-logo">
+            <svg
+              width="38"
+              height="38"
+              viewBox="0 0 38 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="19"
+                cy="19"
+                r="18"
+                stroke="#111"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path
+                d="M19 6 L22 14 L30 14 L24 19 L26 27 L19 22 L12 27 L14 19 L8 14 L16 14 Z"
+                fill="#111"
+              />
+            </svg>
+          </div>
+          <span class="sponsor-label">Official Sponsor</span>
+        </div>
+
+        <div class="sponsor-item-new">
+          <div class="sponsor-logo">
+            <span class="logo-bkt">BKT</span>
+          </div>
+          <span class="sponsor-label">Official Tire</span>
+        </div>
+
+        <div class="sponsor-item-new">
+          <div class="sponsor-logo">
+            <span class="logo-moeve">moeve</span>
+          </div>
+          <span class="sponsor-label">Official Partner</span>
+        </div>
+
+        <div class="sponsor-item-new">
+          <div class="sponsor-logo">
+            <svg
+              width="80"
+              height="36"
+              viewBox="0 0 80 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="0" y="0" width="80" height="36" rx="2" fill="#111" />
+              <text
+                x="8"
+                y="22"
+                font-family="'Barlow Condensed',sans-serif"
+                font-weight="800"
+                font-size="13"
+                fill="#fff"
+                letter-spacing="1"
+              >
+                LEGENDS
+              </text>
+              <text
+                x="8"
+                y="32"
+                font-family="'Barlow',sans-serif"
+                font-size="7"
+                fill="#aaa"
+              >
+                The Home of Football
+              </text>
+            </svg>
+          </div>
+          <span class="sponsor-label">Legends Experience</span>
+        </div>
       </div>
 
-      <div class="sponsor-item-new">
-        <div class="sponsor-logo">
-          <span class="logo-avery">
-            <span class="triangle"></span>
-            AVERY<br>DENNISON
-          </span>
+      <!-- Row 2: 3 Global Licensees -->
+      <div class="sponsors-row row-2">
+        <div class="sponsor-item-new">
+          <div class="sponsor-logo">
+            <span class="logo-fanatics">
+              <svg width="14" height="14" viewBox="0 0 14 14">
+                <path
+                  d="M2 7 L5 10 L12 3"
+                  stroke="#111"
+                  stroke-width="2.2"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Fanatics
+            </span>
+          </div>
+          <span class="sponsor-label">Global Licensee</span>
         </div>
-        <span class="sponsor-label">Global Licensee</span>
-      </div>
 
-      <div class="sponsor-item-new">
-        <div class="sponsor-logo">
-          <span class="logo-sorare">
-            <span class="circle-icon"></span>
-            sorare
-          </span>
+        <div class="sponsor-item-new">
+          <div class="sponsor-logo">
+            <span class="logo-avery">
+              <span class="triangle"></span>
+              AVERY<br />DENNISON
+            </span>
+          </div>
+          <span class="sponsor-label">Global Licensee</span>
         </div>
-        <span class="sponsor-label">Global Licensee</span>
-      </div>
 
+        <div class="sponsor-item-new">
+          <div class="sponsor-logo">
+            <span class="logo-sorare">
+              <span class="circle-icon"></span>
+              sorare
+            </span>
+          </div>
+          <span class="sponsor-label">Global Licensee</span>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- FOOTER BAR -->
-  <div class="footer-bar-wrap">
-    <div class="footer-bar">
+    <!-- FOOTER BAR -->
+    <div class="footer-bar-wrap">
+      <div class="footer-bar">
+        <a href="#" class="footer-brand">National League</a>
 
-      <a href="#" class="footer-brand">National League</a>
+        <div class="social-links">
+          <a href="#" class="fb" aria-label="Facebook">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24">
+              <rect
+                x="2"
+                y="2"
+                width="20"
+                height="20"
+                rx="5"
+                ry="5"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+              />
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+            </svg>
+          </a>
+          <a href="#" aria-label="X">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.733-8.835L2.25 2.25h6.984l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="li" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="vk" aria-label="VK">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21.547 7h-3.29a.743.743 0 0 0-.655.392s-1.312 2.416-1.734 3.23C14.734 12.813 14 12.126 14 11.11V7.603A1.104 1.104 0 0 0 12.896 6.5h-2.474a1.982 1.982 0 0 0-1.75.813s1.255-.204 1.255 1.49c0 .42.022 1.626.04 2.64C9.97 11.454 8.77 9.24 7.84 7.392A.742.742 0 0 0 7.18 7H3.8a.55.55 0 0 0-.55.64s1.914 4.48 4.08 6.716c1.811 1.869 4.16 1.644 4.16 1.644h1.328a.638.638 0 0 0 .64-.623v-.534s-.022-1.94 1.022-2.227c1.017-.283 2.316 1.879 3.696 2.706A2.35 2.35 0 0 0 19.526 16h2.957a.55.55 0 0 0 .55-.685s-.77-2.065-3.43-4.504c-.814-.745-.948-.99.046-2.01C20.535 7.655 22.072 6 21.547 7z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="yt" aria-label="YouTube">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+              />
+              <polygon
+                points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                fill="#fff"
+              />
+            </svg>
+          </a>
+        </div>
 
-      <div class="social-links">
-        <a href="#" class="fb" aria-label="Facebook">
+        <a href="#" class="btn-get-into">
           <svg viewBox="0 0 24 24">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
           </svg>
-        </a>
-        <a href="#" aria-label="Instagram">
-          <svg viewBox="0 0 24 24">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2" fill="none" />
-            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none" />
-            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
-          </svg>
-        </a>
-        <a href="#" aria-label="X">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.733-8.835L2.25 2.25h6.984l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-          </svg>
-        </a>
-        <a href="#" class="li" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-            <rect x="2" y="9" width="4" height="12" />
-            <circle cx="4" cy="4" r="2" />
-          </svg>
-        </a>
-        <a href="#" aria-label="TikTok">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z" />
-          </svg>
-        </a>
-        <a href="#" class="vk" aria-label="VK">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M21.547 7h-3.29a.743.743 0 0 0-.655.392s-1.312 2.416-1.734 3.23C14.734 12.813 14 12.126 14 11.11V7.603A1.104 1.104 0 0 0 12.896 6.5h-2.474a1.982 1.982 0 0 0-1.75.813s1.255-.204 1.255 1.49c0 .42.022 1.626.04 2.64C9.97 11.454 8.77 9.24 7.84 7.392A.742.742 0 0 0 7.18 7H3.8a.55.55 0 0 0-.55.64s1.914 4.48 4.08 6.716c1.811 1.869 4.16 1.644 4.16 1.644h1.328a.638.638 0 0 0 .64-.623v-.534s-.022-1.94 1.022-2.227c1.017-.283 2.316 1.879 3.696 2.706A2.35 2.35 0 0 0 19.526 16h2.957a.55.55 0 0 0 .55-.685s-.77-2.065-3.43-4.504c-.814-.745-.948-.99.046-2.01C20.535 7.655 22.072 6 21.547 7z" />
-          </svg>
-        </a>
-        <a href="#" class="yt" aria-label="YouTube">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
-            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff" />
-          </svg>
+          Get Into Miliga
         </a>
       </div>
-
-      <a href="#" class="btn-get-into">
-        <svg viewBox="0 0 24 24">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-          <circle cx="12" cy="7" r="4" />
-        </svg>
-        Get Into Miliga
-      </a>
-
     </div>
-  </div>
 
-  <!-- BOTTOM STRIP -->
-  <div class="bottom-strip">
-    <p>Lead Partner <strong>EA SPORTS FC</strong> &bull; Official Creativity Partner <strong>Adobe</strong> &bull;
-      Official Bank <strong>Barclays</strong></p>
-  </div>
+    <!-- BOTTOM STRIP -->
+    <div class="bottom-strip">
+      <p>
+        Lead Partner <strong>EA SPORTS FC</strong> &bull; Official Creativity
+        Partner <strong>Adobe</strong> &bull; Official Bank
+        <strong>Barclays</strong>
+      </p>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
