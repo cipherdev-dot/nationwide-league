@@ -189,7 +189,7 @@
   color: var(--charcoal);
   font-family: "Inter", sans-serif;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 11px;
   cursor: pointer;
   width: calc(100% - 28px);
@@ -802,7 +802,7 @@
 }
 .formation-val {
   font-weight: 800;
-  color: var(--charcoal);
+  color: #fff;
   margin-left: 4px;
 }
 .header-divider {
