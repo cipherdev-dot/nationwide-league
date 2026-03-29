@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // end of the js code for the navbar
 
 // ===== DYNAMIC MOBILE MENU (FIXED) =====
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const mainVideo = document.getElementById("mainVideo");
   const featureItems = document.querySelectorAll(
     ".middle-features-card .feature-item",
@@ -87,14 +87,20 @@ document.addEventListener("DOMContentLoaded", function() {
     function addLinksFrom(container, parent) {
       if (!container) return;
       const links = container.querySelectorAll("a");
-      links.forEach(link => {
+      links.forEach((link) => {
         const clone = link.cloneNode(true);
         parent.appendChild(clone);
       });
     }
 
-    addLinksFrom(document.querySelector(".top-bar-content"), mobileLinksContainer);
-    addLinksFrom(document.querySelector(".nav-links-wrapper"), mobileLinksContainer);
+    addLinksFrom(
+      document.querySelector(".top-bar-content"),
+      mobileLinksContainer,
+    );
+    addLinksFrom(
+      document.querySelector(".nav-links-wrapper"),
+      mobileLinksContainer,
+    );
   }
 
   if (burger && mobileNav) {
@@ -155,7 +161,8 @@ const resultsData = [
       },
       {
         home: "Manchester City",
-        homeLogo: "./assets/logos/england_manchester-city.football-logos.cc.svg",
+        homeLogo:
+          "./assets/logos/england_manchester-city.football-logos.cc.svg",
         away: "Liverpool",
         awayLogo: "./assets/logos/england_liverpool.football-logos.cc.svg",
         score: "3 - 2",
@@ -171,7 +178,8 @@ const resultsData = [
         home: "Tottenham Hotspur",
         homeLogo: "./assets/logos/portugal_benfica.football-logos.cc.svg",
         away: "Manchester United",
-        awayLogo: "./assets/logos/england_manchester-united.football-logos.cc.svg",
+        awayLogo:
+          "./assets/logos/england_manchester-united.football-logos.cc.svg",
         score: "1 - 1",
         venue: "Tottenham Hotspur Stadium",
         status: "FT",
@@ -205,7 +213,8 @@ const liveData = [
       },
       {
         home: "Manchester City",
-        homeLogo: "./assets/logos/england_manchester-city.football-logos.cc.svg",
+        homeLogo:
+          "./assets/logos/england_manchester-city.football-logos.cc.svg",
         away: "Liverpool",
         awayLogo: "./assets/logos/england_liverpool.football-logos.cc.svg",
         score: "2 - 2",
@@ -235,25 +244,27 @@ function createMatchItem(match, isLive = false, dateGroup = "") {
   let leftTeamBlock = `
     <div class="team-block left">
       <span class="team-name">${match.home}</span>
-      <span class="team-logo"><img src="${match.homeLogo}" alt="${match.home}" onerror="this.src='https://placehold.co/28x28/ccc/333?text=${match.home.substring(0,2).toUpperCase()}'"></span>
+      <span class="team-logo"><img src="${match.homeLogo}" alt="${match.home}" onerror="this.src='https://placehold.co/28x28/ccc/333?text=${match.home.substring(0, 2).toUpperCase()}'"></span>
     </div>
   `;
   let rightTeamBlock = `
     <div class="team-block right">
-      <span class="team-logo"><img src="${match.awayLogo}" alt="${match.away}" onerror="this.src='https://placehold.co/28x28/ccc/333?text=${match.away.substring(0,2).toUpperCase()}'"></span>
+      <span class="team-logo"><img src="${match.awayLogo}" alt="${match.away}" onerror="this.src='https://placehold.co/28x28/ccc/333?text=${match.away.substring(0, 2).toUpperCase()}'"></span>
       <span class="team-name">${match.away}</span>
     </div>
   `;
 
   let centerBadge = isLive
-    ? `<span class="score-badge" style="background:#c8102e; color:white;">${match.score}</span>`
+    ? `<span class="score-badge" style="background-color:#e8f5e9; color:black;">${match.score}</span>`
     : `<span class="score-badge">${match.score}</span>`;
 
   let matchInfo = isLive
-    ? `<div class="match-info"><span class="live-badge" style="background:#c8102e; color:white;">LIVE ${match.minute}</span> ${match.venue}</div>`
+    ? `<div class="match-info"><span class="live-badge" style="background-color:green; color:white;">LIVE ${match.minute}</span> ${match.venue}</div>`
     : `<div class="match-info"><span class="result-label">${match.status || "FT"}</span> ${match.venue}</div>`;
 
-  let dateHeader = dateGroup ? `<div class="match-date-header">${dateGroup}</div>` : "";
+  let dateHeader = dateGroup
+    ? `<div class="match-date-header">${dateGroup}</div>`
+    : "";
 
   return `
     ${dateHeader}
