@@ -313,3 +313,163 @@ td.col-pts {
 .mobile-col-tabs {
   display: none;
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .mobile-col-tabs {
+    display: flex;
+    background: #1a1a1a;
+    padding: 12px 16px;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .mobile-col-tab {
+    padding: 8px 16px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .mobile-col-tab.active {
+    background: var(--pure-white);
+    color: #111111;
+  }
+
+  .mobile-col-tab:hover:not(.active) {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Table responsive styles */
+  .table-wrapper {
+    padding: 24px 12px 16px;
+  }
+
+  /* Default view - Short view (shows basic info) */
+  body.view-short table {
+    min-width: auto;
+  }
+
+  body.view-short .col-pl,
+  body.view-short .col-w,
+  body.view-short .col-d,
+  body.view-short .col-l,
+  body.view-short .col-gf,
+  body.view-short .col-ga,
+  body.view-short .col-gd,
+  body.view-short .col-form,
+  body.view-short .col-next {
+    display: none;
+  }
+
+  body.view-short th.col-pl,
+  body.view-short th.col-w,
+  body.view-short th.col-d,
+  body.view-short th.col-l,
+  body.view-short th.col-gf,
+  body.view-short th.col-ga,
+  body.view-short th.col-gd,
+  body.view-short th.col-form,
+  body.view-short th.col-next {
+    display: none;
+  }
+
+  /* Full view (shows all stats) */
+  body.view-full table {
+    min-width: auto;
+    font-size: 0.85rem;
+  }
+
+  body.view-full th,
+  body.view-full td {
+    padding: 8px 4px;
+    font-size: 0.8rem;
+  }
+
+  body.view-full .team-name {
+    font-size: 0.85rem;
+  }
+
+  /* Form view (shows form and next match) */
+  body.view-form table {
+    min-width: auto;
+  }
+
+  body.view-form .col-pl,
+  body.view-form .col-w,
+  body.view-form .col-d,
+  body.view-form .col-l,
+  body.view-form .col-gf,
+  body.view-form .col-ga,
+  body.view-form .col-gd,
+  body.view-form .col-pts {
+    display: none;
+  }
+
+  body.view-form th.col-pl,
+  body.view-form th.col-w,
+  body.view-form th.col-d,
+  body.view-form th.col-l,
+  body.view-form th.col-gf,
+  body.view-form th.col-ga,
+  body.view-form th.col-gd,
+  body.view-form th.col-pts {
+    display: none;
+  }
+
+  body.view-form .col-team {
+    width: 60%;
+  }
+
+  body.view-form .col-form {
+    width: 20%;
+  }
+
+  body.view-form .col-next {
+    width: 20%;
+  }
+
+  /* Adjust form bubbles for mobile */
+  .form-bubble {
+    width: 22px;
+    height: 22px;
+    font-size: 0.6rem;
+  }
+
+  /* Make team cells more compact */
+  .team-cell {
+    gap: 8px;
+  }
+
+  .team-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .team-name {
+    font-size: 0.85rem;
+  }
+
+  /* Adjust positioning indicators */
+  .pos-cell {
+    gap: 6px;
+  }
+
+  .pos-indicator {
+    width: 2px;
+    height: 30px;
+  }
+
+  .pos-num {
+    font-size: 0.85rem;
+  }
+}
