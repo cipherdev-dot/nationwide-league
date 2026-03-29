@@ -1,6 +1,13 @@
 /* ========== TABLES PAGE ========== */
 /* Styles specific to tables.html */
 
+/* ----- HEADER SPACER ----- */
+.header-spacer {
+  height: 106px;
+  width: 100%;
+  display: block;
+}
+
 /* ----- FULL‑WIDTH SECTIONS (no max‑width, no centering) ----- */
 .header-banner {
   background: linear-gradient(135deg, #525252 0%, #3d3d3d 55%, #f5f5f5 100%);
