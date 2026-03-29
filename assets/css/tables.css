@@ -1,0 +1,313 @@
+/* ========== TABLES PAGE ========== */
+/* Styles specific to tables.html */
+
+/* ----- FULL‑WIDTH SECTIONS (no max‑width, no centering) ----- */
+.header-banner {
+  background: linear-gradient(135deg, #525252 0%, #3d3d3d 55%, #f5f5f5 100%);
+  padding: 28px 32px 36px;
+  position: relative;
+  overflow: hidden;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+.header-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.header-banner h1 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.tabs-bar {
+  background: #1a1a1a;
+  padding: 0 32px;
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+.tab {
+  padding: 14px 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+.tab.active {
+  color: var(--pure-white);
+  border-bottom-color: var(--pure-white);
+}
+.tab:hover:not(.active) {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.filters-bar {
+  background: #1a1a1a;
+  padding: 16px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: var(--pure-white);
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 7px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+  white-space: nowrap;
+}
+.filter-btn:hover {
+  border-color: var(--pure-white);
+  background: rgba(255, 255, 255, 0.08);
+}
+.filter-btn svg {
+  opacity: 0.7;
+}
+.filter-icon-btn {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--pure-white);
+  transition: border-color 0.2s;
+}
+.filter-icon-btn:hover {
+  border-color: var(--pure-white);
+}
+.reset-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 7px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.reset-btn:hover {
+  border-color: var(--pure-white);
+  color: var(--pure-white);
+}
+
+/* ----- CENTRED CONTENT (table) ----- */
+.table-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 70px 24px 32px;
+  background-color: var(--off-white);
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+thead th {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #999999;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 10px 8px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+thead th.col-team {
+  text-align: left;
+  padding-left: 0;
+}
+thead th.col-pos {
+  text-align: left;
+  width: 52px;
+}
+thead th.col-form {
+  text-align: right;
+  padding-left: 0;
+  padding-right: 0;
+  white-space: nowrap;
+}
+td.col-form {
+  padding-left: 0;
+  padding-right: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+.form-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+}
+tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: background 0.15s;
+  cursor: pointer;
+}
+tbody tr:hover {
+  background: rgba(0, 0, 0, 0.025);
+}
+td {
+  padding: 12px 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: center;
+  color: #111111;
+}
+td.col-pos {
+  text-align: left;
+  padding-left: 0;
+}
+td.col-team {
+  text-align: left;
+}
+td.col-pts {
+  font-weight: 800;
+  font-size: 1rem;
+  color: #525252;
+}
+.pos-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pos-indicator {
+  width: 3px;
+  height: 36px;
+  border-radius: 2px;
+  background: transparent;
+  flex-shrink: 0;
+}
+.pos-indicator.blue {
+  background: #3b82f6;
+}
+.pos-indicator.orange {
+  background: #f97316;
+}
+.pos-num {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #111111;
+  min-width: 18px;
+}
+.pos-change {
+  font-size: 0.7rem;
+  color: #aaaaaa;
+}
+.team-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.team-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.team-logo-placeholder {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #dddddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #555555;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.team-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #111111;
+  white-space: nowrap;
+}
+.stat-muted {
+  color: #777777;
+}
+.form-bubble {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.form-bubble.W {
+  background: #16a34a;
+  color: #fff;
+}
+.form-bubble.L {
+  background: #dc2626;
+  color: #fff;
+}
+.form-bubble.D {
+  background: #4b5563;
+  color: #fff;
+}
+.next-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+.next-logo-placeholder {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #dddddd;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #888888;
+}
+.mobile-col-tabs {
+  display: none;
+}

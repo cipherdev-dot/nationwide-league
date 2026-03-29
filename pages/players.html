@@ -1,196 +1,638 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Players | NationWide League 2025/26</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Players | National League</title>
-
-  <!-- Fonts + Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@400;700;800&family=Bebas+Neue&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <script src="../assets/js/main.js" defer></script>
-</head>
-
-<body>
-  <div class="top-bar">
-    <div class="top-bar-content">
-      <a href="#">Shop</a><a href="#">About Us</a><a href="#">Football & Community</a><a href="#">Events</a><a
-        href="#">Media</a><a href="#">Mornings Live</a>
-    </div>
-  </div>
-  <header class="main-header">
-    <div class="header-content">
-      <a href="../index.html" class="logo">NATIONAL LEAGUE</a>
-      <div class="nav-links-wrapper">
-        <a href="../index.html">Home</a><a href="fixtures.html">Fixtures</a><a href="tables.html">Tables</a><a href="news-logs.html">News</a><a
-          href="clubs.html">Clubs</a><a href="players.html">Players</a><a href="statistics.html">Statistics</a>
-      </div>
-      <div class="search-signin">
-        <i class="fas fa-search"></i><a href="#" class="signin-btn">Sign in</a>
-      </div>
-      <button class="burger-menu" id="burgerBtn" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-    <div class="mobile-nav" id="mobileNav">
-      <div class="mobile-nav-links">
-        <a href="#">Shop</a><a href="#">About Us</a><a href="#">Football & Community</a><a href="#">Events</a><a
-          href="#">Media</a><a href="#">Mornings Live</a><a href="../index.html">Home</a><a href="fixtures.html">Fixtures</a><a href="tables.html">Tables</a><a
-          href="news-logs.html">News</a><a href="clubs.html">Clubs</a><a href="players.html">Players</a><a href="statistics.html">Statistics</a>
+    <!-- Fonts + Icons + Bootstrap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Montserrat:wght@400;700;800&family=Bebas+Neue&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="/nationwide-league/assets/css/style.css" />
+    <link rel="stylesheet" href="/nationwide-league/assets/css/players.css" />
+    <script src="/nationwide-league/assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="#">Shop</a><a href="#">About Us</a
+        ><a href="#">Football & Community</a><a href="#">Events</a
+        ><a href="#">Media</a><a href="#">Mornings Live</a>
       </div>
     </div>
-  </header>
+    <header class="main-header">
+      <div class="header-content">
+        <a href="../index.html" class="logo">NATIONAL LEAGUE</a>
+        <div class="nav-links-wrapper">
+          <a href="../index.html">Home</a><a href="fixtures.html">Fixtures</a
+          ><a href="tables.html">Tables</a><a href="news-logs.html">News</a
+          ><a href="clubs.html">Clubs</a><a href="players.html">Players</a>
+        </div>
+        <div class="search-signin">
+          <i class="fas fa-search"></i
+          ><a href="#" class="signin-btn">Sign in</a>
+        </div>
+        <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-links">
+          <a href="#">Shop</a><a href="#">About Us</a
+          ><a href="#">Football & Community</a><a href="#">Events</a
+          ><a href="#">Media</a><a href="#">Mornings Live</a
+          ><a href="../index.html">Home</a><a href="fixtures.html">Fixtures</a
+          ><a href="tables.html">Tables</a><a href="news-logs.html">News</a
+          ><a href="clubs.html">Clubs</a><a href="players.html">Players</a>
+        </div>
+      </div>
+    </header>
+    <div class="header-spacer"></div>
 
-  <div class="content-container hero-white-bg">
     <div class="page-header">
       <h1>Players</h1>
-      <p class="page-subtitle">Explore player profiles and statistics</p>
     </div>
 
-    <div class="players-content">
-      <div class="row">
-        <!-- Top Scorers -->
-        <div class="col-lg-6 mb-4">
-          <div class="stats-card" style="background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <div class="stats-header" style="margin-bottom: 1rem;">
-              <span class="stats-title" style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 1.25rem;">
-                Top Scorers
-                <svg viewBox="0 0 24 24" style="width: 16px; height: 16px;"><path d="M9 18l6-6-6-6"/></svg>
-              </span>
-            </div>
-            <div class="player-list">
+    <div class="filter-bar">
+      <!-- Filter icon button (like fixtures) -->
+      <button class="filter-icon-btn" aria-label="Filter options">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="8" y1="12" x2="16" y2="12" />
+          <line x1="11" y1="18" x2="13" y2="18" />
+        </svg>
+      </button>
 
-              <div class="player-row">
-                <span class="player-rank">1</span>
-                <div class="player-avatar"><img src="../assets/logos/england_manchester-city.football-logos.cc.svg" alt="Haaland"></div>
-                <div class="player-info">
-                  <span class="player-name">Erling Haaland</span>
-                  <span class="player-club"><span class="club-dot" style="background:#6cabdd;"></span>Manchester City</span>
-                </div>
-                <span class="player-stat">22</span>
-              </div>
+      <!-- Search input -->
+      <input type="text" placeholder="Search player..." class="player-search" />
 
-              <div class="player-row">
-                <span class="player-rank">2</span>
-                <div class="player-avatar"><img src="../assets/logos/england_chelsea.football-logos.cc.svg" alt="Thiago"></div>
-                <div class="player-info">
-                  <span class="player-name">Igor Thiago</span>
-                  <span class="player-club"><span class="club-dot" style="background:#e30613;"></span>Brentford</span>
-                </div>
-                <span class="player-stat">19</span>
-              </div>
+      <!-- Season select -->
+      <select>
+        <option>2025/26 Season</option>
+      </select>
 
-              <div class="player-row">
-                <span class="player-rank">3</span>
-                <div class="player-avatar"><img src="../assets/logos/england_manchester-city.football-logos.cc.svg" alt="Semenyo"></div>
-                <div class="player-info">
-                  <span class="player-name">Antoine Semenyo</span>
-                  <span class="player-club"><span class="club-dot" style="background:#6cabdd;"></span>Manchester City</span>
-                </div>
-                <span class="player-stat">15</span>
-              </div>
+      <!-- Club select -->
+      <select>
+        <option>All Clubs</option>
+        <option>Arsenal</option>
+        <option>Chelsea</option>
+        <option>Liverpool</option>
+        <option>Manchester City</option>
+        <option>Manchester United</option>
+      </select>
 
-              <div class="player-row">
-                <span class="player-rank">4</span>
-                <div class="player-avatar"><img src="../assets/logos/england_chelsea.football-logos.cc.svg" alt="Pedro"></div>
-                <div class="player-info">
-                  <span class="player-name">João Pedro</span>
-                  <span class="player-club"><span class="club-dot" style="background:#034694;"></span>Chelsea</span>
-                </div>
-                <span class="player-stat">14</span>
-              </div>
+      <!-- Position select -->
+      <select>
+        <option>All Positions</option>
+        <option>Forward</option>
+        <option>Midfielder</option>
+        <option>Defender</option>
+        <option>Goalkeeper</option>
+      </select>
 
-              <div class="player-row">
-                <span class="player-rank">5</span>
-                <div class="player-avatar"><img src="../assets/logos/england_liverpool.football-logos.cc.svg" alt="Ekitiké"></div>
-                <div class="player-info">
-                  <span class="player-name">Hugo Ekitiké</span>
-                  <span class="player-club"><span class="club-dot" style="background:#c8102e;"></span>Liverpool</span>
-                </div>
-                <span class="player-stat">11</span>
-              </div>
+      <!-- Reset button -->
+      <button id="resetBtn" class="reset-btn">
+        Reset
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="1 4 1 10 7 10" />
+          <path d="M3.51 15a9 9 0 1 0 .49-3.36" />
+        </svg>
+      </button>
+    </div>
 
-            </div>
+    <div class="players-list">
+      <div class="list-header">
+        <span>Player</span>
+        <span>Club</span>
+        <span>Position</span>
+        <span>Nationality</span>
+        <span></span>
+      </div>
+
+      <!-- ========== PLAYER ROWS ========== -->
+
+      <!-- 1. Brenden Aaronson -->
+      <div class="player-row">
+        <div class="player-info">
+          <div class="avatar">
+            <img
+              class="avatar-img"
+              src="/nationwide-league/assets/img/field-player-1.png"
+              alt="Brenden Aaronson avatar"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?background=3e2a5e&color=fff&size=52&name=BA'
+              "
+            />
           </div>
+          Brenden Aaronson
         </div>
+        <div class="club">
+          <span class="club-logo-holder"
+            ><img
+              class="club-logo-img"
+              src="/nationwide-league/assets/logos/australia_adelaide-united.football-logos.cc.svg"
+              alt="Leeds United logo"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://placehold.co/28x28/eee/37003c?text=LU';
+              "
+          /></span>
+          <span class="club-name">Leeds United</span>
+        </div>
+        <div class="position">Midfielder</div>
+        <div class="nationality">
+          <img
+            class="flag"
+            src="https://flagcdn.com/us.svg"
+            alt="US flag"
+            width="20"
+            height="15"
+          />
+          <span>United States</span>
+        </div>
+        <button class="follow-btn">Follow</button>
+      </div>
 
-        <!-- Top Assists -->
-        <div class="col-lg-6 mb-4">
-          <div class="stats-card" style="background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            <div class="stats-header" style="margin-bottom: 1rem;">
-              <span class="stats-title" style="font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 1.25rem;">
-                Top Assists
-                <svg viewBox="0 0 24 24" style="width: 16px; height: 16px;"><path d="M9 18l6-6-6-6"/></svg>
-              </span>
-            </div>
-            <div class="player-list">
-
-              <div class="player-row">
-                <span class="player-rank">1</span>
-                <div class="player-avatar"><img src="../assets/logos/england_manchester-united.football-logos.cc.svg" alt="Fernandes"></div>
-                <div class="player-info">
-                  <span class="player-name">Bruno Fernandes</span>
-                  <span class="player-club"><span class="club-dot" style="background:#da291c;"></span>Manchester United</span>
-                </div>
-                <span class="player-stat">16</span>
-              </div>
-
-              <div class="player-row">
-                <span class="player-rank">2</span>
-                <div class="player-avatar"><img src="../assets/logos/england_manchester-city.football-logos.cc.svg" alt="KDB"></div>
-                <div class="player-info">
-                  <span class="player-name">Kevin De Bruyne</span>
-                  <span class="player-club"><span class="club-dot" style="background:#6cabdd;"></span>Manchester City</span>
-                </div>
-                <span class="player-stat">14</span>
-              </div>
-
-              <div class="player-row">
-                <span class="player-rank">3</span>
-                <div class="player-avatar"><img src="../assets/logos/england_arsenal.football-logos.cc.svg" alt="Ødegaard"></div>
-                <div class="player-info">
-                  <span class="player-name">Martin Ødegaard</span>
-                  <span class="player-club"><span class="club-dot" style="background:#ef0107;"></span>Arsenal</span>
-                </div>
-                <span class="player-stat">12</span>
-              </div>
-
-              <div class="player-row">
-                <span class="player-rank">4</span>
-                <div class="player-avatar"><img src="../assets/logos/england_liverpool.football-logos.cc.svg" alt="Salah"></div>
-                <div class="player-info">
-                  <span class="player-name">Mohamed Salah</span>
-                  <span class="player-club"><span class="club-dot" style="background:#c8102e;"></span>Liverpool</span>
-                </div>
-                <span class="player-stat">11</span>
-              </div>
-
-              <div class="player-row">
-                <span class="player-rank">5</span>
-                <div class="player-avatar"><img src="../assets/logos/england_chelsea.football-logos.cc.svg" alt="Palmer"></div>
-                <div class="player-info">
-                  <span class="player-name">Cole Palmer</span>
-                  <span class="player-club"><span class="club-dot" style="background:#034694;"></span>Chelsea</span>
-                </div>
-                <span class="player-stat">10</span>
-              </div>
-
-            </div>
+      <!-- 2. Jerome Abbey -->
+      <div class="player-row">
+        <div class="player-info">
+          <div class="avatar">
+            <img
+              class="avatar-img"
+              src="/nationwide-league/assets/img/field-player-2.png"
+              alt="Jerome Abbey avatar"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?background=3e2a5e&color=fff&size=52&name=JA'
+              "
+            />
           </div>
+          Jerome Abbey
         </div>
+        <div class="club">
+          <span class="club-logo-holder"
+            ><img
+              class="club-logo-img"
+              src="/nationwide-league/assets/logos/brazil_flamengo.football-logos.cc.svg"
+              alt="Wolves logo"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://placehold.co/28x28/FF7F2A/white?text=WOL';
+              "
+          /></span>
+          <span class="club-name">Wolverhampton Wanderers</span>
+        </div>
+        <div class="position">Midfielder</div>
+        <div class="nationality">
+          <img
+            class="flag"
+            src="https://flagcdn.com/gb.svg"
+            alt="England flag"
+            width="20"
+            height="15"
+          />
+          <span>England</span>
+        </div>
+        <button class="follow-btn">Follow</button>
+      </div>
+
+      <!-- 3. George Abbott -->
+      <div class="player-row">
+        <div class="player-info">
+          <div class="avatar">
+            <img
+              class="avatar-img"
+              src="/nationwide-league/assets/img/field-player-3.png"
+              alt="George Abbott avatar"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?background=3e2a5e&color=fff&size=52&name=GA'
+              "
+            />
+          </div>
+          George Abbott
+        </div>
+        <div class="club">
+          <span class="club-logo-holder"
+            ><img
+              class="club-logo-img"
+              src="/nationwide-league/assets/logos/cyprus_ael.football-logos.cc.svg"
+              alt="Spurs logo"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://placehold.co/28x28/132257/white?text=TOT';
+              "
+          /></span>
+          <span class="club-name">Tottenham Hotspur</span>
+        </div>
+        <div class="position">Midfielder</div>
+        <div class="nationality">
+          <img
+            class="flag"
+            src="https://flagcdn.com/gb.svg"
+            alt="England flag"
+            width="20"
+            height="15"
+          />
+          <span>England</span>
+        </div>
+        <button class="follow-btn">Follow</button>
+      </div>
+
+      <!-- 4. Zach Abbott -->
+      <div class="player-row">
+        <div class="player-info">
+          <div class="avatar">
+            <img
+              class="avatar-img"
+              src="/nationwide-league/assets/img/recap-image-2.png"
+              alt="Zach Abbott avatar"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?background=3e2a5e&color=fff&size=52&name=ZA'
+              "
+            />
+          </div>
+          Zach Abbott
+        </div>
+        <div class="club">
+          <span class="club-logo-holder"
+            ><img
+              class="club-logo-img"
+              src="/nationwide-league/assets/logos/cyprus_aez.football-logos.cc.svg"
+              alt="Nottingham Forest logo"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://placehold.co/28x28/DD0000/white?text=NFFC';
+              "
+          /></span>
+          <span class="club-name">Nottingham Forest</span>
+        </div>
+        <div class="position">Defender</div>
+        <div class="nationality">
+          <img
+            class="flag"
+            src="https://flagcdn.com/gb.svg"
+            alt="England flag"
+            width="20"
+            height="15"
+          />
+          <span>England</span>
+        </div>
+        <button class="follow-btn">Follow</button>
+      </div>
+
+      <!-- 5. Salis Abdul Samed -->
+      <div class="player-row">
+        <div class="player-info">
+          <div class="avatar">
+            <img
+              class="avatar-img"
+              src="/nationwide-league/assets/img/recap-image.png"
+              alt="Salis Samed avatar"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?background=3e2a5e&color=fff&size=52&name=SAS'
+              "
+            />
+          </div>
+          Salis Abdul Samed
+        </div>
+        <div class="club">
+          <span class="club-logo-holder"
+            ><img
+              class="club-logo-img"
+              src="/nationwide-league/assets/logos/england_accrington.football-logos.cc.svg"
+              alt="Sunderland logo"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://placehold.co/28x28/EB172B/white?text=SUN';
+              "
+          /></span>
+          <span class="club-name">Sunderland</span>
+        </div>
+        <div class="position">Midfielder</div>
+        <div class="nationality">
+          <img
+            class="flag"
+            src="https://flagcdn.com/gh.svg"
+            alt="Ghana flag"
+            width="20"
+            height="15"
+          />
+          <span>Ghana</span>
+        </div>
+        <button class="follow-btn">Follow</button>
+      </div>
+
+      <!-- 6. Ahmed Abdullahi -->
+      <div class="player-row">
+        <div class="player-info">
+          <div class="avatar">
+            <img
+              class="avatar-img"
+              src="/nationwide-league/assets/img/field-player-2.png"
+              alt="Ahmed Abdullahi avatar"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?background=3e2a5e&color=fff&size=52&name=AA'
+              "
+            />
+          </div>
+          Ahmed Abdullahi
+        </div>
+        <div class="club">
+          <span class="club-logo-holder"
+            ><img
+              class="club-logo-img"
+              src="/nationwide-league/assets/logos/england_arsenal.football-logos.cc.svg"
+              alt="Sunderland logo"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://placehold.co/28x28/EB172B/white?text=SUN';
+              "
+          /></span>
+          <span class="club-name">Sunderland</span>
+        </div>
+        <div class="position">Forward</div>
+        <div class="nationality">
+          <img
+            class="flag"
+            src="https://flagcdn.com/ng.svg"
+            alt="Nigeria flag"
+            width="20"
+            height="15"
+          />
+          <span>Nigeria</span>
+        </div>
+        <button class="follow-btn">Follow</button>
+      </div>
+
+      <!-- 7. Tammy Abraham -->
+      <div class="player-row">
+        <div class="player-info">
+          <div class="avatar">
+            <img
+              class="avatar-img"
+              src="/nationwide-league/assets/img/field-player-3.png"
+              alt="Tammy Abraham avatar"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?background=3e2a5e&color=fff&size=52&name=TA'
+              "
+            />
+          </div>
+          Tammy Abraham
+        </div>
+        <div class="club">
+          <span class="club-logo-holder"
+            ><img
+              class="club-logo-img"
+              src="/nationwide-league/assets/logos/england_chelsea.football-logos.cc.svg"
+              alt="Aston Villa logo"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://placehold.co/28x28/670E36/white?text=AVL';
+              "
+          /></span>
+          <span class="club-name">Aston Villa</span>
+        </div>
+        <div class="position">Forward</div>
+        <div class="nationality">
+          <img
+            class="flag"
+            src="https://flagcdn.com/gb.svg"
+            alt="England flag"
+            width="20"
+            height="15"
+          />
+          <span>England</span>
+        </div>
+        <button class="follow-btn">Follow</button>
+      </div>
+
+      <!-- 8. Josh Acheampong -->
+      <div class="player-row">
+        <div class="player-info">
+          <div class="avatar">
+            <img
+              class="avatar-img"
+              src="/nationwide-league/assets/img/recap-image-2.png"
+              alt="Josh Acheampong avatar"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?background=3e2a5e&color=fff&size=52&name=JA'
+              "
+            />
+          </div>
+          Josh Acheampong
+        </div>
+        <div class="club">
+          <span class="club-logo-holder"
+            ><img
+              class="club-logo-img"
+              src="/nationwide-league/assets/logos/england_chelsea.football-logos.cc.svg"
+              alt="Chelsea logo"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://placehold.co/28x28/034694/white?text=CFC';
+              "
+          /></span>
+          <span class="club-name">Chelsea</span>
+        </div>
+        <div class="position">Defender</div>
+        <div class="nationality">
+          <img
+            class="flag"
+            src="https://flagcdn.com/gb.svg"
+            alt="England flag"
+            width="20"
+            height="15"
+          />
+          <span>England</span>
+        </div>
+        <button class="follow-btn">Follow</button>
+      </div>
+
+      <!-- 9. Tyler Adams -->
+      <div class="player-row">
+        <div class="player-info">
+          <div class="avatar">
+            <img
+              class="avatar-img"
+              src="/nationwide-league/assets/img/recap-image.png"
+              alt="Tyler Adams avatar"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?background=3e2a5e&color=fff&size=52&name=TA'
+              "
+            />
+          </div>
+          Tyler Adams
+        </div>
+        <div class="club">
+          <span class="club-logo-holder"
+            ><img
+              class="club-logo-img"
+              src="/nationwide-league/assets/logos/germany_bayern-munchen.football-logos.cc.svg"
+              alt="Bournemouth logo"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://placehold.co/28x28/DA291C/white?text=BOU';
+              "
+          /></span>
+          <span class="club-name">Bournemouth</span>
+        </div>
+        <div class="position">Midfielder</div>
+        <div class="nationality">
+          <img
+            class="flag"
+            src="https://flagcdn.com/us.svg"
+            alt="US flag"
+            width="20"
+            height="15"
+          />
+          <span>United States</span>
+        </div>
+        <button class="follow-btn">Follow</button>
       </div>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- FOOTER BAR -->
+    <div class="footer-bar-wrap">
+      <div class="footer-bar">
+        <a href="../index.html" class="footer-brand">National League</a>
+        <div class="social-links">
+          <a href="#" class="fb" aria-label="Facebook">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24">
+              <rect
+                x="2"
+                y="2"
+                width="20"
+                height="20"
+                rx="5"
+                ry="5"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+              />
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+            </svg>
+          </a>
+          <a href="#" aria-label="X">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.733-8.835L2.25 2.25h6.984l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="li" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="vk" aria-label="VK">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21.547 7h-3.29a.743.743 0 0 0-.655.392s-1.312 2.416-1.734 3.23C14.734 12.813 14 12.126 14 11.11V7.603A1.104 1.104 0 0 0 12.896 6.5h-2.474a1.982 1.982 0 0 0-1.75.813s1.255-.204 1.255 1.49c0 .42.022 1.626.04 2.64C9.97 11.454 8.77 9.24 7.84 7.392A.742.742 0 0 0 7.18 7H3.8a.55.55 0 0 0-.55.64s1.914 4.48 4.08 6.716c1.811 1.869 4.16 1.644 4.16 1.644h1.328a.638.638 0 0 0 .64-.623v-.534s-.022-1.94 1.022-2.227c1.017-.283 2.316 1.879 3.696 2.706A2.35 2.35 0 0 0 19.526 16h2.957a.55.55 0 0 0 .55-.685s-.77-2.065-3.43-4.504c-.814-.745-.948-.99.046-2.01C20.535 7.655 22.072 6 21.547 7z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="yt" aria-label="YouTube">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+              />
+              <polygon
+                points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                fill="#fff"
+              />
+            </svg>
+          </a>
+        </div>
+        <a href="#" class="btn-get-into">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Get Into Miliga
+        </a>
+      </div>
+    </div>
+
+    <!-- BOTTOM STRIP -->
+    <div class="bottom-strip">
+      <p>
+        Lead Partner <strong>EA SPORTS FC</strong> &bull; Official Creativity
+        Partner <strong>Adobe</strong> &bull; Official Bank
+        <strong>Barclays</strong>
+      </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
