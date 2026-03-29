@@ -132,155 +132,138 @@ tabs.forEach((tab) => {
   });
 });
 
-// ----- MATCH CENTRE TAB SWITCHING (enhanced) -----
+// ----- MATCH CENTRE TAB SWITCHING (FIXED: Results & Live with proper structure) -----
 const matchTabs = document.querySelectorAll(".matchcentre-tab");
 const matchContainer = document.querySelector(".match-date-group");
 
 // Store original fixtures HTML (only if container exists)
 const fixturesHtml = matchContainer ? matchContainer.innerHTML : "";
 
-// --- SAMPLE RESULTS DATA ---
+// ========== REALISTIC RESULTS DATA (using actual team names & logos) ==========
 const resultsData = [
   {
-    group: "Group A",
-    matches: [
-      {
-        home: "Shakhtar Donetsk",
-        homeLogo: "https://picsum.photos/id/1/24/24",
-        away: "Leverkusen",
-        awayLogo: "https://picsum.photos/id/2/24/24",
-        score: "0-0",
-        referee: "William Collum (SCO)",
-        stadium: "Donbass Arena, Donetsk (UKR)",
-      },
-      {
-        home: "Real Sociedad",
-        homeLogo: "https://picsum.photos/id/3/24/24",
-        away: "Man. United",
-        awayLogo: "https://picsum.photos/id/4/24/24",
-        score: "0-0",
-        referee: "Nicol Rizzoli (ITA)",
-        stadium: "Anoeta, San Sebastian (ESP)",
-      },
-    ],
-  },
-  {
-    group: "Group B",
-    matches: [
-      {
-        home: "Juventus",
-        homeLogo: "https://picsum.photos/id/5/24/24",
-        away: "Real Madrid",
-        awayLogo: "https://picsum.photos/id/6/24/24",
-        score: "2-2",
-        referee: "Howard Webb (ENG)",
-        stadium: "Juventus Stadium, Turin (ITA)",
-      },
-      {
-        home: "København",
-        homeLogo: "https://picsum.photos/id/7/24/24",
-        away: "Galatasaray",
-        awayLogo: "https://picsum.photos/id/8/24/24",
-        score: "1-0",
-        referee: "Martin Atkinson (ENG)",
-        stadium: "Parken, Copenhagen (DEN)",
-      },
-    ],
-  },
-  {
-    group: "Group C",
-    matches: [
-      {
-        home: "Paris",
-        homeLogo: "https://picsum.photos/id/9/24/24",
-        away: "Anderlecht",
-        awayLogo: "https://picsum.photos/id/10/24/24",
-        score: "1-1",
-        referee: "Mario Strahonja (CRO)",
-        stadium: "Parc des Princes, Paris (FRA)",
-      },
-      {
-        home: "Olympiacos",
-        homeLogo: "https://picsum.photos/id/11/24/24",
-        away: "Benfica",
-        awayLogo: "https://picsum.photos/id/12/24/24",
-        score: "1-0",
-        referee: "Damir Skomina (SVN)",
-        stadium: "Stadio Georgios Karaiskakis, Piraeus (GRE)",
-      },
-    ],
-  },
-  {
-    group: "Group D",
-    matches: [
-      {
-        home: "Man. City",
-        homeLogo: "https://picsum.photos/id/13/24/24",
-        away: "CSKA Moskva",
-        awayLogo: "https://picsum.photos/id/14/24/24",
-        score: "5-2",
-        referee: "Carlos Velasco Carballo (ESP)",
-        stadium: "City of Manchester Stadium, Manchester (ENG)",
-      },
-      {
-        home: "Plzeň",
-        homeLogo: "https://picsum.photos/id/15/24/24",
-        away: "Bayern",
-        awayLogo: "https://picsum.photos/id/16/24/24",
-        score: "0-1",
-        referee: "Cüneyt Çakır (TUR)",
-        stadium: "Doosan Arena, Plzeň (CZE)",
-      },
-    ],
-  },
-];
-
-// --- SAMPLE LIVE DATA (with live badges and in-progress scores) ---
-const liveData = [
-  {
-    group: "Premier League",
+    date: "29 Mar 2026",
     matches: [
       {
         home: "Arsenal",
-        homeLogo: "https://picsum.photos/id/1/24/24",
+        homeLogo: "./assets/logos/england_arsenal.football-logos.cc.svg",
         away: "Chelsea",
-        awayLogo: "https://picsum.photos/id/2/24/24",
-        score: "2-1",
-        minute: "72'",
-        stadium: "Emirates Stadium",
+        awayLogo: "./assets/logos/england_chelsea.football-logos.cc.svg",
+        score: "2 - 1",
+        venue: "Emirates Stadium",
+        status: "FT",
       },
       {
         home: "Manchester City",
-        homeLogo: "https://picsum.photos/id/3/24/24",
+        homeLogo: "./assets/logos/england_manchester-city.football-logos.cc.svg",
         away: "Liverpool",
-        awayLogo: "https://picsum.photos/id/4/24/24",
-        score: "0-0",
-        minute: "55'",
-        stadium: "Etihad Stadium",
+        awayLogo: "./assets/logos/england_liverpool.football-logos.cc.svg",
+        score: "3 - 2",
+        venue: "Etihad Stadium",
+        status: "FT",
+      },
+    ],
+  },
+  {
+    date: "30 Mar 2026",
+    matches: [
+      {
+        home: "Tottenham Hotspur",
+        homeLogo: "./assets/logos/england_tottenham.football-logos.cc.svg",
+        away: "Manchester United",
+        awayLogo: "./assets/logos/england_manchester-united.football-logos.cc.svg",
+        score: "1 - 1",
+        venue: "Tottenham Hotspur Stadium",
+        status: "FT",
+      },
+      {
+        home: "Aston Villa",
+        homeLogo: "./assets/logos/england_aston-villa.football-logos.cc.svg",
+        away: "Newcastle United",
+        awayLogo: "./assets/logos/england_newcastle-united.football-logos.cc.svg",
+        score: "0 - 2",
+        venue: "Villa Park",
+        status: "FT",
       },
     ],
   },
 ];
 
-// Helper: create a match item for results/live (grouped view)
-function createGroupedMatch(match, isLive = false) {
+// ========== REALISTIC LIVE DATA (in‑progress matches) ==========
+const liveData = [
+  {
+    date: "Today",
+    matches: [
+      {
+        home: "Arsenal",
+        homeLogo: "./assets/logos/england_arsenal.football-logos.cc.svg",
+        away: "Chelsea",
+        awayLogo: "./assets/logos/england_chelsea.football-logos.cc.svg",
+        score: "1 - 0",
+        minute: "67'",
+        venue: "Emirates Stadium",
+      },
+      {
+        home: "Manchester City",
+        homeLogo: "./assets/logos/england_manchester-city.football-logos.cc.svg",
+        away: "Liverpool",
+        awayLogo: "./assets/logos/england_liverpool.football-logos.cc.svg",
+        score: "2 - 2",
+        minute: "55'",
+        venue: "Etihad Stadium",
+      },
+    ],
+  },
+  {
+    date: "Later Today",
+    matches: [
+      {
+        home: "Barcelona",
+        homeLogo: "./assets/logos/spain_barcelona.football-logos.cc.svg",
+        away: "Real Madrid",
+        awayLogo: "./assets/logos/spain_real-madrid.football-logos.cc.svg",
+        score: "0 - 0",
+        minute: "20'",
+        venue: "Camp Nou",
+      },
+    ],
+  },
+];
+
+// Helper: create a match item (reuses the exact structure from fixtures)
+function createMatchItem(match, isLive = false, dateGroup = "") {
+  let leftTeamBlock = `
+    <div class="team-block left">
+      <span class="team-name">${match.home}</span>
+      <span class="team-logo"><img src="${match.homeLogo}" alt="${match.home}" onerror="this.src='https://placehold.co/28x28/ccc/333?text=${match.home.substring(0,2).toUpperCase()}'"></span>
+    </div>
+  `;
+  let rightTeamBlock = `
+    <div class="team-block right">
+      <span class="team-logo"><img src="${match.awayLogo}" alt="${match.away}" onerror="this.src='https://placehold.co/28x28/ccc/333?text=${match.away.substring(0,2).toUpperCase()}'"></span>
+      <span class="team-name">${match.away}</span>
+    </div>
+  `;
+
+  let centerBadge = isLive
+    ? `<span class="score-badge" style="background:#c8102e; color:white;">${match.score}</span>`
+    : `<span class="score-badge">${match.score}</span>`;
+
+  let matchInfo = isLive
+    ? `<div class="match-info"><span class="live-badge" style="background:#c8102e; color:white;">LIVE ${match.minute}</span> ${match.venue}</div>`
+    : `<div class="match-info"><span class="result-label">${match.status || "FT"}</span> ${match.venue}</div>`;
+
+  let dateHeader = dateGroup ? `<div class="match-date-header">${dateGroup}</div>` : "";
+
   return `
-    <div class="results-match">
+    ${dateHeader}
+    <div class="match-item ${isLive ? "live" : "completed"}">
       <div class="match-teams">
-        <div class="team-block left">
-          <span class="team-name">${match.home}</span>
-          <span class="team-logo"><img src="${match.homeLogo}" alt="${match.home}"></span>
-        </div>
-        <span class="vs-badge">${match.score}</span>
-        <div class="team-block right">
-          <span class="team-logo"><img src="${match.awayLogo}" alt="${match.away}"></span>
-          <span class="team-name">${match.away}</span>
-        </div>
+        ${leftTeamBlock}
+        ${centerBadge}
+        ${rightTeamBlock}
       </div>
-      <div class="match-info">
-        ${isLive ? `<span class="live-badge-sm">LIVE ${match.minute}</span>` : ""}
-        ${isLive ? match.stadium : `${match.referee} – ${match.stadium}`}
-      </div>
+      ${matchInfo}
     </div>
   `;
 }
@@ -294,19 +277,15 @@ function renderMatches(tabType) {
     html = fixturesHtml;
   } else if (tabType === "results") {
     resultsData.forEach((group) => {
-      html += `<div class="results-group"><h6>${group.group}</h6>`;
       group.matches.forEach((match) => {
-        html += createGroupedMatch(match, false);
+        html += createMatchItem(match, false, group.date);
       });
-      html += `</div>`;
     });
   } else if (tabType === "live") {
     liveData.forEach((group) => {
-      html += `<div class="results-group"><h6>${group.group}</h6>`;
       group.matches.forEach((match) => {
-        html += createGroupedMatch(match, true);
+        html += createMatchItem(match, true, group.date);
       });
-      html += `</div>`;
     });
   }
   matchContainer.innerHTML = html;
@@ -315,7 +294,7 @@ function renderMatches(tabType) {
   initMatchNavigation();
 }
 
-// Add click handlers to tabs (only if they exist)
+// Add click handlers to tabs
 matchTabs.forEach((tab) => {
   tab.addEventListener("click", function () {
     matchTabs.forEach((t) => t.classList.remove("active"));
@@ -324,6 +303,7 @@ matchTabs.forEach((tab) => {
     renderMatches(tabType);
   });
 });
+
 function scrollCarousel(direction) {
   const container = document.getElementById("horizontalCarousel");
   if (container) container.scrollLeft += direction === "left" ? -300 : 300;

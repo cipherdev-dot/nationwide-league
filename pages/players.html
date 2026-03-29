@@ -29,7 +29,6 @@
     />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/players.css" />
-    <script src="./assets/js/main.js" defer></script>
   </head>
   <body>
     <div class="top-bar">
@@ -66,14 +65,12 @@
         </div>
       </div>
     </header>
-    <div class="header-spacer"></div>
 
     <div class="page-header">
       <h1>Players</h1>
     </div>
 
     <div class="filter-bar">
-      <!-- Filter icon button (like fixtures) -->
       <button class="filter-icon-btn" aria-label="Filter options">
         <svg
           width="16"
@@ -90,16 +87,10 @@
           <line x1="11" y1="18" x2="13" y2="18" />
         </svg>
       </button>
-
-      <!-- Search input -->
       <input type="text" placeholder="Search player..." class="player-search" />
-
-      <!-- Season select -->
       <select>
         <option>2025/26 Season</option>
       </select>
-
-      <!-- Club select -->
       <select>
         <option>All Clubs</option>
         <option>Arsenal</option>
@@ -108,8 +99,6 @@
         <option>Manchester City</option>
         <option>Manchester United</option>
       </select>
-
-      <!-- Position select -->
       <select>
         <option>All Positions</option>
         <option>Forward</option>
@@ -117,8 +106,6 @@
         <option>Defender</option>
         <option>Goalkeeper</option>
       </select>
-
-      <!-- Reset button -->
       <button id="resetBtn" class="reset-btn">
         Reset
         <svg
@@ -146,15 +133,14 @@
         <span></span>
       </div>
 
-      <!-- ========== PLAYER ROWS ========== -->
-
+      <!-- ========== PLAYER ROWS (same as before) ========== -->
       <!-- 1. Brenden Aaronson -->
       <div class="player-row">
         <div class="player-info">
           <div class="avatar">
             <img
               class="avatar-img"
-              src="/nationwide-league/assets/img/field-player-1.png"
+              src="../assets/img/field-player-2.png"
               alt="Brenden Aaronson avatar"
               onerror="
                 this.src =
@@ -168,7 +154,7 @@
           <span class="club-logo-holder"
             ><img
               class="club-logo-img"
-              src="/nationwide-league/assets/logos/australia_adelaide-united.football-logos.cc.svg"
+              src="../assets/logos/australia_adelaide-united.football-logos.cc.svg"
               alt="Leeds United logo"
               onerror="
                 this.onerror = null;
@@ -197,7 +183,7 @@
           <div class="avatar">
             <img
               class="avatar-img"
-              src="/nationwide-league/assets/img/field-player-2.png"
+              src="../assets/img/field-player-1.png"
               alt="Jerome Abbey avatar"
               onerror="
                 this.src =
@@ -211,7 +197,7 @@
           <span class="club-logo-holder"
             ><img
               class="club-logo-img"
-              src="/nationwide-league/assets/logos/brazil_flamengo.football-logos.cc.svg"
+              src="../assets/logos/brazil_flamengo.football-logos.cc.svg"
               alt="Wolves logo"
               onerror="
                 this.onerror = null;
@@ -240,7 +226,7 @@
           <div class="avatar">
             <img
               class="avatar-img"
-              src="/nationwide-league/assets/img/field-player-3.png"
+              src="../assets/img/field-player-3.png"
               alt="George Abbott avatar"
               onerror="
                 this.src =
@@ -254,7 +240,7 @@
           <span class="club-logo-holder"
             ><img
               class="club-logo-img"
-              src="/nationwide-league/assets/logos/cyprus_ael.football-logos.cc.svg"
+              src="../assets/logos/cyprus_ael.football-logos.cc.svg"
               alt="Spurs logo"
               onerror="
                 this.onerror = null;
@@ -283,7 +269,7 @@
           <div class="avatar">
             <img
               class="avatar-img"
-              src="/nationwide-league/assets/img/recap-image-2.png"
+              src="../assets/img/recap-image-2.png"
               alt="Zach Abbott avatar"
               onerror="
                 this.src =
@@ -297,7 +283,7 @@
           <span class="club-logo-holder"
             ><img
               class="club-logo-img"
-              src="/nationwide-league/assets/logos/cyprus_aez.football-logos.cc.svg"
+              src="../assets/logos/cyprus_aez.football-logos.cc.svg"
               alt="Nottingham Forest logo"
               onerror="
                 this.onerror = null;
@@ -326,7 +312,7 @@
           <div class="avatar">
             <img
               class="avatar-img"
-              src="/nationwide-league/assets/img/recap-image.png"
+              src="../assets/img/recap-image.png"
               alt="Salis Samed avatar"
               onerror="
                 this.src =
@@ -340,7 +326,7 @@
           <span class="club-logo-holder"
             ><img
               class="club-logo-img"
-              src="/nationwide-league/assets/logos/england_accrington.football-logos.cc.svg"
+              src="../assets/logos/england_accrington.football-logos.cc.svg"
               alt="Sunderland logo"
               onerror="
                 this.onerror = null;
@@ -369,7 +355,7 @@
           <div class="avatar">
             <img
               class="avatar-img"
-              src="/nationwide-league/assets/img/field-player-2.png"
+              src="../assets/img/field-player-2.png"
               alt="Ahmed Abdullahi avatar"
               onerror="
                 this.src =
@@ -383,7 +369,7 @@
           <span class="club-logo-holder"
             ><img
               class="club-logo-img"
-              src="/nationwide-league/assets/logos/england_arsenal.football-logos.cc.svg"
+              src="../assets/logos/england_arsenal.football-logos.cc.svg"
               alt="Sunderland logo"
               onerror="
                 this.onerror = null;
@@ -412,7 +398,7 @@
           <div class="avatar">
             <img
               class="avatar-img"
-              src="/nationwide-league/assets/img/field-player-3.png"
+              src="../assets/img/field-player-3.png"
               alt="Tammy Abraham avatar"
               onerror="
                 this.src =
@@ -426,7 +412,7 @@
           <span class="club-logo-holder"
             ><img
               class="club-logo-img"
-              src="/nationwide-league/assets/logos/england_chelsea.football-logos.cc.svg"
+              src="../assets/logos/england_chelsea.football-logos.cc.svg"
               alt="Aston Villa logo"
               onerror="
                 this.onerror = null;
@@ -455,7 +441,7 @@
           <div class="avatar">
             <img
               class="avatar-img"
-              src="/nationwide-league/assets/img/recap-image-2.png"
+              src="../assets/img/recap-image-2.png"
               alt="Josh Acheampong avatar"
               onerror="
                 this.src =
@@ -469,7 +455,7 @@
           <span class="club-logo-holder"
             ><img
               class="club-logo-img"
-              src="/nationwide-league/assets/logos/england_chelsea.football-logos.cc.svg"
+              src="../assets/logos/england_chelsea.football-logos.cc.svg"
               alt="Chelsea logo"
               onerror="
                 this.onerror = null;
@@ -498,7 +484,7 @@
           <div class="avatar">
             <img
               class="avatar-img"
-              src="/nationwide-league/assets/img/recap-image.png"
+              src="../assets/img/recap-image.png"
               alt="Tyler Adams avatar"
               onerror="
                 this.src =
@@ -512,7 +498,7 @@
           <span class="club-logo-holder"
             ><img
               class="club-logo-img"
-              src="/nationwide-league/assets/logos/germany_bayern-munchen.football-logos.cc.svg"
+              src="../assets/logos/germany_bayern-munchen.football-logos.cc.svg"
               alt="Bournemouth logo"
               onerror="
                 this.onerror = null;
@@ -624,7 +610,6 @@
       </div>
     </div>
 
-    <!-- BOTTOM STRIP -->
     <div class="bottom-strip">
       <p>
         Lead Partner <strong>EA SPORTS FC</strong> &bull; Official Creativity
@@ -633,6 +618,25 @@
       </p>
     </div>
 
+    <!-- Burger menu toggle script (fixes missing navigation) -->
+    <script>
+      (function() {
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        if (burgerBtn && mobileNav) {
+          burgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            mobileNav.classList.toggle('open');
+          });
+          // Optional: close when clicking outside (but not required)
+          document.addEventListener('click', function(event) {
+            if (!mobileNav.contains(event.target) && !burgerBtn.contains(event.target)) {
+              mobileNav.classList.remove('open');
+            }
+          });
+        }
+      })();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
