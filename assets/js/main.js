@@ -169,7 +169,7 @@ const resultsData = [
     matches: [
       {
         home: "Tottenham Hotspur",
-        homeLogo: "./assets/logos/england_tottenham.football-logos.cc.svg",
+        homeLogo: "./assets/logos/portugal_benfica.football-logos.cc.svg",
         away: "Manchester United",
         awayLogo: "./assets/logos/england_manchester-united.football-logos.cc.svg",
         score: "1 - 1",
@@ -178,9 +178,9 @@ const resultsData = [
       },
       {
         home: "Aston Villa",
-        homeLogo: "./assets/logos/england_aston-villa.football-logos.cc.svg",
+        homeLogo: "./assets/logos/germany_bayern-munchen.football-logos.cc.svg",
         away: "Newcastle United",
-        awayLogo: "./assets/logos/england_newcastle-united.football-logos.cc.svg",
+        awayLogo: "./assets/logos/saudi-arabia_al-nassr.football-logos.cc.svg",
         score: "0 - 2",
         venue: "Villa Park",
         status: "FT",
