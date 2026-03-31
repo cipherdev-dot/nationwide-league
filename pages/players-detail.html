@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player Detail | National League</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@400;700;800&family=Bebas+Neue&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/players-detail.css" />
+  </head>
+  <body>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="#">Shop</a><a href="#">About Us</a
+        ><a href="#">Football & Community</a><a href="#">Events</a
+        ><a href="#">Media</a><a href="#">Mornings Live</a>
+      </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+      <div class="header-content">
+        <a href="../index.html" class="logo">NATIONAL LEAGUE</a>
+        <div class="nav-links-wrapper">
+          <a href="../index.html">Home</a><a href="./fixtures.html">Fixtures</a
+          ><a href="./tables.html">Tables</a><a href="./news-logs.html">News</a
+          ><a href="./clubs.html">Clubs</a><a href="./players.html">Players</a
+          ><a href="./statistics.html">Statistics</a>
+        </div>
+        <div class="search-signin">
+          <i class="fas fa-search"></i
+          ><a href="#" class="signin-btn">Sign in</a>
+        </div>
+        <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-links">
+          <a href="#">Shop</a><a href="#">About Us</a
+          ><a href="#">Football & Community</a><a href="#">Events</a
+          ><a href="#">Media</a><a href="#">Mornings Live</a>
+          <a href="../index.html">Home</a><a href="./fixtures.html">Fixtures</a
+          ><a href="./tables.html">Tables</a><a href="./news-logs.html">News</a
+          ><a href="./clubs.html">Clubs</a><a href="./players.html">Players</a
+          ><a href="./statistics.html">Statistics</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="player-content">
+      <!-- LEFT COLUMN -->
+      <div class="left-column">
+        <!-- PLAYER HERO CARD -->
+        <div class="player-hero-card">
+          <div class="player-portrait">
+            <img
+              id="playerPortrait"
+              src="../assets/img/recap-image.png"
+              alt="Player Portrait"
+              class="player-image"
+            />
+          </div>
+          <div class="player-info">
+            <div id="playerFirstName" class="player-first-name">Brenden</div>
+            <div id="playerLastName" class="player-last-name">
+              <strong>Aaronson</strong>
+            </div>
+            <div class="player-meta">
+              <span id="playerClub" class="player-club">Leeds</span>
+              <span id="playerNumber" class="player-number">1</span>
+              <span id="playerPosition" class="player-position"
+                >Goalkeeper</span
+              >
+            </div>
+          </div>
+          <button id="followBtn" class="follow-btn">Follow</button>
+        </div>
+
+        <!-- PLAYER STATS GRID -->
+        <div class="player-stats-grid">
+          <div class="stat-block">
+            <div class="stat-label">Nationality</div>
+            <div id="nationalityValue" class="stat-value">
+              <img
+                id="countryFlag"
+                src="https://flagcdn.com/w40/us.png"
+                alt="USA flag"
+                style="
+                  width: 20px;
+                  height: 15px;
+                  margin-right: 6px;
+                  border-radius: 2px;
+                "
+              />
+              United States
+            </div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-label">Preferred Foot</div>
+            <div id="preferredFootValue" class="stat-value">Right</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-label">Date of Birth</div>
+            <div id="dobValue" class="stat-value">10/12/1997</div>
+          </div>
+        </div>
+
+        <!-- STATS BAR -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div id="appearancesValue" class="stat-value">16</div>
+            <div class="stat-label">Appearances</div>
+          </div>
+          <div class="stat-item">
+            <div id="cleanSheetsValue" class="stat-value">3</div>
+            <div class="stat-label">Clean Sheets</div>
+          </div>
+          <div class="stat-item">
+            <div id="savesValue" class="stat-value">38</div>
+            <div class="stat-label">Saves Made</div>
+          </div>
+        </div>
+
+        <!-- FULL BIO BUTTON -->
+        <button class="full-bio-btn">Full Bio</button>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="right-column">
+        <!-- TABS -->
+        <div class="player-tabs">
+          <button class="tab active" data-tab="overview">Overview</button>
+          <button class="tab" data-tab="video">Video</button>
+          <button class="tab" data-tab="matches">Matches</button>
+          <button class="tab" data-tab="stats">Stats</button>
+          <button class="tab" data-tab="career">Career History</button>
+        </div>
+
+        <!-- TAB CONTENT SECTIONS -->
+        <!-- Overview Tab Content -->
+        <div class="tab-content" id="overview-content">
+
+        <!-- NEXT MATCH AND TEAM FORM ROW -->
+        <div class="match-and-form-row">
+          <!-- NEXT MATCH CARD -->
+          <div class="next-match-card">
+          <div class="match-header">
+            <span class="match-label">Next Match</span>
+          </div>
+          <div class="match-content">
+            <div class="team left-team">
+              <div class="team-name" id="nextHomeTeam">Manchester United</div>
+              <div class="team-logo">
+                <img
+                  id="nextHomeLogo"
+                  src="../assets/logos/england_manchester-united.football-logos.cc.svg"
+                  alt="Manchester United"
+                />
+              </div>
+            </div>
+            <div class="match-time" id="nextMatchTime">20:00</div>
+            <div class="team right-team">
+              <div class="team-logo">
+                <img
+                  id="nextAwayLogo"
+                  src="../assets/logos/england_chelsea.football-logos.cc.svg"
+                  alt="Leeds United"
+                />
+              </div>
+              <div class="team-name" id="nextAwayTeam">Leeds United</div>
+            </div>
+          </div>
+          <div class="match-competition">National League • Matchweek 31</div>
+          </div>
+
+          <!-- TEAM FORM SECTION -->
+          <div class="team-form-section">
+          <div class="form-header">
+            <div class="form-header-left">
+              <span class="form-title">Team Form</span>
+              <i class="fas fa-arrow-right form-arrow"></i>
+            </div>
+            <div class="form-toggle">
+              <button class="toggle-btn active" data-form-type="previous">
+                Previous
+              </button>
+              <button class="toggle-btn" data-form-type="upcoming">
+                Upcoming
+              </button>
+            </div>
+          </div>
+          <div class="team-identifier">
+            <img
+              id="teamFormLogo"
+              src="../assets/logos/france_ajaccio.football-logos.cc.svg"
+              alt="Leeds United"
+              class="team-identifier-logo"
+            />
+            <span class="team-identifier-name" id="teamFormName">Leeds United</span>
+          </div>
+          <div class="match-timeline" id="matchTimeline"></div>
+          </div>
+        </div>
+
+        <!-- TEAMMATES SECTION -->
+        <div class="teammates-section">
+          <div class="teammates-header">
+            <h3>Teammates</h3>
+            <div class="carousel-nav">
+              <button class="carousel-btn left-btn"><</button>
+              <button class="carousel-btn right-btn">></button>
+            </div>
+          </div>
+          <div class="teammates-grid">
+            <div class="teammate-card">
+              <div class="teammate-avatar">
+                <img src="../assets/img/field-player-3.png" alt="Jayden Bogle" />
+              </div>
+              <div class="teammate-name">
+                Jayden Bogle
+                <div class="teammate-meta">2 Defender</div>
+              </div>
+            </div>
+            <div class="teammate-card">
+              <div class="teammate-avatar">
+                <img src="../assets/img/field-player-1.png" alt="Pascal Struijk" />
+              </div>
+              <div class="teammate-name">
+                Pascal Struijk
+                <div class="teammate-meta">5 Defender</div>
+              </div>
+            </div>
+            <div class="teammate-card">
+              <div class="teammate-avatar">
+                <img src="../assets/img/field-player-2.png" alt="Sean Long" />
+              </div>
+              <div class="teammate-name">
+                Sean Long
+                <div class="teammate-meta">8 Midfield</div>
+              </div>
+            </div>
+            <div class="teammate-card">
+              <div class="teammate-avatar">
+                <img src="../assets/img/recap-image-2.png" alt="Gabriel Gudmundsson" />
+              </div>
+              <div class="teammate-name">
+                Gabriel Gudmundsson
+                <div class="teammate-meta">3 Defender</div>
+              </div>
+            </div>
+            <div class="teammate-card">
+              <div class="teammate-avatar">
+                <img src="../assets/img/recap-image.png" alt="Joe Rodon" />
+              </div>
+              <div class="teammate-name">
+                Joe Rodon
+                <div class="teammate-meta">6 Defender</div>
+              </div>
+            </div>
+            <div class="teammate-card">
+              <div class="teammate-avatar">
+                <img src="../assets/img/field-player-3.png" alt="Dominic C" />
+              </div>
+              <div class="teammate-name">
+                Dominic C
+                <div class="teammate-meta">9 Forward</div>
+              </div>
+            </div>
+            <div class="teammate-card">
+              <div class="teammate-avatar">
+                <img src="../assets/img/field-player-1.png" alt="Ethan Ampadu" />
+              </div>
+              <div class="teammate-name">
+                Ethan Ampadu
+                <div class="teammate-meta">4 Defender</div>
+              </div>
+            </div>
+            <div class="teammate-card">
+              <div class="teammate-avatar">
+                <img src="../assets/img/recap-image.png" alt="Daniel James" />
+              </div>
+              <div class="teammate-name">
+                Daniel James
+                <div class="teammate-meta">7 Midfielder</div>
+              </div>
+            </div>
+            <div class="teammate-card">
+              <div class="teammate-avatar">
+                <img src="../assets/img/field-player-1.png" alt="Joël Piroe" />
+              </div>
+              <div class="teammate-name">
+                Joël Piroe
+                <div class="teammate-meta">10 Forward</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FROM THE CLUBS SECTION -->
+        <div class="from-clubs-section">
+          <div class="section-header">
+            <h3>From the Clubs</h3>
+            <a href="#" class="see-all-link">See all</a>
+          </div>
+          <div class="clubs-cards">
+            <div class="club-card">
+              <div class="club-thumbnail">
+                <img src="https://picsum.photos/id/1020/300/200" alt="Match Highlights" />
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5,3 19,12 5,21" />
+                  </svg>
+                </div>
+              </div>
+              <div class="club-content">
+                <div class="club-badge">HIGHLIGHTS</div>
+                <div class="club-title">
+                  Dramatic late winner seals victory in thrilling encounter
+                </div>
+                <a href="#" class="club-link">Watch highlights</a>
+              </div>
+            </div>
+            <div class="club-card">
+              <div class="club-thumbnail">
+                <img src="https://picsum.photos/id/1021/300/200" alt="Free Kick" />
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5,3 19,12 5,21" />
+                  </svg>
+                </div>
+              </div>
+              <div class="club-content">
+                <div class="club-badge">HIGHLIGHTS</div>
+                <div class="club-title">
+                  Free-kick stunner lights up the stadium
+                </div>
+                <a href="#" class="club-link">Watch highlights</a>
+              </div>
+            </div>
+            <div class="club-card">
+              <div class="club-thumbnail">
+                <img src="https://picsum.photos/id/1022/300/200" alt="Hat Trick" />
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5,3 19,12 5,21" />
+                  </svg>
+                </div>
+              </div>
+              <div class="club-content">
+                <div class="club-badge">HIGHLIGHTS</div>
+                <div class="club-title">
+                  Hat-trick masterclass dominates the match
+                </div>
+                <a href="#" class="club-link">Watch highlights</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS SECTION -->
+        <div class="quick-links-section">
+          <div class="quick-link-item">
+            <span class="link-text">Club App (iOS)</span
+            ><span class="link-arrow">→</span>
+          </div>
+          <div class="quick-link-item">
+            <span class="link-text">Club App (Android)</span
+            ><span class="link-arrow">→</span>
+          </div>
+          <div class="quick-link-item">
+            <span class="link-text">Matchday Hospitality</span
+            ><span class="link-arrow">→</span>
+          </div>
+          <div class="quick-link-item">
+            <span class="link-text">Club Shop</span
+            ><span class="link-arrow">→</span>
+          </div>
+        </div>
+
+        </div>
+
+        <!-- Video Tab Content -->
+        <div class="tab-content hidden" id="video-content">
+          <div class="video-section">
+            <div class="section-header">
+              <h3>Latest Videos</h3>
+            </div>
+            <div class="videos-grid">
+              <!-- Video 1 -->
+              <div class="video-card">
+                <div class="video-thumbnail">
+                  <img
+                    src="https://picsum.photos/seed/leedsaccessible/300/170"
+                    alt="How Leeds have made football more accessible"
+                  />
+                  <div class="video-play-btn">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-info">
+                  <div class="video-title">How Leeds have made football more accessible</div>
+                  <div class="video-subtitle">More Than A Game</div>
+                </div>
+              </div>
+
+              <!-- Video 2 -->
+              <div class="video-card">
+                <div class="video-thumbnail">
+                  <img
+                    src="https://picsum.photos/seed/bestskills22/300/170"
+                    alt="Watch: The BEST SKILLS from Matchweek 22"
+                  />
+                  <div class="video-play-btn">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-info">
+                  <div class="video-title">Watch: The BEST SKILLS from Matchweek 22</div>
+                  <div class="video-subtitle">Video</div>
+                </div>
+              </div>
+
+              <!-- Video 3 -->
+              <div class="video-card">
+                <div class="video-thumbnail">
+                  <img
+                    src="https://picsum.photos/seed/aaronsonmw21/300/170"
+                    alt="Watch Aaronson's MW21 performance v Newcastle"
+                  />
+                  <div class="video-play-btn">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-info">
+                  <div class="video-title">Watch Aaronson's MW21 performance v Newcastle</div>
+                </div>
+              </div>
+
+              <!-- Video 4 -->
+              <div class="video-card">
+                <div class="video-thumbnail">
+                  <img
+                    src="https://picsum.photos/seed/fpldifferentials/300/170"
+                    alt="FPL Gameweek 13 Differentials"
+                  />
+                  <div class="video-play-btn">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-info">
+                  <div class="video-title">FPL Gameweek 13 Differentials</div>
+                </div>
+              </div>
+
+              <!-- Video 5 -->
+              <div class="video-card">
+                <div class="video-thumbnail">
+                  <img
+                    src="https://picsum.photos/seed/aaronsonmw9/300/170"
+                    alt="Watch: Aaronson's MW9 performance vs West Ham"
+                  />
+                  <div class="video-play-btn">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-info">
+                  <div class="video-title">Watch: Aaronson's MW9 performance vs West Ham</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Matches Tab Content -->
+        <div class="tab-content hidden" id="matches-content">
+          <!-- Match Results Section -->
+          <div class="match-results-section">
+            <!-- Season Dropdown -->
+            <div class="match-results-header">
+              <div class="season-dropdown">
+                <button class="season-btn" id="seasonBtn">
+                  <span class="season-text">2025/26</span>
+                  <i class="fas fa-chevron-down season-arrow"></i>
+                </button>
+                <div class="season-dropdown-menu" id="seasonDropdownMenu">
+                  <a href="#" class="season-dropdown-item active">2025/26</a>
+                  <a href="#" class="season-dropdown-item">2024/25</a>
+                  <a href="#" class="season-dropdown-item">2023/24</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Month Navigation (on top of match cards) -->
+            <div class="month-navigation">
+              <button class="month-nav-btn left-btn" id="prevMonthBtn">
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <h2 class="month-title" id="monthTitle">March</h2>
+              <button class="month-nav-btn right-btn" id="nextMonthBtn">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Match Results Container -->
+            <div class="match-results-container" id="matchResultsContainer">
+              <!-- Matches will be dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Tab Content -->
+        <div class="tab-content hidden" id="stats-content">
+          <!-- STATS SECTION -->
+          <div class="stats-section">
+            <!-- Season Selector -->
+            <div class="stats-season-selector">
+              <div class="season-dropdown">
+                <button class="season-btn" id="statsSeasonBtn">
+                  <span class="season-text">2025/26</span>
+                  <i class="fas fa-chevron-down season-arrow"></i>
+                </button>
+                <div class="season-dropdown-menu" id="statsSeasonDropdownMenu">
+                  <a href="#" class="season-dropdown-item active">2025/26</a>
+                  <a href="#" class="season-dropdown-item">2024/25</a>
+                  <a href="#" class="season-dropdown-item">2023/24</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Top Stats Cards Row -->
+            <div class="stats-cards-row">
+              <div class="stats-card">
+                <div class="stats-card-label">Appearances</div>
+                <div class="stats-card-value">16</div>
+              </div>
+              <div class="stats-card">
+                <div class="stats-card-label">Goals</div>
+                <div class="stats-card-value">3</div>
+              </div>
+              <div class="stats-card">
+                <div class="stats-card-label">Assists</div>
+                <div class="stats-card-value">5</div>
+              </div>
+            </div>
+            
+            <!-- Attack and Possession Columns -->
+            <div class="detailed-stats-row">
+              <!-- Attack Column -->
+              <div class="detailed-stats-column">
+                <div class="detailed-stats-header">Attack</div>
+                <div class="detailed-stats-list">
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Goals</span>
+                    <span class="stat-value">4</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">xG</span>
+                    <span class="stat-value">4.14</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">xA</span>
+                    <span class="stat-value">3.01</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Shots on Target Inside the Box</span>
+                    <span class="stat-value">17</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Shots on Target Outside the Box</span>
+                    <span class="stat-value">9</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Touches in the Opposition Box</span>
+                    <span class="stat-value">85</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Hit Woodwork</span>
+                    <span class="stat-value">2</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Crosses (completed %)</span>
+                    <span class="stat-value">34 (26%)</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Possession Column -->
+              <div class="detailed-stats-column">
+                <div class="detailed-stats-header">Possession</div>
+                <div class="detailed-stats-list">
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Passes (Completed %)</span>
+                    <span class="stat-value">540 (79%)</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Long Passes (Completed %)</span>
+                    <span class="stat-value">22 (27%)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Physical and Defence Columns -->
+            <div class="detailed-stats-row">
+              <!-- Physical Column -->
+              <div class="detailed-stats-column physical-column">
+                <div class="detailed-stats-header">Physical</div>
+                <div class="detailed-stats-list">
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Minutes Played</span>
+                    <span class="stat-value">1987</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Dribbles (Completed %)</span>
+                    <span class="stat-value">67 (33%)</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Duels Won</span>
+                    <span class="stat-value">129</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Aerial Duels Won</span>
+                    <span class="stat-value">19</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Defence Column -->
+              <div class="detailed-stats-column defence-column">
+                <div class="detailed-stats-header">Defence</div>
+                <div class="detailed-stats-list">
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Total Tackles</span>
+                    <span class="stat-value">45</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Interceptions</span>
+                    <span class="stat-value">11</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Blocks</span>
+                    <span class="stat-value">3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Discipline Column -->
+            <div class="detailed-stats-row">
+              <div class="detailed-stats-column discipline-column">
+                <div class="detailed-stats-header">Discipline</div>
+                <div class="detailed-stats-list">
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Red Cards</span>
+                    <span class="stat-value">0</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Yellow Cards</span>
+                    <span class="stat-value">1</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Fouls</span>
+                    <span class="stat-value">17</span>
+                  </div>
+                  <div class="detailed-stat-item">
+                    <span class="stat-name">Offsides</span>
+                    <span class="stat-value">5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Career History Tab Content -->
+        <div class="tab-content hidden" id="career-content">
+          <section class="career-container">
+            
+            <!-- Season Card 1: 2025/2026 -->
+            <div class="career-card">
+              <h3 class="season-title">2025/2026</h3>
+
+              <div class="club-row">
+                <img src="../assets/logos/france_ajaccio.football-logos.cc.svg" alt="club logo">
+                <span class="club-name">Leeds United FC</span>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Appearances (sub)</span>
+                  <span>30 (6)</span>
+                </div>
+                <div class="stat-row">
+                  <span>Assists</span>
+                  <span>3</span>
+                </div>
+                <div class="stat-row">
+                  <span>Goals</span>
+                  <span>4</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Season Card 2: 2022/2023 -->
+            <div class="career-card">
+              <h3 class="season-title">2022/2023</h3>
+
+              <div class="club-row">
+                <img src="../assets/logos/england_arsenal.football-logos.cc.svg" alt="club logo">
+                <span class="club-name">Philadelphia Union</span>
+              </div>
+
+              <div class="stats">
+                <div class="stat-row">
+                  <span>Appearances (sub)</span>
+                  <span>25 (4)</span>
+                </div>
+                <div class="stat-row">
+                  <span>Assists</span>
+                  <span>2</span>
+                </div>
+                <div class="stat-row">
+                  <span>Goals</span>
+                  <span>3</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notice Box -->
+            <div class="notice-box">
+              Player career and some statistics are not currently available prior to the 2006/07 season.
+              <a href="#">Click here for more details...</a>
+            </div>
+
+          </section>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOTER BAR -->
+    <div class="footer-bar-wrap">
+      <div class="footer-bar">
+        <a href="../index.html" class="footer-brand">National League</a>
+        <div class="social-links">
+          <a href="#" class="fb" aria-label="Facebook"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              /></svg
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><svg viewBox="0 0 24 24">
+              <rect
+                x="2"
+                y="2"
+                width="20"
+                height="20"
+                rx="5"
+                ry="5"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+              />
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" /></svg
+          ></a>
+          <a href="#" aria-label="X"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.733-8.835L2.25 2.25h6.984l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              /></svg
+          ></a>
+          <a href="#" class="li" aria-label="LinkedIn"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" /></svg
+          ></a>
+          <a href="#" aria-label="TikTok"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"
+              /></svg
+          ></a>
+          <a href="#" class="vk" aria-label="VK"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M21.547 7h-3.29a.743.743 0 0 0-.655.392s-1.312 2.416-1.734 3.23C14.734 12.813 14 12.126 14 11.11V7.603A1.104 1.104 0 0 0 12.896 6.5h-2.474a1.982 1.982 0 0 0-1.75.813s1.255-.204 1.255 1.49c0 .42.022 1.626.04 2.64C9.97 11.454 8.77 9.24 7.84 7.392A.742.742 0 0 0 7.18 7H3.8a.55.55 0 0 0-.55.64s1.914 4.48 4.08 6.716c1.811 1.869 4.16 1.644 4.16 1.644h1.328a.638.638 0 0 0 .64-.623v-.534s-.022-1.94 1.022-2.227c1.017-.283 2.316 1.879 3.696 2.706A2.35 2.35 0 0 0 19.526 16h2.957a.55.55 0 0 0 .55-.685s-.77-2.065-3.43-4.504c-.814-.745-.948-.99.046-2.01C20.535 7.655 22.072 6 21.547 7z"
+              /></svg
+          ></a>
+          <a href="#" class="yt" aria-label="YouTube"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+              />
+              <polygon
+                points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                fill="#fff"
+              /></svg
+          ></a>
+        </div>
+        <a href="#" class="btn-get-into"
+          ><svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Get Into Miliga</a
+        >
+      </div>
+    </div>
+
+    <!-- BOTTOM STRIP -->
+    <div class="bottom-strip">
+      <p>
+        Lead Partner <strong>EA SPORTS FC</strong> &bull; Official Creativity
+        Partner <strong>Adobe</strong> &bull; Official Bank
+        <strong>Barclays</strong>
+      </p>
+    </div>
+
+    <script>
+      // ========== PLAYER DATA ==========
+      const playerData = {
+        "brenden-aaronson": {
+          firstName: "Brenden",
+          lastName: "Aaronson",
+          avatar: "../assets/img/field-player-2.png",
+          club: "Leeds United",
+          clubShort: "Leeds",
+          number: 11,
+          position: "Midfielder",
+          nationality: "United States",
+          nationalityCode: "us",
+          preferredFoot: "Right",
+          dob: "10/12/1997",
+          appearances: 16,
+          cleanSheets: 3,
+          saves: 38,
+          clubLogo: "../assets/logos/australia_adelaide-united.football-logos.cc.svg"
+        },
+        "jerome-abbey": {
+          firstName: "Jerome",
+          lastName: "Abbey",
+          avatar: "../assets/img/field-player-1.png",
+          club: "Wolverhampton Wanderers",
+          clubShort: "Wolves",
+          number: 7,
+          position: "Midfielder",
+          nationality: "England",
+          nationalityCode: "gb",
+          preferredFoot: "Left",
+          dob: "15/03/1999",
+          appearances: 22,
+          cleanSheets: 8,
+          saves: 52,
+          clubLogo: "../assets/logos/brazil_flamengo.football-logos.cc.svg"
+        },
+        "george-abbott": {
+          firstName: "George",
+          lastName: "Abbott",
+          avatar: "../assets/img/field-player-3.png",
+          club: "Tottenham Hotspur",
+          clubShort: "Spurs",
+          number: 23,
+          position: "Midfielder",
+          nationality: "England",
+          nationalityCode: "gb",
+          preferredFoot: "Right",
+          dob: "22/08/2000",
+          appearances: 18,
+          cleanSheets: 5,
+          saves: 41,
+          clubLogo: "../assets/logos/cyprus_ael.football-logos.cc.svg"
+        },
+        "zach-abbott": {
+          firstName: "Zach",
+          lastName: "Abbott",
+          avatar: "../assets/img/recap-image-2.png",
+          club: "Nottingham Forest",
+          clubShort: "Forest",
+          number: 4,
+          position: "Defender",
+          nationality: "England",
+          nationalityCode: "gb",
+          preferredFoot: "Right",
+          dob: "05/01/1998",
+          appearances: 25,
+          cleanSheets: 12,
+          saves: 28,
+          clubLogo: "../assets/logos/cyprus_aez.football-logos.cc.svg"
+        },
+        "salis-abdul-samed": {
+          firstName: "Salis Abdul",
+          lastName: "Samed",
+          avatar: "../assets/img/recap-image.png",
+          club: "Sunderland",
+          clubShort: "Sunderland",
+          number: 6,
+          position: "Midfielder",
+          nationality: "Ghana",
+          nationalityCode: "gh",
+          preferredFoot: "Right",
+          dob: "18/06/1996",
+          appearances: 20,
+          cleanSheets: 6,
+          saves: 45,
+          clubLogo: "../assets/logos/england_accrington.football-logos.cc.svg"
+        },
+        "ahmed-abdullahi": {
+          firstName: "Ahmed",
+          lastName: "Abdullahi",
+          avatar: "../assets/img/field-player-2.png",
+          club: "Sunderland",
+          clubShort: "Sunderland",
+          number: 9,
+          position: "Forward",
+          nationality: "Nigeria",
+          nationalityCode: "ng",
+          preferredFoot: "Right",
+          dob: "12/09/1995",
+          appearances: 24,
+          cleanSheets: 2,
+          saves: 35,
+          clubLogo: "../assets/logos/england_arsenal.football-logos.cc.svg"
+        },
+        "tammy-abraham": {
+          firstName: "Tammy",
+          lastName: "Abraham",
+          avatar: "../assets/img/field-player-3.png",
+          club: "Aston Villa",
+          clubShort: "Villa",
+          number: 9,
+          position: "Forward",
+          nationality: "England",
+          nationalityCode: "gb",
+          preferredFoot: "Right",
+          dob: "02/10/1997",
+          appearances: 28,
+          cleanSheets: 1,
+          saves: 22,
+          clubLogo: "../assets/logos/england_chelsea.football-logos.cc.svg"
+        },
+        "josh-acheampong": {
+          firstName: "Josh",
+          lastName: "Acheampong",
+          avatar: "../assets/img/recap-image-2.png",
+          club: "Chelsea",
+          clubShort: "Chelsea",
+          number: 2,
+          position: "Defender",
+          nationality: "England",
+          nationalityCode: "gb",
+          preferredFoot: "Right",
+          dob: "08/04/2001",
+          appearances: 15,
+          cleanSheets: 9,
+          saves: 31,
+          clubLogo: "../assets/logos/england_chelsea.football-logos.cc.svg"
+        },
+        "tyler-adams": {
+          firstName: "Tyler",
+          lastName: "Adams",
+          avatar: "../assets/img/recap-image.png",
+          club: "Bournemouth",
+          clubShort: "Bournemouth",
+          number: 12,
+          position: "Midfielder",
+          nationality: "United States",
+          nationalityCode: "us",
+          preferredFoot: "Right",
+          dob: "14/02/1999",
+          appearances: 19,
+          cleanSheets: 4,
+          saves: 48,
+          clubLogo: "../assets/logos/germany_bayern-munchen.football-logos.cc.svg"
+        }
+      };
+
+      // Get player ID from URL
+      function getPlayerIdFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('player');
+      }
+
+      // Populate player data
+      function populatePlayerData() {
+        const playerId = getPlayerIdFromUrl();
+        const player = playerData[playerId];
+
+        if (!player) {
+          // Default to first player if no valid ID
+          return;
+        }
+
+        // Update page title
+        document.title = `${player.firstName} ${player.lastName} | National League`;
+
+        // Hero card
+        document.getElementById('playerPortrait').src = player.avatar;
+        document.getElementById('playerPortrait').alt = `${player.firstName} ${player.lastName} Portrait`;
+        document.getElementById('playerFirstName').textContent = player.firstName;
+        document.getElementById('playerLastName').innerHTML = `<strong>${player.lastName}</strong>`;
+        document.getElementById('playerClub').textContent = player.clubShort;
+        document.getElementById('playerNumber').textContent = player.number;
+        document.getElementById('playerPosition').textContent = player.position;
+
+        // Stats grid
+        document.getElementById('nationalityValue').innerHTML = `
+          <img src="https://flagcdn.com/w40/${player.nationalityCode}.png" alt="${player.nationality} flag"
+            style="width: 20px; height: 15px; margin-right: 6px; border-radius: 2px;" />
+          ${player.nationality}`;
+        document.getElementById('preferredFootValue').textContent = player.preferredFoot;
+        document.getElementById('dobValue').textContent = player.dob;
+
+        // Stats bar
+        document.getElementById('appearancesValue').textContent = player.appearances;
+        document.getElementById('cleanSheetsValue').textContent = player.cleanSheets;
+        document.getElementById('savesValue').textContent = player.saves;
+
+        // Team form
+        document.getElementById('teamFormLogo').src = player.clubLogo;
+        document.getElementById('teamFormName').textContent = player.club;
+      }
+
+      // ========== TEAM FORM DATA ==========
+      const matchData = {
+        previous: [
+          { matchday: "MW 27", opponentLogo: "../assets/logos/brazil_flamengo.football-logos.cc.svg", opponent: "Aston Villa", context: "AVL (H)", result: "1 - 1", outcome: "draw" },
+          { matchday: "MW 26", opponentLogo: "../assets/logos/australia_adelaide-united.football-logos.cc.svg", opponent: "Manchester City", context: "MCI (A)", result: "2 - 1", outcome: "win" },
+          { matchday: "MW 25", opponentLogo: "../assets/logos/usa_inter-miami-cf.football-logos.cc.svg", opponent: "Liverpool", context: "LIV (A)", result: "0 - 1", outcome: "loss" },
+          { matchday: "MW 24", opponentLogo: "../assets/logos/italy_juventus.football-logos.cc.svg", opponent: "Chelsea", context: "CHE (H)", result: "1 - 1", outcome: "draw" },
+          { matchday: "MW 23", opponentLogo: "../assets/logos/england_manchester-city.football-logos.cc.svg", opponent: "Tottenham", context: "TOT (H)", result: "3 - 1", outcome: "win" }
+        ],
+        upcoming: [
+          { matchday: "MW 31", opponentLogo: "../assets/logos/germany_borussia-dortmund.football-logos.cc.svg", opponent: "Brentford", context: "BRE (A)", result: "20 Apr", outcome: "upcoming" },
+          { matchday: "MW 32", opponentLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", opponent: "Chelsea", context: "CHE (H)", result: "27 Apr", outcome: "upcoming" },
+          { matchday: "MW 33", opponentLogo: "../assets/logos/england_accrington.football-logos.cc.svg", opponent: "Arsenal", context: "ARS (A)", result: "04 May", outcome: "upcoming" },
+          { matchday: "MW 34", opponentLogo: "../assets/logos/italy_juventus.football-logos.cc.svg", opponent: "Man City", context: "MCI (H)", result: "11 May", outcome: "upcoming" },
+          { matchday: "MW 35", opponentLogo: "../assets/logos/scotland_aberdeen.football-logos.cc.svg", opponent: "Liverpool", context: "LIV (H)", result: "18 May", outcome: "upcoming" }
+        ]
+      };
+
+      function renderMatchTimeline(type) {
+        const timeline = document.getElementById("matchTimeline");
+        if (!timeline) return;
+        const matches = matchData[type] || [];
+        timeline.innerHTML = matches.map(m => `
+          <div class="match-item">
+            <div class="match-day">${m.matchday}</div>
+            <div class="opponent-crest"><img src="${m.opponentLogo}" alt="${m.opponent}"></div>
+            <div class="match-context">${m.context}</div>
+            <div class="result-bar ${m.outcome === 'upcoming' ? '' : m.outcome}">${m.result}</div>
+          </div>
+        `).join('');
+      }
+
+      function initTeamFormToggle() {
+        const toggleBtns = document.querySelectorAll(".toggle-btn");
+        toggleBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const type = btn.getAttribute("data-form-type");
+            if (!type) return;
+            toggleBtns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            renderMatchTimeline(type);
+          });
+        });
+      }
+
+      // ========== MATCH RESULTS ==========
+      const months = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+
+      const matchResultsData = {
+        "March": [
+          { date: "Tue 3 Mar", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Sunderland", awayLogo: "../assets/logos/england_accrington.football-logos.cc.svg", homeScore: 0, awayScore: 1, status: "FT", indicator: "loss" },
+          { date: "Sun 8 Mar", homeTeam: "Newcastle", homeLogo: "../assets/logos/england_arsenal.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 2, awayScore: 1, status: "FT", indicator: "loss" },
+          { date: "Sun 15 Mar", homeTeam: "Crystal Palace", homeLogo: "../assets/logos/england_chelsea.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 0, awayScore: 0, status: "FT", indicator: "draw" },
+          { date: "Sat 21 Mar", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Brentford", awayLogo: "../assets/logos/england_accrington.football-logos.cc.svg", homeScore: 2, awayScore: 1, status: "FT", indicator: "win" },
+          { date: "Wed 25 Mar", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Sheffield United", awayLogo: "../assets/logos/england_manchester-united.football-logos.cc.svg", homeScore: 3, awayScore: 0, status: "FT", indicator: "win" },
+          { date: "Sun 29 Mar", homeTeam: "Burnley", homeLogo: "../assets/logos/england_liverpool.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 1, awayScore: 1, status: "FT", indicator: "draw" },
+          { date: "Tue 31 Mar", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Middlesbrough", awayLogo: "../assets/logos/england_chelsea.football-logos.cc.svg", homeScore: 2, awayScore: 0, status: "FT", indicator: "win" }
+        ],
+        "February": [
+          { date: "Sat 7 Feb", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Wolves", awayLogo: "../assets/logos/england_manchester-united.football-logos.cc.svg", homeScore: 2, awayScore: 1, status: "FT", indicator: "win" },
+          { date: "Sat 14 Feb", homeTeam: "Everton", homeLogo: "../assets/logos/england_arsenal.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 1, awayScore: 1, status: "FT", indicator: "draw" },
+          { date: "Sat 21 Feb", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Watford", awayLogo: "../assets/logos/england_accrington.football-logos.cc.svg", homeScore: 1, awayScore: 0, status: "FT", indicator: "win" },
+          { date: "Sat 28 Feb", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Fulham", awayLogo: "../assets/logos/england_chelsea.football-logos.cc.svg", homeScore: 3, awayScore: 0, status: "FT", indicator: "win" },
+          { date: "Wed 25 Feb", homeTeam: "Cardiff", homeLogo: "../assets/logos/england_manchester-city.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 0, awayScore: 2, status: "FT", indicator: "win" }
+        ]
+      };
+
+      let currentMonthIndex = months.indexOf("March");
+
+      function renderMatchResults(monthName) {
+        const container = document.getElementById("matchResultsContainer");
+        if (!container) return;
+        const matches = matchResultsData[monthName] || [];
+        container.innerHTML = matches.map(match => `
+          <div class="match-result-card">
+            <div class="match-date-section"><span class="match-date">${match.date}</span><span class="match-status">${match.status}</span></div>
+            <div class="match-teams-section">
+              <div class="match-team home-team"><span class="match-team-name">${match.homeTeam}</span><div class="match-team-logo"><img src="${match.homeLogo}" alt="${match.homeTeam}"></div></div>
+              <span class="match-score">${match.homeScore} - ${match.awayScore}</span>
+              <div class="match-team away-team"><div class="match-team-logo"><img src="${match.awayLogo}" alt="${match.awayTeam}"></div><span class="match-team-name">${match.awayTeam}</span></div>
+            </div>
+            <div class="match-indicator ${match.indicator}"></div>
+          </div>
+        `).join('');
+      }
+
+      // ========== TAB SWITCHING ==========
+      function initTabSwitching() {
+        const tabs = document.querySelectorAll(".player-tabs .tab");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+            tabContents.forEach((content) => content.classList.add("hidden"));
+            const tabId = tab.getAttribute("data-tab");
+            const targetContent = document.getElementById(tabId + "-content");
+            if (targetContent) targetContent.classList.remove("hidden");
+          });
+        });
+      }
+
+      // ========== MONTH CAROUSEL ==========
+      function initMonthCarousel() {
+        const prevBtn = document.getElementById("prevMonthBtn");
+        const nextBtn = document.getElementById("nextMonthBtn");
+        const monthTitle = document.getElementById("monthTitle");
+        if (!prevBtn || !nextBtn || !monthTitle) return;
+        prevBtn.addEventListener("click", () => {
+          currentMonthIndex = (currentMonthIndex - 1 + months.length) % months.length;
+          monthTitle.textContent = months[currentMonthIndex];
+          renderMatchResults(months[currentMonthIndex]);
+        });
+        nextBtn.addEventListener("click", () => {
+          currentMonthIndex = (currentMonthIndex + 1) % months.length;
+          monthTitle.textContent = months[currentMonthIndex];
+          renderMatchResults(months[currentMonthIndex]);
+        });
+      }
+
+      // ========== SEASON DROPDOWN ==========
+      function initSeasonDropdown() {
+        const seasonBtn = document.getElementById("seasonBtn");
+        const seasonDropdown = seasonBtn?.closest(".season-dropdown");
+        if (!seasonBtn || !seasonDropdown) return;
+        seasonBtn.addEventListener("click", (e) => { e.stopPropagation(); seasonDropdown.classList.toggle("open"); });
+        document.addEventListener("click", () => { seasonDropdown.classList.remove("open"); });
+        const seasonItems = document.querySelectorAll(".season-dropdown-item");
+        seasonItems.forEach(item => {
+          item.addEventListener("click", (e) => {
+            e.preventDefault();
+            seasonItems.forEach(i => i.classList.remove("active"));
+            item.classList.add("active");
+            seasonDropdown.classList.remove("open");
+          });
+        });
+      }
+
+      // ========== BURGER MENU ==========
+      function initBurgerMenu() {
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        if (burgerBtn && mobileNav) {
+          burgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            mobileNav.classList.toggle('open');
+          });
+          document.addEventListener('click', function(event) {
+            if (!mobileNav.contains(event.target) && !burgerBtn.contains(event.target)) {
+              mobileNav.classList.remove('open');
+            }
+          });
+        }
+      }
+
+      // ========== INIT ==========
+      document.addEventListener("DOMContentLoaded", () => {
+        populatePlayerData();
+        initTabSwitching();
+        initTeamFormToggle();
+        renderMatchTimeline("previous");
+        initMonthCarousel();
+        initSeasonDropdown();
+        renderMatchResults("March");
+        initBurgerMenu();
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

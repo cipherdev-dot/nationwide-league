@@ -1,0 +1,2139 @@
+/* ========== PLAYER DETAIL PAGE ========== */
+* {
+  box-sizing: border-box;
+}
+
+/* Page header – full width, gradient background */
+.page-header {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  background: linear-gradient(135deg, #525252 0%, #3d3d3d 55%, #f5f5f5 100%);
+  padding: 28px 60px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner container – centres the content */
+.player-detail-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 24px 30px;
+}
+
+.player-detail-page h1 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.25rem;
+}
+
+/* ----- MAIN CONTENT GRID (mobile‑first: single column) ----- */
+.player-content {
+  display: grid;
+  grid-template-areas:
+    "left"
+    "right";
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 30px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.left-column {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 350px;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.right-column {
+  grid-area: right;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ----- COMPONENT STYLES (unchanged) ----- */
+/* Player hero card */
+.player-hero-card {
+  background: #fcfcfc;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+  position: relative;
+  min-height: 280px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.player-hero-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.player-portrait {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+.player-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.player-info {
+  padding: 12px 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.player-first-name {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #525252;
+  margin-bottom: 2px;
+}
+.player-last-name {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #262626;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.player-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+  justify-content: center;
+}
+.player-meta span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  color: #525252;
+  background: #e5e5e5;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.follow-btn {
+  background: #525252;
+  color: white;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 30px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: fit-content;
+  margin: 0 auto 16px auto;
+}
+.follow-btn:hover {
+  background: #262626;
+}
+
+/* Player stats grid */
+.player-stats-grid {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 12px 8px;
+  border: none;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  color: #525252;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.stat-value {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #262626;
+}
+
+/* Stats bar */
+.stats-bar {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 12px 8px;
+  border: none;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.stat-item .stat-value {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #262626;
+}
+.stat-item .stat-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  color: #525252;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Full bio button */
+.full-bio-btn {
+  background: #e5e5e5;
+  color: #262626;
+  padding: 8px;
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  border: none;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  display: block;
+}
+.full-bio-btn:hover {
+  background: #fcfcfc;
+}
+
+/* Player tabs */
+.player-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+  padding-bottom: 0;
+  background: #f5f5f5;
+  border-radius: 12px 12px 0 0;
+  padding: 6px 6px 0;
+  margin-bottom: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.player-tabs .tab {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #525252;
+  padding: 0 16px 12px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+  white-space: nowrap;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.player-tabs .tab.active {
+  color: #262626;
+  border-bottom-color: #262626;
+}
+
+/* Next match and team form side by side layout */
+.match-and-form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
+  .match-and-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Ensure next-match-card and team-form-section take full height of grid cell */
+.match-and-form-row > .next-match-card {
+  width: 100%;
+  height: 228.39px;
+}
+
+.match-and-form-row > .team-form-section {
+  width: 100%;
+  height: 100%;
+}
+
+/* Desktop: fixed width for next match card */
+@media (min-width: 768px) {
+  .match-and-form-row > .next-match-card {
+    width: 461.33px;
+  }
+}
+
+/* Next match card */
+.next-match-card {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+  margin-top: 0;
+  overflow: hidden;
+}
+.match-header {
+  margin-bottom: 16px;
+}
+.match-label {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #525252;
+}
+.match-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin: 40px 0 39.9844px;
+  padding: 16px;
+  border: 1px solid rgba(82, 82, 82, 0.1);
+  border-radius: 12px;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.match-content:hover {
+  background-color: #fcfcfc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: rgba(82, 82, 82, 0.2);
+}
+
+/* Desktop: fixed width for match content */
+@media (min-width: 768px) {
+  .match-content {
+    flex-wrap: nowrap;
+    gap: 16px;
+    width: 429.33px;
+    height: 78px;
+  }
+}
+.team {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+.team.left-team {
+  justify-content: flex-end;
+}
+.team-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.team-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.team-name {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #525252;
+  white-space: nowrap;
+  text-align: center;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.match-time {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #525252;
+  text-align: center;
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+/* Desktop: larger sizes */
+@media (min-width: 768px) {
+  .team-logo {
+    width: 40px;
+    height: 40px;
+  }
+  .team-name {
+    font-size: 0.9rem;
+    max-width: 120px;
+  }
+  .match-time {
+    font-size: 1.1rem;
+  }
+}
+.match-competition {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  color: #525252;
+  text-align: center;
+}
+
+/* Team form section */
+.team-form-section {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+  overflow: hidden;
+}
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.form-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.form-title {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #525252;
+}
+.form-arrow {
+  font-size: 1rem;
+  color: #525252;
+  opacity: 0.7;
+}
+.form-toggle {
+  display: flex;
+  gap: 6px;
+  background: #e5e5e5;
+  border-radius: 32px;
+  padding: 3px;
+}
+.toggle-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 28px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #525252;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.toggle-btn.active {
+  background: #f5f5f5;
+  color: #525252;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.team-identifier {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+}
+.team-identifier-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.team-identifier-name {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #525252;
+}
+.match-timeline {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.match-timeline::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.match-item {
+  flex: 0 0 auto;
+  width: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.match-day {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #525252;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.opponent-crest {
+  width: 48px;
+  height: 48px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 4px 0;
+}
+.opponent-crest img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.match-context {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #525252;
+}
+.result-bar {
+  display: inline-block;
+  background: #f0f0f0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 4px 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 95px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 20px;
+}
+.result-bar.win {
+  background: #16a34a;
+  color: white;
+}
+.result-bar.loss {
+  background: #dc2626;
+  color: white;
+}
+.result-bar.draw {
+  background: #4b5563;
+  color: white;
+}
+
+/* Teammates section */
+.teammates-section {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+}
+.teammates-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.teammates-header h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #525252;
+  margin: 0;
+}
+.carousel-nav {
+  display: flex;
+  gap: 8px;
+}
+.carousel-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.carousel-btn:hover {
+  background: #e5e5e5;
+  transform: scale(1.05);
+}
+.teammates-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.teammate-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #f5f5f5;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+  border-radius: 12px;
+  padding: 12px;
+  transition: all 0.2s;
+}
+.teammate-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.teammate-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.teammate-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.teammate-name {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #262626;
+  margin-left: 12px;
+  flex: 1;
+  line-height: 1.3;
+}
+.teammate-meta {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  color: #525252;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* From the clubs section */
+.from-clubs-section {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.section-header h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #525252;
+  margin: 0;
+}
+.see-all-link {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #525252;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.see-all-link:hover {
+  color: #262626;
+}
+.clubs-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  overflow: visible;
+}
+.club-card {
+  width: 100%;
+  background: #e5e5e5;
+  border-radius: 12px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.club-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.club-thumbnail {
+  width: 100%;
+  height: 140px;
+  position: relative;
+  overflow: hidden;
+}
+.club-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.club-card:hover .play-btn {
+  background: #525252;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.play-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: #262626;
+  margin-left: 2px;
+}
+.club-card:hover .play-btn svg {
+  fill: #fff;
+}
+.club-content {
+  padding: 12px;
+}
+.club-badge {
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #525252;
+  margin-bottom: 6px;
+}
+.club-title {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #262626;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.club-link {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #525252;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.club-link:hover {
+  color: #262626;
+}
+
+/* Quick links section */
+.quick-links-section {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 12px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+}
+.quick-link-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.quick-link-item:last-child {
+  border-bottom: none;
+}
+.quick-link-item:hover {
+  background: #e5e5e5;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.link-text {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #262626;
+}
+.link-arrow {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #525252;
+  transition: transform 0.2s;
+}
+.quick-link-item:hover .link-arrow {
+  transform: translateX(4px);
+}
+
+/* Tab Content */
+.tab-content {
+  display: block;
+}
+
+.tab-content.hidden {
+  display: none;
+}
+
+/* Career History Section */
+.career-container {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+}
+
+/* Career Card */
+.career-card {
+  background: #fcfcfc;
+  border-radius: 12px;
+  border: 1px solid rgba(82, 82, 82, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.2s ease;
+}
+
+.career-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: rgba(82, 82, 82, 0.2);
+}
+
+.career-card:last-of-type {
+  margin-bottom: 20px;
+}
+
+/* Season Title */
+.season-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #525252;
+  margin: 0 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(82, 82, 82, 0.1);
+}
+
+/* Club Row */
+.club-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.club-row img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.club-name {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #262626;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.05);
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-row span:first-child {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #525252;
+  text-align: left;
+}
+
+.stat-row span:last-child {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #262626;
+  text-align: right;
+  min-width: 60px;
+}
+
+/* Notice Box */
+.notice-box {
+  background: #e8f4fd;
+  border: 1px solid #b3d9f7;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  color: #336699;
+  line-height: 1.5;
+}
+
+.notice-box a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.notice-box a:hover {
+  text-decoration: underline;
+}
+
+
+/* Stats Cards Row for Appearances, Goals, Assists */
+.stats-cards-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.stats-card {
+  width: 304px;
+  height: 110.41px;
+  padding: 16px;
+  background: #fcfcfc;
+  border-radius: 12px;
+  /* border: 1px solid rgba(82, 82, 82, 0.15); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+/* Mobile: use the previous dimensions */
+@media (max-width: 767px) {
+  .stats-card {
+    width: 134.94px;
+    height: 123.22px;
+  }
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(82, 82, 82, 0.1);
+}
+
+.stats-card-label {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #525252;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.stats-card-value {
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: #262626;
+}
+
+/* Detailed Stats Row (Attack & Possession Columns) */
+.detailed-stats-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.detailed-stats-column {
+  width: 460px;
+  height: 400.66px;
+  padding: 16px;
+  background: #fcfcfc;
+  border-radius: 12px;
+  /* border: 1px solid rgba(82, 82, 82, 0.15); */
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.detailed-stats-column:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  border: 1px solid rgba(82, 82, 82, 0.1);
+}
+
+.detailed-stats-header {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #262626;
+  text-align: left;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(82, 82, 82, 0.1);
+}
+
+.detailed-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.detailed-stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.05);
+}
+
+.detailed-stat-item:last-child {
+  border-bottom: none;
+}
+
+.detailed-stat-item .stat-name {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #525252;
+  text-align: left;
+  flex: 1;
+}
+
+.detailed-stat-item .stat-value {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #262626;
+  text-align: right;
+  min-width: 60px;
+}
+
+/* Physical and Defence Columns - Specific Dimensions */
+.detailed-stats-column.physical-column,
+.detailed-stats-column.defence-column {
+  width: 460px;
+  height: 230.03px;
+  padding: 16px;
+}
+
+/* Discipline Column - Specific Dimensions */
+.detailed-stats-column.discipline-column {
+  width: 928px;
+  height: 234.03px;
+  padding: 16px;
+}
+
+/* Mobile: adjust detailed stats columns */
+@media (max-width: 767px) {
+  .detailed-stats-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detailed-stats-column {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: 400px;
+  }
+
+  .detailed-stats-column.physical-column,
+  .detailed-stats-column.defence-column {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+/* Small screen (320px to 425px): stack appearance, goals, assists cards */
+@media (min-width: 320px) and (max-width: 425px) {
+  .stats-cards-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stats-card {
+    width: 100%;
+    max-width: 300px;
+    height: 110px;
+  }
+
+  .stats-card-label {
+    font-size: 14px;
+  }
+
+  .stats-card-value {
+    font-size: 32px;
+  }
+}
+
+/* Small mobile (320px to 767px): ensure columns stack on mobile */
+@media (min-width: 320px) and (max-width: 767px) {
+  .detailed-stats-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .detailed-stats-column,
+  .detailed-stats-column.discipline-column {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: auto;
+  }
+
+  .discipline-stats-row .discipline-stats-column {
+    min-width: 300px;
+  }
+  .detailed-stats-column {
+    min-height: fit-content;
+  }
+  .stats-card-label {
+    font-size: 11px;
+  }
+}
+
+/* Stats Section */
+.stats-section {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+}
+
+/* Stats Season Selector */
+.stats-season-selector {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 20px;
+}
+
+.stats-season-selector .season-dropdown {
+  display: inline-block;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 16px;
+  align-items: center;
+  border: 1px solid teal;
+}
+
+.stats-row {
+  display: contents;
+}
+
+.stats-cell {
+  font-family: "Inter", sans-serif;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.stats-cell.header {
+  font-weight: 600;
+  color: #525252;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+.stats-cell.data {
+  font-weight: 700;
+  color: #262626;
+  font-size: 0.9rem;
+  justify-content: flex-end;
+}
+
+/* Remove border from last row */
+.stats-row:last-child .stats-cell {
+  border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .stats-grid {
+    gap: 20px;
+  }
+  .stats-cell {
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .stats-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(82, 82, 82, 0.1);
+  }
+  .stats-cell.header {
+    text-align: left;
+  }
+  .stats-cell.data {
+    justify-content: flex-start;
+    font-size: 1rem;
+  }
+}
+
+/* Video Section */
+.video-section {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+}
+
+.video-section .section-header {
+  margin-bottom: 20px;
+}
+
+.video-section .section-header h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #262626;
+  margin: 0;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .videos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  /* Make the last two items span to create the 3+2 layout */
+  .videos-grid .video-card:nth-last-child(4) {
+    grid-column: span 1;
+  }
+  .videos-grid .video-card:nth-last-child(5) {
+    grid-column: span 1;
+  }
+}
+
+.video-card {
+  background: #e5e5e5;
+  border-radius: 12px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  max-width: 288px;
+  height: 239.61px;
+  margin: 0 auto;
+}
+
+.video-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-play-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.video-card:hover .video-play-btn {
+  background: #525252;
+  transform: scale(1.1);
+}
+
+.video-play-btn i {
+  font-size: 12px;
+  color: #262626;
+  margin-left: 2px;
+}
+
+.video-card:hover .video-play-btn i {
+  color: #fff;
+}
+
+.video-info {
+  padding: 12px;
+}
+
+.video-title {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #262626;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.video-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  color: #525252;
+  font-weight: 500;
+}
+
+/* ========== MATCH RESULTS SECTION – BASE STYLES (applies to all screen sizes) ========== */
+.match-results-section {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+}
+
+.match-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Season Dropdown */
+.season-dropdown {
+  position: relative;
+}
+
+.season-btn {
+  background: #e5e5e5;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #262626;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.season-btn:hover {
+  background: #d5d5d5;
+}
+
+.season-arrow {
+  font-size: 0.65rem;
+  transition: transform 0.2s;
+}
+
+.season-dropdown.open .season-arrow {
+  transform: rotate(180deg);
+}
+
+.season-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  min-width: 120px;
+  padding: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.season-dropdown.open .season-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.season-dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #525252;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.season-dropdown-item:hover {
+  background: #f5f5f5;
+  color: #262626;
+}
+
+.season-dropdown-item.active {
+  background: #525252;
+  color: #fff;
+}
+
+/* Month Navigation */
+.month-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.month-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e5e5e5;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--charcoal);
+  font-size: 0.9rem;
+}
+
+.month-nav-btn:hover {
+  background: #525252;
+  color: #f5f5f5;
+  transform: scale(1.05);
+}
+
+.month-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.month-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #525252;
+  margin: 0;
+  min-width: 100px;
+  text-align: center;
+}
+
+/* Match Results Container */
+.match-results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Match Result Card */
+.match-result-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 12px 16px;
+  gap: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  flex-wrap: nowrap;
+  width: 100%;
+  border: 1px solid rgba(82, 82, 82, 0.1);
+}
+
+.match-result-card:hover {
+  background-color: #fcfcfc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: rgba(82, 82, 82, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Match Date */
+.match-date-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+
+.match-date {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #525252;
+  margin-bottom: 1px;
+  white-space: nowrap;
+}
+
+.match-status {
+  font-family: "Inter", sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #525252;
+  white-space: nowrap;
+}
+
+/* Match Teams & Score */
+.match-teams-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.match-team {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.match-team.home-team {
+  justify-content: flex-end;
+}
+
+.match-team.away-team {
+  justify-content: flex-start;
+}
+
+.match-team-name {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #525252;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70px;
+}
+
+.match-team-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-team-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.match-score {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #525252;
+  min-width: 40px;
+  text-align: center;
+  background: #f5f5f5;
+  padding: 3px 8px;
+  border-radius: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Match Indicator */
+.match-indicator {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-indicator.win {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid #16a34a;
+}
+
+.match-indicator.draw {
+  width: 4px;
+  height: 12px;
+  background: #4b5563;
+  border-radius: 2px;
+}
+
+.match-indicator.loss {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid #dc2626;
+}
+
+/* ========== MOBILE ADJUSTMENTS (max-width: 767px) ========== */
+@media (max-width: 767px) {
+  .match-results-section {
+    padding: 12px 8px;
+  }
+
+  .match-results-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .month-navigation {
+    gap: 8px;
+  }
+
+  .month-title {
+    font-size: 1rem;
+    min-width: auto;
+  }
+
+  .month-nav-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+
+  /* Keep single row layout from 320px upwards */
+  .match-result-card {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .match-date-section {
+    min-width: 45px;
+  }
+
+  .match-date {
+    font-size: 0.65rem;
+  }
+
+  .match-status {
+    font-size: 0.5rem;
+  }
+
+  .match-teams-section {
+    gap: 6px;
+  }
+
+  .match-team {
+    gap: 4px;
+  }
+
+  .match-team-name {
+    font-size: 0.6rem;
+    max-width: 55px;
+  }
+
+  .match-team-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .match-score {
+    font-size: 0.85rem;
+    min-width: 35px;
+    padding: 2px 6px;
+  }
+
+  .match-indicator {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  .match-indicator.win,
+  .match-indicator.loss,
+  .match-indicator.draw {
+    width: auto;
+    height: auto;
+    border: none;
+    background: transparent;
+  }
+
+  /* Replace arrows/bars with text labels for clarity */
+  .match-indicator.win::after {
+    content: "W";
+    color: #16a34a;
+    font-weight: bold;
+    font-size: 0.65rem;
+  }
+  .match-indicator.draw::after {
+    content: "D";
+    color: #4b5563;
+    font-weight: bold;
+    font-size: 0.65rem;
+  }
+  .match-indicator.loss::after {
+    content: "L";
+    color: #dc2626;
+    font-weight: bold;
+    font-size: 0.65rem;
+  }
+}
+
+/* Very small screens (min-width: 320px) - ensure single row */
+@media (min-width: 320px) {
+  .match-result-card {
+    flex-wrap: nowrap;
+  }
+
+  .match-date-section,
+  .match-teams-section,
+  .match-team,
+  .match-team-name,
+  .match-score {
+    white-space: nowrap;
+  }
+}
+
+/* Optional: very small screens (up to 480px) – further adjustments */
+@media (max-width: 480px) {
+  .match-results-section {
+    padding: 12px;
+  }
+
+  .match-team-name {
+    font-size: 0.75rem;
+  }
+
+  .match-team-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .match-score {
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== MOBILE ADJUSTMENTS (max-width: 765px) ========== */
+@media (max-width: 765px) {
+  .player-hero-card {
+    min-height: 220px;
+  }
+  .player-portrait {
+    height: 160px;
+  }
+  .player-info {
+    padding: 12px;
+  }
+  .player-first-name {
+    font-size: 0.75rem;
+  }
+  .player-last-name {
+    font-size: 1.2rem;
+  }
+  .player-meta span {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+  }
+  .follow-btn {
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    margin: 0 12px 12px 12px;
+  }
+}
+
+/* ========== RESPONSIVE (mobile‑first, min‑width) ========== */
+
+/* Small tablets & up (≥ 640px) – adjust spacing, teammates grid to 2 columns */
+@media (min-width: 640px) {
+  .teammates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .clubs-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .player-detail-page {
+    padding: 20px 24px 30px;
+  }
+}
+
+/* Tablet (≥ 768px) – fine‑tune stats layout */
+@media (min-width: 768px) {
+  .video-card {
+    width: 288px;
+    height: 200px;
+  }
+  .player-stats-grid {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .stat-block {
+    flex-direction: column;
+    text-align: left;
+  }
+  .stats-bar {
+    flex-direction: row;
+  }
+  .stat-item {
+    flex-direction: column;
+  }
+  .player-portrait {
+    height: 220px;
+  }
+  .player-info {
+    text-align: center;
+    align-items: center;
+  }
+  .follow-btn {
+    width: fit-content;
+    margin: 0 auto 20px auto;
+  }
+  .player-meta {
+    justify-content: center;
+  }
+  .player-tabs {
+    overflow-x: visible;
+    white-space: normal;
+  }
+  .match-content {
+    flex-wrap: nowrap;
+  }
+  .team-name {
+    max-width: 120px;
+    white-space: normal;
+  }
+  .form-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .form-toggle {
+    width: auto;
+  }
+  .match-timeline {
+    gap: 24px;
+  }
+
+  /* Additional match result adjustments for tablet and up */
+  .match-results-header {
+    margin-bottom: 24px;
+  }
+
+  .month-title {
+    font-size: 1.8rem;
+    min-width: 140px;
+  }
+
+  .match-result-card {
+    padding: 18px 20px;
+  }
+
+  .match-team-name {
+    max-width: 140px;
+    font-size: 0.9rem;
+  }
+
+  .match-team-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .match-score {
+    font-size: 1.2rem;
+    min-width: 60px;
+    padding: 6px 16px;
+  }
+
+  .match-item {
+    width: 100px;
+  }
+  .opponent-crest {
+    width: 48px;
+    height: 48px;
+  }
+  .result-bar {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Desktop (≥ 1024px) – switch to two‑column layout */
+@media (min-width: 1024px) {
+  .player-content {
+    grid-template-areas: "left right";
+    grid-template-columns: 1.5fr 8.5fr;
+    gap: 24px;
+    padding: 0 24px;
+  }
+  .left-column {
+    max-width: 280px;
+  }
+  .teammates-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .clubs-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .match-results-container {
+    max-width: 600px;
+  }
+}
+
+/* Large desktop (≥ 1200px) – adjust column ratio and gaps */
+@media (min-width: 1200px) {
+  .player-content {
+    grid-template-columns: 1.5fr 3.5fr;
+    gap: 20px;
+  }
+  .left-column {
+    max-width: 300px;
+  }
+  .player-detail-page {
+    padding: 20px 20px 30px;
+  }
+}
+
+/* Ultra‑wide (≥ 1440px) – cap max‑width */
+@media (min-width: 1440px) {
+  .player-detail-page {
+    padding: 20px 0;
+  }
+  .player-content {
+    padding: 0;
+  }
+}
+
+/* Footer spacing fix - ensure proper spacing between content and footer */
+.footer-bar-wrap {
+  margin-top: 0;
+  clear: both;
+}
+
+.bottom-strip {
+  margin-top: 0;
+}
+
+/* Ensure body has proper min-height for footer positioning */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area should push footer down */
+.player-content {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  flex: 1;
+}
+
+/* Ensure left column has proper spacing from footer */
+.left-column {
+  margin-bottom: 20px;
+}
+
+/* Remove extra spacing from right column */
+.right-column {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Ensure tab content doesn't add extra spacing */
+.tab-content {
+  margin-bottom: 0;
+}
+
+/* Video section spacing */
+.video-section {
+  margin-bottom: 0;
+}
+
+/* Match results section spacing */
+.match-results-section {
+  margin-bottom: 0;
+}
+
+.player-portrait {
+  height: 240px;
+  width: 100%;
+  grid-template-areas:
+    "image"
+    "info";
+  background-color: #e5e5e5;
+}
+.player-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+
+  /* object-position: center; */
+}
+.player-info {
+  padding: 12px 8px;
+  text-align: center;
+  align-items: center;
+}
+.player-hero-card {
+  background: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  min-height: 280px;
+  border: none;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.15);
+}
+.player-stats-grid {
+  width: 100%;
+}
+.stats-bar {
+  width: 100%;
+}
+.stat-item {
+  width: 100%;
+}
+.full-bio-btn {
+  width: 100%;
+}
+.right-column {
+  min-width: 200px;
+}
+.match-content {
+  flex-wrap: nowrap;
+}
+.form-toggle {
+  width: auto;
+}
+.match-timeline {
+  gap: 24px;
+}

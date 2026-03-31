@@ -167,6 +167,20 @@
   gap: 1rem;
 }
 
+.player-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.player-link:hover {
+  color: var(--charcoal);
+}
+
 .avatar {
   width: 52px;
   height: 52px;
@@ -224,7 +238,7 @@
   height: 15px;
   object-fit: cover;
   border-radius: 2px;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 .nationality span {
   font-size: 0.85rem;

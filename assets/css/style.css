@@ -374,7 +374,7 @@ img {
 }
 .page-header {
   background: linear-gradient(135deg, #525252 0%, #3d3d3d 55%, #f5f5f5 100%);
-  padding: 28px 32px 36px;
+  padding: 28px 60px 36px;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
@@ -779,6 +779,86 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 14px;
+}
+
+/* Responsive styles for ps-grid and stats-card */
+@media (max-width: 1023px) {
+  .ps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .ps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .ps-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-card {
+    border-radius: 8px;
+  }
+  .stats-header {
+    padding: 12px 14px 10px;
+  }
+  .stats-title {
+    font-size: 11px;
+  }
+  .player-row {
+    grid-template-columns: 18px 44px 1fr 28px;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  .player-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  .player-name {
+    font-size: 10px;
+  }
+  .player-club {
+    font-size: 10px;
+  }
+  .player-stat {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .ps-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .stats-card {
+    border-radius: 6px;
+  }
+  .stats-header {
+    padding: 10px 12px 8px;
+  }
+  .stats-title {
+    font-size: 10px;
+  }
+  .player-row {
+    grid-template-columns: 16px 38px 1fr 26px;
+    gap: 6px;
+    padding: 6px 10px;
+  }
+  .player-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .player-name {
+    font-size: 9px;
+  }
+  .player-club {
+    font-size: 9px;
+  }
+  .player-stat {
+    font-size: 11px;
+  }
 }
 .stats-card {
   background: var(--charcoal);
