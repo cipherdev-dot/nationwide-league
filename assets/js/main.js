@@ -103,12 +103,19 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
+  // BURGER MENU FIX - handle both static HTML and dynamically populated menus
   if (burger && mobileNav) {
-    populateMobileMenu();
+    // Only populate if links container is empty, otherwise use existing links
+    const mobileLinksContainer = mobileNav?.querySelector(".mobile-nav-links");
+    if (mobileLinksContainer && mobileLinksContainer.children.length === 0) {
+      populateMobileMenu();
+    }
 
     burger.addEventListener("click", (e) => {
       e.stopPropagation();
+      e.preventDefault();
       mobileNav.classList.toggle("open");
+      burger.classList.toggle("active");
     });
 
     window.addEventListener("resize", () => {

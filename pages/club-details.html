@@ -807,14 +807,168 @@
         <!-- Video Tab Content -->
         <div class="club-tab-content hidden" id="video-content">
           <div class="club-placeholder-section">
-            <p>Video content coming soon...</p>
+            <p><div class="grid-container">
+
+    <!-- Row 1 -->
+    <div class="card">
+      <img src="../assets/img/recap-image.png" class="card-image" alt="">
+      <div class="club-play-btn">
+        <svg viewBox="0 0 24 24">
+          <polygon points="5,3 19,12 5,21" />
+        </svg>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Full Match: Leeds United vs Chelsea</h3>
+        <p class="card-subtitle">Full Match</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/field-player-1.png" class="card-image" alt="">
+      <div class="club-play-btn">
+        <svg viewBox="0 0 24 24">
+          <polygon points="5,3 19,12 5,21" />
+        </svg>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Highlights: All goals from Matchweek 31</h3>
+        <p class="card-subtitle">Highlights</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/download4.jfif" class="card-image" alt="">
+      <div class="club-play-btn">
+        <svg viewBox="0 0 24 24">
+          <polygon points="5,3 19,12 5,21" />
+        </svg>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Press Conference: Daniel Farke pre-match briefing</h3>
+        <p class="card-subtitle">Press Conference</p>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="card">
+      <img src="../assets/img/download (1).jfif" class="card-image" alt="">
+      <div class="club-play-btn">
+        <svg viewBox="0 0 24 24">
+          <polygon points="5,3 19,12 5,21" />
+        </svg>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Training Ground: Behind the scenes at Thorp Arch</h3>
+        <p class="card-subtitle">Feature</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/download (2).jfif" class="card-image" alt="">
+      <div class="club-play-btn">
+        <svg viewBox="0 0 24 24">
+          <polygon points="5,3 19,12 5,21" />
+        </svg>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Player Interview: Calvert-Lewin on his return</h3>
+        <p class="card-subtitle">Interview</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/download (3).jfif" class="card-image" alt="">
+      <div class="club-play-btn">
+        <svg viewBox="0 0 24 24">
+          <polygon points="5,3 19,12 5,21" />
+        </svg>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Analysis: Tactical breakdown vs Manchester United</h3>
+        <p class="card-subtitle">Analysis</p>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="card">
+      <img src="../assets/img/download (5).jfif" class="card-image" alt="">
+      <div class="club-play-btn">
+        <svg viewBox="0 0 24 24">
+          <polygon points="5,3 19,12 5,21" />
+        </svg>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Goal Cam: Every angle of Nmecha's wonder strike</h3>
+        <p class="card-subtitle">Goal Cam</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/images.jfif" class="card-image" alt="">
+      <div class="club-play-btn">
+        <svg viewBox="0 0 24 24">
+          <polygon points="5,3 19,12 5,21" />
+        </svg>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Legend Profile: Greatest Leeds United moments</h3>
+        <p class="card-subtitle">History</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/download.jfif" class="card-image" alt="">
+      <div class="club-play-btn">
+        <svg viewBox="0 0 24 24">
+          <polygon points="5,3 19,12 5,21" />
+        </svg>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Fan Zone: Best supporter reactions from the weekend</h3>
+        <p class="card-subtitle">Fans</p>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="view-more">View More</button></p>
           </div>
         </div>
 
         <!-- Matches Tab Content -->
         <div class="club-tab-content hidden" id="matches-content">
-          <div class="club-placeholder-section">
-            <p>Matches content coming soon...</p>
+          <!-- Match Results Section -->
+          <div class="match-results-section">
+            <!-- Season Dropdown -->
+            <div class="match-results-header">
+              <div class="season-dropdown">
+                <button class="season-btn" id="seasonBtn">
+                  <span class="season-text">2025/26</span>
+                  <i class="fas fa-chevron-down season-arrow"></i>
+                </button>
+                <div class="season-dropdown-menu" id="seasonDropdownMenu">
+                  <a href="#" class="season-dropdown-item active">2025/26</a>
+                  <a href="#" class="season-dropdown-item">2024/25</a>
+                  <a href="#" class="season-dropdown-item">2023/24</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Month Navigation (on top of match cards) -->
+            <div class="month-navigation">
+              <button class="month-nav-btn left-btn" id="prevMonthBtn">
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <h2 class="month-title" id="monthTitle">March</h2>
+              <button class="month-nav-btn right-btn" id="nextMonthBtn">
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Match Results Container -->
+            <div class="match-results-container" id="matchResultsContainer">
+              <!-- Matches will be dynamically populated -->
+            </div>
           </div>
         </div>
 
@@ -1012,6 +1166,98 @@
         }
       }
 
+      // ========== MONTH CAROUSEL ==========
+      let currentMonthIndex = 2; // March
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+      function initMonthCarousel() {
+        const prevBtn = document.getElementById("prevMonthBtn");
+        const nextBtn = document.getElementById("nextMonthBtn");
+        const monthTitle = document.getElementById("monthTitle");
+        if (!prevBtn || !nextBtn || !monthTitle) return;
+        prevBtn.addEventListener("click", () => {
+          currentMonthIndex = (currentMonthIndex - 1 + months.length) % months.length;
+          monthTitle.textContent = months[currentMonthIndex];
+          renderMatchResults(months[currentMonthIndex]);
+        });
+        nextBtn.addEventListener("click", () => {
+          currentMonthIndex = (currentMonthIndex + 1) % months.length;
+          monthTitle.textContent = months[currentMonthIndex];
+          renderMatchResults(months[currentMonthIndex]);
+        });
+      }
+
+      // ========== SEASON DROPDOWN ==========
+      function initSeasonDropdown() {
+        const seasonBtn = document.getElementById("seasonBtn");
+        const seasonDropdown = seasonBtn?.closest(".season-dropdown");
+        if (!seasonBtn || !seasonDropdown) return;
+        seasonBtn.addEventListener("click", (e) => { e.stopPropagation(); seasonDropdown.classList.toggle("open"); });
+        document.addEventListener("click", () => { seasonDropdown.classList.remove("open"); });
+        const seasonItems = document.querySelectorAll(".season-dropdown-item");
+        seasonItems.forEach(item => {
+          item.addEventListener("click", (e) => {
+            e.preventDefault();
+            seasonItems.forEach(i => i.classList.remove("active"));
+            item.classList.add("active");
+            seasonDropdown.classList.remove("open");
+          });
+        });
+      }
+
+      // ========== MATCH RESULTS DATA ==========
+      const matchResultsData = {
+        "March": [
+          { date: "Tue 3 Mar", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Sunderland", awayLogo: "../assets/logos/england_accrington.football-logos.cc.svg", homeScore: 0, awayScore: 1, status: "FT", indicator: "loss" },
+          { date: "Sun 8 Mar", homeTeam: "Newcastle", homeLogo: "../assets/logos/england_arsenal.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 2, awayScore: 1, status: "FT", indicator: "loss" },
+          { date: "Sun 15 Mar", homeTeam: "Crystal Palace", homeLogo: "../assets/logos/england_chelsea.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 0, awayScore: 0, status: "FT", indicator: "draw" },
+          { date: "Sat 21 Mar", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Brentford", awayLogo: "../assets/logos/england_accrington.football-logos.cc.svg", homeScore: 2, awayScore: 1, status: "FT", indicator: "win" },
+          { date: "Wed 25 Mar", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Sheffield United", awayLogo: "../assets/logos/england_manchester-united.football-logos.cc.svg", homeScore: 3, awayScore: 0, status: "FT", indicator: "win" },
+          { date: "Sun 29 Mar", homeTeam: "Burnley", homeLogo: "../assets/logos/england_liverpool.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 1, awayScore: 1, status: "FT", indicator: "draw" },
+          { date: "Tue 31 Mar", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Middlesbrough", awayLogo: "../assets/logos/england_chelsea.football-logos.cc.svg", homeScore: 2, awayScore: 0, status: "FT", indicator: "win" }
+        ],
+        "February": [
+          { date: "Sat 7 Feb", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Wolves", awayLogo: "../assets/logos/england_manchester-united.football-logos.cc.svg", homeScore: 2, awayScore: 1, status: "FT", indicator: "win" },
+          { date: "Sat 14 Feb", homeTeam: "Everton", homeLogo: "../assets/logos/england_arsenal.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 1, awayScore: 1, status: "FT", indicator: "draw" },
+          { date: "Sat 21 Feb", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Watford", awayLogo: "../assets/logos/england_accrington.football-logos.cc.svg", homeScore: 1, awayScore: 0, status: "FT", indicator: "win" },
+          { date: "Sat 28 Feb", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Fulham", awayLogo: "../assets/logos/england_chelsea.football-logos.cc.svg", homeScore: 3, awayScore: 0, status: "FT", indicator: "win" },
+          { date: "Wed 25 Feb", homeTeam: "Cardiff", homeLogo: "../assets/logos/england_manchester-city.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 0, awayScore: 2, status: "FT", indicator: "win" }
+        ],
+        "January": [
+          { date: "Sat 4 Jan", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Aston Villa", awayLogo: "../assets/logos/england_arsenal.football-logos.cc.svg", homeScore: 1, awayScore: 2, status: "FT", indicator: "loss" },
+          { date: "Sat 11 Jan", homeTeam: "Manchester City", homeLogo: "../assets/logos/england_manchester-city.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 3, awayScore: 1, status: "FT", indicator: "loss" },
+          { date: "Sat 18 Jan", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Liverpool", awayLogo: "../assets/logos/england_liverpool.football-logos.cc.svg", homeScore: 0, awayScore: 0, status: "FT", indicator: "draw" }
+        ],
+        "April": [
+          { date: "Sat 4 Apr", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Tottenham", awayLogo: "../assets/logos/england_chelsea.football-logos.cc.svg", homeScore: 2, awayScore: 1, status: "FT", indicator: "win" },
+          { date: "Sat 11 Apr", homeTeam: "West Ham", homeLogo: "../assets/logos/england_accrington.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 1, awayScore: 3, status: "FT", indicator: "win" },
+          { date: "Sat 18 Apr", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Chelsea", awayLogo: "../assets/logos/england_chelsea.football-logos.cc.svg", homeScore: 1, awayScore: 1, status: "FT", indicator: "draw" }
+        ],
+        "May": [
+          { date: "Sat 2 May", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Arsenal", awayLogo: "../assets/logos/england_arsenal.football-logos.cc.svg", homeScore: 0, awayScore: 2, status: "FT", indicator: "loss" },
+          { date: "Sat 9 May", homeTeam: "Manchester United", homeLogo: "../assets/logos/england_manchester-united.football-logos.cc.svg", awayTeam: "Leeds United", awayLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", homeScore: 2, awayScore: 2, status: "FT", indicator: "draw" },
+          { date: "Sun 17 May", homeTeam: "Leeds United", homeLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", awayTeam: "Newcastle", awayLogo: "../assets/logos/england_arsenal.football-logos.cc.svg", homeScore: 3, awayScore: 1, status: "FT", indicator: "win" }
+        ]
+      };
+
+      // ========== RENDER MATCH RESULTS ==========
+      function renderMatchResults(monthName) {
+        const container = document.getElementById("matchResultsContainer");
+        if (!container) return;
+        const matches = matchResultsData[monthName] || [];
+        container.innerHTML = matches.map(match => `
+          <div class="match-result-card">
+            <div class="match-date-section"><span class="match-date">${match.date}</span><span class="match-status">${match.status}</span></div>
+            <div class="match-teams-section">
+              <div class="match-team home-team"><span class="match-team-name">${match.homeTeam}</span><div class="match-team-logo"><img src="${match.homeLogo}" alt="${match.homeTeam}"></div></div>
+              <span class="match-score">${match.homeScore} - ${match.awayScore}</span>
+              <div class="match-team away-team"><div class="match-team-logo"><img src="${match.awayLogo}" alt="${match.awayTeam}"></div><span class="match-team-name">${match.awayTeam}</span></div>
+            </div>
+            <div class="match-indicator ${match.indicator}"></div>
+          </div>
+        `).join('');
+      }
+
       document.addEventListener('DOMContentLoaded', function() {
         // Tab Switching
         const tabs = document.querySelectorAll('.club-tab');
@@ -1043,8 +1289,13 @@
         initClubTeamFormToggle();
         renderClubMatchTimeline("previous");
 
-        // Burger Menu
-        initClubBurgerMenu();
+        // Matches Tab Functionality
+        initMonthCarousel();
+        initSeasonDropdown();
+        renderMatchResults("March");
+
+        // BURGER MENU IS NOW HANDLED EXCLUSIVELY BY main.js
+        // initClubBurgerMenu();
       });
     </script>
   </body>
