@@ -696,7 +696,111 @@
         <!-- News Tab Content -->
         <div class="club-tab-content hidden" id="news-content">
           <div class="club-placeholder-section">
-            <p>News content coming soon...</p>
+            <p><div class="grid-container">
+
+    <!-- Row 1 -->
+    <div class="card">
+      <img src="../assets/img/download (1).jfif" class="card-image" alt="">
+      <div class="card-content">
+        <h3 class="card-title">Pick your own Team of the Season so far</h3>
+        <p class="card-subtitle">Mini Games</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/download (2).jfif" class="card-image" alt="Leeds Player">
+      <div class="card-content">
+        <h3 class="card-title">Leeds team news: Calvert-Lewin a doubt with hamstring problems</h3>
+        <p class="card-subtitle">Club News</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/download (3).jfif" class="card-image" alt="Man United Group">
+      <div class="card-content">
+        <h3 class="card-title">Premier League clubs' summer 2026 friendlies and tours</h3>
+        <p class="card-subtitle">News</p>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="card">
+      <img src="../assets/img/download.jfif" class="card-image" alt="Newcastle vs Arsenal">
+      <div class="card-content">
+        <h3 class="card-title">Dates announced for fixtures that move due to FA Cup semi-finals</h3>
+        <p class="card-subtitle">Fixtures</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/images (1).jfif" class="card-image" alt="">
+      <div class="card-content">
+        <h3 class="card-title">Fixture schedule announced for Matchweek 36</h3>
+        <p class="card-subtitle">Fixtures</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/download (5).jfif" class="card-image" alt="">
+      <div class="card-content">
+        <h3 class="card-title">FA Cup quarter-final schedule and when Premier League clubs play</h3>
+        <p class="card-subtitle">News</p>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="card">
+      <img src="../assets/img/download4.jfif" class="card-image" alt="">
+      <div class="card-content">
+        <h3 class="card-title">Premier League relegation battle: How it stands and remaining fixtures</h3>
+        <p class="card-subtitle">News</p>
+      </div>
+    </div>
+
+    <div class="card quiz-card">
+      <img src="../assets/img/images (2).jfif" class="card-image" alt="">
+      <div class="card-content">
+        <h3 class="card-title">The ULTIMATE Premier League history quiz</h3>
+        <p class="card-subtitle">Quizzes</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/images (1).jfif" class="card-image" alt="">
+      <div class="card-content">
+        <h3 class="card-title">Watch the ePremier League Grand Final LIVE</h3>
+        <p class="card-subtitle">EPL</p>
+      </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="card">
+      <img src="../assets/img/images (3).jfif" class="card-image" alt="">
+      <div class="card-content">
+        <h3 class="card-title">All you need to know about Sunday's ePremier League Finals</h3>
+        <p class="card-subtitle">EPL</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/images.jfif" class="card-image" alt="">
+      <div class="card-content">
+        <h3 class="card-title">Ao Tanaka shines as Japan edge past Scotland</h3>
+        <p class="card-subtitle">Club News</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../assets/img/soccer-players-action-professional-stadium_654080-1130.avif" class="card-image" alt="">
+      <div class="card-content">
+        <h3 class="card-title">LIVE: Watch the ePremier League Knockout Stages</h3>
+        <p class="card-subtitle">EPL</p>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="view-more">View More</button></p>
           </div>
         </div>
 
@@ -915,12 +1019,23 @@
         
         tabs.forEach(tab => {
           tab.addEventListener('click', function() {
+            // Remove active state from all tabs
             tabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
-            tabContents.forEach(content => content.classList.add('hidden'));
+            
+            // Hide ALL tab contents properly (reset both active and hidden classes)
+            tabContents.forEach(content => {
+              content.classList.remove('active');
+              content.classList.add('hidden');
+            });
+            
+            // Show only the selected tab content
             const tabId = this.getAttribute('data-tab');
             const targetContent = document.getElementById(tabId + '-content');
-            if (targetContent) targetContent.classList.remove('hidden');
+            if (targetContent) {
+              targetContent.classList.remove('hidden');
+              targetContent.classList.add('active');
+            }
           });
         });
 
