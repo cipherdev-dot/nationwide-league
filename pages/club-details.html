@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Club Details | National League</title>
+
+    <!-- Fonts + Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@400;700;800&family=Bebas+Neue&family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/club-details.css" />
+    <script src="../assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <a href="#">Shop</a><a href="#">About Us</a
+        ><a href="#">Football & Community</a><a href="#">Events</a
+        ><a href="#">Media</a><a href="#">Mornings Live</a>
+      </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+      <div class="header-content">
+        <a href="../index.html" class="logo">NATIONAL LEAGUE</a>
+        <div class="nav-links-wrapper">
+          <a href="../index.html">Home</a><a href="fixtures.html">Fixtures</a
+          ><a href="tables.html">Tables</a><a href="news-logs.html">News</a
+          ><a href="clubs.html">Clubs</a><a href="players.html">Players</a>
+        </div>
+        <div class="search-signin">
+          <i class="fas fa-search"></i
+          ><a href="#" class="signin-btn">Sign in</a>
+        </div>
+        <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-links">
+          <a href="#">Shop</a><a href="#">About Us</a
+          ><a href="#">Football & Community</a><a href="#">Events</a
+          ><a href="#">Media</a><a href="#">Mornings Live</a
+          ><a href="../index.html">Home</a><a href="fixtures.html">Fixtures</a
+          ><a href="tables.html">Tables</a><a href="news-logs.html">News</a
+          ><a href="clubs.html">Clubs</a><a href="players.html">Players</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="club-content">
+      <!-- LEFT COLUMN -->
+      <div class="club-left-column">
+        <!-- CLUB HERO CARD -->
+        <div class="club-hero-card">
+          <div class="club-hero-logo">
+            <img
+              src="../assets/logos/england_arsenal.football-logos.cc.svg"
+              alt="Leeds United"
+              class="club-hero-logo-image"
+            />
+          </div>
+          <div class="club-hero-info">
+            <div class="club-hero-name">Leeds United</div>
+            <div class="club-hero-meta">
+              <span>Est. 1919</span>
+              <span>Elland Road</span>
+            </div>
+          </div>
+          <button class="club-follow-btn">
+            <i class="fas fa-heart"></i> Follow Club
+          </button>
+        </div>
+
+        <!-- CLUB LINKS SECTION -->
+        <div class="club-links-section">
+          <div class="club-links-header">Visit Leeds Website</div>
+          <div class="club-links-buttons">
+            <button class="club-link-btn">Official Website</button>
+            <button class="club-link-btn">Official Club Shop</button>
+            <button class="club-link-btn">Official App (iOS)</button>
+            <button class="club-link-btn">Official App (Android)</button>
+          </div>
+        </div>
+
+        <!-- CLUB TICKETS SECTION -->
+        <div class="club-tickets-section">
+          <div class="club-tickets-header">Buy Leeds Tickets</div>
+          <div class="club-tickets-buttons">
+            <button class="club-ticket-btn">Buy Tickets</button>
+            <button class="club-ticket-btn">Buy Matchday Hospitality</button>
+            <button class="club-ticket-btn">Club Ticket Information</button>
+          </div>
+        </div>
+
+        <!-- CLUB SOCIALS SECTION -->
+        <div class="club-socials-section">
+          <div class="club-socials-header">Club Socials</div>
+          <div class="club-socials-icons">
+            <button class="club-social-btn" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </button>
+            <button class="club-social-btn" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </button>
+            <button class="club-social-btn" aria-label="Twitter/X">
+              <i class="fab fa-x-twitter"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="club-right-column">
+        <!-- TABS -->
+        <div class="club-tabs">
+          <button class="club-tab active" data-tab="overview">Overview</button>
+          <button class="club-tab" data-tab="news">News</button>
+          <button class="club-tab" data-tab="video">Video</button>
+          <button class="club-tab" data-tab="matches">Matches</button>
+          <button class="club-tab" data-tab="squad">Squad</button>
+          <button class="club-tab" data-tab="stats">Stats</button>
+          <button class="club-tab" data-tab="stadium">Stadium</button>
+          <button class="club-tab" data-tab="tickets">Tickets</button>
+          <button class="club-tab" data-tab="directory">Directory</button>
+        </div>
+
+        <!-- Overview Tab Content -->
+        <div class="club-tab-content active" id="overview-content">
+          <!-- NEXT MATCH AND TEAM FORM ROW -->
+          <div class="club-match-and-form-row">
+            <!-- NEXT MATCH CARD -->
+            <div class="club-next-match-card">
+              <div class="club-match-header">
+                <span class="club-match-label">Next Match</span>
+              </div>
+              <div class="club-match-content">
+                <div class="club-team left-team">
+                  <div class="club-team-name" id="clubNextHomeTeam">Manchester United</div>
+                  <div class="club-team-logo">
+                    <img
+                      id="clubNextHomeLogo"
+                      src="../assets/logos/england_manchester-united.football-logos.cc.svg"
+                      alt="Manchester United"
+                    />
+                  </div>
+                </div>
+                <div class="club-match-time" id="clubNextMatchTime">20:00</div>
+                <div class="club-team right-team">
+                  <div class="club-team-logo">
+                    <img
+                      id="clubNextAwayLogo"
+                      src="../assets/logos/england_chelsea.football-logos.cc.svg"
+                      alt="Leeds United"
+                    />
+                  </div>
+                  <div class="club-team-name" id="clubNextAwayTeam">Leeds United</div>
+                </div>
+              </div>
+              <div class="club-match-competition">Nationwide League • Matchweek 31</div>
+            </div>
+
+            <!-- TEAM FORM SECTION -->
+            <div class="club-team-form-section">
+              <div class="club-form-header">
+                <div class="club-form-header-left">
+                  <span class="club-form-title">Team Form</span>
+                  <i class="fas fa-arrow-right club-form-arrow"></i>
+                </div>
+                <div class="club-form-toggle">
+                  <button class="club-toggle-btn active" data-form-type="previous">
+                    Previous
+                  </button>
+                  <button class="club-toggle-btn" data-form-type="upcoming">
+                    Upcoming
+                  </button>
+                </div>
+              </div>
+              <div class="club-team-identifier">
+                <img
+                  id="clubTeamFormLogo"
+                  src="../assets/logos/england_arsenal.football-logos.cc.svg"
+                  alt="Leeds United"
+                  class="club-team-identifier-logo"
+                />
+                <span class="club-team-identifier-name" id="clubTeamFormName">Leeds United</span>
+              </div>
+              <div class="club-match-timeline" id="clubMatchTimeline"></div>
+            </div>
+          </div>
+
+          <!-- COMBINED SECTION: LEFT (MATCH + FORMATION) AND RIGHT (TABLE) -->
+          <div class="club-combined-section">
+            <!-- LEFT SIDE: LAST STARTING 11 + FORMATION -->
+            <div class="club-left-side">
+              <!-- LAST STARTING 11 -->
+              <div class="club-left-column-match">
+                <div class="club-match-header-row">
+                  <h3 class="club-match-header-title">Last Starting 11</h3>
+                  <a href="#" class="club-match-see-all">See all ></a>
+                </div>
+                <div class="club-match-row">
+                  <div class="club-match-teams">
+                    <div class="club-team-block left">
+                      <span class="club-team-name">Leeds United</span
+                      ><span class="club-team-logo"
+                        ><img
+                          src="../assets/logos/france_ajaccio.football-logos.cc.svg"
+                          alt="Leeds United"
+                      /></span>
+                    </div>
+                    <span class="club-score-badge">1 - 1</span>
+                    <div class="club-team-block right">
+                      <span class="club-team-logo"
+                        ><img
+                          src="../assets/logos/england_chelsea.football-logos.cc.svg"
+                          alt="Chelsea" /></span
+                      ><span class="club-team-name">Chelsea</span>
+                    </div>
+                  </div>
+                  <div class="club-match-info">
+                    <span class="club-result-label">FT</span> 29 Mar 17:30 - Elland Road
+                  </div>
+                </div>
+              </div>
+
+              <!-- MANAGER AND FORMATION -->
+              <div class="club-right-column-formation">
+                <div class="club-manager-header">
+                  <h3 class="club-manager-title">Manager: Daniel Farke</h3>
+                </div>
+
+                <!-- Formation Pitch -->
+                <div class="club-pitch-outer">
+                  <div class="club-pitch">
+                    <!-- SVG PITCH MARKINGS (Horizontal - Goals at Top/Bottom) -->
+                    <svg class="club-pitch-lines" viewBox="0 0 1000 580" preserveAspectRatio="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <!-- Outer border -->
+                      <rect x="8" y="8" width="984" height="564" fill="none" stroke="#a3a3a3" stroke-width="2" />
+                      <!-- Centre line (horizontal) -->
+                      <line x1="8" y1="290" x2="992" y2="290" stroke="#a3a3a3" stroke-width="2" />
+                      <!-- Centre circle -->
+                      <circle cx="500" cy="290" r="80" fill="none" stroke="#a3a3a3" stroke-width="2" />
+                      <circle cx="500" cy="290" r="4" fill="#a3a3a3" />
+                      <!-- TOP penalty area (big box) -->
+                      <rect x="365" y="8" width="270" height="130" fill="none" stroke="#a3a3a3" stroke-width="2" />
+                      <!-- TOP 6-yard box -->
+                      <rect x="425" y="8" width="150" height="50" fill="none" stroke="#a3a3a3" stroke-width="2" />
+                      <!-- TOP penalty spot -->
+                      <circle cx="500" cy="108" r="4" fill="#a3a3a3" />
+                      <!-- TOP penalty arc -->
+                      <path d="M 430 138 A 80 80 0 0 0 570 138" fill="none" stroke="#a3a3a3" stroke-width="2" />
+                      <!-- BOTTOM penalty area (big box) -->
+                      <rect x="365" y="442" width="270" height="130" fill="none" stroke="#a3a3a3" stroke-width="2" />
+                      <!-- BOTTOM 6-yard box -->
+                      <rect x="425" y="522" width="150" height="50" fill="none" stroke="#a3a3a3" stroke-width="2" />
+                      <!-- BOTTOM penalty spot -->
+                      <circle cx="500" cy="472" r="4" fill="#a3a3a3" />
+                      <!-- BOTTOM penalty arc -->
+                      <path d="M 430 442 A 80 80 0 0 1 570 442" fill="none" stroke="#a3a3a3" stroke-width="2" />
+                      <!-- TOP goal -->
+                      <rect x="462" y="0" width="76" height="8" fill="rgba(163,163,163,0.2)" stroke="#a3a3a3"
+                        stroke-width="1" />
+                      <!-- BOTTOM goal -->
+                      <rect x="462" y="572" width="76" height="8" fill="rgba(163,163,163,0.2)" stroke="#a3a3a3"
+                        stroke-width="1" />
+                    </svg>
+
+                    <!-- Formation Players - 3-4-1-2 (Horizontal - Goals at Top/Bottom) -->
+                    <!-- GK - moved backwards -->
+                    <div class="club-player gk-leeds" style="left:50%;top:12%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">26</span>
+                        <img src="../assets/img/recap-image.png" alt="Darlow" class="club-p-img">
+                      </div>
+                      <span class="club-p-name">Darlow</span>
+                    </div>
+
+                    <!-- Center Backs (3) - Horizontal line, moved forward a little -->
+                    <div class="club-player leeds" style="left:25%;top:30%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">6</span>
+                        <img src="../assets/img/field-player-1.png" alt="Rodon" class="club-p-img">
+                      </div>
+                      <span class="club-p-name">Rodon</span>
+                    </div>
+
+                    <div class="club-player leeds" style="left:50%;top:30%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">15</span>
+                        <img src="../assets/img/field-player-1.png" alt="Bijol" class="club-p-img">
+                      </div>
+                      <span class="club-p-name">Bijol</span>
+                    </div>
+
+                    <div class="club-player leeds" style="left:75%;top:30%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">5</span>
+                        <img src="../assets/img/field-player-1.png" alt="Struijk" class="club-p-img">
+                      </div>
+                      <span class="club-p-name">Struijk</span>
+                      <div class="club-yellow-card"></div>
+                    </div>
+
+                    <!-- Central Midfielders (4) - All in same line for 3-4-1-2 -->
+                    <!-- Left Wing-Back -->
+                    <div class="club-player leeds" style="left:12%;top:48%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">2</span>
+                        <img src="../assets/img/field-player-1.png" alt="Bogle" class="club-p-img">
+                      </div>
+                      <span class="club-p-name">Bogle</span>
+                      <div class="club-yellow-card"></div>
+                    </div>
+
+                    <!-- Central Midfielder -->
+                    <div class="club-player leeds" style="left:40%;top:48%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">4</span>
+                        <img src="../assets/img/field-player-1.png" alt="Ampadu" class="club-p-img">
+                      </div>
+                      <span class="club-p-name">Ampadu</span>
+                    </div>
+
+                    <!-- Central Midfielder -->
+                    <div class="club-player leeds" style="left:60%;top:48%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">18</span>
+                        <img src="../assets/img/field-player-1.png" alt="Stach" class="club-p-img">
+                      </div>
+                      <span class="club-p-name">Stach</span>
+                    </div>
+
+                    <!-- Right Wing-Back -->
+                    <div class="club-player leeds" style="left:88%;top:48%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">24</span>
+                        <img src="../assets/img/field-player-1.png" alt="Justin" class="club-p-img">
+                      </div>
+                      <span class="club-p-name">Justin</span>
+                    </div>
+
+                    <!-- Attacking Midfielder (1) -->
+                    <div class="club-player leeds" style="left:50%;top:62%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">11</span>
+                        <img src="../assets/img/field-player-1.png" alt="Aaronson" class="club-p-img">
+                        <span class="club-cap-badge">C</span>
+                      </div>
+                      <span class="club-p-name">Aaronson</span>
+                      <div class="club-sub-label"><span class="club-sub-arrow">↙</span>69'</div>
+                    </div>
+
+                    <!-- Strikers (2) - Horizontal line -->
+                    <div class="club-player leeds" style="left:38%;top:78%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">9</span>
+                        <img src="../assets/img/recap-image.png" alt="Calvert-Lewin" class="club-p-img">
+                      </div>
+                      <span class="club-p-name">Calvert-Lewin</span>
+                    </div>
+
+                    <div class="club-player leeds" style="left:62%;top:78%;">
+                      <div class="club-p-avatar">
+                        <span class="club-p-num">14</span>
+                        <img src="../assets/img/field-player-1.png" alt="Nmecha" class="club-p-img">
+                      </div>
+                      <span class="club-p-name">Nmecha</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-section"> <!-- MIDDLE COLUMN: MATCH INFORMATION -->
+              <div class="club-right-column-match-info">
+                <div class="club-match-info-card">
+                  <!-- Header Section -->
+                  <div class="club-match-info-header">
+                    <div class="club-match-header-left">
+                      <div class="club-match-header-label">Table ></div>
+                      <h3 class="club-match-info-title">15<span class="club-superscript">th</span></h3>
+                    </div>
+                    <div class="club-match-header-right">
+                      <div class="club-status-indicator"></div>
+                      <div class="club-status-text">Same position as MW 32</div>
+                    </div>
+                  </div>
+
+                  <!-- Table Header Labels -->
+                  <div class="club-match-table-header grid-row">
+                    <div class="club-header-cell">Pos</div>
+                    <div class="club-header-cell">Team</div>
+                    <div class="club-header-cell">Pl</div>
+                    <div class="club-header-cell">W</div>
+                    <div class="club-header-cell">GD</div>
+                    <div class="club-header-cell">Pts</div>
+                  </div>
+
+                  <!-- Scrollable Team List -->
+                  <div class="club-match-scrollable-list">
+                    <div class="club-match-list-item">
+                      <div class="grid-row">
+                        <div class="club-list-value"><span class="trend-arrow up">11<i class="fas fa-arrow-up"></i></span></div>
+                        <div class="club-list-value">
+                          <div class="club-team-info">
+                            <img src="../assets/logos/england_arsenal.football-logos.cc.svg" alt="Sunderland" class="club-team-mini-logo">
+                            <span>Sunderland</span>
+                          </div>
+                        </div>
+                        <div class="club-list-value">31</div>
+                        <div class="club-list-value">11</div>
+                        <div class="club-list-value">-4</div>
+                        <div class="club-list-value">43</div>
+                      </div>
+                    </div>
+                    <div class="club-match-list-item">
+                      <div class="grid-row">
+                        <div class="club-list-value"><span class="trend-arrow up">12<i class="fas fa-arrow-up"></i></span></div>
+                        <div class="club-list-value">
+                          <div class="club-team-info">
+                            <img src="../assets/logos/england_manchester-united.football-logos.cc.svg" alt="Newcastle United" class="club-team-mini-logo">
+                            <span>Newcastle United</span>
+                          </div>
+                        </div>
+                        <div class="club-list-value">31</div>
+                        <div class="club-list-value">12</div>
+                        <div class="club-list-value">-1</div>
+                        <div class="club-list-value">42</div>
+                      </div>
+                    </div>
+                    <div class="club-match-list-item">
+                      <div class="grid-row">
+                        <div class="club-list-value"><span class="trend-arrow down">13<i class="fas fa-arrow-down"></i></span></div>
+                        <div class="club-list-value">
+                          <div class="club-team-info">
+                            <img src="../assets/logos/england_chelsea.football-logos.cc.svg" alt="Bournemouth" class="club-team-mini-logo">
+                            <span>Bournemouth</span>
+                          </div>
+                        </div>
+                        <div class="club-list-value">31</div>
+                        <div class="club-list-value">9</div>
+                        <div class="club-list-value">—</div>
+                        <div class="club-list-value">—</div>
+                      </div>
+                    </div>
+                    <div class="club-match-list-item">
+                      <div class="grid-row">
+                        <div class="club-list-value"><span class="trend-arrow neutral">14<i class="fas fa-minus"></i></span></div>
+                        <div class="club-list-value">
+                          <div class="club-team-info">
+                            <img src="../assets/logos/england_liverpool.football-logos.cc.svg" alt="Crystal Palace" class="club-team-mini-logo">
+                            <span>Crystal Palace</span>
+                          </div>
+                        </div>
+                        <div class="club-list-value">30</div>
+                        <div class="club-list-value">10</div>
+                        <div class="club-list-value">—</div>
+                        <div class="club-list-value">—</div>
+                      </div>
+                    </div>
+                    <div class="club-match-list-item highlighted">
+                      <div class="grid-row">
+                        <div class="club-list-value"><span class="trend-arrow down">15<i class="fas fa-arrow-down"></i></span></div>
+                        <div class="club-list-value">
+                          <div class="club-team-info">
+                            <img src="../assets/logos/england_arsenal.football-logos.cc.svg" alt="Leeds United" class="club-team-mini-logo">
+                            <span>Leeds United</span>
+                          </div>
+                        </div>
+                        <div class="club-list-value">31</div>
+                        <div class="club-list-value">7</div>
+                        <div class="club-list-value">—</div>
+                        <div class="club-list-value">—</div>
+                      </div>
+                    </div>
+                    <div class="club-match-list-item">
+                      <div class="grid-row">
+                        <div class="club-list-value"><span class="trend-arrow up">16<i class="fas fa-arrow-up"></i></span></div>
+                        <div class="club-list-value">
+                          <div class="club-team-info">
+                            <img src="../assets/logos/england_manchester-city.football-logos.cc.svg" alt="Nottingham Forest" class="club-team-mini-logo">
+                            <span>Nottingham Forest</span>
+                          </div>
+                        </div>
+                        <div class="club-list-value">31</div>
+                        <div class="club-list-value">8</div>
+                        <div class="club-list-value">—</div>
+                        <div class="club-list-value">—</div>
+                      </div>
+                    </div>
+                    <div class="club-match-list-item">
+                      <div class="grid-row">
+                        <div class="club-list-value"><span class="trend-arrow down">17<i class="fas fa-arrow-down"></i></span></div>
+                        <div class="club-list-value">
+                          <div class="club-team-info">
+                            <img src="../assets/logos/spain_real-madrid.football-logos.cc.svg" alt="Tottenham Hotspur" class="club-team-mini-logo">
+                            <span>Tottenham Hotspur</span>
+                          </div>
+                        </div>
+                        <div class="club-list-value">31</div>
+                        <div class="club-list-value">7</div>
+                        <div class="club-list-value">—</div>
+                        <div class="club-list-value">—</div>
+                      </div>
+                    </div>
+                    <div class="club-match-list-item">
+                      <div class="grid-row">
+                        <div class="club-list-value"><span class="trend-arrow down">18<i class="fas fa-arrow-down"></i></span></div>
+                        <div class="club-list-value">
+                          <div class="club-team-info">
+                            <img src="../assets/logos/spain_barcelona.football-logos.cc.svg" alt="West Ham United" class="club-team-mini-logo">
+                            <span>West Ham United</span>
+                          </div>
+                        </div>
+                        <div class="club-list-value">31</div>
+                        <div class="club-list-value">7</div>
+                        <div class="club-list-value">—</div>
+                        <div class="club-list-value">—</div>
+                      </div>
+                    </div>
+                    <div class="club-match-list-item">
+                      <div class="grid-row">
+                        <div class="club-list-value"><span class="trend-arrow down">19<i class="fas fa-arrow-down"></i></span></div>
+                        <div class="club-list-value">
+                          <div class="club-team-info">
+                            <img src="../assets/logos/germany_bayern-munchen.football-logos.cc.svg" alt="Burnley" class="club-team-mini-logo">
+                            <span>Burnley</span>
+                          </div>
+                        </div>
+                        <div class="club-list-value">31</div>
+                        <div class="club-list-value">4</div>
+                        <div class="club-list-value">—</div>
+                        <div class="club-list-value">—</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Action Button -->
+                  <div class="club-match-actions">
+                    <button class="club-action-btn">See all</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- top players section -->
+           <section class="top-performers">
+            <div class="header">
+              <h3>Top Performers</h3>
+              <button>See all ></button>
+            </div>
+            <div class="cards">
+              <div class="card">
+                <p class="card-title">Top Goal Scorer ></p>
+                <div class="card-content">
+                  <img src="../assets/img/recap-image.png" alt="Dominic Calvert-Lewin" />
+                  <div>
+                    <p class="name">Dominic Calvert-Lewin</p>
+                    <h2 class="value">10</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <p class="card-title">Most Assists ></p>
+                <div class="card-content">
+                  <img src="../assets/img/field-player-1.png" alt="Ilia Gruev" />
+                  <div>
+                    <p class="name">Ilia Gruev</p>
+                    <h2 class="value">3</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <p class="card-title">Most Successful Passes ></p>
+                <div class="card-content">
+                  <img src="../assets/img/field-player-1.png" alt="Pascal Struijk" />
+                  <div>
+                    <p class="name">Pascal Struijk</p>
+                    <h2 class="value">1310</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </section>
+
+            <!-- FROM THE CLUBS SECTION -->
+            <div class="club-from-clubs-section">
+              <div class="club-section-header">
+                <h3>From the Club</h3>
+                <a href="#" class="club-see-all-link">See all</a>
+              </div>
+              <div class="club-clubs-cards">
+                <div class="club-media-card">
+                  <div class="club-thumbnail">
+                    <img src="https://picsum.photos/id/1020/300/200" alt="Match Highlights" />
+                    <div class="club-play-btn">
+                      <svg viewBox="0 0 24 24">
+                        <polygon points="5,3 19,12 5,21" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="club-media-content">
+                    <div class="club-badge">HIGHLIGHTS</div>
+                    <div class="club-title">
+                      Dramatic late winner seals victory in thrilling encounter
+                    </div>
+                    <a href="#" class="club-link">Watch highlights</a>
+                  </div>
+                </div>
+                <div class="club-media-card">
+                  <div class="club-thumbnail">
+                    <img src="https://picsum.photos/id/1021/300/200" alt="Free Kick" />
+                    <div class="club-play-btn">
+                      <svg viewBox="0 0 24 24">
+                        <polygon points="5,3 19,12 5,21" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="club-media-content">
+                    <div class="club-badge">HIGHLIGHTS</div>
+                    <div class="club-title">
+                      Free-kick stunner lights up the stadium
+                    </div>
+                    <a href="#" class="club-link">Watch highlights</a>
+                  </div>
+                </div>
+                <div class="club-media-card">
+                  <div class="club-thumbnail">
+                    <img src="https://picsum.photos/id/1022/300/200" alt="Hat Trick" />
+                    <div class="club-play-btn">
+                      <svg viewBox="0 0 24 24">
+                        <polygon points="5,3 19,12 5,21" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="club-media-content">
+                    <div class="club-badge">HIGHLIGHTS</div>
+                    <div class="club-title">
+                      Hat-trick masterclass dominates the match
+                    </div>
+                    <a href="#" class="club-link">Watch highlights</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!-- QUICK LINKS SECTION -->
+          <div class="quick-links-section">
+            <div class="quick-link-item">
+              <span class="link-text">Club App (iOS)</span
+              ><span class="link-arrow">→</span>
+            </div>
+            <div class="quick-link-item">
+              <span class="link-text">Club App (Android)</span
+              ><span class="link-arrow">→</span>
+            </div>
+            <div class="quick-link-item">
+              <span class="link-text">Matchday Hospitality</span
+              ><span class="link-arrow">→</span>
+            </div>
+            <div class="quick-link-item">
+              <span class="link-text">Club Shop</span
+              ><span class="link-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Tab Content -->
+        <div class="club-tab-content hidden" id="news-content">
+          <div class="club-placeholder-section">
+            <p>News content coming soon...</p>
+          </div>
+        </div>
+
+        <!-- Video Tab Content -->
+        <div class="club-tab-content hidden" id="video-content">
+          <div class="club-placeholder-section">
+            <p>Video content coming soon...</p>
+          </div>
+        </div>
+
+        <!-- Matches Tab Content -->
+        <div class="club-tab-content hidden" id="matches-content">
+          <div class="club-placeholder-section">
+            <p>Matches content coming soon...</p>
+          </div>
+        </div>
+
+        <!-- Squad Tab Content -->
+        <div class="club-tab-content hidden" id="squad-content">
+          <div class="club-placeholder-section">
+            <p>Squad content coming soon...</p>
+          </div>
+        </div>
+
+        <!-- Stats Tab Content -->
+        <div class="club-tab-content hidden" id="stats-content">
+          <div class="club-placeholder-section">
+            <p>Stats content coming soon...</p>
+          </div>
+        </div>
+
+        <!-- Stadium Tab Content -->
+        <div class="club-tab-content hidden" id="stadium-content">
+          <div class="club-placeholder-section">
+            <p>Stadium content coming soon...</p>
+          </div>
+        </div>
+
+        <!-- Tickets Tab Content -->
+        <div class="club-tab-content hidden" id="tickets-content">
+          <div class="club-placeholder-section">
+            <p>Tickets content coming soon...</p>
+          </div>
+        </div>
+
+        <!-- Directory Tab Content -->
+        <div class="club-tab-content hidden" id="directory-content">
+          <div class="club-placeholder-section">
+            <p>Directory content coming soon...</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOTER BAR -->
+    <div class="footer-bar-wrap">
+      <div class="footer-bar">
+        <a href="../index.html" class="footer-brand">National League</a>
+        <div class="social-links">
+          <a href="#" class="fb" aria-label="Facebook"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              /></svg
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><svg viewBox="0 0 24 24">
+              <rect
+                x="2"
+                y="2"
+                width="20"
+                height="20"
+                rx="5"
+                ry="5"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+              />
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" /></svg
+          ></a>
+          <a href="#" aria-label="X"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.733-8.835L2.25 2.25h6.984l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              /></svg
+          ></a>
+          <a href="#" class="li" aria-label="LinkedIn"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" /></svg
+          ></a>
+          <a href="#" aria-label="TikTok"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"
+              /></svg
+          ></a>
+          <a href="#" class="vk" aria-label="VK"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M21.547 7h-3.29a.743.743 0 0 0-.655.392s-1.312 2.416-1.734 3.23C14.734 12.813 14 12.126 14 11.11V7.603A1.104 1.104 0 0 0 12.896 6.5h-2.474a1.982 1.982 0 0 0-1.75.813s1.255-.204 1.255 1.49c0 .42.022 1.626.04 2.64C9.97 11.454 8.77 9.24 7.84 7.392A.742.742 0 0 0 7.18 7H3.8a.55.55 0 0 0-.55.64s1.914 4.48 4.08 6.716c1.811 1.869 4.16 1.644 4.16 1.644h1.328a.638.638 0 0 0 .64-.623v-.534s-.022-1.94 1.022-2.227c1.017-.283 2.316 1.879 3.696 2.706A2.35 2.35 0 0 0 19.526 16h2.957a.55.55 0 0 0 .55-.685s-.77-2.065-3.43-4.504c-.814-.745-.948-.99.046-2.01C20.535 7.655 22.072 6 21.547 7z"
+              /></svg
+          ></a>
+          <a href="#" class="yt" aria-label="YouTube"
+            ><svg viewBox="0 0 24 24">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+              />
+              <polygon
+                points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                fill="#fff"
+              /></svg
+          ></a>
+        </div>
+        <a href="#" class="btn-get-into"
+          ><svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Get Into Miliga</a
+        >
+      </div>
+    </div>
+
+    <!-- BOTTOM STRIP -->
+    <div class="bottom-strip">
+      <p>
+        Lead Partner <strong>EA SPORTS FC</strong> &bull; Official Creativity
+        Partner <strong>Adobe</strong> &bull; Official Bank
+        <strong>Barclays</strong>
+      </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Tab Switching and Team Form Script -->
+    <script>
+      // ========== TEAM FORM DATA ==========
+      const clubMatchData = {
+        previous: [
+          { matchday: "MW 27", opponentLogo: "../assets/logos/brazil_flamengo.football-logos.cc.svg", opponent: "Aston Villa", context: "AVL (H)", result: "1 - 1", outcome: "draw" },
+          { matchday: "MW 26", opponentLogo: "../assets/logos/australia_adelaide-united.football-logos.cc.svg", opponent: "Manchester City", context: "MCI (A)", result: "2 - 1", outcome: "win" },
+          { matchday: "MW 25", opponentLogo: "../assets/logos/usa_inter-miami-cf.football-logos.cc.svg", opponent: "Liverpool", context: "LIV (A)", result: "0 - 1", outcome: "loss" },
+          { matchday: "MW 24", opponentLogo: "../assets/logos/italy_juventus.football-logos.cc.svg", opponent: "Chelsea", context: "CHE (H)", result: "1 - 1", outcome: "draw" },
+          { matchday: "MW 23", opponentLogo: "../assets/logos/england_manchester-city.football-logos.cc.svg", opponent: "Tottenham", context: "TOT (H)", result: "3 - 1", outcome: "win" }
+        ],
+        upcoming: [
+          { matchday: "MW 31", opponentLogo: "../assets/logos/germany_borussia-dortmund.football-logos.cc.svg", opponent: "Brentford", context: "BRE (A)", result: "20 Apr", outcome: "upcoming" },
+          { matchday: "MW 32", opponentLogo: "../assets/logos/france_ajaccio.football-logos.cc.svg", opponent: "Chelsea", context: "CHE (H)", result: "27 Apr", outcome: "upcoming" },
+          { matchday: "MW 33", opponentLogo: "../assets/logos/england_accrington.football-logos.cc.svg", opponent: "Arsenal", context: "ARS (A)", result: "04 May", outcome: "upcoming" },
+          { matchday: "MW 34", opponentLogo: "../assets/logos/italy_juventus.football-logos.cc.svg", opponent: "Man City", context: "MCI (H)", result: "11 May", outcome: "upcoming" },
+          { matchday: "MW 35", opponentLogo: "../assets/logos/scotland_aberdeen.football-logos.cc.svg", opponent: "Liverpool", context: "LIV (H)", result: "18 May", outcome: "upcoming" }
+        ]
+      };
+
+      function renderClubMatchTimeline(type) {
+        const timeline = document.getElementById("clubMatchTimeline");
+        if (!timeline) return;
+        const matches = clubMatchData[type] || [];
+        timeline.innerHTML = matches.map(m => `
+          <div class="club-match-item">
+            <div class="club-match-day">${m.matchday}</div>
+            <div class="club-opponent-crest"><img src="${m.opponentLogo}" alt="${m.opponent}"></div>
+            <div class="club-match-context">${m.context}</div>
+            <div class="club-result-bar ${m.outcome === 'upcoming' ? '' : m.outcome}">${m.result}</div>
+          </div>
+        `).join('');
+      }
+
+      function initClubTeamFormToggle() {
+        const toggleBtns = document.querySelectorAll(".club-toggle-btn");
+        toggleBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const type = btn.getAttribute("data-form-type");
+            if (!type) return;
+            toggleBtns.forEach((b) => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderClubMatchTimeline(type);
+          });
+        });
+      }
+
+      // ========== BURGER MENU ==========
+      function initClubBurgerMenu() {
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        if (burgerBtn && mobileNav) {
+          burgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            mobileNav.classList.toggle('open');
+          });
+          document.addEventListener('click', function(event) {
+            if (!mobileNav.contains(event.target) && !burgerBtn.contains(event.target)) {
+              mobileNav.classList.remove('open');
+            }
+          });
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // Tab Switching
+        const tabs = document.querySelectorAll('.club-tab');
+        const tabContents = document.querySelectorAll('.club-tab-content');
+        
+        tabs.forEach(tab => {
+          tab.addEventListener('click', function() {
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            tabContents.forEach(content => content.classList.add('hidden'));
+            const tabId = this.getAttribute('data-tab');
+            const targetContent = document.getElementById(tabId + '-content');
+            if (targetContent) targetContent.classList.remove('hidden');
+          });
+        });
+
+        // Team Form Toggle
+        initClubTeamFormToggle();
+        renderClubMatchTimeline("previous");
+
+        // Burger Menu
+        initClubBurgerMenu();
+      });
+    </script>
+  </body>
+</html>

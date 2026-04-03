@@ -205,6 +205,24 @@
   align-items: center;
   gap: 0.5rem;
 }
+
+.club-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  border-radius: 6px;
+}
+
+.club-link:hover {
+  color: var(--charcoal);
+  background: rgba(0, 0, 0, 0.04);
+}
+
 .club-logo-holder {
   width: 28px;
   height: 28px;
