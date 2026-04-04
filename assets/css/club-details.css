@@ -2902,6 +2902,9 @@ body {
   margin-bottom: 16px;
   padding-bottom: 8px;
   border-bottom: 2px solid rgba(82, 82, 82, 0.1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .stats-list {
@@ -2930,6 +2933,10 @@ body {
   color: #525252;
   text-align: left;
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .stats-value {

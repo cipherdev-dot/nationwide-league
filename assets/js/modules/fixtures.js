@@ -1,0 +1,278 @@
+// Fixtures module - handles fixtures page functionality
+const Fixtures = (() => {
+  // ----------------------------------------------
+  // HELPER: generate SVG logo
+  // ----------------------------------------------
+  function generateClubLogo(teamName) {
+    let initials = teamName
+      .split(" ")
+      .map((word) => word[0])
+      .join("")
+      .slice(0, 2)
+      .toUpperCase();
+    if (initials.length < 2)
+      initials = (teamName.slice(0, 2) + "FC").toUpperCase().slice(0, 2);
+    const hue = (teamName.length * 31) % 360;
+    const bgColor = `hsl(${hue}, 68%, 86%)`;
+    const textColor = `hsl(${hue}, 70%, 28%)`;
+    const svgString = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48" fill="${bgColor}" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="50" y="68" font-size="44" font-weight="bold" font-family="Arial, sans-serif" text-anchor="middle" fill="${textColor}">${initials}</text>
+    </svg>`;
+    return "data:image/svg+xml," + encodeURIComponent(svgString);
+  }
+
+  // ----------------------------------------------
+  // LOGO MAPPING for actual logo files
+  // ----------------------------------------------
+  const logoMap = {
+    Arsenal: "../assets/logos/england_arsenal.football-logos.cc.svg",
+    Chelsea: "../assets/logos/england_chelsea.football-logos.cc.svg",
+    Liverpool: "../assets/logos/england_liverpool.football-logos.cc.svg",
+    "Manchester City": "../assets/logos/england_manchester-city.football-logos.cc.svg",
+    "Manchester United": "../assets/logos/england_manchester-united.football-logos.cc.svg",
+    "Man. United": "../assets/logos/england_manchester-united.football-logos.cc.svg",
+    "Manchester Utd": "../assets/logos/england_manchester-united.football-logos.cc.svg",
+    "Bayern Munich": "../assets/logos/germany_bayern-munchen.football-logos.cc.svg",
+    "Borussia Dortmund": "../assets/logos/germany_borussia-dortmund.football-logos.cc.svg",
+    Juventus: "../assets/logos/italy_juventus.football-logos.cc.svg",
+    Barcelona: "../assets/logos/spain_barcelona.football-logos.cc.svg",
+    "Real Madrid": "../assets/logos/spain_real-madrid.football-logos.cc.svg",
+    Flamengo: "../assets/logos/brazil_flamengo.football-logos.cc.svg",
+    "Adelaide United": "../assets/logos/australia_adelaide-united.football-logos.cc.svg",
+    Accrington: "../assets/logos/england_accrington.football-logos.cc.svg",
+  };
+
+  function getLogoPath(teamName) {
+    if (logoMap[teamName]) {
+      return logoMap[teamName];
+    }
+    const logoKeys = Object.keys(logoMap);
+    const randomKey = logoKeys[Math.floor(Math.random() * logoKeys.length)];
+    return logoMap[randomKey];
+  }
+
+  // ----------------------------------------------
+  // MOCK FIXTURE DATA for three matchweeks
+  // ----------------------------------------------
+  const fixturesDB = {
+    36: {
+      date: "Sun 17 May",
+      matches: [
+        { id: 1, homeTeam: "Arsenal", awayTeam: "Chelsea", kickoff: "15:00", competition: "Premier League" },
+        { id: 2, homeTeam: "Real Madrid", awayTeam: "Atletico Madrid", kickoff: "20:00", competition: "La Liga" },
+        { id: 3, homeTeam: "AC Milan", awayTeam: "Juventus", kickoff: "19:45", competition: "Serie A" },
+        { id: 4, homeTeam: "Bayern Munich", awayTeam: "Borussia Dortmund", kickoff: "18:30", competition: "Bundesliga" },
+        { id: 5, homeTeam: "Liverpool", awayTeam: "Manchester City", kickoff: "17:30", competition: "Premier League" },
+      ],
+    },
+    37: {
+      date: "Sun 24 May",
+      matches: [
+        { id: 6, homeTeam: "Manchester United", awayTeam: "Liverpool", kickoff: "16:00", competition: "Premier League" },
+        { id: 7, homeTeam: "Barcelona", awayTeam: "Sevilla", kickoff: "21:00", competition: "La Liga" },
+        { id: 8, homeTeam: "Inter Milan", awayTeam: "AC Milan", kickoff: "20:45", competition: "Serie A" },
+        { id: 9, homeTeam: "RB Leipzig", awayTeam: "Bayern Munich", kickoff: "18:30", competition: "Bundesliga" },
+        { id: 10, homeTeam: "Chelsea", awayTeam: "Arsenal", kickoff: "17:30", competition: "Premier League" },
+      ],
+    },
+    38: {
+      date: "Sun 24 May",
+      matches: [
+        { id: 11, homeTeam: "Arsenal", awayTeam: "Everton", kickoff: "16:00", competition: "Premier League" },
+        { id: 12, homeTeam: "Manchester City", awayTeam: "West Ham", kickoff: "16:00", competition: "Premier League" },
+        { id: 13, homeTeam: "Liverpool", awayTeam: "Crystal Palace", kickoff: "16:00", competition: "Premier League" },
+        { id: 14, homeTeam: "Chelsea", awayTeam: "Bournemouth", kickoff: "16:00", competition: "Premier League" },
+        { id: 15, homeTeam: "Manchester United", awayTeam: "Brighton", kickoff: "16:00", competition: "Premier League" },
+        { id: 16, homeTeam: "Tottenham", awayTeam: "Sheffield United", kickoff: "16:00", competition: "Premier League" },
+      ],
+    },
+  };
+
+  // All clubs for dropdown
+  const allClubs = [
+    "Arsenal", "Chelsea", "Liverpool", "Manchester City", "Manchester United",
+    "Tottenham", "Barcelona", "Real Madrid", "Bayern Munich", "Juventus",
+    "AC Milan", "Inter Milan", "Atletico Madrid", "Borussia Dortmund"
+  ];
+
+  function populateClubDropdown() {
+    const clubFilter = document.getElementById("clubFilter");
+    if (!clubFilter) return;
+    
+    allClubs.forEach(club => {
+      const option = document.createElement("option");
+      option.value = club;
+      option.textContent = club;
+      clubFilter.appendChild(option);
+    });
+  }
+
+  function renderFixtures(matchweek) {
+    const container = document.getElementById("fixturesListContainer");
+    const titleEl = document.getElementById("matchweekTitle");
+    const dateEl = document.getElementById("matchDateText");
+    const cardDateEl = document.getElementById("cardDateLabel");
+    
+    if (!container) return;
+
+    const data = fixturesDB[matchweek];
+    if (!data) {
+      container.innerHTML = '<div class="empty-fixtures">No fixtures found</div>';
+      return;
+    }
+
+    if (titleEl) titleEl.textContent = `Matchweek ${matchweek}`;
+    if (dateEl) dateEl.textContent = data.date;
+    if (cardDateEl) cardDateEl.textContent = data.date;
+
+    let html = "";
+    data.matches.forEach(match => {
+      const homeLogo = getLogoPath(match.homeTeam);
+      const awayLogo = getLogoPath(match.awayTeam);
+      
+      html += `
+        <div class="match-row" data-match-id="${match.id}">
+          <div class="team left">
+            <span class="team-name">${match.homeTeam}</span>
+            <img src="${homeLogo}" alt="${match.homeTeam}" class="team-logo" onerror="this.src='https://placehold.co/32x32/ccc/333?text=${match.homeTeam.substring(0,2).toUpperCase()}'">
+          </div>
+          <div class="time">${match.kickoff}</div>
+          <div class="team right">
+            <img src="${awayLogo}" alt="${match.awayTeam}" class="team-logo" onerror="this.src='https://placehold.co/32x32/ccc/333?text=${match.awayTeam.substring(0,2).toUpperCase()}'">
+            <span class="team-name">${match.awayTeam}</span>
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
+  }
+
+  function init() {
+    populateClubDropdown();
+    
+    // Initial render
+    const mwDropdown = document.getElementById("mwDropdown");
+    const initialMW = mwDropdown ? mwDropdown.value : "38";
+    renderFixtures(initialMW);
+
+    // Matchweek navigation via dropdown
+    if (mwDropdown) {
+      mwDropdown.addEventListener("change", () => {
+        renderFixtures(mwDropdown.value);
+      });
+    }
+
+    // Club filter
+    const clubFilter = document.getElementById("clubFilter");
+    if (clubFilter) {
+      clubFilter.addEventListener("change", () => {
+        const selectedClub = clubFilter.value;
+        filterFixtures(selectedClub);
+      });
+    }
+
+    // Reset button
+    const resetBtn = document.getElementById("resetBtn");
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => {
+        if (clubFilter) clubFilter.value = "all";
+        if (mwDropdown) mwDropdown.value = "38";
+        renderFixtures("38");
+      });
+    }
+
+    // Arrow navigation
+    const prevArrow = document.getElementById("prevWeekArrow");
+    const nextArrow = document.getElementById("nextWeekArrow");
+    
+    if (prevArrow) {
+      prevArrow.addEventListener("click", () => {
+        if (mwDropdown) {
+          const current = parseInt(mwDropdown.value);
+          if (current > 36) {
+            mwDropdown.value = current - 1;
+            renderFixtures(mwDropdown.value);
+          }
+        }
+      });
+    }
+
+    if (nextArrow) {
+      nextArrow.addEventListener("click", () => {
+        if (mwDropdown) {
+          const current = parseInt(mwDropdown.value);
+          if (current < 38) {
+            mwDropdown.value = current + 1;
+            renderFixtures(mwDropdown.value);
+          }
+        }
+      });
+    }
+
+    // Matchday button navigation
+    const prevMatchdayBtn = document.getElementById("prevMatchdayBtn");
+    if (prevMatchdayBtn) {
+      prevMatchdayBtn.addEventListener("click", () => {
+        if (mwDropdown) {
+          const current = parseInt(mwDropdown.value);
+          if (current > 36) {
+            mwDropdown.value = current - 1;
+            renderFixtures(mwDropdown.value);
+          }
+        }
+      });
+    }
+
+    // Tab switching
+    document.querySelectorAll(".tabs-bar .tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        document.querySelectorAll(".tabs-bar .tab").forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+      });
+    });
+  }
+
+  function filterFixtures(clubName) {
+    const container = document.getElementById("fixturesListContainer");
+    if (!container) return;
+
+    if (clubName === "all") {
+      const mwDropdown = document.getElementById("mwDropdown");
+      renderFixtures(mwDropdown ? mwDropdown.value : "38");
+      return;
+    }
+
+    let html = "";
+    Object.values(fixturesDB).forEach(matchweek => {
+      matchweek.matches.forEach(match => {
+        if (match.homeTeam === clubName || match.awayTeam === clubName) {
+          const homeLogo = getLogoPath(match.homeTeam);
+          const awayLogo = getLogoPath(match.awayTeam);
+          
+          html += `
+            <div class="match-row" data-match-id="${match.id}">
+              <div class="team left">
+                <span class="team-name">${match.homeTeam}</span>
+                <img src="${homeLogo}" alt="${match.homeTeam}" class="team-logo">
+              </div>
+              <div class="time">${match.kickoff}</div>
+              <div class="team right">
+                <img src="${awayLogo}" alt="${match.awayTeam}" class="team-logo">
+                <span class="team-name">${match.awayTeam}</span>
+              </div>
+            </div>
+          `;
+        }
+      });
+    });
+
+    container.innerHTML = html || '<div class="empty-fixtures">No fixtures found for this club</div>';
+  }
+
+  return { init, renderFixtures, filterFixtures };
+})();
+
+// Export for use in other modules
+window.Fixtures = Fixtures;

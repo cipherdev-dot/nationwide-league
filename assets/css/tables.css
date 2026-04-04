@@ -264,6 +264,9 @@ td.col-pts {
   font-size: 0.92rem;
   color: #111111;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 .stat-muted {
   color: #777777;
