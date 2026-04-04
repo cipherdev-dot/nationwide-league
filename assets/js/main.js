@@ -45,11 +45,25 @@
   // Function to load a script dynamically
   function loadScript(src) {
     return new Promise((resolve, reject) => {
+      // Check if script is already loaded
+      const existingScript = document.querySelector(`script[src="${src}"]`);
+      if (existingScript) {
+        resolve();
+        return;
+      }
+      
       const script = document.createElement("script");
       script.src = src;
-      script.onload = resolve;
-      script.onerror = reject;
-      document.head.appendChild(script);
+      script.async = false; // Load synchronously to maintain order
+      script.onload = () => {
+        console.log(`Loaded script: ${src}`);
+        resolve();
+      };
+      script.onerror = () => {
+        console.error(`Failed to load script: ${src}`);
+        reject(new Error(`Script load failed: ${src}`));
+      };
+      document.body.appendChild(script); // Append to body instead of head
     });
   }
 
