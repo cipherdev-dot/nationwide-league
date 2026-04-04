@@ -2,8 +2,8 @@
 # This file configures how Netlify handles routing and builds
 
 [build]
-  # The directory Netlify will publish
-  publish = "nationwide-league"
+  # The directory Netlify will publish from (current directory where netlify.toml is located)
+  publish = "."
   
   # No build command needed for static site
   command = "echo 'Static site - no build needed'"

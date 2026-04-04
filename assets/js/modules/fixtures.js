@@ -2,54 +2,83 @@
 const Fixtures = (() => {
   // ----------------------------------------------
   // LOGO MAPPING for actual logo files
-  // Use absolute path from site root
+  // Using relative paths that work from any page
   // ----------------------------------------------
+  
+  // Detect if we're in a subdirectory (pages/) or root
+  // by checking the CSS link href pattern
   function getBasePath() {
-    // Get the path to the main.js script to determine base
-    const scripts = document.getElementsByTagName('script');
-    for (let script of scripts) {
-      if (script.src && script.src.includes('main.js')) {
-        // Extract path up to the assets folder
-        const srcPath = script.src;
-        const assetsIndex = srcPath.indexOf('/assets/');
-        if (assetsIndex !== -1) {
-          return srcPath.substring(0, assetsIndex);
-        }
-      }
-    }
-    // Fallback: check if we're in pages directory
+    // Check CSS links - if they use ../assets/, we're in a subdirectory
     const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
-    for (let link of cssLinks) {
-      if (link.href && link.href.includes('../assets/')) {
+    for (let i = 0; i < cssLinks.length; i++) {
+      const href = cssLinks[i].getAttribute('href') || '';
+      if (href.includes('../assets/')) {
         return '..';
       }
     }
+    // Default to current directory (root)
     return '.';
   }
 
   const basePath = getBasePath();
 
-  const logoMap = {
-    Arsenal: "england_arsenal.football-logos.cc.svg",
-    Chelsea: "england_chelsea.football-logos.cc.svg",
-    Liverpool: "england_liverpool.football-logos.cc.svg",
-    "Manchester City": "england_manchester-city.football-logos.cc.svg",
-    "Manchester United": "england_manchester-united.football-logos.cc.svg",
-    "Man. United": "england_manchester-united.football-logos.cc.svg",
-    "Manchester Utd": "england_manchester-united.football-logos.cc.svg",
-    "Bayern Munich": "germany_bayern-munchen.football-logos.cc.svg",
-    "Borussia Dortmund": "germany_borussia-dortmund.football-logos.cc.svg",
-    Juventus: "italy_juventus.football-logos.cc.svg",
-    Barcelona: "spain_barcelona.football-logos.cc.svg",
-    "Real Madrid": "spain_real-madrid.football-logos.cc.svg",
-    Flamengo: "brazil_flamengo.football-logos.cc.svg",
-    "Adelaide United": "australia_adelaide-united.football-logos.cc.svg",
-    Accrington: "england_accrington.football-logos.cc.svg",
-  };
+  // All available logo files in the logos folder
+  const availableLogos = [
+    "australia_adelaide-united.football-logos.cc.svg",
+    "brazil_flamengo.football-logos.cc.svg",
+    "cyprus_ael.football-logos.cc.svg",
+    "cyprus_aez.football-logos.cc.svg",
+    "england_accrington.football-logos.cc.svg",
+    "england_arsenal.football-logos.cc.svg",
+    "england_chelsea.football-logos.cc.svg",
+    "england_liverpool.football-logos.cc.svg",
+    "england_manchester-city.football-logos.cc.svg",
+    "england_manchester-united.football-logos.cc.svg",
+    "france_ajaccio.football-logos.cc.svg",
+    "germany_bayern-munchen.football-logos.cc.svg",
+    "germany_borussia-dortmund.football-logos.cc.svg",
+    "italy_juventus.football-logos.cc.svg",
+    "portugal_benfica.football-logos.cc.svg",
+    "saudi-arabia_al-nassr.football-logos.cc.svg",
+    "scotland_aberdeen.football-logos.cc.svg",
+    "spain_barcelona.football-logos.cc.svg",
+    "spain_real-madrid.football-logos.cc.svg",
+    "usa_inter-miami-cf.football-logos.cc.svg"
+  ];
+
+  // Shuffle logos to get random order
+  function getShuffledLogos() {
+    const shuffled = [...availableLogos];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  // Assign unique logos to each team (no repeats until we run out)
+  let logoIndex = 0;
+  const shuffledLogos = getShuffledLogos();
+  
+  function getUniqueLogo() {
+    const logo = shuffledLogos[logoIndex % availableLogos.length];
+    logoIndex++;
+    return logo;
+  }
+
+  // Cache for team logo assignments
+  const teamLogoCache = {};
 
   function getLogoPath(teamName) {
-    const filename = logoMap[teamName] || "england_arsenal.football-logos.cc.svg";
-    return `${basePath}/assets/logos/${filename}`;
+    // Return cached logo if already assigned
+    if (teamLogoCache[teamName]) {
+      return `${basePath}/assets/logos/${teamLogoCache[teamName]}`;
+    }
+    
+    // Assign a new unique logo
+    const logo = getUniqueLogo();
+    teamLogoCache[teamName] = logo;
+    return `${basePath}/assets/logos/${logo}`;
   }
 
   // ----------------------------------------------

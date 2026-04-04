@@ -1,26 +1,17 @@
 // Tables module - handles league table functionality
 const Tables = (() => {
-  // Detect base path dynamically based on script location
+  // Detect if we're in a subdirectory (pages/) or root
+  // by checking the CSS link href pattern
   function getBasePath() {
-    // Get the path to the main.js script to determine base
-    const scripts = document.getElementsByTagName('script');
-    for (let script of scripts) {
-      if (script.src && script.src.includes('main.js')) {
-        // Extract path up to the assets folder
-        const srcPath = script.src;
-        const assetsIndex = srcPath.indexOf('/assets/');
-        if (assetsIndex !== -1) {
-          return srcPath.substring(0, assetsIndex);
-        }
-      }
-    }
-    // Fallback: check if we're in pages directory
+    // Check CSS links - if they use ../assets/, we're in a subdirectory
     const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
-    for (let link of cssLinks) {
-      if (link.href && link.href.includes('../assets/')) {
+    for (let i = 0; i < cssLinks.length; i++) {
+      const href = cssLinks[i].getAttribute('href') || '';
+      if (href.includes('../assets/')) {
         return '..';
       }
     }
+    // Default to current directory (root)
     return '.';
   }
 
@@ -50,13 +41,27 @@ const Tables = (() => {
     "usa_inter-miami-cf.football-logos.cc.svg"
   ];
 
-  // Function to get a random logo from available logos
-  function getRandomLogo() {
-    const randomIndex = Math.floor(Math.random() * availableLogos.length);
-    return `${basePath}/assets/logos/${availableLogos[randomIndex]}`;
+  // Shuffle logos to get random order, then cycle through them
+  function getShuffledLogos() {
+    const shuffled = [...availableLogos];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   }
 
-  // Team data
+  // Get unique logos for each team (no repeats until we run out)
+  let logoIndex = 0;
+  const shuffledLogos = getShuffledLogos();
+  
+  function getUniqueLogo() {
+    const logo = `${basePath}/assets/logos/${shuffledLogos[logoIndex % availableLogos.length]}`;
+    logoIndex++;
+    return logo;
+  }
+
+  // Team data - each team gets a unique logo
   const teams = [
     {
       pos: 1,
@@ -71,8 +76,8 @@ const Tables = (() => {
       gd: 39,
       pts: 70,
       form: ["D", "W", "W", "W", "W"],
-      logo: `${basePath}/assets/logos/england_arsenal.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 2,
@@ -87,8 +92,8 @@ const Tables = (() => {
       gd: 32,
       pts: 61,
       form: ["W", "W", "W", "D", "D"],
-      logo: `${basePath}/assets/logos/england_manchester-city.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 3,
@@ -103,8 +108,8 @@ const Tables = (() => {
       gd: 13,
       pts: 55,
       form: ["W", "W", "L", "W", "D"],
-      logo: `${basePath}/assets/logos/england_manchester-united.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 4,
@@ -119,8 +124,8 @@ const Tables = (() => {
       gd: 5,
       pts: 54,
       form: ["D", "L", "L", "L", "W"],
-      logo: `${basePath}/assets/logos/england_arsenal.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 5,
@@ -135,8 +140,8 @@ const Tables = (() => {
       gd: 8,
       pts: 49,
       form: ["W", "W", "L", "D", "L"],
-      logo: `${basePath}/assets/logos/england_liverpool.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 6,
@@ -151,8 +156,8 @@ const Tables = (() => {
       gd: 15,
       pts: 48,
       form: ["D", "L", "W", "L", "L"],
-      logo: `${basePath}/assets/logos/england_chelsea.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 7,
@@ -167,8 +172,8 @@ const Tables = (() => {
       gd: 4,
       pts: 46,
       form: ["L", "W", "D", "D", "D"],
-      logo: `${basePath}/assets/logos/england_arsenal.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 8,
@@ -183,8 +188,8 @@ const Tables = (() => {
       gd: 2,
       pts: 46,
       form: ["L", "W", "W", "L", "W"],
-      logo: `${basePath}/assets/logos/england_chelsea.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 9,
@@ -199,8 +204,8 @@ const Tables = (() => {
       gd: -1,
       pts: 44,
       form: ["W", "W", "L", "D", "W"],
-      logo: `${basePath}/assets/logos/england_manchester-city.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 10,
@@ -215,8 +220,8 @@ const Tables = (() => {
       gd: -3,
       pts: 42,
       form: ["L", "D", "W", "W", "L"],
-      logo: `${basePath}/assets/logos/england_chelsea.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 11,
@@ -231,8 +236,8 @@ const Tables = (() => {
       gd: -2,
       pts: 41,
       form: ["D", "W", "D", "L", "W"],
-      logo: `${basePath}/assets/logos/england_arsenal.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 12,
@@ -247,8 +252,8 @@ const Tables = (() => {
       gd: -3,
       pts: 40,
       form: ["W", "L", "W", "D", "L"],
-      logo: `${basePath}/assets/logos/england_manchester-city.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 13,
@@ -263,8 +268,8 @@ const Tables = (() => {
       gd: -10,
       pts: 38,
       form: ["L", "L", "D", "W", "D"],
-      logo: `${basePath}/assets/logos/england_accrington.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 14,
@@ -279,8 +284,8 @@ const Tables = (() => {
       gd: -16,
       pts: 35,
       form: ["D", "L", "W", "L", "D"],
-      logo: `${basePath}/assets/logos/brazil_flamengo.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
     {
       pos: 15,
@@ -295,8 +300,8 @@ const Tables = (() => {
       gd: -16,
       pts: 33,
       form: ["L", "D", "L", "W", "D"],
-      logo: `${basePath}/assets/logos/spain_real-madrid.football-logos.cc.svg`,
-      nextLogo: getRandomLogo(),
+      logo: getUniqueLogo(),
+      nextLogo: getUniqueLogo(),
     },
   ];
 
@@ -349,7 +354,9 @@ const Tables = (() => {
     // First Team / U21 / U18 tabs
     document.querySelectorAll(".tab").forEach((tab) => {
       tab.addEventListener("click", () => {
-        document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+        document
+          .querySelectorAll(".tab")
+          .forEach((t) => t.classList.remove("active"));
         tab.classList.add("active");
       });
     });
@@ -366,7 +373,9 @@ const Tables = (() => {
 
     document.querySelectorAll(".mobile-col-tab").forEach((tab) => {
       tab.addEventListener("click", () => {
-        document.querySelectorAll(".mobile-col-tab").forEach((t) => t.classList.remove("active"));
+        document
+          .querySelectorAll(".mobile-col-tab")
+          .forEach((t) => t.classList.remove("active"));
         tab.classList.add("active");
         setView(tab.dataset.view);
       });
