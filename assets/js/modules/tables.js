@@ -1,5 +1,61 @@
 // Tables module - handles league table functionality
 const Tables = (() => {
+  // Detect base path dynamically based on script location
+  function getBasePath() {
+    // Get the path to the main.js script to determine base
+    const scripts = document.getElementsByTagName('script');
+    for (let script of scripts) {
+      if (script.src && script.src.includes('main.js')) {
+        // Extract path up to the assets folder
+        const srcPath = script.src;
+        const assetsIndex = srcPath.indexOf('/assets/');
+        if (assetsIndex !== -1) {
+          return srcPath.substring(0, assetsIndex);
+        }
+      }
+    }
+    // Fallback: check if we're in pages directory
+    const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
+    for (let link of cssLinks) {
+      if (link.href && link.href.includes('../assets/')) {
+        return '..';
+      }
+    }
+    return '.';
+  }
+
+  const basePath = getBasePath();
+
+  // All available logo files in the logos folder
+  const availableLogos = [
+    "australia_adelaide-united.football-logos.cc.svg",
+    "brazil_flamengo.football-logos.cc.svg",
+    "cyprus_ael.football-logos.cc.svg",
+    "cyprus_aez.football-logos.cc.svg",
+    "england_accrington.football-logos.cc.svg",
+    "england_arsenal.football-logos.cc.svg",
+    "england_chelsea.football-logos.cc.svg",
+    "england_liverpool.football-logos.cc.svg",
+    "england_manchester-city.football-logos.cc.svg",
+    "england_manchester-united.football-logos.cc.svg",
+    "france_ajaccio.football-logos.cc.svg",
+    "germany_bayern-munchen.football-logos.cc.svg",
+    "germany_borussia-dortmund.football-logos.cc.svg",
+    "italy_juventus.football-logos.cc.svg",
+    "portugal_benfica.football-logos.cc.svg",
+    "saudi-arabia_al-nassr.football-logos.cc.svg",
+    "scotland_aberdeen.football-logos.cc.svg",
+    "spain_barcelona.football-logos.cc.svg",
+    "spain_real-madrid.football-logos.cc.svg",
+    "usa_inter-miami-cf.football-logos.cc.svg"
+  ];
+
+  // Function to get a random logo from available logos
+  function getRandomLogo() {
+    const randomIndex = Math.floor(Math.random() * availableLogos.length);
+    return `${basePath}/assets/logos/${availableLogos[randomIndex]}`;
+  }
+
   // Team data
   const teams = [
     {
@@ -15,8 +71,8 @@ const Tables = (() => {
       gd: 39,
       pts: 70,
       form: ["D", "W", "W", "W", "W"],
-      logo: "../assets/logos/england_arsenal.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_arsenal.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 2,
@@ -31,8 +87,8 @@ const Tables = (() => {
       gd: 32,
       pts: 61,
       form: ["W", "W", "W", "D", "D"],
-      logo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_chelsea.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_manchester-city.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 3,
@@ -47,8 +103,8 @@ const Tables = (() => {
       gd: 13,
       pts: 55,
       form: ["W", "W", "L", "W", "D"],
-      logo: "../assets/logos/england_manchester-united.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_manchester-united.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_manchester-united.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 4,
@@ -63,8 +119,8 @@ const Tables = (() => {
       gd: 5,
       pts: 54,
       form: ["D", "L", "L", "L", "W"],
-      logo: "../assets/logos/england_arsenal.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_arsenal.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 5,
@@ -79,8 +135,8 @@ const Tables = (() => {
       gd: 8,
       pts: 49,
       form: ["W", "W", "L", "D", "L"],
-      logo: "../assets/logos/england_liverpool.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_liverpool.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_liverpool.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 6,
@@ -95,8 +151,8 @@ const Tables = (() => {
       gd: 15,
       pts: 48,
       form: ["D", "L", "W", "L", "L"],
-      logo: "../assets/logos/england_chelsea.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_chelsea.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 7,
@@ -111,8 +167,8 @@ const Tables = (() => {
       gd: 4,
       pts: 46,
       form: ["L", "W", "D", "D", "D"],
-      logo: "../assets/logos/england_arsenal.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_chelsea.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_arsenal.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 8,
@@ -127,8 +183,8 @@ const Tables = (() => {
       gd: 2,
       pts: 46,
       form: ["L", "W", "W", "L", "W"],
-      logo: "../assets/logos/england_chelsea.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_chelsea.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 9,
@@ -143,8 +199,8 @@ const Tables = (() => {
       gd: -1,
       pts: 44,
       form: ["W", "W", "L", "D", "W"],
-      logo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_liverpool.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_manchester-city.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 10,
@@ -159,8 +215,8 @@ const Tables = (() => {
       gd: -3,
       pts: 42,
       form: ["L", "D", "W", "W", "L"],
-      logo: "../assets/logos/england_chelsea.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_chelsea.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 11,
@@ -175,8 +231,8 @@ const Tables = (() => {
       gd: -2,
       pts: 41,
       form: ["D", "W", "D", "L", "W"],
-      logo: "../assets/logos/england_arsenal.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_arsenal.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 12,
@@ -191,8 +247,8 @@ const Tables = (() => {
       gd: -3,
       pts: 40,
       form: ["W", "L", "W", "D", "L"],
-      logo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_chelsea.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_manchester-city.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 13,
@@ -207,8 +263,8 @@ const Tables = (() => {
       gd: -10,
       pts: 38,
       form: ["L", "L", "D", "W", "D"],
-      logo: "../assets/logos/england_accrington.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/england_accrington.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 14,
@@ -223,8 +279,8 @@ const Tables = (() => {
       gd: -16,
       pts: 35,
       form: ["D", "L", "W", "L", "D"],
-      logo: "../assets/logos/brazil_flamengo.football-logos.cc.svg",
-      nextLogo: "../assets/logos/england_accrington.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/brazil_flamengo.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
     {
       pos: 15,
@@ -239,8 +295,8 @@ const Tables = (() => {
       gd: -16,
       pts: 33,
       form: ["L", "D", "L", "W", "D"],
-      logo: "../assets/logos/spain_real-madrid.football-logos.cc.svg",
-      nextLogo: "../assets/logos/brazil_flamengo.football-logos.cc.svg",
+      logo: `${basePath}/assets/logos/spain_real-madrid.football-logos.cc.svg`,
+      nextLogo: getRandomLogo(),
     },
   ];
 

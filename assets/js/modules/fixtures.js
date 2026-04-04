@@ -2,32 +2,54 @@
 const Fixtures = (() => {
   // ----------------------------------------------
   // LOGO MAPPING for actual logo files
+  // Use absolute path from site root
   // ----------------------------------------------
+  function getBasePath() {
+    // Get the path to the main.js script to determine base
+    const scripts = document.getElementsByTagName('script');
+    for (let script of scripts) {
+      if (script.src && script.src.includes('main.js')) {
+        // Extract path up to the assets folder
+        const srcPath = script.src;
+        const assetsIndex = srcPath.indexOf('/assets/');
+        if (assetsIndex !== -1) {
+          return srcPath.substring(0, assetsIndex);
+        }
+      }
+    }
+    // Fallback: check if we're in pages directory
+    const cssLinks = document.querySelectorAll('link[rel="stylesheet"]');
+    for (let link of cssLinks) {
+      if (link.href && link.href.includes('../assets/')) {
+        return '..';
+      }
+    }
+    return '.';
+  }
+
+  const basePath = getBasePath();
+
   const logoMap = {
-    Arsenal: "../assets/logos/england_arsenal.football-logos.cc.svg",
-    Chelsea: "../assets/logos/england_chelsea.football-logos.cc.svg",
-    Liverpool: "../assets/logos/england_liverpool.football-logos.cc.svg",
-    "Manchester City": "../assets/logos/england_manchester-city.football-logos.cc.svg",
-    "Manchester United": "../assets/logos/england_manchester-united.football-logos.cc.svg",
-    "Man. United": "../assets/logos/england_manchester-united.football-logos.cc.svg",
-    "Manchester Utd": "../assets/logos/england_manchester-united.football-logos.cc.svg",
-    "Bayern Munich": "../assets/logos/germany_bayern-munchen.football-logos.cc.svg",
-    "Borussia Dortmund": "../assets/logos/germany_borussia-dortmund.football-logos.cc.svg",
-    Juventus: "../assets/logos/italy_juventus.football-logos.cc.svg",
-    Barcelona: "../assets/logos/spain_barcelona.football-logos.cc.svg",
-    "Real Madrid": "../assets/logos/spain_real-madrid.football-logos.cc.svg",
-    Flamengo: "../assets/logos/brazil_flamengo.football-logos.cc.svg",
-    "Adelaide United": "../assets/logos/australia_adelaide-united.football-logos.cc.svg",
-    Accrington: "../assets/logos/england_accrington.football-logos.cc.svg",
+    Arsenal: "england_arsenal.football-logos.cc.svg",
+    Chelsea: "england_chelsea.football-logos.cc.svg",
+    Liverpool: "england_liverpool.football-logos.cc.svg",
+    "Manchester City": "england_manchester-city.football-logos.cc.svg",
+    "Manchester United": "england_manchester-united.football-logos.cc.svg",
+    "Man. United": "england_manchester-united.football-logos.cc.svg",
+    "Manchester Utd": "england_manchester-united.football-logos.cc.svg",
+    "Bayern Munich": "germany_bayern-munchen.football-logos.cc.svg",
+    "Borussia Dortmund": "germany_borussia-dortmund.football-logos.cc.svg",
+    Juventus: "italy_juventus.football-logos.cc.svg",
+    Barcelona: "spain_barcelona.football-logos.cc.svg",
+    "Real Madrid": "spain_real-madrid.football-logos.cc.svg",
+    Flamengo: "brazil_flamengo.football-logos.cc.svg",
+    "Adelaide United": "australia_adelaide-united.football-logos.cc.svg",
+    Accrington: "england_accrington.football-logos.cc.svg",
   };
 
   function getLogoPath(teamName) {
-    if (logoMap[teamName]) {
-      return logoMap[teamName];
-    }
-    const logoKeys = Object.keys(logoMap);
-    const randomKey = logoKeys[Math.floor(Math.random() * logoKeys.length)];
-    return logoMap[randomKey];
+    const filename = logoMap[teamName] || "england_arsenal.football-logos.cc.svg";
+    return `${basePath}/assets/logos/${filename}`;
   }
 
   // ----------------------------------------------
@@ -189,15 +211,26 @@ const Fixtures = (() => {
       });
     }
 
-    // Matchday button navigation
+    // Matchday button navigation - update button text dynamically
     const prevMatchdayBtn = document.getElementById("prevMatchdayBtn");
     if (prevMatchdayBtn) {
+      // Update button text based on current matchweek
+      function updateMatchdayButtonText() {
+        const currentMW = mwDropdown ? parseInt(mwDropdown.value) : 38;
+        const prevMW = Math.max(36, currentMW - 1);
+        prevMatchdayBtn.textContent = `← MATCHDAY ${prevMW}`;
+      }
+      
+      // Initial update
+      updateMatchdayButtonText();
+      
       prevMatchdayBtn.addEventListener("click", () => {
         if (mwDropdown) {
           const current = parseInt(mwDropdown.value);
           if (current > 36) {
             mwDropdown.value = current - 1;
             renderFixtures(mwDropdown.value);
+            updateMatchdayButtonText();
           }
         }
       });
