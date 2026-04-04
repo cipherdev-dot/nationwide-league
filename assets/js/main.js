@@ -35,6 +35,14 @@
   // Clean up page name - remove query strings and anchors
   pageName = pageName.split('?')[0].split('#')[0] || "index.html";
   
+  // Add .html extension if missing (Netlify serves without extension)
+  if (!pageName.includes('.') && pageName !== 'index') {
+    pageName = pageName + '.html';
+  }
+  if (pageName === 'index') {
+    pageName = 'index.html';
+  }
+  
   // Determine if we're in the pages subdirectory
   const isInPagesDir = currentPage.includes('/pages/') || 
                        document.querySelector('link[href*="../assets/css"]') !== null;
