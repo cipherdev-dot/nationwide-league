@@ -225,11 +225,7 @@ const PlayerData = (() => {
     populatePlayerData();
   }
 
-  return {
-    init,
-    getPlayerIdFromUrl,
-    populatePlayerData
-  };
+  return { init };
 })();
 
 // Export for use in other modules

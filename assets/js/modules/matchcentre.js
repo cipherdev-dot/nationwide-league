@@ -182,7 +182,7 @@ const MatchCentre = (() => {
     });
   }
 
-  return { init, renderMatches };
+  return { init };
 })();
 
 // Export for use in other modules

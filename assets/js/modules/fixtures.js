@@ -249,7 +249,7 @@ const Fixtures = (() => {
     container.innerHTML = html || '<div class="empty-fixtures">No fixtures found for this club</div>';
   }
 
-  return { init, renderFixtures, filterFixtures };
+  return { init };
 })();
 
 // Export for use in other modules

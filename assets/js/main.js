@@ -55,12 +55,9 @@
         // Fixtures page - load fixtures module
         try {
           await loadScript(assetsPath + "/js/modules/fixtures.js");
-          // Wait a bit for the script to be available
-          setTimeout(() => {
-            if (window.Fixtures) {
-              window.Fixtures.init();
-            }
-          }, 50);
+          if (window.Fixtures) {
+            window.Fixtures.init();
+          }
         } catch (error) {
           console.error("Failed to load fixtures module:", error);
         }

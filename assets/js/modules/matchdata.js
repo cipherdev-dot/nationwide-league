@@ -513,13 +513,7 @@ const MatchData = (() => {
     renderMatchResults("March");
   }
 
-  return {
-    init,
-    renderTimeline,
-    renderMatchResults,
-    initTeamFormToggle,
-    initMonthCarousel,
-  };
+  return { init };
 })();
 
 // Export for use in other modules

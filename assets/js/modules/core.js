@@ -173,12 +173,67 @@ const Core = (() => {
     });
   }
 
+  // Initialize hero video switching
+  function initHeroVideoSwitching() {
+    const featureItems = document.querySelectorAll(".feature-item");
+    const mainVideo = document.getElementById("mainVideo");
+    const videoTitle = document.getElementById("video-title");
+    const videoSubtitle = document.getElementById("video-subtitle");
+    const videoBadge = document.getElementById("video-badge");
+
+    if (!featureItems.length || !mainVideo) {
+      console.warn("Hero video switching not initialised: missing elements");
+      return;
+    }
+
+    featureItems.forEach(item => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const videoSrc = item.getAttribute("data-video-src");
+        const badge = item.getAttribute("data-badge");
+        const title = item.getAttribute("data-title");
+        const subtitle = item.getAttribute("data-subtitle");
+
+        if (videoSrc) {
+          // Pause current video
+          mainVideo.pause();
+          // Change source and reload
+          mainVideo.src = videoSrc;
+          mainVideo.load();
+          // Ensure muted to allow autoplay
+          mainVideo.muted = true;
+
+          // Wait until video can play before calling play()
+          const playVideo = () => {
+            mainVideo.play().catch(err => {
+              console.error("Video play failed:", err);
+              // Optional: show a manual play button overlay here
+            });
+            mainVideo.removeEventListener("canplay", playVideo);
+          };
+          mainVideo.addEventListener("canplay", playVideo, { once: true });
+        }
+
+        // Update text content
+        if (videoTitle && title) videoTitle.textContent = title;
+        if (videoSubtitle && subtitle) videoSubtitle.textContent = subtitle;
+        if (videoBadge && badge) videoBadge.textContent = badge;
+
+        // Update active state
+        featureItems.forEach(f => f.classList.remove("active"));
+        item.classList.add("active");
+      });
+    });
+  }
+
   // Public initialization
   function init() {
     initMobileMenu();
     initScrollBehavior();
     initLazyLoading();
     initVideoLazyLoading();
+    initHeroVideoSwitching();
     initSmoothScroll();
   }
 

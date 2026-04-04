@@ -551,15 +551,7 @@ const ClubData = (() => {
     loadClubData();
   }
 
-  return {
-    init,
-    renderClubTimeline,
-    initClubTeamFormToggle,
-    initClubTabs,
-    initMonthCarousel,
-    renderMatchResults,
-    loadClubData
-  };
+  return { init };
 })();
 
 // Export for use in other modules

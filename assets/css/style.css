@@ -1802,6 +1802,13 @@ img {
 .middle-features-card .feature-item:hover {
   background-color: var(--light-gray);
 }
+
+/* Active feature item highlight */
+.feature-item.active {
+  background-color: #e0e0e0;
+  border-left: 4px solid #1a7c3e;
+  transition: all 0.2s ease;
+}
 .middle-features-card .feature-text {
   flex: 1;
   padding-right: 0.75rem;

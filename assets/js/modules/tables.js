@@ -15,8 +15,8 @@ const Tables = (() => {
       gd: 39,
       pts: 70,
       form: ["D", "W", "W", "W", "W"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t3.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t91.svg",
+      logo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_arsenal.football-logos.cc.svg",
     },
     {
       pos: 2,
@@ -31,8 +31,8 @@ const Tables = (() => {
       gd: 32,
       pts: 61,
       form: ["W", "W", "W", "D", "D"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t43.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t8.svg",
+      logo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_chelsea.football-logos.cc.svg",
     },
     {
       pos: 3,
@@ -47,8 +47,8 @@ const Tables = (() => {
       gd: 13,
       pts: 55,
       form: ["W", "W", "L", "W", "D"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t1.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t2.svg",
+      logo: "../assets/logos/england_manchester-united.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_manchester-united.football-logos.cc.svg",
     },
     {
       pos: 4,
@@ -63,8 +63,8 @@ const Tables = (() => {
       gd: 5,
       pts: 54,
       form: ["D", "L", "L", "L", "W"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t7.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t17.svg",
+      logo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_arsenal.football-logos.cc.svg",
     },
     {
       pos: 5,
@@ -79,8 +79,8 @@ const Tables = (() => {
       gd: 8,
       pts: 49,
       form: ["W", "W", "L", "D", "L"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t14.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t54.svg",
+      logo: "../assets/logos/england_liverpool.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_liverpool.football-logos.cc.svg",
     },
     {
       pos: 6,
@@ -95,8 +95,8 @@ const Tables = (() => {
       gd: 15,
       pts: 48,
       form: ["D", "L", "W", "L", "L"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t8.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t43.svg",
+      logo: "../assets/logos/england_chelsea.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
     },
     {
       pos: 7,
@@ -111,8 +111,8 @@ const Tables = (() => {
       gd: 4,
       pts: 46,
       form: ["L", "W", "D", "D", "D"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t94.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t11.svg",
+      logo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_chelsea.football-logos.cc.svg",
     },
     {
       pos: 8,
@@ -127,8 +127,8 @@ const Tables = (() => {
       gd: 2,
       pts: 46,
       form: ["L", "W", "W", "L", "W"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t11.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t94.svg",
+      logo: "../assets/logos/england_chelsea.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_arsenal.football-logos.cc.svg",
     },
     {
       pos: 9,
@@ -143,8 +143,8 @@ const Tables = (() => {
       gd: -1,
       pts: 44,
       form: ["W", "W", "L", "D", "W"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t54.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t14.svg",
+      logo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_liverpool.football-logos.cc.svg",
     },
     {
       pos: 10,
@@ -159,8 +159,8 @@ const Tables = (() => {
       gd: -3,
       pts: 42,
       form: ["L", "D", "W", "W", "L"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t6.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t36.svg",
+      logo: "../assets/logos/england_chelsea.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
     },
     {
       pos: 11,
@@ -175,8 +175,8 @@ const Tables = (() => {
       gd: -2,
       pts: 41,
       form: ["D", "W", "D", "L", "W"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t4.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t7.svg",
+      logo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_arsenal.football-logos.cc.svg",
     },
     {
       pos: 12,
@@ -191,8 +191,8 @@ const Tables = (() => {
       gd: -3,
       pts: 40,
       form: ["W", "L", "W", "D", "L"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t36.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t6.svg",
+      logo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_chelsea.football-logos.cc.svg",
     },
     {
       pos: 13,
@@ -207,8 +207,8 @@ const Tables = (() => {
       gd: -10,
       pts: 38,
       form: ["L", "L", "D", "W", "D"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t21.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t4.svg",
+      logo: "../assets/logos/england_accrington.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_arsenal.football-logos.cc.svg",
     },
     {
       pos: 14,
@@ -223,8 +223,8 @@ const Tables = (() => {
       gd: -16,
       pts: 35,
       form: ["D", "L", "W", "L", "D"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t39.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t21.svg",
+      logo: "../assets/logos/brazil_flamengo.football-logos.cc.svg",
+      nextLogo: "../assets/logos/england_accrington.football-logos.cc.svg",
     },
     {
       pos: 15,
@@ -239,8 +239,8 @@ const Tables = (() => {
       gd: -16,
       pts: 33,
       form: ["L", "D", "L", "W", "D"],
-      logo: "https://resources.premierleague.com/premierleague/badges/t31.svg",
-      nextLogo: "https://resources.premierleague.com/premierleague/badges/t39.svg",
+      logo: "../assets/logos/spain_real-madrid.football-logos.cc.svg",
+      nextLogo: "../assets/logos/brazil_flamengo.football-logos.cc.svg",
     },
   ];
 
@@ -325,7 +325,7 @@ const Tables = (() => {
     initTabs();
   }
 
-  return { init, renderTable };
+  return { init };
 })();
 
 // Export for use in other modules
