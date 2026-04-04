@@ -80,16 +80,17 @@
         <div class="club-hero-card">
           <div class="club-hero-logo">
             <img
+              id="clubHeroLogo"
               src="../assets/logos/england_arsenal.football-logos.cc.svg"
-              alt="Leeds United"
+              alt="Club Logo"
               class="club-hero-logo-image"
             />
           </div>
           <div class="club-hero-info">
-            <div class="club-hero-name">Leeds United</div>
+            <div class="club-hero-name" id="clubHeroName">Leeds United</div>
             <div class="club-hero-meta">
-              <span>Est. 1919</span>
-              <span>Elland Road</span>
+              <span id="clubEstYear">Est. 1919</span>
+              <span id="clubStadium">Elland Road</span>
             </div>
           </div>
           <button class="club-follow-btn">
@@ -967,43 +968,879 @@
 
             <!-- Match Results Container -->
             <div class="match-results-container" id="matchResultsContainer">
-              <!-- Matches will be dynamically populated -->
+              <!-- Match Row 1 -->
+              <div class="match-result-row">
+                <div class="match-result-grid">
+                  <div class="match-date-cell">
+                    <span class="match-day">29</span>
+                    <span class="match-month">Mar</span>
+                  </div>
+                  <div class="match-team-cell home-team-cell">
+                    <span class="match-team-name">Leeds United</span>
+                  </div>
+                  <div class="match-logo-cell home-logo-cell">
+                    <img src="../assets/logos/england_arsenal.football-logos.cc.svg" alt="Leeds United" class="match-team-logo">
+                  </div>
+                  <div class="match-score-cell">
+                    <span class="match-score">1 - 1</span>
+                    <span class="match-status">FT</span>
+                  </div>
+                  <div class="match-logo-cell away-logo-cell">
+                    <img src="../assets/logos/england_chelsea.football-logos.cc.svg" alt="Chelsea" class="match-team-logo">
+                  </div>
+                  <div class="match-team-cell away-team-cell">
+                    <span class="match-team-name">Chelsea</span>
+                  </div>
+                  <div class="match-venue-cell">Elland Road</div>
+                </div>
+              </div>
+
+              <!-- Match Row 2 -->
+              <div class="match-result-row">
+                <div class="match-result-grid">
+                  <div class="match-date-cell">
+                    <span class="match-day">22</span>
+                    <span class="match-month">Mar</span>
+                  </div>
+                  <div class="match-team-cell home-team-cell">
+                    <span class="match-team-name">Manchester United</span>
+                  </div>
+                  <div class="match-logo-cell home-logo-cell">
+                    <img src="../assets/logos/england_manchester-united.football-logos.cc.svg" alt="Manchester United" class="match-team-logo">
+                  </div>
+                  <div class="match-score-cell">
+                    <span class="match-score">2 - 0</span>
+                    <span class="match-status">FT</span>
+                  </div>
+                  <div class="match-logo-cell away-logo-cell">
+                    <img src="../assets/logos/england_liverpool.football-logos.cc.svg" alt="Liverpool" class="match-team-logo">
+                  </div>
+                  <div class="match-team-cell away-team-cell">
+                    <span class="match-team-name">Liverpool</span>
+                  </div>
+                  <div class="match-venue-cell">Old Trafford</div>
+                </div>
+              </div>
+
+              <!-- Match Row 3 -->
+              <div class="match-result-row">
+                <div class="match-result-grid">
+                  <div class="match-date-cell">
+                    <span class="match-day">15</span>
+                    <span class="match-month">Mar</span>
+                  </div>
+                  <div class="match-team-cell home-team-cell">
+                    <span class="match-team-name">Arsenal</span>
+                  </div>
+                  <div class="match-logo-cell home-logo-cell">
+                    <img src="../assets/logos/england_arsenal.football-logos.cc.svg" alt="Arsenal" class="match-team-logo">
+                  </div>
+                  <div class="match-score-cell">
+                    <span class="match-score">3 - 1</span>
+                    <span class="match-status">FT</span>
+                  </div>
+                  <div class="match-logo-cell away-logo-cell">
+                    <img src="../assets/logos/england_manchester-city.football-logos.cc.svg" alt="Manchester City" class="match-team-logo">
+                  </div>
+                  <div class="match-team-cell away-team-cell">
+                    <span class="match-team-name">Manchester City</span>
+                  </div>
+                  <div class="match-venue-cell">Emirates Stadium</div>
+                </div>
+              </div>
+
+              <!-- Match Row 4 -->
+              <div class="match-result-row">
+                <div class="match-result-grid">
+                  <div class="match-date-cell">
+                    <span class="match-day">08</span>
+                    <span class="match-month">Mar</span>
+                  </div>
+                  <div class="match-team-cell home-team-cell">
+                    <span class="match-team-name">Tottenham</span>
+                  </div>
+                  <div class="match-logo-cell home-logo-cell">
+                    <img src="../assets/logos/spain_real-madrid.football-logos.cc.svg" alt="Tottenham" class="match-team-logo">
+                  </div>
+                  <div class="match-score-cell">
+                    <span class="match-score">0 - 2</span>
+                    <span class="match-status">FT</span>
+                  </div>
+                  <div class="match-logo-cell away-logo-cell">
+                    <img src="../assets/logos/spain_barcelona.football-logos.cc.svg" alt="Barcelona" class="match-team-logo">
+                  </div>
+                  <div class="match-team-cell away-team-cell">
+                    <span class="match-team-name">Barcelona</span>
+                  </div>
+                  <div class="match-venue-cell">Tottenham Stadium</div>
+                </div>
+              </div>
+
+              <!-- Match Row 5 -->
+              <div class="match-result-row">
+                <div class="match-result-grid">
+                  <div class="match-date-cell">
+                    <span class="match-day">01</span>
+                    <span class="match-month">Mar</span>
+                  </div>
+                  <div class="match-team-cell home-team-cell">
+                    <span class="match-team-name">Newcastle</span>
+                  </div>
+                  <div class="match-logo-cell home-logo-cell">
+                    <img src="../assets/logos/germany_bayern-munchen.football-logos.cc.svg" alt="Newcastle" class="match-team-logo">
+                  </div>
+                  <div class="match-score-cell">
+                    <span class="match-score">1 - 1</span>
+                    <span class="match-status">FT</span>
+                  </div>
+                  <div class="match-logo-cell away-logo-cell">
+                    <img src="../assets/logos/italy_juventus.football-logos.cc.svg" alt="Juventus" class="match-team-logo">
+                  </div>
+                  <div class="match-team-cell away-team-cell">
+                    <span class="match-team-name">Juventus</span>
+                  </div>
+                  <div class="match-venue-cell">St James' Park</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Squad Tab Content -->
         <div class="club-tab-content hidden" id="squad-content">
-          <div class="club-placeholder-section">
-            <p>Squad content coming soon...</p>
+          <!-- Season Filter (Top Bar) -->
+          <div class="squad-season-filter">
+            <span class="season-text">2025/26</span>
+            <span class="season-arrow">▼</span>
+          </div>
+
+          <div class="squad-section">
+            <div class="squad-container">
+              <!-- LEFT COLUMN -->
+              <div class="squad-main-column">
+                <!-- GOALKEEPERS CARD -->
+                <div class="squad-card">
+                  <h3 class="squad-card-title">Goalkeepers</h3>
+                  <div class="squad-player-list">
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/recap-image.png" alt="Lucas Perri" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Lucas Perri</div>
+                        <div class="squad-player-meta">1 • Brazil 🇧🇷</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-1.png" alt="Illan Meslier" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Illan Meslier</div>
+                        <div class="squad-player-meta">16 • France 🇫🇷</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-2.png" alt="Alex Cairns" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Alex Cairns</div>
+                        <div class="squad-player-meta">21 • England 🏴</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/recap-image-2.png" alt="Karl Darlow" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Karl Darlow</div>
+                        <div class="squad-player-meta">26 • Wales 🏴</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- DEFENDERS CARD -->
+                <div class="squad-card">
+                  <h3 class="squad-card-title">Defenders</h3>
+                  <div class="squad-player-list">
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-1.png" alt="Jayden Bogle" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Jayden Bogle</div>
+                        <div class="squad-player-meta">2 • England 🏴</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/recap-image-2.png" alt="Gabriel Gudmundsson" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Gabriel Gudmundsson</div>
+                        <div class="squad-player-meta">3 • Sweden 🇸🇪</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-1.png" alt="Ethan Ampadu" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Ethan Ampadu</div>
+                        <div class="squad-player-meta">4 • Wales 🏴</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-2.png" alt="Pascal Struijk" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Pascal Struijk</div>
+                        <div class="squad-player-meta">5 • Netherlands 🇳🇱</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-1.png" alt="Joe Rodon" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Joe Rodon</div>
+                        <div class="squad-player-meta">6 • Wales 🏴</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-3.png" alt="Jaka Bijol" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Jaka Bijol</div>
+                        <div class="squad-player-meta">15 • Slovenia 🇸🇮</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/recap-image.png" alt="Sebastiaan Bornauw" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Sebastiaan Bornauw</div>
+                        <div class="squad-player-meta">23 • Belgium 🇧🇪</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-2.png" alt="James Justin" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">James Justin</div>
+                        <div class="squad-player-meta">24 • England 🏴</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-3.png" alt="Sam Byram" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Sam Byram</div>
+                        <div class="squad-player-meta">25 • England 🏴</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN -->
+              <div class="squad-main-column">
+                <!-- MIDFIELDERS CARD -->
+                <div class="squad-card">
+                  <h3 class="squad-card-title">Midfielders</h3>
+                  <div class="squad-player-list">
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/recap-image.png" alt="Daniel James" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Daniel James</div>
+                        <div class="squad-player-meta">7 • Wales 🏴</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-3.png" alt="Sean Longstaff" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Sean Longstaff</div>
+                        <div class="squad-player-meta">8 • England 🏴</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-1.png" alt="Brenden Aaronson" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Brenden Aaronson</div>
+                        <div class="squad-player-meta">11 • United States 🇺🇸</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-1.png" alt="Anton Stach" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Anton Stach</div>
+                        <div class="squad-player-meta">18 • Germany 🇩🇪</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-2.png" alt="Ao Tanaka" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Ao Tanaka</div>
+                        <div class="squad-player-meta">22 • Japan 🇯🇵</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-3.png" alt="Facundo Buonanotte" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Facundo Buonanotte</div>
+                        <div class="squad-player-meta">40 • Argentina 🇦🇷</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/recap-image-2.png" alt="Sam Chambers" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Sam Chambers</div>
+                        <div class="squad-player-meta">42 • Scotland 🏴</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-2.png" alt="Ilia Gruev" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Ilia Gruev</div>
+                        <div class="squad-player-meta">44 • Bulgaria 🇧🇬</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-3.png" alt="Charlie Crew" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Charlie Crew</div>
+                        <div class="squad-player-meta">50 • Wales 🏴</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FORWARDS CARD -->
+                <div class="squad-card">
+                  <h3 class="squad-card-title">Forwards</h3>
+                  <div class="squad-player-list">
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/recap-image.png" alt="Dominic Calvert-Lewin" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Dominic Calvert-Lewin</div>
+                        <div class="squad-player-meta">9 • England 🏴</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/recap-image-2.png" alt="Joël Piroe" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Joël Piroe</div>
+                        <div class="squad-player-meta">10 • Suriname 🇸🇷</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-1.png" alt="Lukas Nmecha" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Lukas Nmecha</div>
+                        <div class="squad-player-meta">14 • Germany 🇩🇪</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-2.png" alt="Noah Okafor" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Noah Okafor</div>
+                        <div class="squad-player-meta">19 • Switzerland 🇨🇭</div>
+                      </div>
+                    </div>
+                    <div class="squad-player-item">
+                      <div class="squad-player-avatar">
+                        <img src="../assets/img/field-player-3.png" alt="Wilfried Gnonto" />
+                      </div>
+                      <div class="squad-player-info">
+                        <div class="squad-player-name">Wilfried Gnonto</div>
+                        <div class="squad-player-meta">29 • Italy 🇮🇹</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Stats Tab Content -->
         <div class="club-tab-content hidden" id="stats-content">
-          <div class="club-placeholder-section">
-            <p>Stats content coming soon...</p>
+          <!-- Stats Section -->
+          <div class="stats-section">
+            <!-- Season Filter -->
+            <div class="stats-season-filter">
+            <span class="season-text">2025/26</span>
+            <span class="season-arrow">▼</span>
+          </div>
+
+          <!-- Top Summary Stats (3-Column Row) -->
+          <div class="stats-summary-row">
+            <div class="stats-summary-card">
+              <div class="stats-summary-label">Games Played</div>
+              <div class="stats-summary-value">31</div>
+            </div>
+            <div class="stats-summary-card">
+              <div class="stats-summary-label">Goals</div>
+              <div class="stats-summary-value">37</div>
+            </div>
+            <div class="stats-summary-card">
+              <div class="stats-summary-label">Goals Conceded</div>
+              <div class="stats-summary-value">48</div>
+            </div>
+          </div>
+
+          <!-- Attack Section -->
+          <div class="stats-card">
+            <h3 class="stats-card-title">⚔️ Attack</h3>
+            <div class="stats-list">
+              <div class="stats-row">
+                <span class="stats-label">Goals</span>
+                <span class="stats-value">37</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">XG</span>
+                <span class="stats-value">43.07</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Shots</span>
+                <span class="stats-value">240</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Shots On Target</span>
+                <span class="stats-value">120</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Shots On Target Inside the Box</span>
+                <span class="stats-value">126</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Shots On Target Outside the Box</span>
+                <span class="stats-value">70</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Touches in the Opposition Box</span>
+                <span class="stats-value">728</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Penalties (Scored)</span>
+                <span class="stats-value">6 (4)</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Free Kicks (Scored)</span>
+                <span class="stats-value">8 (3)</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Hit Woodwork</span>
+                <span class="stats-value">9</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Crosses (Completed %)</span>
+                <span class="stats-value">383 (22%)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Defence Section -->
+          <div class="stats-card">
+            <h3 class="stats-card-title">🛡️ Defence</h3>
+            <div class="stats-list">
+              <div class="stats-row">
+                <span class="stats-label">Interceptions</span>
+                <span class="stats-value">281</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Blocks</span>
+                <span class="stats-value">106</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Clearances</span>
+                <span class="stats-value">914</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Possession Section -->
+          <div class="stats-card">
+            <h3 class="stats-card-title">⚙️ Possession</h3>
+            <div class="stats-list">
+              <div class="stats-row">
+                <span class="stats-label">Passes</span>
+                <span class="stats-value">12,285</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Long Passes (Completed %)</span>
+                <span class="stats-value">1,623 (38%)</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Corners Taken</span>
+                <span class="stats-value">140</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Physical Section -->
+          <div class="stats-card">
+            <h3 class="stats-card-title">💪 Physical</h3>
+            <div class="stats-list">
+              <div class="stats-row">
+                <span class="stats-label">Dribbles (Completed %)</span>
+                <span class="stats-value">420 (40%)</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Duels Won</span>
+                <span class="stats-value">1,634</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Aerial Duels Won</span>
+                <span class="stats-value">586</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Discipline Section -->
+          <div class="stats-card full-width">
+            <h3 class="stats-card-title">🚨 Discipline</h3>
+            <div class="stats-list">
+              <div class="stats-row">
+                <span class="stats-label">Red Cards</span>
+                <span class="stats-value">1</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Yellow Cards</span>
+                <span class="stats-value">49</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Fouls</span>
+                <span class="stats-value">322</span>
+              </div>
+              <div class="stats-row">
+                <span class="stats-label">Offsides</span>
+                <span class="stats-value">52</span>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
 
         <!-- Stadium Tab Content -->
         <div class="club-tab-content hidden" id="stadium-content">
-          <div class="club-placeholder-section">
-            <p>Stadium content coming soon...</p>
+          <div class="stadium-article">
+            <!-- Header -->
+            <div class="stadium-header">
+              <div class="stadium-date">24 May 2018</div>
+              <div class="stadium-label">Getting There</div>
+              <h1 class="stadium-title">Arriving at Elland Road by Public Transport</h1>
+            </div>
+
+            <!-- National Rail Section -->
+            <div class="stadium-section">
+              <h3>National Rail</h3>
+              <p><strong>Leeds Railway Station [LDS]</strong><br>
+              Address: New Station Street, Leeds, LS1 4DY<br>
+              Distance: 2 miles from stadium<br>
+              (See directions in Bus section below)</p>
+
+              <p>Leeds is well connected to the MetroTrain network with regular services from all major cities. The following services operate from Leeds Station:</p>
+
+              <ul class="stadium-list">
+                <li><strong>East Coast Main Line</strong> → London King's Cross</li>
+                <li><strong>Midland Main Line</strong> → London St Pancras</li>
+                <li><strong>Airedale Line</strong> → Keighley, Skipton, Heysham Port, Morecambe, Carlisle</li>
+                <li><strong>Caldervale Line</strong> → Manchester Oxford Road, Blackpool North, Huddersfield</li>
+                <li><strong>Hallam Line</strong> → Castleford, Wakefield, Barnsley, Sheffield</li>
+                <li><strong>Harrogate Line</strong> → Harrogate, Knaresborough, York</li>
+                <li><strong>Huddersfield Line</strong> → Dewsbury, Huddersfield</li>
+                <li><strong>Pontefract Line</strong> → Castleford, Pontefract, Knottingley, Goole</li>
+                <li><strong>Wakefield Line</strong> → Wakefield, Doncaster, Sheffield</li>
+                <li><strong>Wharfedale Line</strong> → Ilkley</li>
+                <li><strong>Leeds–Bradford Lines</strong> → Bradford</li>
+              </ul>
+            </div>
+
+            <!-- Bus Section -->
+            <div class="stadium-section">
+              <h3>Bus</h3>
+              <p>A shuttle bus service (R2) operates on matchdays, run by First Leeds Buses. The service departs from Sovereign Street, which is located near the railway station.</p>
+
+              <p>The shuttle service begins 90 minutes before kick-off and runs at frequent intervals. A return service operates after the match.</p>
+
+              <p><strong>Pricing:</strong></p>
+              <ul class="stadium-list">
+                <li>£3 return (adults)</li>
+                <li>£1.50 (children/OAPs)</li>
+                <li>£2 single (adults)</li>
+                <li>£1 single (children/OAPs)</li>
+              </ul>
+
+              <p>Regular bus services 51, 52, and 55 also run from Leeds city centre to Elland Road. Please note that bus stops in the immediate vicinity of the stadium are suspended for one hour before and after the match.</p>
+            </div>
+
+            <!-- Arriving by Car Section -->
+            <div class="stadium-section">
+              <h2>Arriving at Elland Road by Car</h2>
+              <p>Elland Road is easily accessible from the M1, M62, and M621 motorways. <a href="https://maps.google.com" target="_blank">Click here</a> for Google Maps directions.</p>
+
+              <div class="direction-block">
+                <h4>From the North</h4>
+                <p>Take the A1, M1, and A639 towards Leeds. Join the M621 and exit at Junction 1. Follow the A6110 to Elland Road.</p>
+              </div>
+
+              <div class="direction-block">
+                <h4>From the South</h4>
+                <p>Take the M1 to the M621 and exit at Junction 1. Follow the A6110 to Elland Road.</p>
+              </div>
+
+              <div class="direction-block">
+                <h4>From the East</h4>
+                <p>Take the A64 and A1, then follow the same route as from the North. Alternatively, take the M62 to the M621 and exit at Junction 1.</p>
+              </div>
+
+              <div class="direction-block">
+                <h4>From the West</h4>
+                <p>Take the M62 to the M621 and exit at Junction 1. Follow the A6110 to Elland Road.</p>
+              </div>
+
+              <p><strong>Postcode:</strong> LS11 0ES</p>
+
+              <p><strong>Parking:</strong> Leeds City Council operates several car parks around the stadium. Pricing is as follows:</p>
+              <ul class="stadium-list">
+                <li>Cars → £6</li>
+                <li>Mini coaches → £12</li>
+                <li>Coaches → £20</li>
+              </ul>
+
+              <p>Street parking in the surrounding area is restricted to resident permit holders only. Disabled parking is available for Blue Badge holders.</p>
+
+              <p><strong>Contact:</strong><br>
+              Phone: 0113 395 7400<br>
+              Email: parks@leeds.gov.uk</p>
+            </div>
           </div>
         </div>
 
         <!-- Tickets Tab Content -->
         <div class="club-tab-content hidden" id="tickets-content">
-          <div class="club-placeholder-section">
-            <p>Tickets content coming soon...</p>
+          <div class="tickets-article">
+            <!-- Title -->
+            <div class="tickets-page-title">Guide to buying Leeds tickets at Elland Road</div>
+
+            <!-- Logo Hero Section -->
+            <div class="tickets-logo-container">
+              <img src="../assets/logos/england_arsenal.football-logos.cc.svg" alt="Leeds United" class="tickets-logo" />
+            </div>
+
+            <!-- Date -->
+            <div class="tickets-date">10 Jun 2021</div>
+
+            <!-- Main Heading -->
+            <h1 class="tickets-main-heading">Leeds Ticket Information</h1>
+
+            <!-- Body Content -->
+            <div class="tickets-body">
+              <p>Tickets for Premier League matches at Elland Road for Leeds fans are generally prioritised to members.</p>
+
+              <p>Members have an exclusive period to book ahead of general sale. Gold Members have first priority. All tickets subject to availability.</p>
+
+              <p class="tickets-note"><strong>Note:</strong> A membership does not guarantee a ticket.</p>
+            </div>
+
+            <!-- Resource List -->
+            <div class="tickets-resources">
+              <a href="https://www.leedsunited.com/tickets/info" class="tickets-link" target="_blank">Ticket info</a>
+              <a href="https://tickets.leedsunited.com/" class="tickets-link" target="_blank">Ticket online sales</a>
+              <a href="tel:03713341992" class="tickets-link">Ticket phone sales: 0371 334 1992</a>
+              <a href="mailto:tickets@leedsunited.com" class="tickets-link">Ticket enquiries: tickets@leedsunited.com</a>
+              <a href="https://www.twitter.com/LUFCtickets" class="tickets-link" target="_blank">Twitter: @LUFCtickets</a>
+              <a href="https://tickets.leedsunited.com/memberships" class="tickets-link" target="_blank">Memberships</a>
+              <a href="https://www.leedsunited.com/hospitality" class="tickets-link" target="_blank">Hospitality</a>
+            </div>
           </div>
         </div>
 
         <!-- Directory Tab Content -->
         <div class="club-tab-content hidden" id="directory-content">
-          <div class="club-placeholder-section">
-            <p>Directory content coming soon...</p>
+          <div class="directory-article">
+            <!-- Page Title -->
+            <div class="directory-page-title">Leeds United Club Directory</div>
+
+            <!-- Date -->
+            <div class="directory-date">14 Aug 2020</div>
+
+            <!-- Club Info Section -->
+            <div class="directory-club-info">
+              <h2 class="directory-club-name">Leeds United Football Club Limited</h2>
+
+              <div class="directory-contact-block">
+                <div class="contact-row">
+                  <span class="contact-label">Address:</span>
+                  <span class="contact-value">Elland Road, Leeds, LS11 0ES</span>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-label">Main Switchboard:</span>
+                  <span class="contact-value">0871 334 1919</span>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-label">Ticket Office:</span>
+                  <span class="contact-value">0371 334 1992</span>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-label">Enquiries:</span>
+                  <span class="contact-value">0330 333 1521</span>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-label">Website:</span>
+                  <a href="https://www.leedsunited.com" class="directory-link" target="_blank">www.leedsunited.com</a>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-label">Club Enquiries:</span>
+                  <a href="mailto:tickets@leedsunited.com" class="directory-link">tickets@leedsunited.com</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Two-Column Directory -->
+            <div class="directory-grid">
+              <!-- Left Column -->
+              <div class="directory-column">
+                <div class="directory-item">
+                  <div class="directory-role">Chairman</div>
+                  <div class="directory-name">Paraag Marathe</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Executive Vice Chairman</div>
+                  <div class="directory-name">Peter McCormick</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Chief Business Officer</div>
+                  <div class="directory-name">Morrie Eisenberg</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Sporting Director</div>
+                  <div class="directory-name">Adam Underwood</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">First-team Manager</div>
+                  <div class="directory-name">Daniel Farke</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of Medicine</div>
+                  <div class="directory-name">Henry McStay</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Partnerships Director</div>
+                  <div class="directory-name">Phil Hardman</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of Digital and Marketing</div>
+                  <div class="directory-name">Scott Hobro</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of Ticketing and Matchday Operations</div>
+                  <div class="directory-name">Katie Holmes</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of IT and Facilities</div>
+                  <div class="directory-name">Mark Broadley</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Supporter Liaison Officer</div>
+                  <div class="directory-name">Mark Pitts</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of Safeguarding</div>
+                  <div class="directory-name">Helen Evans</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Directors</div>
+                  <div class="directory-name">Paraag Marathe, Andrew Schwartzberg, Robbie Evans, Eugene Schneur, Peter Lowy</div>
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div class="directory-column">
+                <div class="directory-item">
+                  <div class="directory-role">Vice Chairman</div>
+                  <div class="directory-name">Andrew Schwartzberg</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Managing Director</div>
+                  <div class="directory-name">Robbie Evans</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Chief Financial Officer</div>
+                  <div class="directory-name">Fay Greer</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of Football Administration</div>
+                  <div class="directory-name">Hannah Cox</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Academy Manager</div>
+                  <div class="directory-name">Martin Diggle</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of Commercial</div>
+                  <div class="directory-name">Stuart Dodsley</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of Communications</div>
+                  <div class="directory-name">Jordan Owens</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of People</div>
+                  <div class="directory-name">Rachael Jones</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of Matchday Safety and Security</div>
+                  <div class="directory-name">Laura Strong</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Foundation CEO</div>
+                  <div class="directory-name">Frances Milner</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Disability Liaison Officer</div>
+                  <div class="directory-name">Nicola Connolly</div>
+                </div>
+                <div class="directory-item">
+                  <div class="directory-role">Head of Retail Development</div>
+                  <div class="directory-name">Simon Moss</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1246,16 +2083,239 @@
         if (!container) return;
         const matches = matchResultsData[monthName] || [];
         container.innerHTML = matches.map(match => `
-          <div class="match-result-card">
-            <div class="match-date-section"><span class="match-date">${match.date}</span><span class="match-status">${match.status}</span></div>
-            <div class="match-teams-section">
-              <div class="match-team home-team"><span class="match-team-name">${match.homeTeam}</span><div class="match-team-logo"><img src="${match.homeLogo}" alt="${match.homeTeam}"></div></div>
-              <span class="match-score">${match.homeScore} - ${match.awayScore}</span>
-              <div class="match-team away-team"><div class="match-team-logo"><img src="${match.awayLogo}" alt="${match.awayTeam}"></div><span class="match-team-name">${match.awayTeam}</span></div>
+          <div class="match-result-row">
+            <div class="match-result-grid">
+              <div class="match-date-cell">
+                <span class="match-day">${match.date.split(' ')[1]}</span>
+                <span class="match-month">${match.date.split(' ')[2]}</span>
+              </div>
+              <div class="match-team-cell home-team-cell">
+                <span class="match-team-name">${match.homeTeam}</span>
+              </div>
+              <div class="match-logo-cell home-logo-cell">
+                <img src="${match.homeLogo}" alt="${match.homeTeam}" class="match-team-logo">
+              </div>
+              <div class="match-score-cell">
+                <span class="match-score">${match.homeScore} - ${match.awayScore}</span>
+                <span class="match-status">${match.status}</span>
+              </div>
+              <div class="match-logo-cell away-logo-cell">
+                <img src="${match.awayLogo}" alt="${match.awayTeam}" class="match-team-logo">
+              </div>
+              <div class="match-team-cell away-team-cell">
+                <span class="match-team-name">${match.awayTeam}</span>
+              </div>
+              <div class="match-venue-cell">Elland Road</div>
             </div>
-            <div class="match-indicator ${match.indicator}"></div>
           </div>
         `).join('');
+      }
+
+      // ========== DYNAMIC CLUB DATA LOADING ==========
+      // Club data mapping - maps club names to their logo paths and details
+      const clubDataMap = {
+        "Arsenal": {
+          logo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+          stadium: "Emirates Stadium",
+          est: "Est. 1886"
+        },
+        "Aston Villa": {
+          logo: "../assets/logos/cyprus_aez.football-logos.cc.svg",
+          stadium: "Villa Park",
+          est: "Est. 1874"
+        },
+        "Barnsley": {
+          logo: "../assets/logos/england_accrington.football-logos.cc.svg",
+          stadium: "Oakwell",
+          est: "Est. 1887"
+        },
+        "Birmingham City": {
+          logo: "../assets/logos/cyprus_aez.football-logos.cc.svg",
+          stadium: "St Andrew's",
+          est: "Est. 1875"
+        },
+        "Blackburn Rovers": {
+          logo: "../assets/logos/england_chelsea.football-logos.cc.svg",
+          stadium: "Ewood Park",
+          est: "Est. 1875"
+        },
+        "Blackpool": {
+          logo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
+          stadium: "Bloomfield Road",
+          est: "Est. 1887"
+        },
+        "Bolton Wanderers": {
+          logo: "../assets/logos/france_ajaccio.football-logos.cc.svg",
+          stadium: "University of Bolton Stadium",
+          est: "Est. 1874"
+        },
+        "Bournemouth": {
+          logo: "../assets/logos/germany_bayern-munchen.football-logos.cc.svg",
+          stadium: "Vitality Stadium",
+          est: "Est. 1899"
+        },
+        "Bradford City": {
+          logo: "../assets/logos/germany_borussia-dortmund.football-logos.cc.svg",
+          stadium: "Valley Parade",
+          est: "Est. 1903"
+        },
+        "Brentford": {
+          logo: "../assets/logos/italy_juventus.football-logos.cc.svg",
+          stadium: "Gtech Community Stadium",
+          est: "Est. 1889"
+        },
+        "Brighton & Hove Albion": {
+          logo: "../assets/logos/saudi-arabia_al-nassr.football-logos.cc.svg",
+          stadium: "Amex Stadium",
+          est: "Est. 1901"
+        },
+        "Burnley": {
+          logo: "../assets/logos/portugal_benfica.football-logos.cc.svg",
+          stadium: "Turf Moor",
+          est: "Est. 1882"
+        },
+        "Chelsea": {
+          logo: "../assets/logos/england_chelsea.football-logos.cc.svg",
+          stadium: "Stamford Bridge",
+          est: "Est. 1905"
+        },
+        "Crystal Palace": {
+          logo: "../assets/logos/spain_real-madrid.football-logos.cc.svg",
+          stadium: "Selhurst Park",
+          est: "Est. 1905"
+        },
+        "Everton": {
+          logo: "../assets/logos/scotland_aberdeen.football-logos.cc.svg",
+          stadium: "Goodison Park",
+          est: "Est. 1878"
+        },
+        "Fulham": {
+          logo: "../assets/logos/australia_adelaide-united.football-logos.cc.svg",
+          stadium: "Craven Cottage",
+          est: "Est. 1879"
+        },
+        "Leeds United": {
+          logo: "../assets/logos/england_arsenal.football-logos.cc.svg",
+          stadium: "Elland Road",
+          est: "Est. 1919"
+        },
+        "Leicester City": {
+          logo: "../assets/logos/scotland_aberdeen.football-logos.cc.svg",
+          stadium: "King Power Stadium",
+          est: "Est. 1884"
+        },
+        "Liverpool": {
+          logo: "../assets/logos/england_liverpool.football-logos.cc.svg",
+          stadium: "Anfield",
+          est: "Est. 1892"
+        },
+        "Manchester City": {
+          logo: "../assets/logos/england_manchester-city.football-logos.cc.svg",
+          stadium: "Etihad Stadium",
+          est: "Est. 1880"
+        },
+        "Manchester United": {
+          logo: "../assets/logos/england_manchester-united.football-logos.cc.svg",
+          stadium: "Old Trafford",
+          est: "Est. 1878"
+        }
+      };
+
+      function loadClubData() {
+        // Get club name from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const clubName = urlParams.get('club');
+
+        if (!clubName) return; // No club specified, use default
+
+        // Get club data from map
+        const clubData = clubDataMap[clubName];
+        if (!clubData) return; // Club not found in map
+
+        // Update page title
+        document.title = clubName + " | National League";
+
+        // Update hero section
+        const heroLogo = document.getElementById('clubHeroLogo');
+        const heroName = document.getElementById('clubHeroName');
+        const estYear = document.getElementById('clubEstYear');
+        const stadium = document.getElementById('clubStadium');
+
+        if (heroLogo) heroLogo.src = clubData.logo;
+        if (heroLogo) heroLogo.alt = clubName;
+        if (heroName) heroName.textContent = clubName;
+        if (estYear) estYear.textContent = clubData.est;
+        if (stadium) stadium.textContent = clubData.stadium;
+
+        // Update team form section
+        const teamFormLogo = document.getElementById('clubTeamFormLogo');
+        const teamFormName = document.getElementById('clubTeamFormName');
+        if (teamFormLogo) teamFormLogo.src = clubData.logo;
+        if (teamFormLogo) teamFormLogo.alt = clubName;
+        if (teamFormName) teamFormName.textContent = clubName;
+
+        // Update next match away team
+        const nextAwayTeam = document.getElementById('clubNextAwayTeam');
+        const nextAwayLogo = document.getElementById('clubNextAwayLogo');
+        if (nextAwayTeam) nextAwayTeam.textContent = clubName;
+        if (nextAwayLogo) nextAwayLogo.alt = clubName;
+
+        // Update links section headers
+        const linksHeader = document.querySelector('.club-links-header');
+        const ticketsHeader = document.querySelector('.club-tickets-header');
+        if (linksHeader) linksHeader.textContent = 'Visit ' + clubName + ' Website';
+        if (ticketsHeader) ticketsHeader.textContent = 'Buy ' + clubName + ' Tickets';
+
+        // Update directory page title
+        const directoryTitle = document.querySelector('.directory-page-title');
+        const directoryClubName = document.querySelector('.directory-club-name');
+        if (directoryTitle) directoryTitle.textContent = clubName + ' Club Directory';
+        if (directoryClubName) directoryClubName.textContent = clubName + ' Football Club Limited';
+
+        // Update stadium article title
+        const stadiumTitle = document.querySelector('.stadium-title');
+        if (stadiumTitle) {
+          stadiumTitle.textContent = 'Arriving at ' + clubData.stadium + ' by Public Transport';
+        }
+
+        // Update tickets article
+        const ticketsPageTitle = document.querySelector('.tickets-page-title');
+        const ticketsMainHeading = document.querySelector('.tickets-main-heading');
+        if (ticketsPageTitle) {
+          ticketsPageTitle.textContent = 'Guide to buying ' + clubName + ' tickets at ' + clubData.stadium;
+        }
+        if (ticketsMainHeading) {
+          ticketsMainHeading.textContent = clubName + ' Ticket Information';
+        }
+
+        // Update tickets logo
+        const ticketsLogo = document.querySelector('.tickets-logo');
+        if (ticketsLogo) {
+          ticketsLogo.src = clubData.logo;
+          ticketsLogo.alt = clubName;
+        }
+
+        // Update highlighted team in table
+        const highlightedTeam = document.querySelector('.club-match-list-item.highlighted .club-team-info span');
+        if (highlightedTeam) {
+          highlightedTeam.textContent = clubName;
+        }
+        const highlightedLogo = document.querySelector('.club-match-list-item.highlighted .club-team-mini-logo');
+        if (highlightedLogo) {
+          highlightedLogo.src = clubData.logo;
+          highlightedLogo.alt = clubName;
+        }
+
+        // Update last starting 11 team name and logo
+        const lastMatchTeamNames = document.querySelectorAll('.club-match-teams .club-team-name');
+        const lastMatchTeamLogos = document.querySelectorAll('.club-match-teams .club-team-logo img');
+        if (lastMatchTeamNames.length > 0) {
+          lastMatchTeamNames[0].textContent = clubName;
+        }
+        if (lastMatchTeamLogos.length > 0) {
+          lastMatchTeamLogos[0].src = clubData.logo;
+          lastMatchTeamLogos[0].alt = clubName;
+        }
       }
 
       document.addEventListener('DOMContentLoaded', function() {
@@ -1294,8 +2354,8 @@
         initSeasonDropdown();
         renderMatchResults("March");
 
-        // BURGER MENU IS NOW HANDLED EXCLUSIVELY BY main.js
-        // initClubBurgerMenu();
+        // Load club data when page loads
+        loadClubData();
       });
     </script>
   </body>

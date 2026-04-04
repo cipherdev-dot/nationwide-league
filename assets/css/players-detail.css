@@ -1405,6 +1405,140 @@
   border-bottom: 1px solid rgba(82, 82, 82, 0.15);
 }
 
+/* Match Result Row - Grid Layout */
+.match-result-row {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(82, 82, 82, 0.1);
+}
+
+.match-result-row:hover {
+  background-color: #fcfcfc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: rgba(82, 82, 82, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Match Result Grid */
+.match-result-grid {
+  display: grid;
+  grid-template-columns: 40px 1fr 32px 60px 32px 1fr 80px;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+/* Date Cell */
+.match-date-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.match-day {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #525252;
+  line-height: 1;
+}
+
+.match-month {
+  font-family: "Inter", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #525252;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Team Name Cells */
+.match-team-cell {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.home-team-cell {
+  justify-content: flex-end;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.away-team-cell {
+  justify-content: flex-start;
+  text-align: left;
+  padding-left: 8px;
+}
+
+.match-team-name {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #525252;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Logo Cells - Fixed width for alignment */
+.match-logo-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.match-team-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Score Cell */
+.match-score-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.match-score {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #525252;
+  line-height: 1;
+}
+
+.match-status {
+  font-family: "Inter", sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #525252;
+  margin-top: 2px;
+}
+
+/* Venue Cell */
+.match-venue-cell {
+  font-family: "Inter", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #737373;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .match-results-header {
   display: flex;
   justify-content: space-between;
@@ -1611,13 +1745,15 @@
 .match-team {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   flex: 1;
   min-width: 0;
+  position: relative;
 }
 
 .match-team.home-team {
   justify-content: flex-end;
+  text-align: right;
 }
 
 .match-team.away-team {
@@ -1638,10 +1774,8 @@
 .match-team-logo {
   width: 28px;
   height: 28px;
-  border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1651,6 +1785,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  background: transparent;
 }
 
 .match-score {
