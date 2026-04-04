@@ -6,9 +6,37 @@
   const currentPage = window.location.pathname;
   const pageName = currentPage.substring(currentPage.lastIndexOf("/") + 1) || "index.html";
   
-  // Determine if we're in the pages subdirectory
-  const isInPagesDir = currentPage.includes('/pages/');
-  const assetsPath = isInPagesDir ? '../assets' : './assets';
+  // Calculate assets path - use relative paths that work from any page
+  // Check if we're in the pages directory based on the current page name
+  const pagesInPath = currentPage.includes('/pages/');
+  
+  // Use a more robust path calculation
+  let assetsPath;
+  
+  // Try to get the script's src to determine the correct path
+  const scripts = document.getElementsByTagName('script');
+  let scriptSrc = '';
+  for (let i = 0; i < scripts.length; i++) {
+    if (scripts[i].src && scripts[i].src.includes('main.js')) {
+      scriptSrc = scripts[i].src;
+      break;
+    }
+  }
+  
+  if (scriptSrc) {
+    // Extract path from script src
+    const scriptPath = scriptSrc.substring(0, scriptSrc.lastIndexOf('/'));
+    // Go up from assets/js to assets
+    const lastSlash = scriptPath.lastIndexOf('/');
+    const secondLastSlash = scriptPath.substring(0, lastSlash).lastIndexOf('/');
+    assetsPath = scriptPath.substring(0, secondLastSlash);
+  } else if (pagesInPath) {
+    // We're in /pages/ directory, go up one level
+    assetsPath = '../assets';
+  } else {
+    // We're in root directory
+    assetsPath = './assets';
+  }
 
   // Function to load a script dynamically
   function loadScript(src) {
