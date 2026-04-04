@@ -109,6 +109,8 @@
           
           if (window.PlayerData) window.PlayerData.init();
           if (window.MatchData) window.MatchData.init();
+          // Initialize player details tab switching
+          initPlayerDetails();
         } catch (error) {
           console.error("Failed to init player details:", error);
         }
@@ -236,30 +238,6 @@
 
     // Update page title
     document.title = data.home + " vs " + data.away + " | Match Recap | National League";
-  }
-
-  // Club details page initialization
-  function initClubDetails() {
-    // Tab switching for club details
-    const clubTabs = document.querySelectorAll(".club-tab");
-    const clubTabContents = document.querySelectorAll(".club-tab-content");
-
-    clubTabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        clubTabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
-
-        const tabType = tab.getAttribute("data-tab");
-        clubTabContents.forEach(content => {
-          content.classList.remove("active");
-          content.classList.add("hidden");
-          if (content.id === tabType + "-content") {
-            content.classList.add("active");
-            content.classList.remove("hidden");
-          }
-        });
-      });
-    });
   }
 
   // Player details page initialization

@@ -517,11 +517,6 @@ const MatchData = (() => {
     init,
     renderTimeline,
     renderMatchResults,
-    navigateMonth,
-    getCurrentMonth,
-    getMonths,
-    getFormData,
-    getMatchResults,
     initTeamFormToggle,
     initMonthCarousel,
   };

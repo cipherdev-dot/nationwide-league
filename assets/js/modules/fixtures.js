@@ -1,28 +1,6 @@
 // Fixtures module - handles fixtures page functionality
 const Fixtures = (() => {
   // ----------------------------------------------
-  // HELPER: generate SVG logo
-  // ----------------------------------------------
-  function generateClubLogo(teamName) {
-    let initials = teamName
-      .split(" ")
-      .map((word) => word[0])
-      .join("")
-      .slice(0, 2)
-      .toUpperCase();
-    if (initials.length < 2)
-      initials = (teamName.slice(0, 2) + "FC").toUpperCase().slice(0, 2);
-    const hue = (teamName.length * 31) % 360;
-    const bgColor = `hsl(${hue}, 68%, 86%)`;
-    const textColor = `hsl(${hue}, 70%, 28%)`;
-    const svgString = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="48" fill="${bgColor}" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="50" y="68" font-size="44" font-weight="bold" font-family="Arial, sans-serif" text-anchor="middle" fill="${textColor}">${initials}</text>
-    </svg>`;
-    return "data:image/svg+xml," + encodeURIComponent(svgString);
-  }
-
-  // ----------------------------------------------
   // LOGO MAPPING for actual logo files
   // ----------------------------------------------
   const logoMap = {

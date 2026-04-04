@@ -227,11 +227,8 @@ const PlayerData = (() => {
 
   return {
     init,
-    getPlayer,
-    getAllPlayers,
     getPlayerIdFromUrl,
-    populatePlayerData,
-    players
+    populatePlayerData
   };
 })();
 

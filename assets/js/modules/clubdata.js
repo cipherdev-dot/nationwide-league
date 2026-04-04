@@ -558,9 +558,7 @@ const ClubData = (() => {
     initClubTabs,
     initMonthCarousel,
     renderMatchResults,
-    loadClubData,
-    formData,
-    clubDataMap
+    loadClubData
   };
 })();
 
