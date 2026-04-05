@@ -7,7 +7,6 @@ const Core = (() => {
 
     if (!burger || !mobileNav) return;
 
-    // Populate mobile menu from header links if empty
     const mobileLinksContainer = mobileNav.querySelector(".mobile-nav-links");
     if (mobileLinksContainer && mobileLinksContainer.children.length === 0) {
       populateMobileMenu(mobileLinksContainer);
@@ -70,7 +69,7 @@ const Core = (() => {
       requestAnimationFrame(() => {
         const currentScroll = Math.max(
           0,
-          window.pageYOffset || document.documentElement.scrollTop
+          window.pageYOffset || document.documentElement.scrollTop,
         );
 
         if (currentScroll <= 5) {
@@ -95,34 +94,31 @@ const Core = (() => {
   // Initialize lazy loading for images
   function initLazyLoading() {
     if ("IntersectionObserver" in window) {
-      const lazyImages = document.querySelectorAll("img[data-src], img[data-srcset]");
-      
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            
-            if (img.dataset.src) {
-              img.src = img.dataset.src;
-            }
-            if (img.dataset.srcset) {
-              img.srcset = img.dataset.srcset;
-            }
-            
-            img.classList.add("lazy-loaded");
-            observer.unobserve(img);
-          }
-        });
-      }, {
-        rootMargin: "50px 0px",
-        threshold: 0.01
-      });
+      const lazyImages = document.querySelectorAll(
+        "img[data-src], img[data-srcset]",
+      );
 
-      lazyImages.forEach(img => imageObserver.observe(img));
+      const imageObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              if (img.dataset.src) img.src = img.dataset.src;
+              if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+              img.classList.add("lazy-loaded");
+              imageObserver.unobserve(img);
+            }
+          });
+        },
+        { rootMargin: "50px 0px", threshold: 0.01 },
+      );
+
+      lazyImages.forEach((img) => imageObserver.observe(img));
     } else {
-      // Fallback for browsers that don't support IntersectionObserver
-      const lazyImages = document.querySelectorAll("img[data-src], img[data-srcset]");
-      lazyImages.forEach(img => {
+      const lazyImages = document.querySelectorAll(
+        "img[data-src], img[data-srcset]",
+      );
+      lazyImages.forEach((img) => {
         if (img.dataset.src) img.src = img.dataset.src;
         if (img.dataset.srcset) img.srcset = img.dataset.srcset;
       });
@@ -132,48 +128,31 @@ const Core = (() => {
   // Initialize video lazy loading
   function initVideoLazyLoading() {
     const lazyVideos = document.querySelectorAll("video[data-poster]");
-    
     if ("IntersectionObserver" in window) {
-      const videoObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const video = entry.target;
-            if (video.dataset.poster) {
-              video.poster = video.dataset.poster;
+      const videoObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const video = entry.target;
+              if (video.dataset.poster) video.poster = video.dataset.poster;
+              if (video.dataset.src && !video.querySelector("source")) {
+                const source = document.createElement("source");
+                source.src = video.dataset.src;
+                source.type = video.dataset.type || "video/mp4";
+                video.appendChild(source);
+              }
+              video.classList.add("lazy-loaded");
+              videoObserver.unobserve(video);
             }
-            if (video.dataset.src && !video.querySelector("source")) {
-              const source = document.createElement("source");
-              source.src = video.dataset.src;
-              source.type = video.dataset.type || "video/mp4";
-              video.appendChild(source);
-            }
-            video.classList.add("lazy-loaded");
-            observer.unobserve(video);
-          }
-        });
-      }, { rootMargin: "100px 0px" });
-
-      lazyVideos.forEach(video => videoObserver.observe(video));
+          });
+        },
+        { rootMargin: "100px 0px" },
+      );
+      lazyVideos.forEach((video) => videoObserver.observe(video));
     }
   }
 
-  // Initialize smooth scroll behavior
-  function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function(e) {
-        const href = this.getAttribute("href");
-        if (href === "#") return;
-        
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
-    });
-  }
-
-  // Initialize hero video switching
+  // ========== HERO VIDEO SWITCHING ==========
   function initHeroVideoSwitching() {
     const featureItems = document.querySelectorAll(".feature-item");
     const mainVideo = document.getElementById("mainVideo");
@@ -181,48 +160,126 @@ const Core = (() => {
     const videoSubtitle = document.getElementById("video-subtitle");
     const videoBadge = document.getElementById("video-badge");
 
+    console.log("Hero video switching init:", {
+      hasFeatureItems: featureItems.length > 0,
+      featureItemCount: featureItems.length,
+      hasMainVideo: !!mainVideo,
+      videoSrc: mainVideo ? mainVideo.src : null
+    });
+
     if (!featureItems.length || !mainVideo) {
       console.warn("Hero video switching not initialised: missing elements");
       return;
     }
 
-    featureItems.forEach(item => {
+    // Ensure initial video plays
+    if (mainVideo.readyState >= 3) {
+      mainVideo.play().catch(e => console.log("Initial play attempt:", e.message));
+    } else {
+      mainVideo.addEventListener("canplay", () => {
+        mainVideo.play().catch(e => console.log("Initial canplay:", e.message));
+      }, { once: true });
+    }
+
+    // Helper to switch video
+    function switchVideo(videoSrc, badge, title, subtitle, clickedItem) {
+      if (!videoSrc) return;
+
+      // Update overlay text
+      if (videoTitle && title) videoTitle.textContent = title;
+      if (videoSubtitle && subtitle) videoSubtitle.textContent = subtitle;
+      if (videoBadge && badge) videoBadge.textContent = badge;
+
+      // Pause current video first
+      mainVideo.pause();
+
+      // Remove all source children to ensure clean state
+      const existingSources = mainVideo.querySelectorAll("source");
+      existingSources.forEach(src => src.remove());
+
+      // Create new source element
+      const sourceEl = document.createElement("source");
+      sourceEl.src = videoSrc;
+      sourceEl.type = "video/mp4";
+      mainVideo.appendChild(sourceEl);
+
+      // Set video attributes for autoplay
+      mainVideo.muted = true;
+      mainVideo.autoplay = true;
+      mainVideo.loop = true;
+      mainVideo.playsInline = true;
+      mainVideo.preload = "auto";
+
+      // Force the video to reload with new source
+      mainVideo.src = videoSrc;
+      mainVideo.load();
+
+      console.log("Switching video to:", videoSrc);
+
+      // Handle video events for debugging
+      const onCanPlay = async () => {
+        console.log("Video canplay event fired, readyState:", mainVideo.readyState);
+        try {
+          await mainVideo.play();
+          console.log("Video play() succeeded");
+        } catch (err) {
+          console.warn("Video play() failed:", err.name, err.message);
+        }
+        mainVideo.removeEventListener("canplay", onCanPlay);
+        mainVideo.removeEventListener("error", onError);
+      };
+
+      const onError = (e) => {
+        console.error("Video error:", e);
+        console.error("Error code:", mainVideo.error);
+        mainVideo.removeEventListener("error", onError);
+        mainVideo.removeEventListener("canplay", onCanPlay);
+      };
+
+      mainVideo.addEventListener("canplay", onCanPlay);
+      mainVideo.addEventListener("error", onError);
+
+      // Update active class
+      featureItems.forEach((f) => f.classList.remove("active"));
+      if (clickedItem) clickedItem.classList.add("active");
+    }
+
+    // Attach click handlers
+    featureItems.forEach((item) => {
       item.addEventListener("click", (e) => {
         e.preventDefault();
-
         const videoSrc = item.getAttribute("data-video-src");
         const badge = item.getAttribute("data-badge");
         const title = item.getAttribute("data-title");
         const subtitle = item.getAttribute("data-subtitle");
+        switchVideo(videoSrc, badge, title, subtitle, item);
+      });
+    });
 
-        if (videoSrc) {
-          // Pause current video
-          mainVideo.pause();
-          // Change source and reload
-          mainVideo.src = videoSrc;
-          mainVideo.load();
-          // Ensure muted to allow autoplay
-          mainVideo.muted = true;
+    // DO NOT call play() manually on page load – rely on HTML autoplay.
+    // The video will start playing automatically because it has `autoplay muted`.
+    // If it doesn't, the user can click the video controls.
 
-          // Wait until video can play before calling play()
-          const playVideo = () => {
-            mainVideo.play().catch(err => {
-              console.error("Video play failed:", err);
-              // Optional: show a manual play button overlay here
-            });
-            mainVideo.removeEventListener("canplay", playVideo);
-          };
-          mainVideo.addEventListener("canplay", playVideo, { once: true });
+    // Activate first feature item visually without reloading video
+    if (
+      featureItems.length > 0 &&
+      !document.querySelector(".feature-item.active")
+    ) {
+      featureItems[0].classList.add("active");
+    }
+  }
+
+  // Initialize smooth scroll behavior
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        if (href === "#") return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-
-        // Update text content
-        if (videoTitle && title) videoTitle.textContent = title;
-        if (videoSubtitle && subtitle) videoSubtitle.textContent = subtitle;
-        if (videoBadge && badge) videoBadge.textContent = badge;
-
-        // Update active state
-        featureItems.forEach(f => f.classList.remove("active"));
-        item.classList.add("active");
       });
     });
   }
@@ -240,5 +297,4 @@ const Core = (() => {
   return { init };
 })();
 
-// Export for use in other modules
 window.Core = Core;
